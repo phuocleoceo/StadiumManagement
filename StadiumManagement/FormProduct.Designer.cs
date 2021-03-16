@@ -1,5 +1,5 @@
 ﻿
-namespace StadiumManagement
+namespace GUILayer
 {
     partial class FormProduct
     {

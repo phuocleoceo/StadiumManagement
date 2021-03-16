@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace StadiumManagement
+namespace GUILayer
 {
     public partial class FormProduct : Form
     {

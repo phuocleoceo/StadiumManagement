@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{05318603-6551-4883-A4E1-0542BFD02DF5}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>StadiumManagement</RootNamespace>
-    <AssemblyName>StadiumManagement</AssemblyName>
+    <RootNamespace>GUILayer</RootNamespace>
+    <AssemblyName>GUILayer</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

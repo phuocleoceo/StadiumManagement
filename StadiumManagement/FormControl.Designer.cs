@@ -1,5 +1,5 @@
 ﻿
-namespace StadiumManagement
+namespace GUILayer
 {
     partial class FormControl
     {
@@ -214,7 +214,7 @@ namespace StadiumManagement
             // pictureBox2
             // 
             this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox2.Image = global::StadiumManagement.Properties.Resources.tải_xuống;
+            this.pictureBox2.Image = global::GUILayer.Properties.Resources.tải_xuống;
             this.pictureBox2.Location = new System.Drawing.Point(321, 128);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(224, 168);
@@ -224,7 +224,7 @@ namespace StadiumManagement
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::StadiumManagement.Properties.Resources.Logo_dhbkdn;
+            this.pictureBox1.Image = global::GUILayer.Properties.Resources.Logo_dhbkdn;
             this.pictureBox1.Location = new System.Drawing.Point(34, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(124, 82);
