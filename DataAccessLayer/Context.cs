@@ -8,7 +8,7 @@ using DataAccessLayer.Models;
 
 namespace DataAccessLayer
 {
-    public class Context:DbContext
+    public class Context : DbContext
     {
         public Context() : base("name=CNS")
         {
@@ -20,7 +20,8 @@ namespace DataAccessLayer
             base.OnModelCreating(modelBuilder);
         }
 
-        public DbSet<TAIKHOAN> TAIKHOAN { get; set; }
+        public DbSet<Account> Accounts { get; set; }
+        public DbSet<Cashier> Cashiers { get; set; }
 
     }
 }

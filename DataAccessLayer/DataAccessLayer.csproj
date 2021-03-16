@@ -52,9 +52,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Context.cs" />
+    <Compile Include="Enums\Gender.cs" />
     <Compile Include="Enums\Role.cs" />
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\TAIKHOAN.cs" />
+    <Compile Include="Models\Account.cs" />
+    <Compile Include="Models\Cashier.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

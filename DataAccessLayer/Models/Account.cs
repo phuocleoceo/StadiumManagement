@@ -9,16 +9,15 @@ using DataAccessLayer.Enums;
 
 namespace DataAccessLayer.Models
 {
-    [Table("TAIKHOAN")]
-    public class TAIKHOAN
+    public class Account
     {
         [Key]
-        public string MaNV { get; set; }
+        public int Id { get; set; }
 
-        public string TenDangNhap { get; set; }
+        public string UserName { get; set; }
 
-        public string MatKhau { get; set; }
+        public string PassWord { get; set; }
 
-        public Role VaiTro { get; set; }
+        public Role Role { get; set; }
     }
 }
