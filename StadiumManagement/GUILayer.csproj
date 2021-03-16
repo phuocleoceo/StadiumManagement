@@ -95,5 +95,11 @@
   <ItemGroup>
     <None Include="Resources\tải xuống.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessLayer\BusinessLayer.csproj">
+      <Project>{5a3f46d8-2dd6-4c04-bdc5-40fc5040cf65}</Project>
+      <Name>BusinessLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -8,9 +8,9 @@ using DataAccessLayer.Models;
 
 namespace DataAccessLayer
 {
-    public class Context : DbContext
+    public class StadiumContext : DbContext
     {
-        public Context() : base("name=CNS")
+        public StadiumContext() : base("name=CNS")
         {
 
         }
