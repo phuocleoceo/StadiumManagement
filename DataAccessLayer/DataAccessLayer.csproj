@@ -51,6 +51,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enums\Status.cs" />
+    <Compile Include="Models\Bill.cs" />
+    <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\RentOrder.cs" />
+    <Compile Include="Models\Service.cs" />
+    <Compile Include="Models\ServiceOrder.cs" />
+    <Compile Include="Models\Stadium.cs" />
     <Compile Include="Repository\UnitOfWork.cs" />
     <Compile Include="StadiumContext.cs" />
     <Compile Include="Enums\Gender.cs" />

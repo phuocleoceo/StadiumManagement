@@ -1,15 +1,14 @@
-﻿using System;
+﻿using DataAccessLayer.Enums;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DataAccessLayer.Enums;
 
 namespace DataAccessLayer.Models
 {
-    public class Cashier
+    public class Customer
     {
         [Key]
         public int Id { get; set; }
@@ -18,17 +17,9 @@ namespace DataAccessLayer.Models
 
         public Gender Gender { get; set; }
 
-        public DateTime DateOfBirth { get; set; }
+        public string Address { get; set; }
 
         public string PhoneNumber { get; set; }
-
-        public string IdentityCard { get; set; }
-
-        public float Salary { get; set; }
-
-        public string Note { get; set; }
-
-        public Account Account { get; set; }
 
         public List<Bill> Bills { get; set; }
     }
