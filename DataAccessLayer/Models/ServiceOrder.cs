@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace DataAccessLayer.Models
 {
@@ -15,5 +10,7 @@ namespace DataAccessLayer.Models
         public int Count { get; set; }
 
         public Service Service { get; set; }
+
+        public Bill Bill { get; set; }
     }
 }

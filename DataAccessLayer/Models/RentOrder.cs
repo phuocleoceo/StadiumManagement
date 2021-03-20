@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace DataAccessLayer.Models
 {
@@ -17,5 +12,7 @@ namespace DataAccessLayer.Models
         public int RentTime { get; set; }
 
         public Stadium Stadium { get; set; }
+
+        public Bill Bill { get; set; }
     }
 }

@@ -3,12 +3,10 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataAccessLayer.Repository
 {
-    public class Repository<T> where T:class
+    public class Repository<T> where T : class
     {
         private readonly StadiumContext _db;
         internal DbSet<T> dbSet;
@@ -29,8 +27,8 @@ namespace DataAccessLayer.Repository
             return dbSet.Find(id);
         }
 
-        public IEnumerable<T> GetAll(Expression<Func<T, bool>> filter = null, 
-                              Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null, 
+        public IEnumerable<T> GetAll(Expression<Func<T, bool>> filter = null,
+                              Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null,
                               string includeProperties = null)
         {
             IQueryable<T> query = dbSet;
@@ -54,7 +52,7 @@ namespace DataAccessLayer.Repository
             return query.ToList();
         }
 
-        public T GetFirstOrDefault(Expression<Func<T, bool>> filter = null, 
+        public T GetFirstOrDefault(Expression<Func<T, bool>> filter = null,
                                    string includeProperties = null)
         {
             IQueryable<T> query = dbSet;
