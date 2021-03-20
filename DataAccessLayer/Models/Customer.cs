@@ -11,7 +11,7 @@ namespace DataAccessLayer.Models
 
         public string Name { get; set; }
 
-        public Gender Gender { get; set; }
+        public bool Gender { get; set; }
 
         public string Address { get; set; }
 

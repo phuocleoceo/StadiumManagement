@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FontAwesome.Sharp, Version=5.15.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FontAwesome.Sharp.5.15.3\lib\net472\FontAwesome.Sharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,11 +49,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormControl2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormControl2.Designer.cs">
+      <DependentUpon>FormControl2.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormControl.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormControl.Designer.cs">
       <DependentUpon>FormControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="FormProduct.cs">
       <SubType>Form</SubType>
@@ -60,8 +75,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormControl2.resx">
+      <DependentUpon>FormControl2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormControl.resx">
       <DependentUpon>FormControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormProduct.resx">
       <DependentUpon>FormProduct.cs</DependentUpon>
@@ -71,6 +92,7 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -100,6 +122,12 @@
       <Project>{5a3f46d8-2dd6-4c04-bdc5-40fc5040cf65}</Project>
       <Name>BusinessLayer</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IMG_0487.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo200.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

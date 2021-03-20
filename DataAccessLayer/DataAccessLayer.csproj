@@ -60,7 +60,6 @@
     <Compile Include="Models\Stadium.cs" />
     <Compile Include="Repository\UnitOfWork.cs" />
     <Compile Include="StadiumContext.cs" />
-    <Compile Include="Enums\Gender.cs" />
     <Compile Include="Enums\Role.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account.cs" />
