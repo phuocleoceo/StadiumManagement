@@ -27,13 +27,47 @@ namespace GUILayer
             PanelMenu.Controls.Add(leftBorderBtn);
             timer.Start();//dong ho
             //Form
+            CustomizeDesign();
             this.Text = string.Empty;
             this.ControlBox = false;
             this.DoubleBuffered = true;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
         }
 
-        #region Design
+        #region SubPanel Design  
+        private void CustomizeDesign()
+        {
+            pnlStadium.Visible = false;
+            pnlService.Visible = false;
+            pnlCashier.Visible = false;
+            pnlCustomer.Visible = false;
+        }
+
+        private void HideSubMenu()
+        {
+            if (pnlStadium.Visible == true)
+                pnlStadium.Visible = false;
+            if (pnlService.Visible == true)
+                pnlService.Visible = false;
+            if (pnlCashier.Visible == true)
+                pnlCashier.Visible = false;
+            if (pnlCustomer.Visible == true)
+                pnlCustomer.Visible = false;
+        }
+
+        private void ShowSubMenu(Panel subMenu)
+        {
+            if (subMenu.Visible == false)
+            {
+                HideSubMenu();
+                subMenu.Visible = true;
+            }
+            else
+                subMenu.Visible = false;
+        }
+        #endregion
+
+        #region ChildForm Design 
         private struct RGBColors
         {
             public static Color color1 = Color.FromArgb(172, 126, 241);
@@ -115,28 +149,32 @@ namespace GUILayer
         #region ButtonClick
         private void btnStadium_Click(object sender, EventArgs e)
         {
+            ShowSubMenu(pnlStadium);
             ActiveButton(sender, RGBColors.color1);
-            //openChildForm(new Form());
         }
 
         private void btnService_Click(object sender, EventArgs e)
         {
+            ShowSubMenu(pnlService);
             ActiveButton(sender, RGBColors.color2);
         }
 
         private void btnCashier_Click(object sender, EventArgs e)
         {
+            ShowSubMenu(pnlCashier);
             ActiveButton(sender, RGBColors.color3);
         }
 
         private void btnCustomer_Click(object sender, EventArgs e)
         {
-            ActiveButton(sender, RGBColors.color4);
+            ShowSubMenu(pnlCustomer);
+            ActiveButton(sender, RGBColors.color4);            
         }
 
         private void btnStatistic_Click(object sender, EventArgs e)
         {
-            ActiveButton(sender, RGBColors.color5);
+            HideSubMenu();
+            ActiveButton(sender, RGBColors.color5);            
         }
 
         private void btnSetting_Click(object sender, EventArgs e)
