@@ -179,11 +179,13 @@ namespace GUILayer
 
         private void btnSetting_Click(object sender, EventArgs e)
         {
+            HideSubMenu();
             ActiveButton(sender, RGBColors.color6);
         }
 
         private void btnlogout_Click(object sender, EventArgs e)
         {
+            HideSubMenu();
             ActiveButton(sender, RGBColors.color7);
             //Application.Restart();
         }
@@ -192,6 +194,7 @@ namespace GUILayer
         #region Logo, Timer, Exit , Minimize , Zoom
         private void picLogo_Click(object sender, EventArgs e)
         {
+            HideSubMenu();
             if (currentChildForm != null)
             {
                 currentChildForm.Close();
