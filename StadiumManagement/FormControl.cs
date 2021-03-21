@@ -27,7 +27,6 @@ namespace GUILayer
             PanelMenu.Controls.Add(leftBorderBtn);
             timer.Start();//dong ho
             //Form
-            CustomizeDesign();
             this.Text = string.Empty;
             this.ControlBox = false;
             this.DoubleBuffered = true;
@@ -35,13 +34,6 @@ namespace GUILayer
         }
 
         #region SubPanel Design  
-        private void CustomizeDesign()
-        {
-            pnlStadium.Visible = false;
-            pnlService.Visible = false;
-            pnlCashier.Visible = false;
-            pnlCustomer.Visible = false;
-        }
 
         private void HideSubMenu()
         {
@@ -146,51 +138,6 @@ namespace GUILayer
         }
         #endregion
 
-        #region ButtonClick
-        private void btnStadium_Click(object sender, EventArgs e)
-        {
-            ShowSubMenu(pnlStadium);
-            ActiveButton(sender, RGBColors.color1);
-        }
-
-        private void btnService_Click(object sender, EventArgs e)
-        {
-            ShowSubMenu(pnlService);
-            ActiveButton(sender, RGBColors.color2);
-        }
-
-        private void btnCashier_Click(object sender, EventArgs e)
-        {
-            ShowSubMenu(pnlCashier);
-            ActiveButton(sender, RGBColors.color3);
-        }
-
-        private void btnCustomer_Click(object sender, EventArgs e)
-        {
-            ShowSubMenu(pnlCustomer);
-            ActiveButton(sender, RGBColors.color4);            
-        }
-
-        private void btnStatistic_Click(object sender, EventArgs e)
-        {
-            HideSubMenu();
-            ActiveButton(sender, RGBColors.color5);            
-        }
-
-        private void btnSetting_Click(object sender, EventArgs e)
-        {
-            HideSubMenu();
-            ActiveButton(sender, RGBColors.color6);
-        }
-
-        private void btnlogout_Click(object sender, EventArgs e)
-        {
-            HideSubMenu();
-            ActiveButton(sender, RGBColors.color7);
-            //Application.Restart();
-        }
-        #endregion
-
         #region Logo, Timer, Exit , Minimize , Zoom
         private void picLogo_Click(object sender, EventArgs e)
         {
@@ -244,6 +191,51 @@ namespace GUILayer
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+        #endregion
+
+        #region ButtonIconClick
+        private void btnStadium_Click(object sender, EventArgs e)
+        {
+            ShowSubMenu(pnlStadium);
+            ActiveButton(sender, RGBColors.color1);
+        }
+
+        private void btnService_Click(object sender, EventArgs e)
+        {
+            ShowSubMenu(pnlService);
+            ActiveButton(sender, RGBColors.color2);
+        }
+
+        private void btnCashier_Click(object sender, EventArgs e)
+        {
+            ShowSubMenu(pnlCashier);
+            ActiveButton(sender, RGBColors.color3);
+        }
+
+        private void btnCustomer_Click(object sender, EventArgs e)
+        {
+            ShowSubMenu(pnlCustomer);
+            ActiveButton(sender, RGBColors.color4);
+        }
+
+        private void btnStatistic_Click(object sender, EventArgs e)
+        {
+            HideSubMenu();
+            ActiveButton(sender, RGBColors.color5);
+        }
+
+        private void btnSetting_Click(object sender, EventArgs e)
+        {
+            HideSubMenu();
+            ActiveButton(sender, RGBColors.color6);
+        }
+
+        private void btnlogout_Click(object sender, EventArgs e)
+        {
+            HideSubMenu();
+            ActiveButton(sender, RGBColors.color7);
+            //Application.Restart();
         }
         #endregion
     }

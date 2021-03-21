@@ -111,7 +111,7 @@ namespace GUILayer
             this.btnStatistic.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnStatistic.IconSize = 35;
             this.btnStatistic.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnStatistic.Location = new System.Drawing.Point(0, 581);
+            this.btnStatistic.Location = new System.Drawing.Point(0, 549);
             this.btnStatistic.Name = "btnStatistic";
             this.btnStatistic.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnStatistic.Size = new System.Drawing.Size(170, 50);
@@ -129,10 +129,11 @@ namespace GUILayer
             this.pnlCustomer.Controls.Add(this.button12);
             this.pnlCustomer.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlCustomer.ForeColor = System.Drawing.Color.White;
-            this.pnlCustomer.Location = new System.Drawing.Point(0, 513);
+            this.pnlCustomer.Location = new System.Drawing.Point(0, 481);
             this.pnlCustomer.Name = "pnlCustomer";
             this.pnlCustomer.Size = new System.Drawing.Size(170, 68);
             this.pnlCustomer.TabIndex = 15;
+            this.pnlCustomer.Visible = false;
             // 
             // button11
             // 
@@ -174,7 +175,7 @@ namespace GUILayer
             this.btnCustomer.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCustomer.IconSize = 35;
             this.btnCustomer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCustomer.Location = new System.Drawing.Point(0, 463);
+            this.btnCustomer.Location = new System.Drawing.Point(0, 431);
             this.btnCustomer.Name = "btnCustomer";
             this.btnCustomer.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnCustomer.Size = new System.Drawing.Size(170, 50);
@@ -192,10 +193,11 @@ namespace GUILayer
             this.pnlCashier.Controls.Add(this.button9);
             this.pnlCashier.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlCashier.ForeColor = System.Drawing.Color.White;
-            this.pnlCashier.Location = new System.Drawing.Point(0, 397);
+            this.pnlCashier.Location = new System.Drawing.Point(0, 361);
             this.pnlCashier.Name = "pnlCashier";
-            this.pnlCashier.Size = new System.Drawing.Size(170, 66);
+            this.pnlCashier.Size = new System.Drawing.Size(170, 70);
             this.pnlCashier.TabIndex = 13;
+            this.pnlCashier.Visible = false;
             // 
             // button8
             // 
@@ -206,7 +208,7 @@ namespace GUILayer
             this.button8.ForeColor = System.Drawing.Color.Gainsboro;
             this.button8.Location = new System.Drawing.Point(0, 32);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(170, 34);
+            this.button8.Size = new System.Drawing.Size(170, 35);
             this.button8.TabIndex = 1;
             this.button8.Text = "button8";
             this.button8.UseVisualStyleBackColor = true;
@@ -237,7 +239,7 @@ namespace GUILayer
             this.btnCashier.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCashier.IconSize = 35;
             this.btnCashier.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCashier.Location = new System.Drawing.Point(0, 347);
+            this.btnCashier.Location = new System.Drawing.Point(0, 311);
             this.btnCashier.Name = "btnCashier";
             this.btnCashier.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnCashier.Size = new System.Drawing.Size(170, 50);
@@ -255,10 +257,11 @@ namespace GUILayer
             this.pnlService.Controls.Add(this.button6);
             this.pnlService.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlService.ForeColor = System.Drawing.Color.White;
-            this.pnlService.Location = new System.Drawing.Point(0, 276);
+            this.pnlService.Location = new System.Drawing.Point(0, 240);
             this.pnlService.Name = "pnlService";
             this.pnlService.Size = new System.Drawing.Size(170, 71);
             this.pnlService.TabIndex = 11;
+            this.pnlService.Visible = false;
             // 
             // button5
             // 
@@ -300,7 +303,7 @@ namespace GUILayer
             this.btnService.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnService.IconSize = 35;
             this.btnService.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnService.Location = new System.Drawing.Point(0, 226);
+            this.btnService.Location = new System.Drawing.Point(0, 190);
             this.btnService.Name = "btnService";
             this.btnService.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnService.Size = new System.Drawing.Size(170, 50);
@@ -318,10 +321,11 @@ namespace GUILayer
             this.pnlStadium.Controls.Add(this.button1);
             this.pnlStadium.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlStadium.ForeColor = System.Drawing.Color.White;
-            this.pnlStadium.Location = new System.Drawing.Point(0, 150);
+            this.pnlStadium.Location = new System.Drawing.Point(0, 120);
             this.pnlStadium.Name = "pnlStadium";
-            this.pnlStadium.Size = new System.Drawing.Size(170, 76);
+            this.pnlStadium.Size = new System.Drawing.Size(170, 70);
             this.pnlStadium.TabIndex = 9;
+            this.pnlStadium.Visible = false;
             // 
             // button2
             // 
@@ -330,7 +334,7 @@ namespace GUILayer
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.Gainsboro;
-            this.button2.Location = new System.Drawing.Point(0, 42);
+            this.button2.Location = new System.Drawing.Point(0, 36);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(170, 32);
             this.button2.TabIndex = 1;
@@ -346,7 +350,7 @@ namespace GUILayer
             this.button1.ForeColor = System.Drawing.Color.Gainsboro;
             this.button1.Location = new System.Drawing.Point(0, 0);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(170, 42);
+            this.button1.Size = new System.Drawing.Size(170, 36);
             this.button1.TabIndex = 0;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
@@ -409,7 +413,7 @@ namespace GUILayer
             this.btnStadium.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnStadium.IconSize = 35;
             this.btnStadium.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnStadium.Location = new System.Drawing.Point(0, 100);
+            this.btnStadium.Location = new System.Drawing.Point(0, 70);
             this.btnStadium.Name = "btnStadium";
             this.btnStadium.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnStadium.Size = new System.Drawing.Size(170, 50);
@@ -426,15 +430,15 @@ namespace GUILayer
             this.pnlLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlLogo.Location = new System.Drawing.Point(0, 0);
             this.pnlLogo.Name = "pnlLogo";
-            this.pnlLogo.Size = new System.Drawing.Size(170, 100);
+            this.pnlLogo.Size = new System.Drawing.Size(170, 70);
             this.pnlLogo.TabIndex = 0;
             // 
             // picLogo
             // 
             this.picLogo.Image = global::GUILayer.Properties.Resources.phuocleoceo;
-            this.picLogo.Location = new System.Drawing.Point(30, 6);
+            this.picLogo.Location = new System.Drawing.Point(55, 3);
             this.picLogo.Name = "picLogo";
-            this.picLogo.Size = new System.Drawing.Size(92, 88);
+            this.picLogo.Size = new System.Drawing.Size(60, 64);
             this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picLogo.TabIndex = 0;
             this.picLogo.TabStop = false;
