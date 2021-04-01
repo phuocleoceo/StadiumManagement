@@ -16,6 +16,7 @@ namespace GUILayer
         public FormLogin()
         {
             InitializeComponent();
+            btnHidePass.Hide();
         }
 
         private void txtuser_Click(object sender, EventArgs e)
@@ -46,6 +47,20 @@ namespace GUILayer
         private void btnlogin_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void btnHidePass_Click(object sender, EventArgs e)
+        {
+            txtpass.UseSystemPasswordChar = true;
+            btnHidePass.Hide();
+            btnShowPass.Show();
+        }
+
+        private void btnShowPass_Click(object sender, EventArgs e)
+        {
+            txtpass.UseSystemPasswordChar = false;
+            btnShowPass.Hide();
+            btnHidePass.Show();
         }
     }
 }
