@@ -15,9 +15,11 @@ namespace DataAccessLayer.Models
 
         public Customer Customer { get; set; }
 
-        public Cashier Cashier { get; set; }
+        public AccountInformation Cashier { get; set; }
 
         public DateTime DateCreated { get; set; }
+
+        public DateTime DateCheckedOut { get; set; }
 
         public double Total { get; set; }
     }

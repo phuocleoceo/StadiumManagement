@@ -14,6 +14,8 @@ namespace DataAccessLayer.Models
 
         public string Unit { get; set; }
 
+        public bool isDeleted { get; set; }
+
         public List<ServiceOrder> ServiceOrders { get; set; }
     }
 }

@@ -298,7 +298,7 @@ namespace GUILayer
             this.btnService.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnService.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnService.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnService.IconChar = FontAwesome.Sharp.IconChar.Star;
+            this.btnService.IconChar = FontAwesome.Sharp.IconChar.StackOverflow;
             this.btnService.IconColor = System.Drawing.Color.Gainsboro;
             this.btnService.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnService.IconSize = 35;

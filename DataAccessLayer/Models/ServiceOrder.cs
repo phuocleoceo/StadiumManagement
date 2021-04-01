@@ -9,6 +9,8 @@ namespace DataAccessLayer.Models
 
         public int Count { get; set; }
 
+        public float Total { get; set; }
+
         public Service Service { get; set; }
 
         public Bill Bill { get; set; }

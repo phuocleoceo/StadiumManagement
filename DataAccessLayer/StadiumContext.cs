@@ -16,7 +16,7 @@ namespace DataAccessLayer
         }
 
         public DbSet<Account> Accounts { get; set; }
-        public DbSet<Cashier> Cashiers { get; set; }
+        public DbSet<AccountInformation> AccountInformation { get; set; }
         public DbSet<Bill> Bills { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<RentOrder> RentOrders { get; set; }

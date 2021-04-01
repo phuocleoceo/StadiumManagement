@@ -63,7 +63,7 @@
     <Compile Include="Enums\Role.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account.cs" />
-    <Compile Include="Models\Cashier.cs" />
+    <Compile Include="Models\AccountInformation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\Repository.cs" />
   </ItemGroup>

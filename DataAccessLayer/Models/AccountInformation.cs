@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace DataAccessLayer.Models
 {
-    public class Cashier
+    public class AccountInformation
     {
         [Key]
         public int Id { get; set; }

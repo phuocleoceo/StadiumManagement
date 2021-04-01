@@ -21,6 +21,8 @@ namespace DataAccessLayer.Models
 
         public string Note { get; set; }
 
+        public bool isDeleted { get; set; }
+
         public List<RentOrder> RentOrders { get; set; }
     }
 }
