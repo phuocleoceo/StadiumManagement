@@ -71,5 +71,10 @@ namespace BusinessLayer.Repository
         {
             dbSet.RemoveRange(entity);
         }
+
+        public void Save()
+        {
+            _db.SaveChanges();
+        }
     }
 }

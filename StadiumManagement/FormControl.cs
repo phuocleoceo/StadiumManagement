@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GUILayer.ChildForm;
 
 namespace GUILayer
 {
@@ -238,5 +239,10 @@ namespace GUILayer
             //Application.Restart();
         }
         #endregion
+
+        private void btnDSKH_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FormDSKH());
+        }
     }
 }

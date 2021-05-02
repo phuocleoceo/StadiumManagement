@@ -1,12 +1,5 @@
 ﻿using BusinessLayer.Repository;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GUILayer
@@ -50,7 +43,7 @@ namespace GUILayer
         {
             string un = txtuser.Text;
             string pw = txtpass.Text;
-            bool check = _db.CheckLogin(un, pw);
+            bool check = _db.Authentication(un, pw);
             if (check)
             {
                 FormControl fc = new FormControl();

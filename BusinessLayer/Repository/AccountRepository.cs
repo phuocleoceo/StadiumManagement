@@ -10,17 +10,9 @@ namespace BusinessLayer.Repository
 {
     public class AccountRepository : Repository<Account>
     {
-        public bool CheckLogin(string username, string password)
+        public bool Authentication(string username, string password)
         {
-            List<Account> list = GetAll();
-            foreach (Account i in list)
-            {
-                if (i.UserName == username && i.PassWord == password)
-                {
-                    return true;
-                }
-            }
-            return false;
+            return _db.Accounts.Any(c => c.UserName == username && c.PassWord == password);
         }
     }
 }

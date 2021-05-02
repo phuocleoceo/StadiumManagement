@@ -34,7 +34,7 @@ namespace GUILayer
             this.btnStatistic = new FontAwesome.Sharp.IconButton();
             this.pnlCustomer = new System.Windows.Forms.Panel();
             this.button11 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
+            this.btnDSKH = new System.Windows.Forms.Button();
             this.btnCustomer = new FontAwesome.Sharp.IconButton();
             this.pnlCashier = new System.Windows.Forms.Panel();
             this.button8 = new System.Windows.Forms.Button();
@@ -126,7 +126,7 @@ namespace GUILayer
             // 
             this.pnlCustomer.BackColor = System.Drawing.Color.Indigo;
             this.pnlCustomer.Controls.Add(this.button11);
-            this.pnlCustomer.Controls.Add(this.button12);
+            this.pnlCustomer.Controls.Add(this.btnDSKH);
             this.pnlCustomer.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlCustomer.ForeColor = System.Drawing.Color.White;
             this.pnlCustomer.Location = new System.Drawing.Point(0, 481);
@@ -149,19 +149,20 @@ namespace GUILayer
             this.button11.Text = "button11";
             this.button11.UseVisualStyleBackColor = true;
             // 
-            // button12
+            // btnDSKH
             // 
-            this.button12.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button12.FlatAppearance.BorderSize = 0;
-            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button12.ForeColor = System.Drawing.Color.Gainsboro;
-            this.button12.Location = new System.Drawing.Point(0, 0);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(170, 33);
-            this.button12.TabIndex = 0;
-            this.button12.Text = "button12";
-            this.button12.UseVisualStyleBackColor = true;
+            this.btnDSKH.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnDSKH.FlatAppearance.BorderSize = 0;
+            this.btnDSKH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDSKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDSKH.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnDSKH.Location = new System.Drawing.Point(0, 0);
+            this.btnDSKH.Name = "btnDSKH";
+            this.btnDSKH.Size = new System.Drawing.Size(170, 33);
+            this.btnDSKH.TabIndex = 0;
+            this.btnDSKH.Text = "DS Khách hàng";
+            this.btnDSKH.UseVisualStyleBackColor = true;
+            this.btnDSKH.Click += new System.EventHandler(this.btnDSKH_Click);
             // 
             // btnCustomer
             // 
@@ -568,10 +569,9 @@ namespace GUILayer
             this.pnlChildForm.Controls.Add(this.lblDate);
             this.pnlChildForm.Controls.Add(this.lblDMY);
             this.pnlChildForm.Controls.Add(this.lblTime);
-            this.pnlChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlChildForm.Location = new System.Drawing.Point(170, 0);
+            this.pnlChildForm.Location = new System.Drawing.Point(170, 70);
             this.pnlChildForm.Name = "pnlChildForm";
-            this.pnlChildForm.Size = new System.Drawing.Size(1057, 675);
+            this.pnlChildForm.Size = new System.Drawing.Size(1057, 605);
             this.pnlChildForm.TabIndex = 3;
             // 
             // lblDate
@@ -671,7 +671,7 @@ namespace GUILayer
         private FontAwesome.Sharp.IconButton btnService;
         private System.Windows.Forms.Panel pnlCustomer;
         private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Button btnDSKH;
         private FontAwesome.Sharp.IconButton btnCustomer;
         private System.Windows.Forms.Panel pnlCashier;
         private System.Windows.Forms.Button button8;
