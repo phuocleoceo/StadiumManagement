@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusinessLayer.Repository;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,10 @@ namespace GUILayer
 {
     public partial class FormLogin : Form
     {
-       
+        private readonly AccountRepository _db;
         public FormLogin()
         {
+            _db = new AccountRepository();
             InitializeComponent();
             btnHidePass.Hide();
         }
@@ -46,7 +48,20 @@ namespace GUILayer
 
         private void btnlogin_Click(object sender, EventArgs e)
         {
-            
+            string un = txtuser.Text;
+            string pw = txtpass.Text;
+            bool check = _db.CheckLogin(un, pw);
+            if (check)
+            {
+                FormControl fc = new FormControl();
+                this.Hide();
+                fc.ShowDialog();
+                this.Show();
+            }
+            else
+            {
+                MessageBox.Show("Username or Password is incorrect !");
+            }
         }
 
         private void btnHidePass_Click(object sender, EventArgs e)

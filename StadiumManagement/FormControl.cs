@@ -160,7 +160,7 @@ namespace GUILayer
 
         private void iconExit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
         }
 
         private void iconMinimize_Click(object sender, EventArgs e)

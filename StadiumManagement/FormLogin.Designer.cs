@@ -57,7 +57,7 @@ namespace GUILayer
             this.txtuser.Location = new System.Drawing.Point(127, 220);
             this.txtuser.Name = "txtuser";
             this.txtuser.Size = new System.Drawing.Size(179, 19);
-            this.txtuser.TabIndex = 2;
+            this.txtuser.TabIndex = 1;
             this.txtuser.TabStop = false;
             this.txtuser.Text = "Tài khoản";
             this.txtuser.Click += new System.EventHandler(this.txtuser_Click);
@@ -89,7 +89,7 @@ namespace GUILayer
             this.txtpass.Location = new System.Drawing.Point(128, 291);
             this.txtpass.Name = "txtpass";
             this.txtpass.Size = new System.Drawing.Size(179, 19);
-            this.txtpass.TabIndex = 5;
+            this.txtpass.TabIndex = 2;
             this.txtpass.TabStop = false;
             this.txtpass.Text = "Mật khẩu";
             this.txtpass.UseSystemPasswordChar = true;
@@ -103,7 +103,7 @@ namespace GUILayer
             this.btnlogin.Location = new System.Drawing.Point(106, 354);
             this.btnlogin.Name = "btnlogin";
             this.btnlogin.Size = new System.Drawing.Size(150, 41);
-            this.btnlogin.TabIndex = 7;
+            this.btnlogin.TabIndex = 5;
             this.btnlogin.Text = "Đăng nhập";
             this.btnlogin.UseVisualStyleBackColor = false;
             this.btnlogin.Click += new System.EventHandler(this.btnlogin_Click);
@@ -188,7 +188,7 @@ namespace GUILayer
             this.btnShowPass.Location = new System.Drawing.Point(269, 294);
             this.btnShowPass.Name = "btnShowPass";
             this.btnShowPass.Size = new System.Drawing.Size(47, 20);
-            this.btnShowPass.TabIndex = 13;
+            this.btnShowPass.TabIndex = 20;
             this.btnShowPass.Text = "Show";
             this.btnShowPass.UseVisualStyleBackColor = true;
             this.btnShowPass.Click += new System.EventHandler(this.btnShowPass_Click);

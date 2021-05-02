@@ -9,12 +9,12 @@ namespace BusinessLayer.Repository
 {
     public class Repository<T> where T : class
     {
-        private readonly StadiumContext _db;
+        protected readonly StadiumContext _db;
         internal DbSet<T> dbSet;
 
-        public Repository(StadiumContext db)
+        public Repository()
         {
-            _db = db;
+            _db = new StadiumContext();
             this.dbSet = _db.Set<T>();
         }
 
@@ -28,7 +28,7 @@ namespace BusinessLayer.Repository
             return dbSet.Find(id);
         }
 
-        public IEnumerable<T> GetAll(Expression<Func<T, bool>> filter = null,
+        public List<T> GetAll(Expression<Func<T, bool>> filter = null,
                               Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null)
         {
             IQueryable<T> query = dbSet;
