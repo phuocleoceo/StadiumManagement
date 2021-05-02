@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DataAccessLayer.Models
 {
@@ -11,8 +12,12 @@ namespace DataAccessLayer.Models
 
         public float Total { get; set; }
 
-        public Service Service { get; set; }
+        public int Service_Id { get; set; }
+        [ForeignKey(nameof(Service_Id))]
+        public virtual Service Service { get; set; }
 
-        public Bill Bill { get; set; }
+        public int Bill_Id { get; set; }
+        [ForeignKey(nameof(Bill_Id))]
+        public virtual Bill Bill { get; set; }
     }
 }

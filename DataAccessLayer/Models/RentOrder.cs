@@ -20,8 +20,12 @@ namespace DataAccessLayer.Models
 
         public float Total { get; set; }
 
-        public Stadium Stadium { get; set; }
+        public int Stadium_Id { get; set; }
+        [ForeignKey(nameof(Stadium_Id))]
+        public virtual Stadium Stadium { get; set; }
 
-        public Bill Bill { get; set; }
+        public int Bill_Id { get; set; }
+        [ForeignKey(nameof(Bill_Id))]
+        public virtual Bill Bill { get; set; }
     }
 }

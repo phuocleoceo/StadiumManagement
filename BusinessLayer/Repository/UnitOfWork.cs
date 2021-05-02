@@ -1,6 +1,7 @@
-﻿using System;
+﻿using DataAccessLayer;
+using System;
 
-namespace DataAccessLayer.Repository
+namespace BusinessLayer.Repository
 {
     public class UnitOfWork : IDisposable
     {

@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
+using DataAccessLayer;
 
-namespace DataAccessLayer.Repository
+namespace BusinessLayer.Repository
 {
     public class Repository<T> where T : class
     {
@@ -28,21 +29,12 @@ namespace DataAccessLayer.Repository
         }
 
         public IEnumerable<T> GetAll(Expression<Func<T, bool>> filter = null,
-                              Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null,
-                              string includeProperties = null)
+                              Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null)
         {
             IQueryable<T> query = dbSet;
             if (filter != null)
             {
                 query = query.Where(filter);
-            }
-
-            if (includeProperties != null)
-            {
-                foreach (var includeProp in includeProperties.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
-                {
-                    query = query.Include(includeProp);
-                }
             }
 
             if (orderBy != null)
@@ -52,22 +44,13 @@ namespace DataAccessLayer.Repository
             return query.ToList();
         }
 
-        public T GetFirstOrDefault(Expression<Func<T, bool>> filter = null,
-                                   string includeProperties = null)
+        public T GetFirstOrDefault(Expression<Func<T, bool>> filter = null)
         {
             IQueryable<T> query = dbSet;
 
             if (filter != null)
             {
                 query = query.Where(filter);
-            }
-
-            if (includeProperties != null)
-            {
-                foreach (var includeProp in includeProperties.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
-                {
-                    query = query.Include(includeProp);
-                }
             }
 
             return query.FirstOrDefault();

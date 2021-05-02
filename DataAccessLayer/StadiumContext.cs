@@ -15,14 +15,14 @@ namespace DataAccessLayer
             base.OnModelCreating(modelBuilder);
         }
 
-        public DbSet<Account> Accounts { get; set; }
-        public DbSet<AccountInformation> AccountInformation { get; set; }
-        public DbSet<Bill> Bills { get; set; }
-        public DbSet<Customer> Customers { get; set; }
-        public DbSet<RentOrder> RentOrders { get; set; }
-        public DbSet<Service> Services { get; set; }
-        public DbSet<ServiceOrder> ServiceOrders { get; set; }
-        public DbSet<Stadium> Stadiums { get; set; }
+        public virtual DbSet<Account> Accounts { get; set; }
+        public virtual DbSet<AccountInformation> AccountInformation { get; set; }
+        public virtual DbSet<Bill> Bills { get; set; }
+        public virtual DbSet<Customer> Customers { get; set; }
+        public virtual DbSet<RentOrder> RentOrders { get; set; }
+        public virtual DbSet<Service> Services { get; set; }
+        public virtual DbSet<ServiceOrder> ServiceOrders { get; set; }
+        public virtual DbSet<Stadium> Stadiums { get; set; }
 
     }
 }

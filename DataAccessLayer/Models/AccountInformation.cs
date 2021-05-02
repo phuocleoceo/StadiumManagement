@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DataAccessLayer.Models
 {
@@ -24,8 +25,10 @@ namespace DataAccessLayer.Models
 
         public string Note { get; set; }
 
-        public Account Account { get; set; }
+        public int Account_Id { get; set; }
+        [ForeignKey(nameof(Account_Id))]
+        public virtual Account Account { get; set; }
 
-        public List<Bill> Bills { get; set; }
+        public virtual List<Bill> Bills { get; set; }
     }
 }

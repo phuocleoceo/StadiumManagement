@@ -15,14 +15,14 @@ namespace DataAccessLayer.Models
 
         public double Price { get; set; }
 
-        public Status Status { get; set; }
+        public StadiumStatus Status { get; set; }
 
-        public double Area { get; set; }
+        public string Area { get; set; }
 
         public string Note { get; set; }
 
         public bool isDeleted { get; set; }
 
-        public List<RentOrder> RentOrders { get; set; }
+        public virtual List<RentOrder> RentOrders { get; set; }
     }
 }

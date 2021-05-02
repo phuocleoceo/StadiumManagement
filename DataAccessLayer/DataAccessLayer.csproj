@@ -51,21 +51,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Enums\Status.cs" />
+    <Compile Include="Enums\BillStatus.cs" />
+    <Compile Include="Enums\StadiumStatus.cs" />
     <Compile Include="Models\Bill.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\RentOrder.cs" />
     <Compile Include="Models\Service.cs" />
     <Compile Include="Models\ServiceOrder.cs" />
     <Compile Include="Models\Stadium.cs" />
-    <Compile Include="Repository\UnitOfWork.cs" />
     <Compile Include="StadiumContext.cs" />
     <Compile Include="Enums\Role.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\AccountInformation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repository\Repository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
