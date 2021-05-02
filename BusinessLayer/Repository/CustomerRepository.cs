@@ -11,7 +11,7 @@ namespace BusinessLayer.Repository
     {
         public List<CustomerVM> GetList()
         {
-            List<CustomerVM> list = GetAll().Select(c => new CustomerVM
+            List<CustomerVM> list = _db.Customers.Select(c => new CustomerVM
             {
                 Id = c.Id,
                 Name = c.Name,
