@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Security.Cryptography;
 
 namespace BusinessLayer
 {
@@ -24,6 +25,20 @@ namespace BusinessLayer
             dgv.ColumnHeadersDefaultCellStyle.Font = new Font("Cambria", 12);
             dgv.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        }
+
+        public static string GetMD5(this string str)
+        {
+            MD5 md5 = MD5.Create();
+            byte[] fromData = Encoding.ASCII.GetBytes(str);
+            byte[] targetData = md5.ComputeHash(fromData);
+
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < targetData.Length; i++)
+            {
+                sb.Append(targetData[i].ToString("x2"));
+            }
+            return sb.ToString();
         }
     }
 }

@@ -12,7 +12,8 @@ namespace BusinessLayer.Repository
     {
         public bool Authentication(string username, string password)
         {
-            return _db.Accounts.Any(c => c.UserName == username && c.PassWord == password);
+            string passwordMD5 = password.GetMD5();
+            return _db.Accounts.Any(c => c.UserName == username && c.PassWord == passwordMD5);
         }
     }
 }

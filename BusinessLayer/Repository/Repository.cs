@@ -7,7 +7,7 @@ using DataAccessLayer;
 
 namespace BusinessLayer.Repository
 {
-    public class Repository<T> where T : class
+    public class Repository<T> : IDisposable where T : class
     {
         protected readonly StadiumContext _db;
         internal DbSet<T> dbSet;
@@ -28,7 +28,7 @@ namespace BusinessLayer.Repository
             return dbSet.Find(id);
         }
 
-        public List<T> GetAll(Expression<Func<T, bool>> filter = null,
+        public IEnumerable<T> GetAll(Expression<Func<T, bool>> filter = null,
                               Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null)
         {
             IQueryable<T> query = dbSet;
@@ -39,9 +39,9 @@ namespace BusinessLayer.Repository
 
             if (orderBy != null)
             {
-                return orderBy(query).ToList();
+                return orderBy(query);
             }
-            return query.ToList();
+            return query;
         }
 
         public T GetFirstOrDefault(Expression<Func<T, bool>> filter = null)
@@ -75,6 +75,11 @@ namespace BusinessLayer.Repository
         public void Save()
         {
             _db.SaveChanges();
+        }
+
+        public void Dispose()
+        {
+            _db.Dispose();
         }
     }
 }
