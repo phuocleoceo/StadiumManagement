@@ -236,7 +236,7 @@ namespace GUILayer
         {
             HideSubMenu();
             ActiveButton(sender, RGBColors.color7);
-            //Application.Restart();
+            this.Close();
         }
         #endregion
 
