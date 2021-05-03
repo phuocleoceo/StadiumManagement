@@ -42,7 +42,7 @@ namespace GUILayer.ChildForm
                 dtpNgaySinh.Value = Convert.ToDateTime(r[0].Cells["DateOfBirth"].Value);
                 txtCMND.Text = r[0].Cells["IdentityCard"].Value.ToString();
                 txtLuong.Text = r[0].Cells["Salary"].Value.ToString();
-                cbbTaiKhoan.Text = r[0].Cells["UserName"].Value.ToString();
+                cbbTaiKhoan.Text = r[0].Cells["AccountName"].Value.ToString();
             }
         }
 
@@ -72,12 +72,38 @@ namespace GUILayer.ChildForm
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-
+            _db.AddAccountInformation(new AccountInformationVM
+            {
+                Name = txtTenNhanVien.Text,
+                Gender = rdbNam.Checked ? true : false,
+                DateOfBirth = dtpNgaySinh.Value,
+                PhoneNumber = txtSoDienThoai.Text,
+                IdentityCard = txtCMND.Text,
+                Salary = float.Parse(txtLuong.Text),
+                Address = txtDiaChi.Text,
+                AccountName = cbbTaiKhoan.Text,
+                Account_Id = ((CBBItem)cbbTaiKhoan.SelectedItem).Value
+            });
+            LoadData();
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-
+            DataGridViewSelectedRowCollection r = dgvDSNV.SelectedRows;
+            _db.UpdateAccountInformation(new AccountInformationVM
+            {
+                Id = Convert.ToInt32(r[0].Cells["Id"].Value),
+                Name = txtTenNhanVien.Text,
+                Gender = rdbNam.Checked ? true : false,
+                DateOfBirth = dtpNgaySinh.Value,
+                PhoneNumber = txtSoDienThoai.Text,
+                IdentityCard = txtCMND.Text,
+                Salary = float.Parse(txtLuong.Text),
+                Address = txtDiaChi.Text,
+                AccountName = cbbTaiKhoan.Text,
+                Account_Id = ((CBBItem)cbbTaiKhoan.SelectedItem).Value
+            });
+            LoadData();
         }
     }
 }

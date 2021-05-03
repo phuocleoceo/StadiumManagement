@@ -33,6 +33,9 @@ namespace BusinessLayer.ViewModels
         public string Address { get; set; }
 
         [DisplayName("Tài khoản")]
-        public string UserName { get; set; }
+        public string AccountName { get; set; }
+
+        [Browsable(false)]
+        public int Account_Id { get; set; }
     }
 }

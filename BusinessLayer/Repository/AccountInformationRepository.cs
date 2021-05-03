@@ -21,7 +21,8 @@ namespace BusinessLayer.Repository
                 IdentityCard = c.IdentityCard,
                 Salary = c.Salary,
                 Address = c.Address,
-                UserName = c.Account.UserName
+                AccountName = c.Account.UserName,
+                Account_Id = c.Account.Id
             }).ToList();
             return list;
         }
@@ -37,7 +38,8 @@ namespace BusinessLayer.Repository
                 IdentityCard = c.IdentityCard,
                 Salary = c.Salary,
                 Address = c.Address,
-                //UserName = c.Account.UserName
+                Account_Id = c.Account_Id,
+                Account = _db.Accounts.Find(c.Account_Id)
             });
             Save();
         }
@@ -52,6 +54,8 @@ namespace BusinessLayer.Repository
             ai.IdentityCard = c.IdentityCard;
             ai.Salary = c.Salary;
             ai.Address = c.Address;
+            ai.Account_Id = c.Account_Id;
+            ai.Account = _db.Accounts.Find(c.Account_Id);
             Save();
         }
 
@@ -63,15 +67,14 @@ namespace BusinessLayer.Repository
 
         public List<CBBItem> LoadComboBox()
         {
-            AccountRepository ar = new AccountRepository();
-            List<Account> listAC = ar.GetAll().ToList();
+            List<Account> listAC = _db.Accounts.ToList();
             List<CBBItem> list = new List<CBBItem>();
-            foreach(Account ac in listAC)
+            foreach (Account ac in listAC)
             {
                 list.Add(new CBBItem
                 {
-                    Value=ac.Id,
-                    Text=ac.UserName
+                    Value = ac.Id,
+                    Text = ac.UserName
                 });
             }
             return list;

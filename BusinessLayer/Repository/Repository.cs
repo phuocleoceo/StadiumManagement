@@ -28,7 +28,7 @@ namespace BusinessLayer.Repository
             return dbSet.Find(id);
         }
 
-        public IEnumerable<T> GetAll(Expression<Func<T, bool>> filter = null,
+        public List<T> GetAll(Expression<Func<T, bool>> filter = null,
                               Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null)
         {
             IQueryable<T> query = dbSet;
