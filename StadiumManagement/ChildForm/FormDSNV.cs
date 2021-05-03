@@ -15,6 +15,7 @@ namespace GUILayer.ChildForm
             InitializeComponent();
             dgvDSNV.FormatTable();
             LoadData();
+            cbbTaiKhoan.DataSource = _db.LoadComboBox();
         }
 
         private void LoadData()
@@ -41,15 +42,42 @@ namespace GUILayer.ChildForm
                 dtpNgaySinh.Value = Convert.ToDateTime(r[0].Cells["DateOfBirth"].Value);
                 txtCMND.Text = r[0].Cells["IdentityCard"].Value.ToString();
                 txtLuong.Text = r[0].Cells["Salary"].Value.ToString();
-                txtTaiKhoan.Text = r[0].Cells["UserName"].Value.ToString();
+                cbbTaiKhoan.Text = r[0].Cells["UserName"].Value.ToString();
             }
         }
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            txtTenNhanVien.Text = txtTaiKhoan.Text =
+            txtTenNhanVien.Text = cbbTaiKhoan.Text =
                 txtSoDienThoai.Text = txtLuong.Text = txtDiaChi.Text = txtCMND.Text = "";
             dtpNgaySinh.Value = DateTime.Now;
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            DataGridViewSelectedRowCollection r = dgvDSNV.SelectedRows;
+            if (r.Count > 0)
+            {
+                DialogResult dialogResult = MessageBox.Show("Xác nhận xoá ?", "Bình tĩnh !", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    foreach (DataGridViewRow row in r)
+                    {
+                        _db.DeleteAccountInformation(Convert.ToInt32(row.Cells["Id"].Value));
+                    }
+                }
+            }
+            LoadData();
+        }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

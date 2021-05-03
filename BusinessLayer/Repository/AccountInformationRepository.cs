@@ -26,37 +26,55 @@ namespace BusinessLayer.Repository
             return list;
         }
 
-        public void AddAccountInformation(AccountInformationVM ai)
+        public void AddAccountInformation(AccountInformationVM c)
         {
             Add(new AccountInformation
             {
-                //Id = c.Id,
-                //Name = c.Name,
-                //Gender = c.Gender,
-                //DateOfBirth = c.DateOfBirth,
-                //PhoneNumber = c.PhoneNumber,
-                //IdentityCard = c.IdentityCard,
-                //Salary = c.Salary,
-                //Address = c.Address,
+                Name = c.Name,
+                Gender = c.Gender,
+                DateOfBirth = c.DateOfBirth,
+                PhoneNumber = c.PhoneNumber,
+                IdentityCard = c.IdentityCard,
+                Salary = c.Salary,
+                Address = c.Address,
                 //UserName = c.Account.UserName
             });
             Save();
         }
 
-        //public void UpdateCustomer(CustomerVM c)
-        //{
-        //    Customer customer = GetById(c.Id);
-        //    customer.Name = c.Name;
-        //    customer.Gender = c.Gender;
-        //    customer.Address = c.Address;
-        //    customer.PhoneNumber = c.PhoneNumber;
-        //    Save();
-        //}
+        public void UpdateAccountInformation(AccountInformationVM c)
+        {
+            AccountInformation ai = GetById(c.Id);
+            ai.Name = c.Name;
+            ai.Gender = c.Gender;
+            ai.DateOfBirth = c.DateOfBirth;
+            ai.PhoneNumber = c.PhoneNumber;
+            ai.IdentityCard = c.IdentityCard;
+            ai.Salary = c.Salary;
+            ai.Address = c.Address;
+            Save();
+        }
 
-        //public void DeleteCustomer(int id)
-        //{
-        //    Remove(id);
-        //    Save();
-        //}
+        public void DeleteAccountInformation(int id)
+        {
+            Remove(id);
+            Save();
+        }
+
+        public List<CBBItem> LoadComboBox()
+        {
+            AccountRepository ar = new AccountRepository();
+            List<Account> listAC = ar.GetAll().ToList();
+            List<CBBItem> list = new List<CBBItem>();
+            foreach(Account ac in listAC)
+            {
+                list.Add(new CBBItem
+                {
+                    Value=ac.Id,
+                    Text=ac.UserName
+                });
+            }
+            return list;
+        }
     }
 }

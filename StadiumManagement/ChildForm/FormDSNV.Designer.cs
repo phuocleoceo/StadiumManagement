@@ -46,11 +46,11 @@ namespace GUILayer.ChildForm
             this.txtLuong = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.dtpNgaySinh = new System.Windows.Forms.DateTimePicker();
-            this.txtTaiKhoan = new System.Windows.Forms.TextBox();
             this.txtDiaChi = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.btnClear = new System.Windows.Forms.Button();
+            this.cbbTaiKhoan = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSNV)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -74,6 +74,7 @@ namespace GUILayer.ChildForm
             this.btnXoa.TabIndex = 13;
             this.btnXoa.Text = "Xoá";
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnSua
             // 
@@ -84,6 +85,7 @@ namespace GUILayer.ChildForm
             this.btnSua.TabIndex = 14;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnThem
             // 
@@ -94,6 +96,7 @@ namespace GUILayer.ChildForm
             this.btnThem.TabIndex = 15;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // groupBox1
             // 
@@ -221,14 +224,6 @@ namespace GUILayer.ChildForm
             this.dtpNgaySinh.Size = new System.Drawing.Size(200, 21);
             this.dtpNgaySinh.TabIndex = 16;
             // 
-            // txtTaiKhoan
-            // 
-            this.txtTaiKhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTaiKhoan.Location = new System.Drawing.Point(868, 86);
-            this.txtTaiKhoan.Name = "txtTaiKhoan";
-            this.txtTaiKhoan.Size = new System.Drawing.Size(156, 26);
-            this.txtTaiKhoan.TabIndex = 19;
-            // 
             // txtDiaChi
             // 
             this.txtDiaChi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -268,13 +263,22 @@ namespace GUILayer.ChildForm
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
+            // cbbTaiKhoan
+            // 
+            this.cbbTaiKhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbTaiKhoan.FormattingEnabled = true;
+            this.cbbTaiKhoan.Location = new System.Drawing.Point(868, 83);
+            this.cbbTaiKhoan.Name = "cbbTaiKhoan";
+            this.cbbTaiKhoan.Size = new System.Drawing.Size(156, 28);
+            this.cbbTaiKhoan.TabIndex = 22;
+            // 
             // FormDSNV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1041, 566);
+            this.Controls.Add(this.cbbTaiKhoan);
             this.Controls.Add(this.btnClear);
-            this.Controls.Add(this.txtTaiKhoan);
             this.Controls.Add(this.txtDiaChi);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label7);
@@ -322,10 +326,10 @@ namespace GUILayer.ChildForm
         private System.Windows.Forms.TextBox txtLuong;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DateTimePicker dtpNgaySinh;
-        private System.Windows.Forms.TextBox txtTaiKhoan;
         private System.Windows.Forms.TextBox txtDiaChi;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.ComboBox cbbTaiKhoan;
     }
 }
