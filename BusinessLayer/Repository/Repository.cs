@@ -39,9 +39,9 @@ namespace BusinessLayer.Repository
 
             if (orderBy != null)
             {
-                return orderBy(query);
+                return orderBy(query).ToList();
             }
-            return query;
+            return query.ToList();
         }
 
         public T GetFirstOrDefault(Expression<Func<T, bool>> filter = null)

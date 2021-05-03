@@ -19,6 +19,8 @@ namespace GUILayer.ChildForm
 
         private void LoadData()
         {
+            dgvDSKH.DataSource = null;
+            dgvDSKH.Rows.Clear();
             dgvDSKH.DataSource = _db.GetList();
             dgvDSKH.Columns["Id"].Visible = false;
         }
@@ -67,22 +69,24 @@ namespace GUILayer.ChildForm
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            if (dgvDSKH.Rows.Count > 0)
+            DataGridViewSelectedRowCollection r = dgvDSKH.SelectedRows;
+            if (r.Count > 0)
             {
                 DialogResult dialogResult = MessageBox.Show("Xác nhận xoá ?", "Bình tĩnh !", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    DataGridViewSelectedRowCollection r = dgvDSKH.SelectedRows;
-                    if (r.Count > 0)
+                    foreach (DataGridViewRow row in r)
                     {
-                        foreach(DataGridViewRow row in r)
-                        {
-                            _db.DeleteCustomer(Convert.ToInt32(row.Cells["Id"].Value));
-                        }
+                        _db.DeleteCustomer(Convert.ToInt32(row.Cells["Id"].Value));
                     }
                 }
-                LoadData();
             }
+            LoadData();
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtTenKhachHang.Text = txtSoDienThoai.Text = txtDiaChi.Text = "";
         }
     }
 }

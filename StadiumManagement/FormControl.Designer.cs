@@ -38,7 +38,7 @@ namespace GUILayer
             this.btnCustomer = new FontAwesome.Sharp.IconButton();
             this.pnlCashier = new System.Windows.Forms.Panel();
             this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
+            this.btnDSNV = new System.Windows.Forms.Button();
             this.btnCashier = new FontAwesome.Sharp.IconButton();
             this.pnlService = new System.Windows.Forms.Panel();
             this.button5 = new System.Windows.Forms.Button();
@@ -191,7 +191,7 @@ namespace GUILayer
             // 
             this.pnlCashier.BackColor = System.Drawing.Color.Indigo;
             this.pnlCashier.Controls.Add(this.button8);
-            this.pnlCashier.Controls.Add(this.button9);
+            this.pnlCashier.Controls.Add(this.btnDSNV);
             this.pnlCashier.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlCashier.ForeColor = System.Drawing.Color.White;
             this.pnlCashier.Location = new System.Drawing.Point(0, 361);
@@ -214,19 +214,20 @@ namespace GUILayer
             this.button8.Text = "button8";
             this.button8.UseVisualStyleBackColor = true;
             // 
-            // button9
+            // btnDSNV
             // 
-            this.button9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button9.FlatAppearance.BorderSize = 0;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.ForeColor = System.Drawing.Color.Gainsboro;
-            this.button9.Location = new System.Drawing.Point(0, 0);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(170, 32);
-            this.button9.TabIndex = 0;
-            this.button9.Text = "button9";
-            this.button9.UseVisualStyleBackColor = true;
+            this.btnDSNV.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnDSNV.FlatAppearance.BorderSize = 0;
+            this.btnDSNV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDSNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDSNV.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnDSNV.Location = new System.Drawing.Point(0, 0);
+            this.btnDSNV.Name = "btnDSNV";
+            this.btnDSNV.Size = new System.Drawing.Size(170, 32);
+            this.btnDSNV.TabIndex = 0;
+            this.btnDSNV.Text = "DS Nhân viên";
+            this.btnDSNV.UseVisualStyleBackColor = true;
+            this.btnDSNV.Click += new System.EventHandler(this.btnDSNV_Click);
             // 
             // btnCashier
             // 
@@ -675,7 +676,7 @@ namespace GUILayer
         private FontAwesome.Sharp.IconButton btnCustomer;
         private System.Windows.Forms.Panel pnlCashier;
         private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button btnDSNV;
         private FontAwesome.Sharp.IconButton btnCashier;
         private System.Windows.Forms.Panel pnlService;
         private System.Windows.Forms.Button button5;

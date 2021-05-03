@@ -65,6 +65,12 @@
     <Compile Include="ChildForm\FormDSKH.Designer.cs">
       <DependentUpon>FormDSKH.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChildForm\FormDSNV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForm\FormDSNV.Designer.cs">
+      <DependentUpon>FormDSNV.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormControl.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +87,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="ChildForm\FormDSKH.resx">
       <DependentUpon>FormDSKH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForm\FormDSNV.resx">
+      <DependentUpon>FormDSNV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormControl.resx">
       <DependentUpon>FormControl.cs</DependentUpon>

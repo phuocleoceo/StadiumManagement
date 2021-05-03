@@ -23,7 +23,7 @@ namespace DataAccessLayer.Models
 
         public float Salary { get; set; }
 
-        public string Note { get; set; }
+        public string Address { get; set; }
 
         public int Account_Id { get; set; }
         [ForeignKey(nameof(Account_Id))]
