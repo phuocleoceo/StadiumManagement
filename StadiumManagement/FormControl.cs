@@ -249,5 +249,10 @@ namespace GUILayer
         {
             OpenChildForm(new FormDSNV());
         }
+
+        private void btnTaiKhoan_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FormTaiKhoan());
+        }
     }
 }

@@ -37,7 +37,7 @@ namespace GUILayer
             this.btnDSKH = new System.Windows.Forms.Button();
             this.btnCustomer = new FontAwesome.Sharp.IconButton();
             this.pnlCashier = new System.Windows.Forms.Panel();
-            this.button8 = new System.Windows.Forms.Button();
+            this.btnTaiKhoan = new System.Windows.Forms.Button();
             this.btnDSNV = new System.Windows.Forms.Button();
             this.btnCashier = new FontAwesome.Sharp.IconButton();
             this.pnlService = new System.Windows.Forms.Panel();
@@ -190,7 +190,7 @@ namespace GUILayer
             // pnlCashier
             // 
             this.pnlCashier.BackColor = System.Drawing.Color.Indigo;
-            this.pnlCashier.Controls.Add(this.button8);
+            this.pnlCashier.Controls.Add(this.btnTaiKhoan);
             this.pnlCashier.Controls.Add(this.btnDSNV);
             this.pnlCashier.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlCashier.ForeColor = System.Drawing.Color.White;
@@ -200,19 +200,20 @@ namespace GUILayer
             this.pnlCashier.TabIndex = 13;
             this.pnlCashier.Visible = false;
             // 
-            // button8
+            // btnTaiKhoan
             // 
-            this.button8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button8.FlatAppearance.BorderSize = 0;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.ForeColor = System.Drawing.Color.Gainsboro;
-            this.button8.Location = new System.Drawing.Point(0, 32);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(170, 35);
-            this.button8.TabIndex = 1;
-            this.button8.Text = "button8";
-            this.button8.UseVisualStyleBackColor = true;
+            this.btnTaiKhoan.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnTaiKhoan.FlatAppearance.BorderSize = 0;
+            this.btnTaiKhoan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTaiKhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTaiKhoan.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnTaiKhoan.Location = new System.Drawing.Point(0, 32);
+            this.btnTaiKhoan.Name = "btnTaiKhoan";
+            this.btnTaiKhoan.Size = new System.Drawing.Size(170, 35);
+            this.btnTaiKhoan.TabIndex = 1;
+            this.btnTaiKhoan.Text = "DS Tài khoản";
+            this.btnTaiKhoan.UseVisualStyleBackColor = true;
+            this.btnTaiKhoan.Click += new System.EventHandler(this.btnTaiKhoan_Click);
             // 
             // btnDSNV
             // 
@@ -675,7 +676,7 @@ namespace GUILayer
         private System.Windows.Forms.Button btnDSKH;
         private FontAwesome.Sharp.IconButton btnCustomer;
         private System.Windows.Forms.Panel pnlCashier;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button btnTaiKhoan;
         private System.Windows.Forms.Button btnDSNV;
         private FontAwesome.Sharp.IconButton btnCashier;
         private System.Windows.Forms.Panel pnlService;
