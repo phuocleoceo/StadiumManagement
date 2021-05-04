@@ -245,6 +245,7 @@ namespace GUILayer
         {
             HideSubMenu();
             ActiveButton(sender, RGBColors.color6);
+            OpenChildForm(new FormThietLap());
         }
 
         private void btnlogout_Click(object sender, EventArgs e)

@@ -24,5 +24,7 @@ namespace DataAccessLayer.Models
         public bool isDeleted { get; set; }
 
         public virtual List<RentOrder> RentOrders { get; set; }
+
+        public byte[] Image { get; set; }
     }
 }

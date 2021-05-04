@@ -89,6 +89,12 @@
     <Compile Include="ChildForm\FormTaiKhoan.Designer.cs">
       <DependentUpon>FormTaiKhoan.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChildForm\FormThietLap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForm\FormThietLap.Designer.cs">
+      <DependentUpon>FormThietLap.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormControl.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -70,27 +70,41 @@ namespace GUILayer.ChildForm
         }
 
         private void btnSua_Click(object sender, EventArgs e)
-        {
-            DataGridViewSelectedRowCollection r = dgvDSTK.SelectedRows;
-            _db.UpdateAccount(new AccountVM
+        {            
+            try
             {
-                Id = Convert.ToInt32(r[0].Cells["Id"].Value),
-                UserName = txtTenTaiKhoan.Text,
-                Role = cbbVaiTro.Text
-            });
-            LoadData();
+                DataGridViewSelectedRowCollection r = dgvDSTK.SelectedRows;
+                _db.UpdateAccount(new AccountVM
+                {
+                    Id = Convert.ToInt32(r[0].Cells["Id"].Value),
+                    UserName = txtTenTaiKhoan.Text,
+                    Role = cbbVaiTro.Text
+                });
+                LoadData();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            _db.AddAccount(new AccountVM
+            try
             {
-                UserName = txtTenTaiKhoan.Text,
-                PassWord = txtMatKhau.Text,
-                Role = cbbVaiTro.Text
-            });
-            LoadData();
-            grbThem.Visible = false;
+                _db.AddAccount(new AccountVM
+                {
+                    UserName = txtTenTaiKhoan.Text,
+                    PassWord = txtMatKhau.Text,
+                    Role = cbbVaiTro.Text
+                });
+                LoadData();
+                grbThem.Visible = false;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

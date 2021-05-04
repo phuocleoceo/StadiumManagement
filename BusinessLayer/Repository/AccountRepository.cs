@@ -40,23 +40,41 @@ namespace BusinessLayer.Repository
             return list;
         }
 
+        private bool CheckUserName(string username, int id = 0)
+        {
+            //Mac dinh id=0 thi lay toan bo, id khac 0 thi lay nhung tai khoan khac tai khoan muon update
+            List<Account> list = GetAll(c => c.Id != id);
+            foreach (Account a in list)
+            {
+                if (a.UserName == username) return false;
+            }
+            return true;
+        }
         public void AddAccount(AccountVM c)
         {
-            Add(new Account
+            if (CheckUserName(c.UserName))
             {
-                UserName = c.UserName,
-                PassWord = c.PassWord.GetMD5(),
-                Role = (Role)Enum.Parse(typeof(Role), c.Role)
-            });
-            Save();
+                Add(new Account
+                {
+                    UserName = c.UserName,
+                    PassWord = c.PassWord.GetMD5(),
+                    Role = (Role)Enum.Parse(typeof(Role), c.Role)
+                });
+                Save();
+            }
+            else throw new Exception("Tài khoản đã tồn tại !");
         }
 
         public void UpdateAccount(AccountVM c)
         {
-            Account account = GetById(c.Id);
-            account.UserName = c.UserName;
-            account.Role = (Role)Enum.Parse(typeof(Role), c.Role);
-            Save();
+            if (CheckUserName(c.UserName, c.Id))
+            {
+                Account account = GetById(c.Id);
+                account.UserName = c.UserName;
+                account.Role = (Role)Enum.Parse(typeof(Role), c.Role);
+                Save();
+            }
+            else throw new Exception("Tài khoản đã tồn tại !");
         }
 
         public void DeleteAccount(int id)

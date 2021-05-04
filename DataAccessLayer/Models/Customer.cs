@@ -1,6 +1,7 @@
 ﻿using DataAccessLayer.Enums;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DataAccessLayer.Models
 {
@@ -18,5 +19,7 @@ namespace DataAccessLayer.Models
         public string PhoneNumber { get; set; }
 
         public virtual List<Bill> Bills { get; set; }
+
+        public byte[] Image { get; set; }
     }
 }

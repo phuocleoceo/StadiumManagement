@@ -1,5 +1,6 @@
 ﻿using DataAccessLayer.Enums;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DataAccessLayer.Models
 {
@@ -13,5 +14,7 @@ namespace DataAccessLayer.Models
         public string PassWord { get; set; }
 
         public Role Role { get; set; }
+
+        public byte[] Image { get; set; }
     }
 }

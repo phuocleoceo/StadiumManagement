@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DataAccessLayer.Models
 {
@@ -17,5 +18,7 @@ namespace DataAccessLayer.Models
         public bool isDeleted { get; set; }
 
         public virtual List<ServiceOrder> ServiceOrders { get; set; }
+
+        public byte[] Image { get; set; }
     }
 }
