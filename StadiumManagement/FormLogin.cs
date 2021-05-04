@@ -7,6 +7,7 @@ namespace GUILayer
     public partial class FormLogin : Form
     {
         private readonly AccountRepository _db;
+        public static bool isAdmin;
         public FormLogin()
         {
             _db = new AccountRepository();
@@ -46,6 +47,7 @@ namespace GUILayer
             bool check = _db.Authentication(un, pw);
             if (check)
             {
+                isAdmin = _db.Authorization(un, pw);
                 FormControl fc = new FormControl();
                 this.Hide();
                 fc.ShowDialog();

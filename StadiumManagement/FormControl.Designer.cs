@@ -111,7 +111,7 @@ namespace GUILayer
             this.btnStatistic.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnStatistic.IconSize = 35;
             this.btnStatistic.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnStatistic.Location = new System.Drawing.Point(0, 549);
+            this.btnStatistic.Location = new System.Drawing.Point(0, 554);
             this.btnStatistic.Name = "btnStatistic";
             this.btnStatistic.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnStatistic.Size = new System.Drawing.Size(170, 50);
@@ -129,7 +129,7 @@ namespace GUILayer
             this.pnlCustomer.Controls.Add(this.btnDSKH);
             this.pnlCustomer.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlCustomer.ForeColor = System.Drawing.Color.White;
-            this.pnlCustomer.Location = new System.Drawing.Point(0, 481);
+            this.pnlCustomer.Location = new System.Drawing.Point(0, 486);
             this.pnlCustomer.Name = "pnlCustomer";
             this.pnlCustomer.Size = new System.Drawing.Size(170, 68);
             this.pnlCustomer.TabIndex = 15;
@@ -176,7 +176,7 @@ namespace GUILayer
             this.btnCustomer.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCustomer.IconSize = 35;
             this.btnCustomer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCustomer.Location = new System.Drawing.Point(0, 431);
+            this.btnCustomer.Location = new System.Drawing.Point(0, 436);
             this.btnCustomer.Name = "btnCustomer";
             this.btnCustomer.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnCustomer.Size = new System.Drawing.Size(170, 50);
@@ -196,7 +196,7 @@ namespace GUILayer
             this.pnlCashier.ForeColor = System.Drawing.Color.White;
             this.pnlCashier.Location = new System.Drawing.Point(0, 361);
             this.pnlCashier.Name = "pnlCashier";
-            this.pnlCashier.Size = new System.Drawing.Size(170, 70);
+            this.pnlCashier.Size = new System.Drawing.Size(170, 75);
             this.pnlCashier.TabIndex = 13;
             this.pnlCashier.Visible = false;
             // 
@@ -207,9 +207,9 @@ namespace GUILayer
             this.btnTaiKhoan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTaiKhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTaiKhoan.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnTaiKhoan.Location = new System.Drawing.Point(0, 32);
+            this.btnTaiKhoan.Location = new System.Drawing.Point(0, 37);
             this.btnTaiKhoan.Name = "btnTaiKhoan";
-            this.btnTaiKhoan.Size = new System.Drawing.Size(170, 35);
+            this.btnTaiKhoan.Size = new System.Drawing.Size(170, 34);
             this.btnTaiKhoan.TabIndex = 1;
             this.btnTaiKhoan.Text = "DS Tài khoản";
             this.btnTaiKhoan.UseVisualStyleBackColor = true;
@@ -224,7 +224,7 @@ namespace GUILayer
             this.btnDSNV.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnDSNV.Location = new System.Drawing.Point(0, 0);
             this.btnDSNV.Name = "btnDSNV";
-            this.btnDSNV.Size = new System.Drawing.Size(170, 32);
+            this.btnDSNV.Size = new System.Drawing.Size(170, 37);
             this.btnDSNV.TabIndex = 0;
             this.btnDSNV.Text = "DS Nhân viên";
             this.btnDSNV.UseVisualStyleBackColor = true;

@@ -23,6 +23,7 @@ namespace GUILayer
         public FormControl()
         {
             InitializeComponent();
+            Authorization();
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(7, 50);
             PanelMenu.Controls.Add(leftBorderBtn);
@@ -33,6 +34,19 @@ namespace GUILayer
             this.DoubleBuffered = true;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
         }
+
+        #region Authorization
+        public void Authorization()
+        {
+            if (!FormLogin.isAdmin)
+            {
+                btnSanBong.Enabled = false;
+                btnDichVu.Enabled = false;
+                btnDSKH.Enabled = false;
+                btnCashier.Enabled = false;
+            }
+        }
+        #endregion
 
         #region SubPanel Design  
 
