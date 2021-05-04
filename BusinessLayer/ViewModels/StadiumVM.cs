@@ -23,5 +23,7 @@ namespace BusinessLayer.ViewModels
 
         [DisplayName("Ghi chú")]
         public string Note { get; set; }
+
+        public byte[] Image { get; set; }
     }
 }

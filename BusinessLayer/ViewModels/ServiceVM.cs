@@ -20,5 +20,7 @@ namespace BusinessLayer.ViewModels
 
         [DisplayName("Đơn vị tính")]
         public string Unit { get; set; }
+
+        public byte[] Image { get; set; }
     }
 }

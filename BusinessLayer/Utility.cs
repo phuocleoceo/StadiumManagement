@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Security.Cryptography;
+using System.IO;
 
 namespace BusinessLayer
 {
@@ -37,6 +38,33 @@ namespace BusinessLayer
                 sb.Append(targetData[i].ToString("x2"));
             }
             return sb.ToString();
+        }
+
+        public static void LoadImage(this PictureBox pic, byte[] img)
+        {
+            if (img == null)
+            {
+                pic.Image = null;
+            }
+            else
+            {
+                MemoryStream ms = new MemoryStream(img);
+                pic.Image = Image.FromStream(ms);
+            }
+        }
+
+        public static byte[] ImageToByte(this string imgPath)
+        {
+            try
+            {
+                FileStream fs = new FileStream(imgPath, FileMode.Open, FileAccess.Read);
+                BinaryReader br = new BinaryReader(fs);
+                return br.ReadBytes((int)fs.Length);
+            }
+            catch
+            {
+                return null;
+            }
         }
     }
 }

@@ -36,15 +36,15 @@ namespace GUILayer
             this.btnLogin = new System.Windows.Forms.Button();
             this.lbexit = new System.Windows.Forms.Label();
             this.lbmini = new System.Windows.Forms.Label();
-            this.picLogo = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnHidePass = new System.Windows.Forms.Button();
             this.btnShowPass = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.btnHidePass = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picLogo = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // txtUser
@@ -131,36 +131,6 @@ namespace GUILayer
             this.lbmini.Text = "-";
             this.lbmini.Click += new System.EventHandler(this.lbmini_Click);
             // 
-            // picLogo
-            // 
-            this.picLogo.Image = global::GUILayer.Properties.Resources.tải_xuống;
-            this.picLogo.Location = new System.Drawing.Point(95, 12);
-            this.picLogo.Name = "picLogo";
-            this.picLogo.Size = new System.Drawing.Size(167, 110);
-            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picLogo.TabIndex = 10;
-            this.picLogo.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::GUILayer.Properties.Resources.username_2;
-            this.pictureBox1.Location = new System.Drawing.Point(48, 215);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(32, 31);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 11;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::GUILayer.Properties.Resources.password_2;
-            this.pictureBox2.Location = new System.Drawing.Point(48, 279);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(32, 31);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 11;
-            this.pictureBox2.TabStop = false;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -172,25 +142,64 @@ namespace GUILayer
             this.label1.TabIndex = 12;
             this.label1.Text = "Login";
             // 
-            // btnHidePass
-            // 
-            this.btnHidePass.Location = new System.Drawing.Point(269, 294);
-            this.btnHidePass.Name = "btnHidePass";
-            this.btnHidePass.Size = new System.Drawing.Size(47, 20);
-            this.btnHidePass.TabIndex = 13;
-            this.btnHidePass.Text = "Hide";
-            this.btnHidePass.UseVisualStyleBackColor = true;
-            this.btnHidePass.Click += new System.EventHandler(this.btnHidePass_Click);
-            // 
             // btnShowPass
             // 
+            this.btnShowPass.BackColor = System.Drawing.Color.Transparent;
+            this.btnShowPass.FlatAppearance.BorderSize = 0;
+            this.btnShowPass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnShowPass.ForeColor = System.Drawing.Color.Transparent;
+            this.btnShowPass.Image = global::GUILayer.Properties.Resources.eye_open2;
             this.btnShowPass.Location = new System.Drawing.Point(269, 294);
             this.btnShowPass.Name = "btnShowPass";
             this.btnShowPass.Size = new System.Drawing.Size(47, 20);
             this.btnShowPass.TabIndex = 20;
-            this.btnShowPass.Text = "Show";
-            this.btnShowPass.UseVisualStyleBackColor = true;
+            this.btnShowPass.UseVisualStyleBackColor = false;
             this.btnShowPass.Click += new System.EventHandler(this.btnShowPass_Click);
+            // 
+            // btnHidePass
+            // 
+            this.btnHidePass.BackColor = System.Drawing.Color.Transparent;
+            this.btnHidePass.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnHidePass.FlatAppearance.BorderSize = 0;
+            this.btnHidePass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHidePass.ForeColor = System.Drawing.Color.Transparent;
+            this.btnHidePass.Image = global::GUILayer.Properties.Resources.eye_close;
+            this.btnHidePass.Location = new System.Drawing.Point(269, 294);
+            this.btnHidePass.Name = "btnHidePass";
+            this.btnHidePass.Size = new System.Drawing.Size(47, 20);
+            this.btnHidePass.TabIndex = 13;
+            this.btnHidePass.UseVisualStyleBackColor = false;
+            this.btnHidePass.Click += new System.EventHandler(this.btnHidePass_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::GUILayer.Properties.Resources.password_2;
+            this.pictureBox2.Location = new System.Drawing.Point(48, 279);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(32, 31);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 11;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::GUILayer.Properties.Resources.username_2;
+            this.pictureBox1.Location = new System.Drawing.Point(48, 215);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(32, 31);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 11;
+            this.pictureBox1.TabStop = false;
+            // 
+            // picLogo
+            // 
+            this.picLogo.Image = global::GUILayer.Properties.Resources.tải_xuống;
+            this.picLogo.Location = new System.Drawing.Point(95, 12);
+            this.picLogo.Name = "picLogo";
+            this.picLogo.Size = new System.Drawing.Size(167, 110);
+            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picLogo.TabIndex = 10;
+            this.picLogo.TabStop = false;
             // 
             // FormLogin
             // 
@@ -215,9 +224,9 @@ namespace GUILayer
             this.Name = "FormLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormLogin";
-            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

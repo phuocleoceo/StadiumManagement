@@ -3,12 +3,16 @@ using System;
 using System.Windows.Forms;
 using BusinessLayer.ViewModels;
 using BusinessLayer;
+using System.IO;
+using System.Drawing;
+using System.Text;
 
 namespace GUILayer.ChildForm
 {
     public partial class FormQLDichVu : Form
     {
         private readonly ServiceRepository _db;
+        string imgPath = "";
         public FormQLDichVu()
         {
             _db = new ServiceRepository();
@@ -23,6 +27,7 @@ namespace GUILayer.ChildForm
             dgvDSDichVu.Rows.Clear();
             dgvDSDichVu.DataSource = _db.GetList();
             dgvDSDichVu.Columns["Id"].Visible = false;
+            dgvDSDichVu.Columns["Image"].Visible = false;
         }
 
         private void dgvDSDichVu_SelectionChanged(object sender, EventArgs e)
@@ -33,6 +38,7 @@ namespace GUILayer.ChildForm
                 txtTenDichVu.Text = r[0].Cells["Name"].Value.ToString();
                 txtDonGia.Text = r[0].Cells["Price"].Value.ToString();
                 txtDonViTinh.Text = r[0].Cells["Unit"].Value.ToString();
+                picDV.LoadImage((byte[])(r[0].Cells["Image"].Value));
             }
         }
 
@@ -42,7 +48,8 @@ namespace GUILayer.ChildForm
             {
                 Name = txtTenDichVu.Text,
                 Price = double.Parse(txtDonGia.Text),
-                Unit = txtDonViTinh.Text
+                Unit = txtDonViTinh.Text,
+                Image=imgPath.ImageToByte()
             });
             LoadData();
         }
@@ -55,7 +62,8 @@ namespace GUILayer.ChildForm
                 Id = Convert.ToInt32(r[0].Cells["Id"].Value),
                 Name = txtTenDichVu.Text,
                 Price = double.Parse(txtDonGia.Text),
-                Unit = txtDonViTinh.Text
+                Unit = txtDonViTinh.Text,
+                Image = imgPath.ImageToByte()
             });
             LoadData();
         }
@@ -80,6 +88,16 @@ namespace GUILayer.ChildForm
         private void btnClear_Click(object sender, EventArgs e)
         {
             txtTenDichVu.Text = txtDonViTinh.Text = txtDonGia.Text = "";
+        }
+
+        private void btnChonAnh_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dlg = new OpenFileDialog();
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                imgPath = dlg.FileName.ToString();
+                picDV.ImageLocation = imgPath;
+            }
         }
     }
 }

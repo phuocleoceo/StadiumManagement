@@ -38,7 +38,7 @@ namespace GUILayer
         }
 
         private void btnHidePass_Click(object sender, EventArgs e)
-        {
+        {            
             txtPass.UseSystemPasswordChar = true;
             btnHidePass.Hide();
             btnShowPass.Show();

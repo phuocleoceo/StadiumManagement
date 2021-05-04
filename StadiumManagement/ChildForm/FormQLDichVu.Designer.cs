@@ -40,13 +40,16 @@ namespace GUILayer.ChildForm
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvDSDichVu = new System.Windows.Forms.DataGridView();
+            this.btnChonAnh = new System.Windows.Forms.Button();
+            this.picDV = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSDichVu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDV)).BeginInit();
             this.SuspendLayout();
             // 
             // btnClear
             // 
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(611, 133);
+            this.btnClear.Location = new System.Drawing.Point(544, 133);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(66, 36);
             this.btnClear.TabIndex = 53;
@@ -75,7 +78,7 @@ namespace GUILayer.ChildForm
             // btnXoa
             // 
             this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoa.Location = new System.Drawing.Point(494, 133);
+            this.btnXoa.Location = new System.Drawing.Point(437, 133);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(66, 36);
             this.btnXoa.TabIndex = 46;
@@ -86,7 +89,7 @@ namespace GUILayer.ChildForm
             // btnSua
             // 
             this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSua.Location = new System.Drawing.Point(381, 133);
+            this.btnSua.Location = new System.Drawing.Point(332, 133);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(66, 36);
             this.btnSua.TabIndex = 47;
@@ -97,7 +100,7 @@ namespace GUILayer.ChildForm
             // btnThem
             // 
             this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThem.Location = new System.Drawing.Point(272, 133);
+            this.btnThem.Location = new System.Drawing.Point(223, 133);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(66, 36);
             this.btnThem.TabIndex = 48;
@@ -151,11 +154,35 @@ namespace GUILayer.ChildForm
             this.dgvDSDichVu.TabIndex = 41;
             this.dgvDSDichVu.SelectionChanged += new System.EventHandler(this.dgvDSDichVu_SelectionChanged);
             // 
+            // btnChonAnh
+            // 
+            this.btnChonAnh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChonAnh.Location = new System.Drawing.Point(647, 133);
+            this.btnChonAnh.Name = "btnChonAnh";
+            this.btnChonAnh.Size = new System.Drawing.Size(86, 36);
+            this.btnChonAnh.TabIndex = 53;
+            this.btnChonAnh.Text = "Chọn ảnh";
+            this.btnChonAnh.UseVisualStyleBackColor = true;
+            this.btnChonAnh.Click += new System.EventHandler(this.btnChonAnh_Click);
+            // 
+            // picDV
+            // 
+            this.picDV.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picDV.Image = global::GUILayer.Properties.Resources.BKDN;
+            this.picDV.Location = new System.Drawing.Point(761, 60);
+            this.picDV.Name = "picDV";
+            this.picDV.Size = new System.Drawing.Size(109, 109);
+            this.picDV.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picDV.TabIndex = 54;
+            this.picDV.TabStop = false;
+            // 
             // FormQLDichVu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1041, 566);
+            this.Controls.Add(this.picDV);
+            this.Controls.Add(this.btnChonAnh);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.txtDonViTinh);
             this.Controls.Add(this.label7);
@@ -170,6 +197,7 @@ namespace GUILayer.ChildForm
             this.Name = "FormQLDichVu";
             this.Text = "Quản lý dịch vụ";
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSDichVu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -188,5 +216,7 @@ namespace GUILayer.ChildForm
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvDSDichVu;
+        private System.Windows.Forms.PictureBox picDV;
+        private System.Windows.Forms.Button btnChonAnh;
     }
 }

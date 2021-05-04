@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using GUILayer.ChildForm;
+using BusinessLayer;
 
 namespace GUILayer
 {
@@ -46,6 +47,7 @@ namespace GUILayer
                 btnCashier.Enabled = false;
             }
             lblUserName.Text = FormLogin.currentAccount.UserName;
+            //picLogo.LoadImage(FormLogin.currentAccount.Image);
         }
         #endregion
 

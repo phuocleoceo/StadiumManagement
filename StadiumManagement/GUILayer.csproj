@@ -124,6 +124,9 @@
     <EmbeddedResource Include="ChildForm\FormTaiKhoan.resx">
       <DependentUpon>FormTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ChildForm\FormThietLap.resx">
+      <DependentUpon>FormThietLap.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormControl.resx">
       <DependentUpon>FormControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -181,7 +184,18 @@
   <ItemGroup>
     <None Include="Resources\username-2.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\BKDN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PassHide.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eye_close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eye_open2.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
