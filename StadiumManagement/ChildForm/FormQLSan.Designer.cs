@@ -190,7 +190,7 @@ namespace GUILayer.ChildForm
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvDSSan);
             this.Name = "FormQLSan";
-            this.Text = "FormDSSan";
+            this.Text = "Quản lý sân";
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSSan)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

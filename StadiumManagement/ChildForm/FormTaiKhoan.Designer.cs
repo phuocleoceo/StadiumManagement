@@ -39,9 +39,9 @@ namespace GUILayer.ChildForm
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.grbThem = new System.Windows.Forms.GroupBox();
-            this.txtMatKhau = new System.Windows.Forms.TextBox();
-            this.btnOK = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.btnOK = new System.Windows.Forms.Button();
+            this.txtMatKhau = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSTK)).BeginInit();
             this.grbThem.SuspendLayout();
             this.SuspendLayout();
@@ -153,13 +153,15 @@ namespace GUILayer.ChildForm
             this.grbThem.Text = "Nhập mật khẩu :";
             this.grbThem.Visible = false;
             // 
-            // txtMatKhau
+            // btnCancel
             // 
-            this.txtMatKhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMatKhau.Location = new System.Drawing.Point(23, 19);
-            this.txtMatKhau.Name = "txtMatKhau";
-            this.txtMatKhau.Size = new System.Drawing.Size(153, 23);
-            this.txtMatKhau.TabIndex = 0;
+            this.btnCancel.Location = new System.Drawing.Point(112, 59);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(64, 23);
+            this.btnCancel.TabIndex = 1;
+            this.btnCancel.Text = "Đóng";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnOK
             // 
@@ -171,15 +173,13 @@ namespace GUILayer.ChildForm
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
-            // btnCancel
+            // txtMatKhau
             // 
-            this.btnCancel.Location = new System.Drawing.Point(112, 59);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(64, 23);
-            this.btnCancel.TabIndex = 1;
-            this.btnCancel.Text = "Đóng";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            this.txtMatKhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMatKhau.Location = new System.Drawing.Point(23, 19);
+            this.txtMatKhau.Name = "txtMatKhau";
+            this.txtMatKhau.Size = new System.Drawing.Size(153, 23);
+            this.txtMatKhau.TabIndex = 0;
             // 
             // FormTaiKhoan
             // 
@@ -197,7 +197,7 @@ namespace GUILayer.ChildForm
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvDSTK);
             this.Name = "FormTaiKhoan";
-            this.Text = "FormTaiKhoan";
+            this.Text = "Danh sách tài khoản";
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSTK)).EndInit();
             this.grbThem.ResumeLayout(false);
             this.grbThem.PerformLayout();

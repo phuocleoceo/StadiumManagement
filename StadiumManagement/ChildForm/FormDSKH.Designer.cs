@@ -209,7 +209,7 @@ namespace GUILayer.ChildForm
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvDSKH);
             this.Name = "FormDSKH";
-            this.Text = "FormDSKH";
+            this.Text = "Danh sách khách hàng";
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSKH)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

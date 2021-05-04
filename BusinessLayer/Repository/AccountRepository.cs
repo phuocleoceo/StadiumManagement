@@ -18,10 +18,12 @@ namespace BusinessLayer.Repository
             return _db.Accounts.Any(c => c.UserName == username && c.PassWord == passwordMD5);
         }
 
-        public bool Authorization(string username, string password)
+        public bool Authorization(string username, string password, out string displayName)
         {
             string passwordMD5 = password.GetMD5();
-            Role role = GetFirstOrDefault(c => c.UserName == username && c.PassWord == passwordMD5).Role;
+            Account account = GetFirstOrDefault(c => c.UserName == username && c.PassWord == passwordMD5);
+            displayName = account.UserName;
+            Role role = account.Role;
             if (role == Role.Admin) return true;
             else return false;
         }

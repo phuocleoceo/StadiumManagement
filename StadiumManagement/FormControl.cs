@@ -45,6 +45,7 @@ namespace GUILayer
                 btnDSKH.Enabled = false;
                 btnCashier.Enabled = false;
             }
+            lblUserName.Text = FormLogin.displayName;
         }
         #endregion
 

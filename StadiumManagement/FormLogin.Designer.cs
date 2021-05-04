@@ -29,11 +29,11 @@ namespace GUILayer
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtuser = new System.Windows.Forms.TextBox();
+            this.txtUser = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.txtpass = new System.Windows.Forms.TextBox();
-            this.btnlogin = new System.Windows.Forms.Button();
+            this.txtPass = new System.Windows.Forms.TextBox();
+            this.btnLogin = new System.Windows.Forms.Button();
             this.lbexit = new System.Windows.Forms.Label();
             this.lbmini = new System.Windows.Forms.Label();
             this.picLogo = new System.Windows.Forms.PictureBox();
@@ -47,21 +47,20 @@ namespace GUILayer
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
-            // txtuser
+            // txtUser
             // 
-            this.txtuser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.txtuser.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtuser.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtuser.ForeColor = System.Drawing.Color.White;
-            this.txtuser.HideSelection = false;
-            this.txtuser.Location = new System.Drawing.Point(127, 220);
-            this.txtuser.Name = "txtuser";
-            this.txtuser.Size = new System.Drawing.Size(179, 19);
-            this.txtuser.TabIndex = 1;
-            this.txtuser.TabStop = false;
-            this.txtuser.Text = "Tài khoản";
-            this.txtuser.Click += new System.EventHandler(this.txtuser_Click);
-            this.txtuser.TextChanged += new System.EventHandler(this.txtuser_TextChanged);
+            this.txtUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.txtUser.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtUser.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUser.ForeColor = System.Drawing.Color.White;
+            this.txtUser.HideSelection = false;
+            this.txtUser.Location = new System.Drawing.Point(127, 220);
+            this.txtUser.Name = "txtUser";
+            this.txtUser.Size = new System.Drawing.Size(179, 19);
+            this.txtUser.TabIndex = 1;
+            this.txtUser.TabStop = false;
+            this.txtUser.Text = "Tài khoản";
+            this.txtUser.Click += new System.EventHandler(this.txtuser_Click);
             // 
             // panel1
             // 
@@ -79,34 +78,34 @@ namespace GUILayer
             this.panel2.Size = new System.Drawing.Size(230, 1);
             this.panel2.TabIndex = 6;
             // 
-            // txtpass
+            // txtPass
             // 
-            this.txtpass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.txtpass.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtpass.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtpass.ForeColor = System.Drawing.Color.White;
-            this.txtpass.HideSelection = false;
-            this.txtpass.Location = new System.Drawing.Point(128, 291);
-            this.txtpass.Name = "txtpass";
-            this.txtpass.Size = new System.Drawing.Size(179, 19);
-            this.txtpass.TabIndex = 2;
-            this.txtpass.TabStop = false;
-            this.txtpass.Text = "Mật khẩu";
-            this.txtpass.UseSystemPasswordChar = true;
-            this.txtpass.Click += new System.EventHandler(this.txtpass_Click);
+            this.txtPass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.txtPass.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPass.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPass.ForeColor = System.Drawing.Color.White;
+            this.txtPass.HideSelection = false;
+            this.txtPass.Location = new System.Drawing.Point(128, 291);
+            this.txtPass.Name = "txtPass";
+            this.txtPass.Size = new System.Drawing.Size(179, 19);
+            this.txtPass.TabIndex = 2;
+            this.txtPass.TabStop = false;
+            this.txtPass.Text = "Mật khẩu";
+            this.txtPass.UseSystemPasswordChar = true;
+            this.txtPass.Click += new System.EventHandler(this.txtpass_Click);
             // 
-            // btnlogin
+            // btnLogin
             // 
-            this.btnlogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
-            this.btnlogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnlogin.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnlogin.Location = new System.Drawing.Point(106, 354);
-            this.btnlogin.Name = "btnlogin";
-            this.btnlogin.Size = new System.Drawing.Size(150, 41);
-            this.btnlogin.TabIndex = 5;
-            this.btnlogin.Text = "Đăng nhập";
-            this.btnlogin.UseVisualStyleBackColor = false;
-            this.btnlogin.Click += new System.EventHandler(this.btnlogin_Click);
+            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
+            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogin.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.Location = new System.Drawing.Point(106, 354);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(150, 41);
+            this.btnLogin.TabIndex = 5;
+            this.btnLogin.Text = "Đăng nhập";
+            this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // lbexit
             // 
@@ -207,11 +206,11 @@ namespace GUILayer
             this.Controls.Add(this.picLogo);
             this.Controls.Add(this.lbmini);
             this.Controls.Add(this.lbexit);
-            this.Controls.Add(this.btnlogin);
+            this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.txtpass);
+            this.Controls.Add(this.txtPass);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.txtuser);
+            this.Controls.Add(this.txtUser);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -225,11 +224,11 @@ namespace GUILayer
         }
 
         #endregion
-        private System.Windows.Forms.TextBox txtuser;
+        private System.Windows.Forms.TextBox txtUser;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox txtpass;
-        private System.Windows.Forms.Button btnlogin;
+        private System.Windows.Forms.TextBox txtPass;
+        private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Label lbexit;
         private System.Windows.Forms.Label lbmini;
         private System.Windows.Forms.PictureBox picLogo;

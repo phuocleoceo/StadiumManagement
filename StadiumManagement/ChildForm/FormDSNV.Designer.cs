@@ -298,7 +298,7 @@ namespace GUILayer.ChildForm
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvDSNV);
             this.Name = "FormDSNV";
-            this.Text = "FormDSNV";
+            this.Text = "Danh sách nhân viên";
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSNV)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

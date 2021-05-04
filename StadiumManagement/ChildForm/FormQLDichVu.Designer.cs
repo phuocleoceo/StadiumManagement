@@ -168,7 +168,7 @@ namespace GUILayer.ChildForm
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvDSDichVu);
             this.Name = "FormQLDichVu";
-            this.Text = "FormQLDichVu";
+            this.Text = "Quản lý dịch vụ";
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSDichVu)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
