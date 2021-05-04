@@ -58,12 +58,14 @@
     <Compile Include="Repository\AccountRepository.cs" />
     <Compile Include="Repository\CustomerRepository.cs" />
     <Compile Include="Repository\Repository.cs" />
+    <Compile Include="Repository\ServiceRepository.cs" />
     <Compile Include="Repository\StadiumRepository.cs" />
     <Compile Include="Utility.cs" />
     <Compile Include="ViewModels\AccountInformationVM.cs" />
     <Compile Include="ViewModels\AccountVM.cs" />
     <Compile Include="ViewModels\CBBItem.cs" />
     <Compile Include="ViewModels\CustomerVM.cs" />
+    <Compile Include="ViewModels\ServiceVM.cs" />
     <Compile Include="ViewModels\StadiumVM.cs" />
   </ItemGroup>
   <ItemGroup>

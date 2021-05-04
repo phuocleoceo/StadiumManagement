@@ -259,5 +259,10 @@ namespace GUILayer
         {
             OpenChildForm(new FormQLSan());
         }
+
+        private void btnDichVu_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FormQLDichVu());
+        }
     }
 }
