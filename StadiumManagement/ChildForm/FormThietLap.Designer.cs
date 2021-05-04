@@ -50,8 +50,17 @@ namespace GUILayer.ChildForm
             this.picTaiKhoan = new System.Windows.Forms.PictureBox();
             this.btnChonAnh = new System.Windows.Forms.Button();
             this.btnLuuAnh = new System.Windows.Forms.Button();
+            this.grbDoiMK = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtMKCu = new System.Windows.Forms.TextBox();
+            this.txtMKMoi = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtXacNhanMK = new System.Windows.Forms.TextBox();
+            this.btnXacNhanDoiMK = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTaiKhoan)).BeginInit();
+            this.grbDoiMK.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -262,11 +271,94 @@ namespace GUILayer.ChildForm
             this.btnLuuAnh.UseVisualStyleBackColor = true;
             this.btnLuuAnh.Click += new System.EventHandler(this.btnLuuAnh_Click);
             // 
+            // grbDoiMK
+            // 
+            this.grbDoiMK.Controls.Add(this.label11);
+            this.grbDoiMK.Controls.Add(this.label10);
+            this.grbDoiMK.Controls.Add(this.label6);
+            this.grbDoiMK.Controls.Add(this.txtXacNhanMK);
+            this.grbDoiMK.Controls.Add(this.btnXacNhanDoiMK);
+            this.grbDoiMK.Controls.Add(this.txtMKMoi);
+            this.grbDoiMK.Controls.Add(this.txtMKCu);
+            this.grbDoiMK.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbDoiMK.Location = new System.Drawing.Point(509, 297);
+            this.grbDoiMK.Name = "grbDoiMK";
+            this.grbDoiMK.Size = new System.Drawing.Size(403, 246);
+            this.grbDoiMK.TabIndex = 51;
+            this.grbDoiMK.TabStop = false;
+            this.grbDoiMK.Text = "Đổi mật khẩu : ";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(15, 45);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(108, 20);
+            this.label6.TabIndex = 38;
+            this.label6.Text = "Mật khẩu cũ : ";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(15, 99);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(116, 20);
+            this.label10.TabIndex = 38;
+            this.label10.Text = "Mật khẩu mới : ";
+            // 
+            // txtMKCu
+            // 
+            this.txtMKCu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMKCu.Location = new System.Drawing.Point(138, 39);
+            this.txtMKCu.Name = "txtMKCu";
+            this.txtMKCu.Size = new System.Drawing.Size(226, 26);
+            this.txtMKCu.TabIndex = 47;
+            // 
+            // txtMKMoi
+            // 
+            this.txtMKMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMKMoi.Location = new System.Drawing.Point(138, 96);
+            this.txtMKMoi.Name = "txtMKMoi";
+            this.txtMKMoi.Size = new System.Drawing.Size(226, 26);
+            this.txtMKMoi.TabIndex = 47;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(38, 153);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(85, 20);
+            this.label11.TabIndex = 38;
+            this.label11.Text = "Xác nhận :";
+            // 
+            // txtXacNhanMK
+            // 
+            this.txtXacNhanMK.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtXacNhanMK.Location = new System.Drawing.Point(138, 147);
+            this.txtXacNhanMK.Name = "txtXacNhanMK";
+            this.txtXacNhanMK.Size = new System.Drawing.Size(226, 26);
+            this.txtXacNhanMK.TabIndex = 47;
+            // 
+            // btnXacNhanDoiMK
+            // 
+            this.btnXacNhanDoiMK.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXacNhanDoiMK.Location = new System.Drawing.Point(117, 193);
+            this.btnXacNhanDoiMK.Name = "btnXacNhanDoiMK";
+            this.btnXacNhanDoiMK.Size = new System.Drawing.Size(190, 37);
+            this.btnXacNhanDoiMK.TabIndex = 48;
+            this.btnXacNhanDoiMK.Text = "Xác nhận đổi";
+            this.btnXacNhanDoiMK.UseVisualStyleBackColor = true;
+            this.btnXacNhanDoiMK.Click += new System.EventHandler(this.btnXacNhanDoiMK_Click);
+            // 
             // FormThietLap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1041, 566);
+            this.Controls.Add(this.grbDoiMK);
             this.Controls.Add(this.btnLuuAnh);
             this.Controls.Add(this.btnChonAnh);
             this.Controls.Add(this.picTaiKhoan);
@@ -291,6 +383,8 @@ namespace GUILayer.ChildForm
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTaiKhoan)).EndInit();
+            this.grbDoiMK.ResumeLayout(false);
+            this.grbDoiMK.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -319,5 +413,13 @@ namespace GUILayer.ChildForm
         private System.Windows.Forms.PictureBox picTaiKhoan;
         private System.Windows.Forms.Button btnChonAnh;
         private System.Windows.Forms.Button btnLuuAnh;
+        private System.Windows.Forms.GroupBox grbDoiMK;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtXacNhanMK;
+        private System.Windows.Forms.TextBox txtMKMoi;
+        private System.Windows.Forms.TextBox txtMKCu;
+        private System.Windows.Forms.Button btnXacNhanDoiMK;
     }
 }

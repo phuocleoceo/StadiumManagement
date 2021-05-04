@@ -21,7 +21,6 @@ namespace GUILayer
         private Panel leftBorderBtn;
         private Form currentChildForm;
         public static string UserName = "";
-
         public FormControl()
         {
             InitializeComponent();

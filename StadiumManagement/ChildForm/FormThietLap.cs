@@ -50,6 +50,30 @@ namespace GUILayer.ChildForm
             _db.SaveImage(id, img);
         }
 
+        private void btnXacNhanDoiMK_Click(object sender, EventArgs e)
+        {
+            if (txtMKMoi.Text == txtXacNhanMK.Text)
+            {
+                int id = ac.Id;
+                string oldPW = txtMKCu.Text;
+                string newPW = txtMKMoi.Text;
+                if (_db.CheckPassword(id, oldPW))
+                {
+                    _db.ChangePassword(id, newPW);
+                    MessageBox.Show("Đổi mật khẩu thành công");
+                    txtMKCu.Text = txtMKMoi.Text = txtXacNhanMK.Text = "";
+                }
+                else
+                {
+                    MessageBox.Show("Mật khẩu cũ không đúng !");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Xác nhận mật khẩu sai !");
+            }            
+        }
+
         public void LoadThongTinCaNhan()
         {
 

@@ -28,7 +28,7 @@ namespace BusinessLayer.Repository
                 UserName = account.UserName,
                 PassWord = account.PassWord,
                 Role = Enum.GetName(typeof(Role), account.Role),
-                Image=account.Image
+                Image = account.Image
             };
         }
 
@@ -40,7 +40,7 @@ namespace BusinessLayer.Repository
                 UserName = c.UserName,
                 PassWord = c.PassWord,
                 Role = Enum.GetName(typeof(Role), c.Role),
-                Image=c.Image
+                Image = c.Image
             }).ToList();
             return list;
         }
@@ -88,10 +88,24 @@ namespace BusinessLayer.Repository
             Save();
         }
 
-        public void SaveImage(int id,byte[] img)
+        public void SaveImage(int id, byte[] img)
         {
             Account ac = GetById(id);
             ac.Image = img;
+            Save();
+        }
+
+        public bool CheckPassword(int id,string oldPW)
+        {
+            Account ac = GetById(id);
+            if (ac.PassWord == oldPW.GetMD5()) return true;
+            return false;
+        }
+
+        public void ChangePassword(int id,string newPW)
+        {
+            Account ac = GetById(id);
+            ac.PassWord = newPW.GetMD5();
             Save();
         }
     }
