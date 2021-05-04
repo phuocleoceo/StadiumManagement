@@ -71,6 +71,12 @@
     <Compile Include="ChildForm\FormDSNV.Designer.cs">
       <DependentUpon>FormDSNV.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChildForm\FormQLSan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForm\FormQLSan.Designer.cs">
+      <DependentUpon>FormQLSan.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChildForm\FormTaiKhoan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +102,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ChildForm\FormDSNV.resx">
       <DependentUpon>FormDSNV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForm\FormQLSan.resx">
+      <DependentUpon>FormQLSan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ChildForm\FormTaiKhoan.resx">
       <DependentUpon>FormTaiKhoan.cs</DependentUpon>

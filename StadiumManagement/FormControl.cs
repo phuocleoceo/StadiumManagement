@@ -254,5 +254,10 @@ namespace GUILayer
         {
             OpenChildForm(new FormTaiKhoan());
         }
+
+        private void btnSanBong_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FormQLSan());
+        }
     }
 }
