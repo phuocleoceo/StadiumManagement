@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using GUILayer.ChildForm;
 using BusinessLayer;
+using BusinessLayer.ViewModels;
 
 namespace GUILayer
 {
@@ -39,15 +40,16 @@ namespace GUILayer
         #region Authorization
         public void Authorization()
         {
-            if (FormLogin.currentAccount.Role!="Admin")
+            AccountVM currentAcc = FormLogin.currentAccount;
+            if (currentAcc.Role!="Admin")
             {
                 btnSanBong.Enabled = false;
                 btnDichVu.Enabled = false;
                 btnDSKH.Enabled = false;
                 btnCashier.Enabled = false;
             }
-            lblUserName.Text = FormLogin.currentAccount.UserName;
-            //picLogo.LoadImage(FormLogin.currentAccount.Image);
+            lblUserName.Text = currentAcc.UserName;
+            picLogo.LoadImage(currentAcc.Image);
         }
         #endregion
 

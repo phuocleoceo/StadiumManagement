@@ -2,13 +2,6 @@
 using BusinessLayer.Repository;
 using BusinessLayer.ViewModels;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GUILayer.ChildForm
@@ -30,6 +23,7 @@ namespace GUILayer.ChildForm
             dgvDSTK.Rows.Clear();
             dgvDSTK.DataSource = _db.GetList();
             dgvDSTK.Columns["Id"].Visible = false;
+            dgvDSTK.Columns["Image"].Visible = false;
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -44,6 +38,7 @@ namespace GUILayer.ChildForm
             {
                 txtTenTaiKhoan.Text = r[0].Cells["UserName"].Value.ToString();
                 cbbVaiTro.Text = r[0].Cells["Role"].Value.ToString();
+                picTK.LoadImage((byte[])(r[0].Cells["Image"].Value));
             }
         }
 
@@ -66,6 +61,7 @@ namespace GUILayer.ChildForm
 
         private void btnThem_Click(object sender, EventArgs e)
         {
+            picTK.Image = null;
             grbThem.Visible = true;
         }
 

@@ -27,7 +27,7 @@ namespace GUILayer
                 FormControl fc = new FormControl();
                 this.Hide();
                 fc.ShowDialog();
-                this.Show();
+                this.Show();                
                 txtUser.Text = "Tài khoản";
                 txtPass.Text = "Mật khẩu";
             }

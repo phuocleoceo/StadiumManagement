@@ -20,5 +20,7 @@ namespace BusinessLayer.ViewModels
 
         [DisplayName("Vai trò")]
         public string Role { get; set; }
+
+        public byte[] Image { get; set; }
     }
 }

@@ -28,6 +28,7 @@ namespace BusinessLayer.Repository
                 UserName = account.UserName,
                 PassWord = account.PassWord,
                 Role = Enum.GetName(typeof(Role), account.Role),
+                Image=account.Image
             };
         }
 
@@ -38,7 +39,8 @@ namespace BusinessLayer.Repository
                 Id = c.Id,
                 UserName = c.UserName,
                 PassWord = c.PassWord,
-                Role = Enum.GetName(typeof(Role), c.Role)
+                Role = Enum.GetName(typeof(Role), c.Role),
+                Image=c.Image
             }).ToList();
             return list;
         }
@@ -83,6 +85,13 @@ namespace BusinessLayer.Repository
         public void DeleteAccount(int id)
         {
             Remove(id);
+            Save();
+        }
+
+        public void SaveImage(int id,byte[] img)
+        {
+            Account ac = GetById(id);
+            ac.Image = img;
             Save();
         }
     }

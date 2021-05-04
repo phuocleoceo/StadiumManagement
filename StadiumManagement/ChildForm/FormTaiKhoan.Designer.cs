@@ -42,8 +42,10 @@ namespace GUILayer.ChildForm
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnOK = new System.Windows.Forms.Button();
             this.txtMatKhau = new System.Windows.Forms.TextBox();
+            this.picTK = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSTK)).BeginInit();
             this.grbThem.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picTK)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvDSTK
@@ -60,7 +62,7 @@ namespace GUILayer.ChildForm
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(625, 61);
+            this.label2.Location = new System.Drawing.Point(657, 61);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(67, 20);
             this.label2.TabIndex = 12;
@@ -91,7 +93,7 @@ namespace GUILayer.ChildForm
             this.cbbVaiTro.Items.AddRange(new object[] {
             "Admin",
             "Cashier"});
-            this.cbbVaiTro.Location = new System.Drawing.Point(698, 58);
+            this.cbbVaiTro.Location = new System.Drawing.Point(730, 58);
             this.cbbVaiTro.Name = "cbbVaiTro";
             this.cbbVaiTro.Size = new System.Drawing.Size(135, 28);
             this.cbbVaiTro.TabIndex = 18;
@@ -181,11 +183,22 @@ namespace GUILayer.ChildForm
             this.txtMatKhau.Size = new System.Drawing.Size(153, 23);
             this.txtMatKhau.TabIndex = 0;
             // 
+            // picTK
+            // 
+            this.picTK.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picTK.Location = new System.Drawing.Point(488, 12);
+            this.picTK.Name = "picTK";
+            this.picTK.Size = new System.Drawing.Size(91, 84);
+            this.picTK.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picTK.TabIndex = 56;
+            this.picTK.TabStop = false;
+            // 
             // FormTaiKhoan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1041, 566);
+            this.Controls.Add(this.picTK);
             this.Controls.Add(this.grbThem);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnXoa);
@@ -201,6 +214,7 @@ namespace GUILayer.ChildForm
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSTK)).EndInit();
             this.grbThem.ResumeLayout(false);
             this.grbThem.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picTK)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -221,5 +235,6 @@ namespace GUILayer.ChildForm
         private System.Windows.Forms.TextBox txtMatKhau;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnOK;
+        private System.Windows.Forms.PictureBox picTK;
     }
 }
