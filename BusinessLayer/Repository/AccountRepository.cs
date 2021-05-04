@@ -18,14 +18,17 @@ namespace BusinessLayer.Repository
             return _db.Accounts.Any(c => c.UserName == username && c.PassWord == passwordMD5);
         }
 
-        public bool Authorization(string username, string password, out string displayName)
+        public AccountVM Authorization(string username, string password)
         {
             string passwordMD5 = password.GetMD5();
             Account account = GetFirstOrDefault(c => c.UserName == username && c.PassWord == passwordMD5);
-            displayName = account.UserName;
-            Role role = account.Role;
-            if (role == Role.Admin) return true;
-            else return false;
+            return new AccountVM
+            {
+                Id = account.Id,
+                UserName = account.UserName,
+                PassWord = account.PassWord,
+                Role = Enum.GetName(typeof(Role), account.Role),
+            };
         }
 
         public List<AccountVM> GetList()

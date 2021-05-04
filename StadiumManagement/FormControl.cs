@@ -38,14 +38,14 @@ namespace GUILayer
         #region Authorization
         public void Authorization()
         {
-            if (!FormLogin.isAdmin)
+            if (FormLogin.currentAccount.Role!="Admin")
             {
                 btnSanBong.Enabled = false;
                 btnDichVu.Enabled = false;
                 btnDSKH.Enabled = false;
                 btnCashier.Enabled = false;
             }
-            lblUserName.Text = FormLogin.displayName;
+            lblUserName.Text = FormLogin.currentAccount.UserName;
         }
         #endregion
 
