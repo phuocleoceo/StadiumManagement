@@ -21,7 +21,7 @@ namespace GUILayer.ChildForm
         public FormThietLap()
         {
             _db = new AccountRepository();
-            ac = FormLogin.currentAccount;
+            ac = _db.GetAccountById(FormLogin.currentAccount_Id);
             InitializeComponent();
             LoadTaiKhoan();
             LoadThongTinCaNhan();
@@ -71,7 +71,7 @@ namespace GUILayer.ChildForm
             else
             {
                 MessageBox.Show("Xác nhận mật khẩu sai !");
-            }            
+            }
         }
 
         public void LoadThongTinCaNhan()

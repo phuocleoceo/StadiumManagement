@@ -18,18 +18,11 @@ namespace BusinessLayer.Repository
             return _db.Accounts.Any(c => c.UserName == username && c.PassWord == passwordMD5);
         }
 
-        public AccountVM Authorization(string username, string password)
+        public int Authorization(string username, string password)
         {
             string passwordMD5 = password.GetMD5();
             Account account = GetFirstOrDefault(c => c.UserName == username && c.PassWord == passwordMD5);
-            return new AccountVM
-            {
-                Id = account.Id,
-                UserName = account.UserName,
-                PassWord = account.PassWord,
-                Role = Enum.GetName(typeof(Role), account.Role),
-                Image = account.Image
-            };
+            return account.Id;
         }
 
         public List<AccountVM> GetList()
@@ -93,6 +86,19 @@ namespace BusinessLayer.Repository
             Account ac = GetById(id);
             ac.Image = img;
             Save();
+        }
+
+        public AccountVM GetAccountById(int id)
+        {
+            Account account = GetById(id);
+            return new AccountVM
+            {
+                Id = account.Id,
+                UserName = account.UserName,
+                PassWord = account.PassWord,
+                Role = Enum.GetName(typeof(Role), account.Role),
+                Image=account.Image
+            };
         }
 
         public bool CheckPassword(int id,string oldPW)

@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using GUILayer.ChildForm;
 using BusinessLayer;
 using BusinessLayer.ViewModels;
+using BusinessLayer.Repository;
 
 namespace GUILayer
 {
@@ -20,7 +21,6 @@ namespace GUILayer
         private IconButton currentBtn;
         private Panel leftBorderBtn;
         private Form currentChildForm;
-        public static string UserName = "";
         public FormControl()
         {
             InitializeComponent();
@@ -39,7 +39,7 @@ namespace GUILayer
         #region Authorization
         public void Authorization()
         {
-            AccountVM currentAcc = FormLogin.currentAccount;
+            AccountVM currentAcc = (new AccountRepository()).GetAccountById(FormLogin.currentAccount_Id);
             if (currentAcc.Role!="Admin")
             {
                 btnSanBong.Enabled = false;
