@@ -42,7 +42,10 @@ namespace GUILayer.ChildForm
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtGhiChu = new System.Windows.Forms.TextBox();
+            this.picSB = new System.Windows.Forms.PictureBox();
+            this.btnChonAnh = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSSan)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSB)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvDSSan
@@ -69,7 +72,7 @@ namespace GUILayer.ChildForm
             // txtDienTich
             // 
             this.txtDienTich.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDienTich.Location = new System.Drawing.Point(637, 34);
+            this.txtDienTich.Location = new System.Drawing.Point(601, 34);
             this.txtDienTich.Name = "txtDienTich";
             this.txtDienTich.Size = new System.Drawing.Size(235, 26);
             this.txtDienTich.TabIndex = 39;
@@ -78,7 +81,7 @@ namespace GUILayer.ChildForm
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(533, 90);
+            this.label6.Location = new System.Drawing.Point(497, 90);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(76, 20);
             this.label6.TabIndex = 37;
@@ -88,7 +91,7 @@ namespace GUILayer.ChildForm
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(533, 36);
+            this.label7.Location = new System.Drawing.Point(497, 36);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(79, 20);
             this.label7.TabIndex = 38;
@@ -130,7 +133,7 @@ namespace GUILayer.ChildForm
             // txtDonGia
             // 
             this.txtDonGia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDonGia.Location = new System.Drawing.Point(190, 87);
+            this.txtDonGia.Location = new System.Drawing.Point(171, 87);
             this.txtDonGia.Name = "txtDonGia";
             this.txtDonGia.Size = new System.Drawing.Size(241, 26);
             this.txtDonGia.TabIndex = 28;
@@ -138,7 +141,7 @@ namespace GUILayer.ChildForm
             // txtTenSan
             // 
             this.txtTenSan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenSan.Location = new System.Drawing.Point(190, 33);
+            this.txtTenSan.Location = new System.Drawing.Point(171, 33);
             this.txtTenSan.Name = "txtTenSan";
             this.txtTenSan.Size = new System.Drawing.Size(241, 26);
             this.txtTenSan.TabIndex = 31;
@@ -147,7 +150,7 @@ namespace GUILayer.ChildForm
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(74, 90);
+            this.label4.Location = new System.Drawing.Point(55, 90);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(76, 20);
             this.label4.TabIndex = 23;
@@ -157,7 +160,7 @@ namespace GUILayer.ChildForm
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(74, 33);
+            this.label1.Location = new System.Drawing.Point(55, 33);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(78, 20);
             this.label1.TabIndex = 27;
@@ -166,16 +169,39 @@ namespace GUILayer.ChildForm
             // txtGhiChu
             // 
             this.txtGhiChu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGhiChu.Location = new System.Drawing.Point(637, 87);
+            this.txtGhiChu.Location = new System.Drawing.Point(601, 87);
             this.txtGhiChu.Name = "txtGhiChu";
             this.txtGhiChu.Size = new System.Drawing.Size(235, 26);
             this.txtGhiChu.TabIndex = 39;
+            // 
+            // picSB
+            // 
+            this.picSB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picSB.Location = new System.Drawing.Point(877, 33);
+            this.picSB.Name = "picSB";
+            this.picSB.Size = new System.Drawing.Size(148, 146);
+            this.picSB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picSB.TabIndex = 55;
+            this.picSB.TabStop = false;
+            // 
+            // btnChonAnh
+            // 
+            this.btnChonAnh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChonAnh.Location = new System.Drawing.Point(733, 143);
+            this.btnChonAnh.Name = "btnChonAnh";
+            this.btnChonAnh.Size = new System.Drawing.Size(86, 36);
+            this.btnChonAnh.TabIndex = 56;
+            this.btnChonAnh.Text = "Chọn ảnh";
+            this.btnChonAnh.UseVisualStyleBackColor = true;
+            this.btnChonAnh.Click += new System.EventHandler(this.btnChonAnh_Click);
             // 
             // FormQLSan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1041, 566);
+            this.Controls.Add(this.btnChonAnh);
+            this.Controls.Add(this.picSB);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.txtGhiChu);
             this.Controls.Add(this.txtDienTich);
@@ -192,6 +218,7 @@ namespace GUILayer.ChildForm
             this.Name = "FormQLSan";
             this.Text = "Quản lý sân";
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSSan)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSB)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -212,5 +239,7 @@ namespace GUILayer.ChildForm
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtGhiChu;
+        private System.Windows.Forms.PictureBox picSB;
+        private System.Windows.Forms.Button btnChonAnh;
     }
 }

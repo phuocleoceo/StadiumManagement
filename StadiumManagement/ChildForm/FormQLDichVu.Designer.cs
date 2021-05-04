@@ -168,7 +168,6 @@ namespace GUILayer.ChildForm
             // picDV
             // 
             this.picDV.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picDV.Image = global::GUILayer.Properties.Resources.BKDN;
             this.picDV.Location = new System.Drawing.Point(761, 60);
             this.picDV.Name = "picDV";
             this.picDV.Size = new System.Drawing.Size(109, 109);

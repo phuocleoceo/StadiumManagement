@@ -49,7 +49,7 @@ namespace GUILayer.ChildForm
                 Name = txtTenDichVu.Text,
                 Price = double.Parse(txtDonGia.Text),
                 Unit = txtDonViTinh.Text,
-                Image=imgPath.ImageToByte()
+                Image = imgPath.ImageToByte()
             });
             LoadData();
         }
@@ -88,6 +88,7 @@ namespace GUILayer.ChildForm
         private void btnClear_Click(object sender, EventArgs e)
         {
             txtTenDichVu.Text = txtDonViTinh.Text = txtDonGia.Text = "";
+            picDV.Image = null;
         }
 
         private void btnChonAnh_Click(object sender, EventArgs e)

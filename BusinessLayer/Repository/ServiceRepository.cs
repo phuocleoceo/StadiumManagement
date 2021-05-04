@@ -20,7 +20,7 @@ namespace BusinessLayer.Repository
                 Name = c.Name,
                 Price = c.Price,
                 Unit = c.Unit,
-                Image=c.Image
+                Image = c.Image
             }).ToList();
             return list;
         }
@@ -33,7 +33,7 @@ namespace BusinessLayer.Repository
                 Price = c.Price,
                 Unit = c.Unit,
                 isDeleted = false,
-                Image=c.Image
+                Image = c.Image
             });
             Save();
         }
@@ -53,11 +53,6 @@ namespace BusinessLayer.Repository
             Service service = GetById(id);
             service.isDeleted = true;
             Save();
-        }
-
-        public byte[] GetImage(int id)
-        {
-            return GetFirstOrDefault(c => c.Id == id).Image;
         }
     }
 }

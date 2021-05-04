@@ -9,6 +9,7 @@ namespace GUILayer.ChildForm
     public partial class FormQLSan : Form
     {
         private readonly StadiumRepository _db;
+        string imgPath = "";
         public FormQLSan()
         {
             _db = new StadiumRepository();
@@ -23,6 +24,7 @@ namespace GUILayer.ChildForm
             dgvDSSan.Rows.Clear();
             dgvDSSan.DataSource = _db.GetList();
             dgvDSSan.Columns["Id"].Visible = false;
+            dgvDSSan.Columns["Image"].Visible = false;
         }
 
         private void dgvDSSan_SelectionChanged(object sender, EventArgs e)
@@ -34,6 +36,7 @@ namespace GUILayer.ChildForm
                 txtDonGia.Text = r[0].Cells["Price"].Value.ToString();
                 txtDienTich.Text = r[0].Cells["Area"].Value.ToString();
                 txtGhiChu.Text = r[0].Cells["Note"].Value.ToString();
+                picSB.LoadImage((byte[])(r[0].Cells["Image"].Value));
             }
         }
 
@@ -44,7 +47,8 @@ namespace GUILayer.ChildForm
                 Name = txtTenSan.Text,
                 Price = double.Parse(txtDonGia.Text),
                 Area = txtDienTich.Text,
-                Note = txtGhiChu.Text
+                Note = txtGhiChu.Text,
+                Image = imgPath.ImageToByte()
             });
             LoadData();
         }
@@ -58,7 +62,8 @@ namespace GUILayer.ChildForm
                 Name = txtTenSan.Text,
                 Price = double.Parse(txtDonGia.Text),
                 Area = txtDienTich.Text,
-                Note = txtGhiChu.Text
+                Note = txtGhiChu.Text,
+                Image = imgPath.ImageToByte()
             });
             LoadData();
         }
@@ -83,6 +88,17 @@ namespace GUILayer.ChildForm
         private void btnClear_Click(object sender, EventArgs e)
         {
             txtTenSan.Text = txtGhiChu.Text = txtDonGia.Text = txtDienTich.Text = "";
+            picSB.Image = null;
+        }
+
+        private void btnChonAnh_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dlg = new OpenFileDialog();
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                imgPath = dlg.FileName.ToString();
+                picSB.ImageLocation = imgPath;
+            }
         }
     }
 }

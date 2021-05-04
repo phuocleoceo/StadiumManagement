@@ -20,7 +20,8 @@ namespace BusinessLayer.Repository
                 Name = c.Name,
                 Price = c.Price,
                 Area = c.Area,
-                Note = c.Note
+                Note = c.Note,
+                Image=c.Image
             }).ToList();
             return list;
         }
@@ -34,7 +35,8 @@ namespace BusinessLayer.Repository
                 Area = c.Area,
                 Note = c.Note,
                 isDeleted = false,
-                Status = StadiumStatus.Free
+                Status = StadiumStatus.Free,
+                Image=c.Image
             });
             Save();
         }
@@ -46,6 +48,7 @@ namespace BusinessLayer.Repository
             stadium.Price = c.Price;
             stadium.Area = c.Area;
             stadium.Note = c.Note;
+            stadium.Image = c.Image;
             Save();
         }
 
