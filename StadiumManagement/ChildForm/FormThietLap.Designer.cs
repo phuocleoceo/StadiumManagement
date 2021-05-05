@@ -51,13 +51,13 @@ namespace GUILayer.ChildForm
             this.btnChonAnh = new System.Windows.Forms.Button();
             this.btnLuuAnh = new System.Windows.Forms.Button();
             this.grbDoiMK = new System.Windows.Forms.GroupBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txtMKCu = new System.Windows.Forms.TextBox();
-            this.txtMKMoi = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.txtXacNhanMK = new System.Windows.Forms.TextBox();
             this.btnXacNhanDoiMK = new System.Windows.Forms.Button();
+            this.txtMKMoi = new System.Windows.Forms.TextBox();
+            this.txtMKCu = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTaiKhoan)).BeginInit();
             this.grbDoiMK.SuspendLayout();
@@ -208,6 +208,7 @@ namespace GUILayer.ChildForm
             this.btnLuu.TabIndex = 48;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.UseVisualStyleBackColor = true;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // label2
             // 
@@ -288,15 +289,15 @@ namespace GUILayer.ChildForm
             this.grbDoiMK.TabStop = false;
             this.grbDoiMK.Text = "Đổi mật khẩu : ";
             // 
-            // label6
+            // label11
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(15, 45);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(108, 20);
-            this.label6.TabIndex = 38;
-            this.label6.Text = "Mật khẩu cũ : ";
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(38, 153);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(85, 20);
+            this.label11.TabIndex = 38;
+            this.label11.Text = "Xác nhận :";
             // 
             // label10
             // 
@@ -308,31 +309,15 @@ namespace GUILayer.ChildForm
             this.label10.TabIndex = 38;
             this.label10.Text = "Mật khẩu mới : ";
             // 
-            // txtMKCu
+            // label6
             // 
-            this.txtMKCu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMKCu.Location = new System.Drawing.Point(138, 39);
-            this.txtMKCu.Name = "txtMKCu";
-            this.txtMKCu.Size = new System.Drawing.Size(226, 26);
-            this.txtMKCu.TabIndex = 47;
-            // 
-            // txtMKMoi
-            // 
-            this.txtMKMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMKMoi.Location = new System.Drawing.Point(138, 96);
-            this.txtMKMoi.Name = "txtMKMoi";
-            this.txtMKMoi.Size = new System.Drawing.Size(226, 26);
-            this.txtMKMoi.TabIndex = 47;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(38, 153);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(85, 20);
-            this.label11.TabIndex = 38;
-            this.label11.Text = "Xác nhận :";
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(15, 45);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(108, 20);
+            this.label6.TabIndex = 38;
+            this.label6.Text = "Mật khẩu cũ : ";
             // 
             // txtXacNhanMK
             // 
@@ -352,6 +337,22 @@ namespace GUILayer.ChildForm
             this.btnXacNhanDoiMK.Text = "Xác nhận đổi";
             this.btnXacNhanDoiMK.UseVisualStyleBackColor = true;
             this.btnXacNhanDoiMK.Click += new System.EventHandler(this.btnXacNhanDoiMK_Click);
+            // 
+            // txtMKMoi
+            // 
+            this.txtMKMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMKMoi.Location = new System.Drawing.Point(138, 96);
+            this.txtMKMoi.Name = "txtMKMoi";
+            this.txtMKMoi.Size = new System.Drawing.Size(226, 26);
+            this.txtMKMoi.TabIndex = 47;
+            // 
+            // txtMKCu
+            // 
+            this.txtMKCu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMKCu.Location = new System.Drawing.Point(138, 39);
+            this.txtMKCu.Name = "txtMKCu";
+            this.txtMKCu.Size = new System.Drawing.Size(226, 26);
+            this.txtMKCu.TabIndex = 47;
             // 
             // FormThietLap
             // 

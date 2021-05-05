@@ -2,13 +2,6 @@
 using BusinessLayer.Repository;
 using BusinessLayer.ViewModels;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GUILayer.ChildForm
@@ -16,18 +9,22 @@ namespace GUILayer.ChildForm
     public partial class FormThietLap : Form
     {
         private readonly AccountRepository _db;
-        private AccountVM ac;
+        private readonly AccountInformationRepository _dbAI;
+        private readonly AccountVM ac;
+        private readonly AccountInformationVM ai;
         private string imgPath = "";
         public FormThietLap()
         {
-            _db = new AccountRepository();
-            ac = _db.GetAccountById(FormLogin.currentAccount_Id);
             InitializeComponent();
-            LoadTaiKhoan();
-            LoadThongTinCaNhan();
+            _db = new AccountRepository();
+            _dbAI = new AccountInformationRepository();
+            ac = _db.GetAccountById(FormLogin.currentAccount_Id);
+            ai = _dbAI.GetAIByAccountId(ac.Id);
+            LoadAccount();
+            LoadAccountInformation();
         }
 
-        public void LoadTaiKhoan()
+        public void LoadAccount()
         {
             txtTenTaiKhoan.Text = ac.UserName;
             picTaiKhoan.LoadImage(ac.Image);
@@ -74,9 +71,35 @@ namespace GUILayer.ChildForm
             }
         }
 
-        public void LoadThongTinCaNhan()
+        public void LoadAccountInformation()
         {
+            if (ai != null)
+            {
+                txtTen.Text = ai.Name;
+                txtSoDienThoai.Text = ai.PhoneNumber;
+                txtCMND.Text = ai.IdentityCard;
+                txtDiaChi.Text = ai.Address;
+                dtpNgaySinh.Value = ai.DateOfBirth;
+                if (ai.Gender == true)
+                {
+                    rdbNam.Checked = true;
+                }
+                else rdbNu.Checked = true;
+            }
+        }
 
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+            _dbAI.UpdateAccountInformationFromSetting(new AccountInformationVM
+            {
+                Id = ai.Id,
+                Name = txtTen.Text,
+                Gender = (rdbNam.Checked) ? true : false,
+                DateOfBirth = dtpNgaySinh.Value,
+                PhoneNumber = txtSoDienThoai.Text,
+                IdentityCard = txtCMND.Text,
+                Address = txtDiaChi.Text
+            });
         }
     }
 }

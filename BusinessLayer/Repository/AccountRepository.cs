@@ -12,6 +12,7 @@ namespace BusinessLayer.Repository
 {
     public class AccountRepository : Repository<Account>
     {
+        #region Login
         public int Authentication(string username, string password)
         {
             string passwordMD5 = password.GetMD5();
@@ -19,7 +20,9 @@ namespace BusinessLayer.Repository
             if (account == null) return 0;
             return account.Id;
         }
+        #endregion
 
+        #region Admin
         public List<AccountVM> GetList()
         {
             List<AccountVM> list = GetAll().Select(c => new AccountVM
@@ -32,7 +35,6 @@ namespace BusinessLayer.Repository
             }).ToList();
             return list;
         }
-
         private bool CheckUserName(string username, int id = 0)
         {
             //Mac dinh id=0 thi lay toan bo, id khac 0 thi lay nhung tai khoan khac tai khoan muon update
@@ -75,7 +77,9 @@ namespace BusinessLayer.Repository
             Remove(id);
             Save();
         }
+        #endregion
 
+        #region All User
         public void SaveImage(int id, byte[] img)
         {
             Account ac = GetById(id);
@@ -109,5 +113,6 @@ namespace BusinessLayer.Repository
             ac.PassWord = newPW.GetMD5();
             Save();
         }
+        #endregion
     }
 }

@@ -9,6 +9,7 @@ namespace BusinessLayer.Repository
 {
     public class AccountInformationRepository : Repository<AccountInformation>
     {
+        #region Admin
         public List<AccountInformationVM> GetList()
         {
             List<AccountInformationVM> list = GetAll().Select(c => new AccountInformationVM
@@ -79,5 +80,39 @@ namespace BusinessLayer.Repository
             }
             return list;
         }
+        #endregion
+
+        #region All User
+        public AccountInformationVM GetAIByAccountId(int Account_Id)
+        {
+            AccountInformation ai = GetFirstOrDefault(c => c.Account_Id == Account_Id);
+            if (ai == null) return null;
+            return new AccountInformationVM
+            {
+                Id = ai.Id,
+                Name = ai.Name,
+                Gender = ai.Gender,
+                DateOfBirth = ai.DateOfBirth,
+                PhoneNumber = ai.PhoneNumber,
+                IdentityCard = ai.IdentityCard,
+                Salary = ai.Salary,
+                Address = ai.Address,
+                AccountName = ai.Account.UserName,
+                Account_Id = ai.Account_Id
+            };
+        }
+
+        public void UpdateAccountInformationFromSetting(AccountInformationVM c)
+        {
+            AccountInformation ai = GetById(c.Id);
+            ai.Name = c.Name;
+            ai.Gender = c.Gender;
+            ai.DateOfBirth = c.DateOfBirth;
+            ai.PhoneNumber = c.PhoneNumber;
+            ai.IdentityCard = c.IdentityCard;
+            ai.Address = c.Address;
+            Save();
+        }
+        #endregion
     }
 }
