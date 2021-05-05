@@ -101,18 +101,6 @@ namespace BusinessLayer.Repository
                 Account_Id = ai.Account_Id
             };
         }
-
-        public void UpdateAccountInformationFromSetting(AccountInformationVM c)
-        {
-            AccountInformation ai = GetById(c.Id);
-            ai.Name = c.Name;
-            ai.Gender = c.Gender;
-            ai.DateOfBirth = c.DateOfBirth;
-            ai.PhoneNumber = c.PhoneNumber;
-            ai.IdentityCard = c.IdentityCard;
-            ai.Address = c.Address;
-            Save();
-        }
         #endregion
     }
 }

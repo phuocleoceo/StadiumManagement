@@ -90,7 +90,7 @@ namespace GUILayer.ChildForm
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            _dbAI.UpdateAccountInformationFromSetting(new AccountInformationVM
+            _dbAI.UpdateAccountInformation(new AccountInformationVM
             {
                 Id = ai.Id,
                 Name = txtTen.Text,
@@ -98,7 +98,9 @@ namespace GUILayer.ChildForm
                 DateOfBirth = dtpNgaySinh.Value,
                 PhoneNumber = txtSoDienThoai.Text,
                 IdentityCard = txtCMND.Text,
-                Address = txtDiaChi.Text
+                Salary = ai.Salary,
+                Address = txtDiaChi.Text,
+                Account_Id = ai.Account_Id
             });
         }
     }
