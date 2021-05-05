@@ -12,16 +12,11 @@ namespace BusinessLayer.Repository
 {
     public class AccountRepository : Repository<Account>
     {
-        public bool Authentication(string username, string password)
-        {
-            string passwordMD5 = password.GetMD5();
-            return _db.Accounts.Any(c => c.UserName == username && c.PassWord == passwordMD5);
-        }
-
-        public int Authorization(string username, string password)
+        public int Authentication(string username, string password)
         {
             string passwordMD5 = password.GetMD5();
             Account account = GetFirstOrDefault(c => c.UserName == username && c.PassWord == passwordMD5);
+            if (account == null) return 0;
             return account.Id;
         }
 
@@ -64,7 +59,7 @@ namespace BusinessLayer.Repository
         }
 
         public void UpdateAccount(AccountVM c)
-        {
+        {            
             if (CheckUserName(c.UserName, c.Id))
             {
                 Account account = GetById(c.Id);

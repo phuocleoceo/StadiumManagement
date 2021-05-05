@@ -20,25 +20,24 @@ namespace GUILayer
         {
             string un = txtUser.Text;
             string pw = txtPass.Text;
-            bool check = _db.Authentication(un, pw);
-            if (check)
+            currentAccount_Id = _db.Authentication(un, pw);
+            if (currentAccount_Id != 0)
             {
-                currentAccount_Id = _db.Authorization(un, pw);
                 FormControl fc = new FormControl();
                 this.Hide();
                 fc.ShowDialog();
-                this.Show();                
+                this.Show();
                 txtUser.Text = "Tài khoản";
                 txtPass.Text = "Mật khẩu";
             }
             else
             {
-                MessageBox.Show("Username or Password is incorrect !");
+                MessageBox.Show("Sai thông tin đăng nhập !", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void btnHidePass_Click(object sender, EventArgs e)
-        {            
+        {
             txtPass.UseSystemPasswordChar = true;
             btnHidePass.Hide();
             btnShowPass.Show();
