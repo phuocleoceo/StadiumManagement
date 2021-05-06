@@ -58,6 +58,7 @@ namespace GUILayer.ChildForm
             this.btnXacNhanDoiMK = new System.Windows.Forms.Button();
             this.txtMKMoi = new System.Windows.Forms.TextBox();
             this.txtMKCu = new System.Windows.Forms.TextBox();
+            this.ckbShowPass = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTaiKhoan)).BeginInit();
             this.grbDoiMK.SuspendLayout();
@@ -274,6 +275,7 @@ namespace GUILayer.ChildForm
             // 
             // grbDoiMK
             // 
+            this.grbDoiMK.Controls.Add(this.ckbShowPass);
             this.grbDoiMK.Controls.Add(this.label11);
             this.grbDoiMK.Controls.Add(this.label10);
             this.grbDoiMK.Controls.Add(this.label6);
@@ -282,7 +284,7 @@ namespace GUILayer.ChildForm
             this.grbDoiMK.Controls.Add(this.txtMKMoi);
             this.grbDoiMK.Controls.Add(this.txtMKCu);
             this.grbDoiMK.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbDoiMK.Location = new System.Drawing.Point(509, 297);
+            this.grbDoiMK.Location = new System.Drawing.Point(511, 297);
             this.grbDoiMK.Name = "grbDoiMK";
             this.grbDoiMK.Size = new System.Drawing.Size(403, 246);
             this.grbDoiMK.TabIndex = 51;
@@ -293,7 +295,7 @@ namespace GUILayer.ChildForm
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(38, 153);
+            this.label11.Location = new System.Drawing.Point(38, 131);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(85, 20);
             this.label11.TabIndex = 38;
@@ -303,7 +305,7 @@ namespace GUILayer.ChildForm
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(15, 99);
+            this.label10.Location = new System.Drawing.Point(15, 81);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(116, 20);
             this.label10.TabIndex = 38;
@@ -313,7 +315,7 @@ namespace GUILayer.ChildForm
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(15, 45);
+            this.label6.Location = new System.Drawing.Point(15, 38);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(108, 20);
             this.label6.TabIndex = 38;
@@ -322,7 +324,7 @@ namespace GUILayer.ChildForm
             // txtXacNhanMK
             // 
             this.txtXacNhanMK.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtXacNhanMK.Location = new System.Drawing.Point(138, 147);
+            this.txtXacNhanMK.Location = new System.Drawing.Point(138, 125);
             this.txtXacNhanMK.Name = "txtXacNhanMK";
             this.txtXacNhanMK.Size = new System.Drawing.Size(226, 26);
             this.txtXacNhanMK.TabIndex = 47;
@@ -330,7 +332,7 @@ namespace GUILayer.ChildForm
             // btnXacNhanDoiMK
             // 
             this.btnXacNhanDoiMK.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXacNhanDoiMK.Location = new System.Drawing.Point(117, 193);
+            this.btnXacNhanDoiMK.Location = new System.Drawing.Point(117, 203);
             this.btnXacNhanDoiMK.Name = "btnXacNhanDoiMK";
             this.btnXacNhanDoiMK.Size = new System.Drawing.Size(190, 37);
             this.btnXacNhanDoiMK.TabIndex = 48;
@@ -341,7 +343,7 @@ namespace GUILayer.ChildForm
             // txtMKMoi
             // 
             this.txtMKMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMKMoi.Location = new System.Drawing.Point(138, 96);
+            this.txtMKMoi.Location = new System.Drawing.Point(138, 78);
             this.txtMKMoi.Name = "txtMKMoi";
             this.txtMKMoi.Size = new System.Drawing.Size(226, 26);
             this.txtMKMoi.TabIndex = 47;
@@ -349,10 +351,21 @@ namespace GUILayer.ChildForm
             // txtMKCu
             // 
             this.txtMKCu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMKCu.Location = new System.Drawing.Point(138, 39);
+            this.txtMKCu.Location = new System.Drawing.Point(138, 32);
             this.txtMKCu.Name = "txtMKCu";
             this.txtMKCu.Size = new System.Drawing.Size(226, 26);
             this.txtMKCu.TabIndex = 47;
+            // 
+            // ckbShowPass
+            // 
+            this.ckbShowPass.AutoSize = true;
+            this.ckbShowPass.Location = new System.Drawing.Point(138, 166);
+            this.ckbShowPass.Name = "ckbShowPass";
+            this.ckbShowPass.Size = new System.Drawing.Size(131, 24);
+            this.ckbShowPass.TabIndex = 49;
+            this.ckbShowPass.Text = "Hiện mật khẩu";
+            this.ckbShowPass.UseVisualStyleBackColor = true;
+            this.ckbShowPass.CheckedChanged += new System.EventHandler(this.ckbShowPass_CheckedChanged);
             // 
             // FormThietLap
             // 
@@ -422,5 +435,6 @@ namespace GUILayer.ChildForm
         private System.Windows.Forms.TextBox txtMKMoi;
         private System.Windows.Forms.TextBox txtMKCu;
         private System.Windows.Forms.Button btnXacNhanDoiMK;
+        private System.Windows.Forms.CheckBox ckbShowPass;
     }
 }

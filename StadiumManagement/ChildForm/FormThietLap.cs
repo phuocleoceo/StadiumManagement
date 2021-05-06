@@ -22,6 +22,7 @@ namespace GUILayer.ChildForm
             ai = _dbAI.GetAIByAccountId(ac.Id);
             LoadAccount();
             LoadAccountInformation();
+            HidePassword();
         }
 
         public void LoadAccount()
@@ -57,17 +58,17 @@ namespace GUILayer.ChildForm
                 if (_db.CheckPassword(id, oldPW))
                 {
                     _db.ChangePassword(id, newPW);
-                    MessageBox.Show("Đổi mật khẩu thành công");
+                    MessageBox.Show("Đổi mật khẩu thành công", "Tuyệt vời", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txtMKCu.Text = txtMKMoi.Text = txtXacNhanMK.Text = "";
                 }
                 else
                 {
-                    MessageBox.Show("Mật khẩu cũ không đúng !");
+                    MessageBox.Show("Mật khẩu cũ không đúng !", "Bình tĩnh", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
-                MessageBox.Show("Xác nhận mật khẩu sai !");
+                MessageBox.Show("Xác nhận mật khẩu sai !", "Bình tĩnh", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -102,6 +103,19 @@ namespace GUILayer.ChildForm
                 Address = txtDiaChi.Text,
                 Account_Id = ai.Account_Id
             });
+        }
+
+        private void HidePassword()
+        {
+            txtMKCu.UseSystemPasswordChar = true;
+            txtMKMoi.UseSystemPasswordChar = true;
+            txtXacNhanMK.UseSystemPasswordChar = true;
+        }
+        private void ckbShowPass_CheckedChanged(object sender, EventArgs e)
+        {
+            txtMKCu.UseSystemPasswordChar = !ckbShowPass.Checked;
+            txtMKMoi.UseSystemPasswordChar = !ckbShowPass.Checked;
+            txtXacNhanMK.UseSystemPasswordChar = !ckbShowPass.Checked;
         }
     }
 }
