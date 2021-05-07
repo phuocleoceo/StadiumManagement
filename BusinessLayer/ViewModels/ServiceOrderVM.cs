@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace BusinessLayer.Models
+namespace BusinessLayer.ViewModels
 {
     public class ServiceOrderVM
     {

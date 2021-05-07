@@ -5,7 +5,7 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace BusinessLayer.Models
+namespace BusinessLayer.ViewModels
 {
     public class BillVM
     {
@@ -17,6 +17,8 @@ namespace BusinessLayer.Models
         public int Customer_Id { get; set; }
         [DisplayName("Tên khách hàng")]
         public string Customer_Name { get; set; }
+        [DisplayName("SĐT")]
+        public string Customer_Phone { get; set; }
 
         public int Cashier_Id { get; set; }
         [DisplayName("Tên thu ngân")]

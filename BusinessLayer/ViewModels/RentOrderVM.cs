@@ -3,7 +3,7 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace BusinessLayer.Models
+namespace BusinessLayer.ViewModels
 {
     public class RentOrderVM
     {        
@@ -30,8 +30,6 @@ namespace BusinessLayer.Models
         public double RentTime => (EndRentDate - StartRentDate).TotalHours;
 
         [DisplayName("Tổng tiền")]
-        public float Total { get; set; }
-
-              
+        public float Total { get; set; }              
     }
 }
