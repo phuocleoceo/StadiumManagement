@@ -59,12 +59,6 @@ namespace GUILayer.ChildForm
             LoadData();
         }
 
-        private void btnThem_Click(object sender, EventArgs e)
-        {
-            picTK.Image = null;
-            grbThem.Visible = true;
-        }
-
         private void btnSua_Click(object sender, EventArgs e)
         {            
             try
@@ -82,6 +76,12 @@ namespace GUILayer.ChildForm
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            picTK.Image = null;
+            grbThem.Visible = true;
         }
 
         private void btnOK_Click(object sender, EventArgs e)

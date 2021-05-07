@@ -25,16 +25,15 @@ namespace BusinessLayer.Repository
         #region Admin
         public List<AccountVM> GetList()
         {
-            List<AccountVM> list = GetAll().Select(c => new AccountVM
+            List<Account> list = GetAll();
+            List<AccountVM> listVM = new List<AccountVM>();
+            foreach(Account a in list)
             {
-                Id = c.Id,
-                UserName = c.UserName,
-                PassWord = c.PassWord,
-                Role = Enum.GetName(typeof(Role), c.Role),
-                Image = c.Image
-            }).ToList();
-            return list;
+                listVM.Add(mapper.Map<AccountVM>(a));
+            }
+            return listVM;
         }
+
         private bool CheckUserName(string username, int id = 0)
         {
             //Mac dinh id=0 thi lay toan bo, id khac 0 thi lay nhung tai khoan khac tai khoan muon update
@@ -45,16 +44,14 @@ namespace BusinessLayer.Repository
             }
             return true;
         }
+
         public void AddAccount(AccountVM c)
         {
             if (CheckUserName(c.UserName))
             {
-                Add(new Account
-                {
-                    UserName = c.UserName,
-                    PassWord = c.PassWord.GetMD5(),
-                    Role = (Role)Enum.Parse(typeof(Role), c.Role)
-                });
+                Account account = mapper.Map<Account>(c);
+                account.Image = null;
+                Add(account);
                 Save();
             }
             else throw new Exception("Tài khoản đã tồn tại !");
@@ -90,14 +87,7 @@ namespace BusinessLayer.Repository
         public AccountVM GetAccountById(int id)
         {
             Account account = GetById(id);
-            return new AccountVM
-            {
-                Id = account.Id,
-                UserName = account.UserName,
-                PassWord = account.PassWord,
-                Role = Enum.GetName(typeof(Role), account.Role),
-                Image=account.Image
-            };
+            return mapper.Map<AccountVM>(account);
         }
 
         public bool CheckPassword(int id,string oldPW)

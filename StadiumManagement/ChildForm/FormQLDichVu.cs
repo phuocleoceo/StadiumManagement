@@ -49,7 +49,7 @@ namespace GUILayer.ChildForm
                 Name = txtTenDichVu.Text,
                 Price = double.Parse(txtDonGia.Text),
                 Unit = txtDonViTinh.Text,
-                Image = imgPath.ImageToByte()
+                Image = imgPath.ImagePathToByte()
             });
             LoadData();
         }

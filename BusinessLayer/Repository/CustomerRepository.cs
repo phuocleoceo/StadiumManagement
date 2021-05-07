@@ -11,26 +11,19 @@ namespace BusinessLayer.Repository
     {
         public List<CustomerVM> GetList()
         {
-            List<CustomerVM> list = GetAll().Select(c => new CustomerVM
+            List<Customer> list = GetAll();
+            List<CustomerVM> listVM = new List<CustomerVM>();
+            foreach(Customer c in list)
             {
-                Id = c.Id,
-                Name = c.Name,
-                Gender = c.Gender,
-                Address = c.Address,
-                PhoneNumber = c.PhoneNumber
-            }).ToList();
-            return list;
+                listVM.Add(mapper.Map<CustomerVM>(c));
+            }
+            return listVM;
         }
 
         public void AddCustomer(CustomerVM c)
         {
-            Add(new Customer
-            {
-                Name = c.Name,
-                Gender = c.Gender,
-                Address = c.Address,
-                PhoneNumber = c.PhoneNumber
-            });
+            Customer customer = mapper.Map<Customer>(c);
+            Add(customer);
             Save();
         }
 

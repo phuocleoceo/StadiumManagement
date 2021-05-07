@@ -18,14 +18,14 @@ namespace BusinessLayer.Repository
             List<StadiumVM> listVM = new List<StadiumVM>();
             foreach (Stadium s in list)
             {
-                listVM.Add(mapper.Map<Stadium, StadiumVM>(s));
+                listVM.Add(mapper.Map<StadiumVM>(s));
             }
             return listVM;
         }
 
         public void AddStadium(StadiumVM c)
         {
-            Stadium s = mapper.Map<StadiumVM, Stadium>(c);
+            Stadium s = mapper.Map<Stadium>(c);
             s.isDeleted = false;
             s.Status = StadiumStatus.Free;
             Add(s);

@@ -48,7 +48,7 @@ namespace GUILayer.ChildForm
                 Price = double.Parse(txtDonGia.Text),
                 Area = txtDienTich.Text,
                 Note = txtGhiChu.Text,
-                Image = imgPath.ImageToByte()
+                Image = imgPath.ImagePathToByte()
             });
             LoadData();
         }

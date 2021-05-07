@@ -42,7 +42,7 @@ namespace BusinessLayer
 
         public static void LoadImage(this PictureBox pic, byte[] img)
         {
-            if (img == null)
+            if (img == null || img.Length == 0)
             {
                 pic.Image = null;
             }
@@ -53,7 +53,7 @@ namespace BusinessLayer
             }
         }
 
-        public static byte[] ImageToByte(this string imgPath)
+        public static byte[] ImagePathToByte(this string imgPath)
         {
             try
             {

@@ -44,7 +44,7 @@ namespace GUILayer.ChildForm
         private void btnLuuAnh_Click(object sender, EventArgs e)
         {
             int id = ac.Id;
-            byte[] img = imgPath.ImageToByte();
+            byte[] img = imgPath.ImagePathToByte();
             _db.SaveImage(id, img);
         }
 

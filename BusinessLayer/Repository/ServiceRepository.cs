@@ -18,14 +18,15 @@ namespace BusinessLayer.Repository
             List<ServiceVM> listVM = new List<ServiceVM>();
             foreach (Service s in list)
             {
-                listVM.Add(mapper.Map<Service, ServiceVM>(s));
+                listVM.Add(mapper.Map<ServiceVM>(s));
             }
             return listVM;
         }
 
         public void AddService(ServiceVM c)
         {
-            Service s = mapper.Map<ServiceVM, Service>(c);
+            Service s = mapper.Map<Service>(c);
+            s.isDeleted = false;
             Add(s);
             Save();
         }
