@@ -30,10 +30,7 @@ namespace BusinessLayer.Repository
         public void UpdateCustomer(CustomerVM c)
         {
             Customer customer = GetById(c.Id);
-            customer.Name = c.Name;
-            customer.Gender = c.Gender;
-            customer.Address = c.Address;
-            customer.PhoneNumber = c.PhoneNumber;
+            mapper.Map(c, customer);
             Save();
         }
 

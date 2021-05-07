@@ -28,17 +28,10 @@ namespace BusinessLayer.Repository
             Save();
         }
 
-        public void UpdateAccountInformation(AccountInformationVM c)
+        public void UpdateAccountInformation(AccountInformationVM aivm)
         {
-            AccountInformation ai = GetById(c.Id);
-            ai.Name = c.Name;
-            ai.Gender = c.Gender;
-            ai.DateOfBirth = c.DateOfBirth;
-            ai.PhoneNumber = c.PhoneNumber;
-            ai.IdentityCard = c.IdentityCard;
-            ai.Salary = c.Salary;
-            ai.Address = c.Address;
-            ai.Account_Id = c.Account_Id;
+            AccountInformation ai = GetById(aivm.Id);
+            mapper.Map(aivm, ai);
             Save();
         }
 

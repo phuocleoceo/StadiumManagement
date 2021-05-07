@@ -57,13 +57,13 @@ namespace BusinessLayer.Repository
             else throw new Exception("Tài khoản đã tồn tại !");
         }
 
-        public void UpdateAccount(AccountVM c)
+        public void UpdateAccount(AccountVM avm)
         {            
-            if (CheckUserName(c.UserName, c.Id))
+            if (CheckUserName(avm.UserName, avm.Id))
             {
-                Account account = GetById(c.Id);
-                account.UserName = c.UserName;
-                account.Role = (Role)Enum.Parse(typeof(Role), c.Role);
+                Account account = GetById(avm.Id);
+                account.UserName = avm.UserName;
+                account.Role = (Role)Enum.Parse(typeof(Role), avm.Role);
                 Save();
             }
             else throw new Exception("Tài khoản đã tồn tại !");

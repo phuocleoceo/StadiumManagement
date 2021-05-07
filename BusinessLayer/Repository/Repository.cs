@@ -18,7 +18,7 @@ namespace BusinessLayer.Repository
         public Repository()
         {
             _db = new StadiumContext();
-            this.dbSet = _db.Set<T>();
+            dbSet = _db.Set<T>();
             config = new MapperConfiguration(cfg => cfg.AddProfile(new MappingConfig()));
             mapper = config.CreateMapper();
         }
