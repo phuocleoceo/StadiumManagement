@@ -14,27 +14,19 @@ namespace BusinessLayer.Repository
     {
         public List<ServiceVM> GetList()
         {
-            List<ServiceVM> list = GetAll(c => c.isDeleted == false).Select(c => new ServiceVM
+            List<Service> list = GetAll(c => c.isDeleted == false);
+            List<ServiceVM> listVM = new List<ServiceVM>();
+            foreach (Service s in list)
             {
-                Id = c.Id,
-                Name = c.Name,
-                Price = c.Price,
-                Unit = c.Unit,
-                Image = c.Image
-            }).ToList();
-            return list;
+                listVM.Add(mapper.Map<Service, ServiceVM>(s));
+            }
+            return listVM;
         }
 
         public void AddService(ServiceVM c)
         {
-            Add(new Service
-            {
-                Name = c.Name,
-                Price = c.Price,
-                Unit = c.Unit,
-                isDeleted = false,
-                Image = c.Image
-            });
+            Service s = mapper.Map<ServiceVM, Service>(c);
+            Add(s);
             Save();
         }
 

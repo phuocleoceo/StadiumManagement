@@ -14,30 +14,21 @@ namespace BusinessLayer.Repository
     {
         public List<StadiumVM> GetList()
         {
-            List<StadiumVM> list = GetAll(c => c.isDeleted == false).Select(c => new StadiumVM
+            List<Stadium> list = GetAll(c => c.isDeleted == false);
+            List<StadiumVM> listVM = new List<StadiumVM>();
+            foreach (Stadium s in list)
             {
-                Id = c.Id,
-                Name = c.Name,
-                Price = c.Price,
-                Area = c.Area,
-                Note = c.Note,
-                Image=c.Image
-            }).ToList();
-            return list;
+                listVM.Add(mapper.Map<Stadium, StadiumVM>(s));
+            }
+            return listVM;
         }
 
         public void AddStadium(StadiumVM c)
         {
-            Add(new Stadium
-            {
-                Name = c.Name,
-                Price = c.Price,
-                Area = c.Area,
-                Note = c.Note,
-                isDeleted = false,
-                Status = StadiumStatus.Free,
-                Image=c.Image
-            });
+            Stadium s = mapper.Map<StadiumVM, Stadium>(c);
+            s.isDeleted = false;
+            s.Status = StadiumStatus.Free;
+            Add(s);
             Save();
         }
 

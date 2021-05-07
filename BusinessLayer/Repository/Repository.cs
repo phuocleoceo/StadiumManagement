@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
+using AutoMapper;
 using DataAccessLayer;
 
 namespace BusinessLayer.Repository
@@ -11,11 +12,15 @@ namespace BusinessLayer.Repository
     {
         protected readonly StadiumContext _db;
         internal DbSet<T> dbSet;
+        private readonly MapperConfiguration config;
+        protected readonly IMapper mapper;
 
         public Repository()
         {
             _db = new StadiumContext();
             this.dbSet = _db.Set<T>();
+            config = new MapperConfiguration(cfg => cfg.AddProfile(new MappingConfig()));
+            mapper = config.CreateMapper();
         }
 
         public void Add(T entity)
