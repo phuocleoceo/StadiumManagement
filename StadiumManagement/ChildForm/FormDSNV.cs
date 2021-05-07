@@ -42,7 +42,7 @@ namespace GUILayer.ChildForm
                 dtpNgaySinh.Value = Convert.ToDateTime(r[0].Cells["DateOfBirth"].Value);
                 txtCMND.Text = r[0].Cells["IdentityCard"].Value.ToString();
                 txtLuong.Text = r[0].Cells["Salary"].Value.ToString();
-                cbbTaiKhoan.Text = r[0].Cells["AccountName"].Value.ToString();
+                cbbTaiKhoan.Text = r[0].Cells["Account_Name"].Value.ToString();
             }
         }
 

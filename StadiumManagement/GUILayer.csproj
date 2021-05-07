@@ -185,9 +185,6 @@
     <None Include="Resources\username-2.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\BKDN.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\PassHide.png" />
   </ItemGroup>
   <ItemGroup>
