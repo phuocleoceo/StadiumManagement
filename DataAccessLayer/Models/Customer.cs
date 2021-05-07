@@ -19,7 +19,5 @@ namespace DataAccessLayer.Models
         public string PhoneNumber { get; set; }
 
         public virtual List<Bill> Bills { get; set; }
-
-        public byte[] Image { get; set; }
     }
 }

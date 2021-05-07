@@ -58,7 +58,6 @@ namespace GUILayer
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(179, 19);
             this.txtUser.TabIndex = 1;
-            this.txtUser.TabStop = false;
             this.txtUser.Text = "Tài khoản";
             this.txtUser.Click += new System.EventHandler(this.txtuser_Click);
             // 
@@ -89,7 +88,6 @@ namespace GUILayer
             this.txtPass.Name = "txtPass";
             this.txtPass.Size = new System.Drawing.Size(179, 19);
             this.txtPass.TabIndex = 2;
-            this.txtPass.TabStop = false;
             this.txtPass.Text = "Mật khẩu";
             this.txtPass.UseSystemPasswordChar = true;
             this.txtPass.Click += new System.EventHandler(this.txtpass_Click);
@@ -103,6 +101,7 @@ namespace GUILayer
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(150, 41);
             this.btnLogin.TabIndex = 5;
+            this.btnLogin.TabStop = false;
             this.btnLogin.Text = "Đăng nhập";
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
@@ -153,6 +152,7 @@ namespace GUILayer
             this.btnShowPass.Name = "btnShowPass";
             this.btnShowPass.Size = new System.Drawing.Size(47, 20);
             this.btnShowPass.TabIndex = 20;
+            this.btnShowPass.TabStop = false;
             this.btnShowPass.UseVisualStyleBackColor = false;
             this.btnShowPass.Click += new System.EventHandler(this.btnShowPass_Click);
             // 
@@ -203,6 +203,7 @@ namespace GUILayer
             // 
             // FormLogin
             // 
+            this.AcceptButton = this.btnLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));

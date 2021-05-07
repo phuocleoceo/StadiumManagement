@@ -81,7 +81,7 @@ namespace GUILayer.ChildForm
                 IdentityCard = txtCMND.Text,
                 Salary = float.Parse(txtLuong.Text),
                 Address = txtDiaChi.Text,
-                AccountName = cbbTaiKhoan.Text,
+                Account_Name = cbbTaiKhoan.Text,
                 Account_Id = ((CBBItem)cbbTaiKhoan.SelectedItem).Value
             });
             LoadData();
@@ -100,7 +100,7 @@ namespace GUILayer.ChildForm
                 IdentityCard = txtCMND.Text,
                 Salary = float.Parse(txtLuong.Text),
                 Address = txtDiaChi.Text,
-                AccountName = cbbTaiKhoan.Text,
+                Account_Name = cbbTaiKhoan.Text,
                 Account_Id = ((CBBItem)cbbTaiKhoan.SelectedItem).Value
             });
             LoadData();

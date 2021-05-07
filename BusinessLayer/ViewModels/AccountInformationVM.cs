@@ -36,6 +36,6 @@ namespace BusinessLayer.ViewModels
         public int Account_Id { get; set; }
 
         [DisplayName("Tài khoản")]
-        public string AccountName { get; set; }
+        public string Account_Name { get; set; }
     }
 }

@@ -67,8 +67,11 @@
     <Compile Include="Utility.cs" />
     <Compile Include="ViewModels\AccountInformationVM.cs" />
     <Compile Include="ViewModels\AccountVM.cs" />
+    <Compile Include="ViewModels\BillVM.cs" />
     <Compile Include="ViewModels\CBBItem.cs" />
     <Compile Include="ViewModels\CustomerVM.cs" />
+    <Compile Include="ViewModels\RentOrderVM.cs" />
+    <Compile Include="ViewModels\ServiceOrderVM.cs" />
     <Compile Include="ViewModels\ServiceVM.cs" />
     <Compile Include="ViewModels\StadiumVM.cs" />
   </ItemGroup>

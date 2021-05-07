@@ -15,9 +15,6 @@ namespace DataAccessLayer.Models
 
         public DateTime EndRentDate { get; set; }
 
-        [NotMapped]
-        public double RentTime => (EndRentDate - StartRentDate).TotalHours;
-
         public float Total { get; set; }
 
         public int Stadium_Id { get; set; }

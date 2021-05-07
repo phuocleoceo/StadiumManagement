@@ -25,7 +25,7 @@ namespace BusinessLayer
                 .ForMember(a => a.PassWord, prop => prop.MapFrom(avm => avm.PassWord.GetMD5()));
 
             CreateMap<AccountInformation, AccountInformationVM>()
-                .ForMember(aivm=>aivm.AccountName,prop=>prop.MapFrom(ai=>ai.Account.UserName));
+                .ForMember(aivm=>aivm.Account_Name,prop=>prop.MapFrom(ai=>ai.Account.UserName));
             CreateMap<AccountInformationVM, AccountInformation>();
         }
     }
