@@ -11,9 +11,9 @@ namespace GUILayer.ChildForm
         private readonly AccountRepository _db;
         public FormTaiKhoan()
         {
-            _db = new AccountRepository();
             InitializeComponent();
             dgvDSTK.FormatTable();
+            _db = new AccountRepository();
             LoadData();
         }
 

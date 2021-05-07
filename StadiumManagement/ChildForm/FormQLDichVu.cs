@@ -15,9 +15,9 @@ namespace GUILayer.ChildForm
         string imgPath = "";
         public FormQLDichVu()
         {
-            _db = new ServiceRepository();
             InitializeComponent();
             dgvDSDichVu.FormatTable();
+            _db = new ServiceRepository();
             LoadData();
         }
 

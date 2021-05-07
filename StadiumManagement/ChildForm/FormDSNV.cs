@@ -11,9 +11,9 @@ namespace GUILayer.ChildForm
         private readonly AccountInformationRepository _db;
         public FormDSNV()
         {
-            _db = new AccountInformationRepository();
             InitializeComponent();
             dgvDSNV.FormatTable();
+            _db = new AccountInformationRepository();            
             LoadData();
             cbbTaiKhoan.DataSource = _db.LoadComboBox();
         }

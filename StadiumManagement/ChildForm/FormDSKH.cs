@@ -11,9 +11,9 @@ namespace GUILayer.ChildForm
         private readonly CustomerRepository _db;
         public FormDSKH()
         {
-            _db = new CustomerRepository();
             InitializeComponent();
             dgvDSKH.FormatTable();
+            _db = new CustomerRepository();
             LoadData();
         }
 

@@ -12,9 +12,9 @@ namespace GUILayer.ChildForm
         string imgPath = "";
         public FormQLSan()
         {
-            _db = new StadiumRepository();
             InitializeComponent();
             dgvDSSan.FormatTable();
+            _db = new StadiumRepository();
             LoadData();
         }
 
