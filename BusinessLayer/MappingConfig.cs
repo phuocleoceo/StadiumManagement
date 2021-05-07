@@ -23,6 +23,10 @@ namespace BusinessLayer
             CreateMap<AccountVM, Account>()
                 .ForMember(a => a.Role, prop => prop.MapFrom(avm => (Role)Enum.Parse(typeof(Role), avm.Role)))
                 .ForMember(a => a.PassWord, prop => prop.MapFrom(avm => avm.PassWord.GetMD5()));
+
+            CreateMap<AccountInformation, AccountInformationVM>()
+                .ForMember(aivm=>aivm.AccountName,prop=>prop.MapFrom(ai=>ai.Account.UserName));
+            CreateMap<AccountInformationVM, AccountInformation>();
         }
     }
 }

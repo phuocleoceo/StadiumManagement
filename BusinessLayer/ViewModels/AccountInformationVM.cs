@@ -32,10 +32,10 @@ namespace BusinessLayer.ViewModels
         [DisplayName("Địa chỉ")]
         public string Address { get; set; }
 
-        [DisplayName("Tài khoản")]
-        public string AccountName { get; set; }
-
         [Browsable(false)]
         public int Account_Id { get; set; }
+
+        [DisplayName("Tài khoản")]
+        public string AccountName { get; set; }
     }
 }

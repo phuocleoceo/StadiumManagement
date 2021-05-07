@@ -12,36 +12,19 @@ namespace BusinessLayer.Repository
         #region Admin
         public List<AccountInformationVM> GetList()
         {
-            List<AccountInformationVM> list = GetAll().Select(c => new AccountInformationVM
+            List<AccountInformation> list = GetAll();
+            List<AccountInformationVM> listVM = new List<AccountInformationVM>();
+            foreach(AccountInformation ai in list)
             {
-                Id = c.Id,
-                Name = c.Name,
-                Gender = c.Gender,
-                DateOfBirth = c.DateOfBirth,
-                PhoneNumber = c.PhoneNumber,
-                IdentityCard = c.IdentityCard,
-                Salary = c.Salary,
-                Address = c.Address,
-                AccountName = c.Account.UserName,
-                Account_Id = c.Account.Id
-            }).ToList();
-            return list;
+                listVM.Add(mapper.Map<AccountInformationVM>(ai));
+            }
+            return listVM;
         }
 
         public void AddAccountInformation(AccountInformationVM c)
         {
-            Add(new AccountInformation
-            {
-                Name = c.Name,
-                Gender = c.Gender,
-                DateOfBirth = c.DateOfBirth,
-                PhoneNumber = c.PhoneNumber,
-                IdentityCard = c.IdentityCard,
-                Salary = c.Salary,
-                Address = c.Address,
-                Account_Id = c.Account_Id,
-                Account = _db.Accounts.Find(c.Account_Id)
-            });
+            AccountInformation ai = mapper.Map<AccountInformation>(c);
+            Add(ai);
             Save();
         }
 
@@ -56,7 +39,6 @@ namespace BusinessLayer.Repository
             ai.Salary = c.Salary;
             ai.Address = c.Address;
             ai.Account_Id = c.Account_Id;
-            ai.Account = _db.Accounts.Find(c.Account_Id);
             Save();
         }
 
@@ -87,19 +69,7 @@ namespace BusinessLayer.Repository
         {
             AccountInformation ai = GetFirstOrDefault(c => c.Account_Id == Account_Id);
             if (ai == null) return null;
-            return new AccountInformationVM
-            {
-                Id = ai.Id,
-                Name = ai.Name,
-                Gender = ai.Gender,
-                DateOfBirth = ai.DateOfBirth,
-                PhoneNumber = ai.PhoneNumber,
-                IdentityCard = ai.IdentityCard,
-                Salary = ai.Salary,
-                Address = ai.Address,
-                AccountName = ai.Account.UserName,
-                Account_Id = ai.Account_Id
-            };
+            return mapper.Map<AccountInformationVM>(ai);
         }
         #endregion
     }
