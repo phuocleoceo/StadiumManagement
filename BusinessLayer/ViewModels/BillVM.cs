@@ -14,12 +14,14 @@ namespace BusinessLayer.ViewModels
         [DisplayName("Mã hoá đơn")]
         public string BillCode { get; set; }
 
+        [Browsable(false)]
         public int Customer_Id { get; set; }
         [DisplayName("Tên khách hàng")]
         public string Customer_Name { get; set; }
         [DisplayName("SĐT")]
         public string Customer_Phone { get; set; }
 
+        [Browsable(false)]
         public int Cashier_Id { get; set; }
         [DisplayName("Tên thu ngân")]
         public string Cashier_Name { get; set; }

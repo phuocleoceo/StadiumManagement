@@ -59,6 +59,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChildForm\FormDatDichVu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForm\FormDatDichVu.Designer.cs">
+      <DependentUpon>FormDatDichVu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChildForm\FormDatSan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForm\FormDatSan.Designer.cs">
+      <DependentUpon>FormDatSan.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChildForm\FormDSKH.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,11 +101,23 @@
     <Compile Include="ChildForm\FormTaiKhoan.Designer.cs">
       <DependentUpon>FormTaiKhoan.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChildForm\FormHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForm\FormHoaDon.Designer.cs">
+      <DependentUpon>FormHoaDon.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChildForm\FormThietLap.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ChildForm\FormThietLap.Designer.cs">
       <DependentUpon>FormThietLap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChildForm\FormThongKe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForm\FormThongKe.Designer.cs">
+      <DependentUpon>FormThongKe.cs</DependentUpon>
     </Compile>
     <Compile Include="FormControl.cs">
       <SubType>Form</SubType>
@@ -109,6 +133,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ChildForm\FormDatDichVu.resx">
+      <DependentUpon>FormDatDichVu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForm\FormDatSan.resx">
+      <DependentUpon>FormDatSan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ChildForm\FormDSKH.resx">
       <DependentUpon>FormDSKH.cs</DependentUpon>
     </EmbeddedResource>
@@ -124,8 +154,14 @@
     <EmbeddedResource Include="ChildForm\FormTaiKhoan.resx">
       <DependentUpon>FormTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ChildForm\FormHoaDon.resx">
+      <DependentUpon>FormHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ChildForm\FormThietLap.resx">
       <DependentUpon>FormThietLap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForm\FormThongKe.resx">
+      <DependentUpon>FormThongKe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormControl.resx">
       <DependentUpon>FormControl.cs</DependentUpon>

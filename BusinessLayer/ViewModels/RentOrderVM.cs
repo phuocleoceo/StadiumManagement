@@ -9,10 +9,12 @@ namespace BusinessLayer.ViewModels
     {        
         public int Id { get; set; }
 
+        [Browsable(false)]
         public int Bill_Id { get; set; }
         [DisplayName("Mã hoá đơn")]
         public string Bill_Code { get; set; }
 
+        [Browsable(false)]
         public int Stadium_Id { get; set; }
         [DisplayName("Tên sân")]
         public string Stadium_Name { get; set; }

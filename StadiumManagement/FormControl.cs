@@ -242,6 +242,7 @@ namespace GUILayer
         {
             HideSubMenu();
             ActiveButton(sender, RGBColors.color5);
+            OpenChildForm(new FormThongKe());
         }
 
         private void btnSetting_Click(object sender, EventArgs e)
@@ -259,6 +260,7 @@ namespace GUILayer
         }
         #endregion
 
+        #region ButtonClick
         private void btnDSKH_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FormDSKH());
@@ -283,5 +285,22 @@ namespace GUILayer
         {
             OpenChildForm(new FormQLDichVu());
         }
+
+        private void btnDatSan_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FormDatSan());
+        }
+
+        private void btnDatDichVu_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FormDatDichVu());
+        }
+
+        private void btnThanhToan_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FormHoaDon());
+        }
+        #endregion
+
     }
 }

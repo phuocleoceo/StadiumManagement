@@ -11,8 +11,8 @@ namespace GUILayer
         public static int currentAccount_Id;
         public FormLogin()
         {
-            _db = new AccountRepository();
             InitializeComponent();
+            _db = new AccountRepository();
             btnHidePass.Hide();
         }
 

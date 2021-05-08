@@ -33,7 +33,7 @@ namespace GUILayer
             this.PanelMenu = new System.Windows.Forms.Panel();
             this.btnStatistic = new FontAwesome.Sharp.IconButton();
             this.pnlCustomer = new System.Windows.Forms.Panel();
-            this.button11 = new System.Windows.Forms.Button();
+            this.btnHoaDon = new System.Windows.Forms.Button();
             this.btnDSKH = new System.Windows.Forms.Button();
             this.btnCustomer = new FontAwesome.Sharp.IconButton();
             this.pnlCashier = new System.Windows.Forms.Panel();
@@ -41,11 +41,11 @@ namespace GUILayer
             this.btnDSNV = new System.Windows.Forms.Button();
             this.btnCashier = new FontAwesome.Sharp.IconButton();
             this.pnlService = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnDatDichVu = new System.Windows.Forms.Button();
             this.btnDichVu = new System.Windows.Forms.Button();
             this.btnService = new FontAwesome.Sharp.IconButton();
             this.pnlStadium = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnDatSan = new System.Windows.Forms.Button();
             this.btnSanBong = new System.Windows.Forms.Button();
             this.btnSetting = new FontAwesome.Sharp.IconButton();
             this.btnLogOut = new FontAwesome.Sharp.IconButton();
@@ -125,7 +125,7 @@ namespace GUILayer
             // pnlCustomer
             // 
             this.pnlCustomer.BackColor = System.Drawing.Color.Indigo;
-            this.pnlCustomer.Controls.Add(this.button11);
+            this.pnlCustomer.Controls.Add(this.btnHoaDon);
             this.pnlCustomer.Controls.Add(this.btnDSKH);
             this.pnlCustomer.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlCustomer.ForeColor = System.Drawing.Color.White;
@@ -135,19 +135,20 @@ namespace GUILayer
             this.pnlCustomer.TabIndex = 15;
             this.pnlCustomer.Visible = false;
             // 
-            // button11
+            // btnHoaDon
             // 
-            this.button11.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button11.FlatAppearance.BorderSize = 0;
-            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.ForeColor = System.Drawing.Color.Gainsboro;
-            this.button11.Location = new System.Drawing.Point(0, 33);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(170, 32);
-            this.button11.TabIndex = 1;
-            this.button11.Text = "button11";
-            this.button11.UseVisualStyleBackColor = true;
+            this.btnHoaDon.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnHoaDon.FlatAppearance.BorderSize = 0;
+            this.btnHoaDon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHoaDon.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHoaDon.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnHoaDon.Location = new System.Drawing.Point(0, 33);
+            this.btnHoaDon.Name = "btnHoaDon";
+            this.btnHoaDon.Size = new System.Drawing.Size(170, 32);
+            this.btnHoaDon.TabIndex = 1;
+            this.btnHoaDon.Text = "Hoá đơn";
+            this.btnHoaDon.UseVisualStyleBackColor = true;
+            this.btnHoaDon.Click += new System.EventHandler(this.btnThanhToan_Click);
             // 
             // btnDSKH
             // 
@@ -256,7 +257,7 @@ namespace GUILayer
             // pnlService
             // 
             this.pnlService.BackColor = System.Drawing.Color.Indigo;
-            this.pnlService.Controls.Add(this.button5);
+            this.pnlService.Controls.Add(this.btnDatDichVu);
             this.pnlService.Controls.Add(this.btnDichVu);
             this.pnlService.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlService.ForeColor = System.Drawing.Color.White;
@@ -266,19 +267,20 @@ namespace GUILayer
             this.pnlService.TabIndex = 11;
             this.pnlService.Visible = false;
             // 
-            // button5
+            // btnDatDichVu
             // 
-            this.button5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.Gainsboro;
-            this.button5.Location = new System.Drawing.Point(0, 35);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(170, 33);
-            this.button5.TabIndex = 1;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnDatDichVu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnDatDichVu.FlatAppearance.BorderSize = 0;
+            this.btnDatDichVu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDatDichVu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDatDichVu.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnDatDichVu.Location = new System.Drawing.Point(0, 35);
+            this.btnDatDichVu.Name = "btnDatDichVu";
+            this.btnDatDichVu.Size = new System.Drawing.Size(170, 33);
+            this.btnDatDichVu.TabIndex = 1;
+            this.btnDatDichVu.Text = "Đặt dịch vụ";
+            this.btnDatDichVu.UseVisualStyleBackColor = true;
+            this.btnDatDichVu.Click += new System.EventHandler(this.btnDatDichVu_Click);
             // 
             // btnDichVu
             // 
@@ -321,7 +323,7 @@ namespace GUILayer
             // pnlStadium
             // 
             this.pnlStadium.BackColor = System.Drawing.Color.Indigo;
-            this.pnlStadium.Controls.Add(this.button2);
+            this.pnlStadium.Controls.Add(this.btnDatSan);
             this.pnlStadium.Controls.Add(this.btnSanBong);
             this.pnlStadium.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlStadium.ForeColor = System.Drawing.Color.White;
@@ -331,19 +333,20 @@ namespace GUILayer
             this.pnlStadium.TabIndex = 9;
             this.pnlStadium.Visible = false;
             // 
-            // button2
+            // btnDatSan
             // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.Gainsboro;
-            this.button2.Location = new System.Drawing.Point(0, 36);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(170, 32);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnDatSan.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnDatSan.FlatAppearance.BorderSize = 0;
+            this.btnDatSan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDatSan.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDatSan.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnDatSan.Location = new System.Drawing.Point(0, 36);
+            this.btnDatSan.Name = "btnDatSan";
+            this.btnDatSan.Size = new System.Drawing.Size(170, 32);
+            this.btnDatSan.TabIndex = 1;
+            this.btnDatSan.Text = "Đặt sân";
+            this.btnDatSan.UseVisualStyleBackColor = true;
+            this.btnDatSan.Click += new System.EventHandler(this.btnDatSan_Click);
             // 
             // btnSanBong
             // 
@@ -670,11 +673,11 @@ namespace GUILayer
         private System.Windows.Forms.Label lblDMY;
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.Panel pnlStadium;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnDatSan;
         private System.Windows.Forms.Button btnSanBong;
         private FontAwesome.Sharp.IconButton btnService;
         private System.Windows.Forms.Panel pnlCustomer;
-        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button btnHoaDon;
         private System.Windows.Forms.Button btnDSKH;
         private FontAwesome.Sharp.IconButton btnCustomer;
         private System.Windows.Forms.Panel pnlCashier;
@@ -682,7 +685,7 @@ namespace GUILayer
         private System.Windows.Forms.Button btnDSNV;
         private FontAwesome.Sharp.IconButton btnCashier;
         private System.Windows.Forms.Panel pnlService;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnDatDichVu;
         private System.Windows.Forms.Button btnDichVu;
         private FontAwesome.Sharp.IconButton btnStatistic;
     }
