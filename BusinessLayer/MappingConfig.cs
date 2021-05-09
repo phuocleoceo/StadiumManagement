@@ -45,8 +45,9 @@ namespace BusinessLayer
                 .ForMember(bvm => bvm.Customer_Phone, prop => prop.MapFrom(b => b.Customer.PhoneNumber))
                 .ForMember(bvm => bvm.Cashier_Name, prop => prop.MapFrom(b => b.Cashier.Name))
                 .ForMember(bvm => bvm.BillStatus, prop => prop.MapFrom(b => Enum.GetName(typeof(BillStatus), b.BillStatus)));
-            CreateMap<BillVM, Bill>()
-                .ForMember(b => b.BillStatus, prop => prop.MapFrom(bvm => (BillStatus)Enum.Parse(typeof(BillStatus), bvm.BillStatus)));
+            CreateMap<BillVM, Bill>();
+            //CreateMap<BillVM, Bill>()
+            //    .ForMember(b => b.BillStatus, prop => prop.MapFrom(bvm => (BillStatus)Enum.Parse(typeof(BillStatus), bvm.BillStatus)));
         }
     }
 }

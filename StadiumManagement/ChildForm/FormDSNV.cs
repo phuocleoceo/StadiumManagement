@@ -15,7 +15,7 @@ namespace GUILayer.ChildForm
             dgvDSNV.FormatTable();
             _db = new AccountInformationRepository();            
             LoadData();
-            cbbTaiKhoan.DataSource = _db.LoadComboBox();
+            _db.LoadComboBoxAccount(cbbTaiKhoan);
         }
 
         private void LoadData()

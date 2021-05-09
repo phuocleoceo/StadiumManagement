@@ -30,7 +30,7 @@ namespace BusinessLayer.ViewModels
         public DateTime DateCreated { get; set; }
 
         [DisplayName("Ngày thanh toán")]
-        public DateTime DateCheckedOut { get; set; }
+        public DateTime? DateCheckedOut { get; set; }
 
         [DisplayName("Trạng thái")]
         public string BillStatus { get; set; }

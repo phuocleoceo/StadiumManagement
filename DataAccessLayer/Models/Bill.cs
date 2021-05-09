@@ -27,7 +27,7 @@ namespace DataAccessLayer.Models
 
         public DateTime DateCreated { get; set; }
 
-        public DateTime DateCheckedOut { get; set; }
+        public DateTime? DateCheckedOut { get; set; }
 
         public BillStatus BillStatus { get; set; }
 

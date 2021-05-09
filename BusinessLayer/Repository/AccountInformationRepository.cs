@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 
 namespace BusinessLayer.Repository
 {
@@ -14,7 +15,7 @@ namespace BusinessLayer.Repository
         {
             List<AccountInformation> list = GetAll();
             List<AccountInformationVM> listVM = new List<AccountInformationVM>();
-            foreach(AccountInformation ai in list)
+            foreach (AccountInformation ai in list)
             {
                 listVM.Add(mapper.Map<AccountInformationVM>(ai));
             }
@@ -41,19 +42,17 @@ namespace BusinessLayer.Repository
             Save();
         }
 
-        public List<CBBItem> LoadComboBox()
+        public void LoadComboBoxAccount(ComboBox cbb)
         {
             List<Account> listAC = _db.Accounts.ToList();
-            List<CBBItem> list = new List<CBBItem>();
             foreach (Account ac in listAC)
             {
-                list.Add(new CBBItem
+                cbb.Items.Add(new CBBItem
                 {
                     Value = ac.Id,
                     Text = ac.UserName
                 });
             }
-            return list;
         }
         #endregion
 
