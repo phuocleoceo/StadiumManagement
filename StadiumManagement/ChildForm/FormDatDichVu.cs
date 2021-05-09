@@ -29,8 +29,9 @@ namespace GUILayer.ChildForm
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            txtTongTien.Text = cbbHoaDon.Text = lblDichVu.Text = "";
+            txtTongTien.Text = cbbHoaDon.Text = "";
             NUDSoLuong.Value = 0;
+            lblDichVu.Text = "Click to choose ...";
             picDV.Image = null;
         }
 

@@ -26,5 +26,13 @@ namespace GUILayer.ChildForm
             dgvSan.Columns["Id"].Visible = false;
             dgvSan.Columns["Stadium_Image"].Visible = false;
         }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            cbbHoaDon.Text = txtTienCoc.Text = txtTongTien.Text = "";
+            lblSan.Text = "Click to choose ...";
+            picSan.Image = null;
+            dtpKetThucThue.Value = dtpBatDauThue.Value = DateTime.Now;
+        }
     }
 }
