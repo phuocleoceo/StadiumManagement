@@ -18,6 +18,8 @@ namespace BusinessLayer.ViewModels
         [DisplayName("Tên dịch vụ")]
         public string Service_Name { get; set; }
 
+        public byte[] Service_Image { get; set; }
+
         [DisplayName("Số lượng")]
         public int Count { get; set; }
 

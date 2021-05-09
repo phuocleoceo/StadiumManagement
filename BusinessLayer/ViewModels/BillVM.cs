@@ -32,8 +32,8 @@ namespace BusinessLayer.ViewModels
         [DisplayName("Ngày thanh toán")]
         public DateTime? DateCheckedOut { get; set; }
 
-        [DisplayName("Trạng thái")]
-        public string BillStatus { get; set; }
+        [Browsable(false)]
+        public BillStatus BillStatus { get; set; }
 
         [DisplayName("Tổng tiền")]
         public double Total { get; set; }

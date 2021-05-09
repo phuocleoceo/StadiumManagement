@@ -32,22 +32,21 @@ namespace BusinessLayer
 
             CreateMap<ServiceOrder, ServiceOrderVM>()
                 .ForMember(svm => svm.Bill_Code, prop => prop.MapFrom(s => s.Bill.BillCode))
-                .ForMember(svm => svm.Service_Name, prop => prop.MapFrom(s => s.Service.Name));
+                .ForMember(svm => svm.Service_Name, prop => prop.MapFrom(s => s.Service.Name))
+                .ForMember(svm => svm.Service_Image, prop => prop.MapFrom(s => s.Service.Image));
             CreateMap<ServiceOrderVM, ServiceOrder>();
 
             CreateMap<RentOrder, RentOrderVM>()
                 .ForMember(rvm => rvm.Bill_Code, prop => prop.MapFrom(r => r.Bill.BillCode))
-                .ForMember(rvm => rvm.Stadium_Name, prop => prop.MapFrom(r => r.Stadium.Name));
+                .ForMember(rvm => rvm.Stadium_Name, prop => prop.MapFrom(r => r.Stadium.Name))
+                .ForMember(rvm => rvm.Stadium_Image, prop => prop.MapFrom(r => r.Stadium.Image));
             CreateMap<RentOrderVM, RentOrder>();
 
             CreateMap<Bill, BillVM>()
                 .ForMember(bvm => bvm.Customer_Name, prop => prop.MapFrom(b => b.Customer.Name))
                 .ForMember(bvm => bvm.Customer_Phone, prop => prop.MapFrom(b => b.Customer.PhoneNumber))
-                .ForMember(bvm => bvm.Cashier_Name, prop => prop.MapFrom(b => b.Cashier.Name))
-                .ForMember(bvm => bvm.BillStatus, prop => prop.MapFrom(b => Enum.GetName(typeof(BillStatus), b.BillStatus)));
+                .ForMember(bvm => bvm.Cashier_Name, prop => prop.MapFrom(b => b.Cashier.Name));
             CreateMap<BillVM, Bill>();
-            //CreateMap<BillVM, Bill>()
-            //    .ForMember(b => b.BillStatus, prop => prop.MapFrom(bvm => (BillStatus)Enum.Parse(typeof(BillStatus), bvm.BillStatus)));
         }
     }
 }

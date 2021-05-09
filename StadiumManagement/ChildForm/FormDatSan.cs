@@ -15,6 +15,7 @@ namespace GUILayer.ChildForm
             dgvSan.FormatTable();
             _db = new RentOrderRepository();
             LoadData();
+            _db.LoadComboBoxBill(cbbHoaDon);
         }
 
         private void LoadData()
@@ -23,6 +24,7 @@ namespace GUILayer.ChildForm
             dgvSan.Rows.Clear();
             dgvSan.DataSource = _db.GetList();
             dgvSan.Columns["Id"].Visible = false;
+            dgvSan.Columns["Stadium_Image"].Visible = false;
         }
     }
 }

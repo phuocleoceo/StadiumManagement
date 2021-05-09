@@ -44,8 +44,6 @@ namespace GUILayer.ChildForm
             this.label5 = new System.Windows.Forms.Label();
             this.txtThuNgan = new System.Windows.Forms.TextBox();
             this.cbbKhachHang = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtTrangThai = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtTongTien = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -175,7 +173,7 @@ namespace GUILayer.ChildForm
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(24, 165);
+            this.label5.Location = new System.Drawing.Point(757, 41);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(115, 20);
             this.label5.TabIndex = 46;
@@ -184,10 +182,10 @@ namespace GUILayer.ChildForm
             // txtThuNgan
             // 
             this.txtThuNgan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtThuNgan.Location = new System.Drawing.Point(159, 162);
+            this.txtThuNgan.Location = new System.Drawing.Point(868, 38);
             this.txtThuNgan.Name = "txtThuNgan";
             this.txtThuNgan.ReadOnly = true;
-            this.txtThuNgan.Size = new System.Drawing.Size(210, 26);
+            this.txtThuNgan.Size = new System.Drawing.Size(161, 26);
             this.txtThuNgan.TabIndex = 47;
             // 
             // cbbKhachHang
@@ -198,25 +196,6 @@ namespace GUILayer.ChildForm
             this.cbbKhachHang.Name = "cbbKhachHang";
             this.cbbKhachHang.Size = new System.Drawing.Size(210, 28);
             this.cbbKhachHang.TabIndex = 48;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(770, 41);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(92, 20);
-            this.label6.TabIndex = 46;
-            this.label6.Text = "Trạng thái : ";
-            // 
-            // txtTrangThai
-            // 
-            this.txtTrangThai.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTrangThai.Location = new System.Drawing.Point(868, 38);
-            this.txtTrangThai.Name = "txtTrangThai";
-            this.txtTrangThai.ReadOnly = true;
-            this.txtTrangThai.Size = new System.Drawing.Size(161, 26);
-            this.txtTrangThai.TabIndex = 47;
             // 
             // label7
             // 
@@ -264,10 +243,8 @@ namespace GUILayer.ChildForm
             this.Controls.Add(this.cbbKhachHang);
             this.Controls.Add(this.txtNgayThanhToan);
             this.Controls.Add(this.txtTongTien);
-            this.Controls.Add(this.txtTrangThai);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtNgayTao);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtSDTKhach);
@@ -307,8 +284,6 @@ namespace GUILayer.ChildForm
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtThuNgan;
         private System.Windows.Forms.ComboBox cbbKhachHang;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtTrangThai;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtTongTien;
         private System.Windows.Forms.Label label8;
