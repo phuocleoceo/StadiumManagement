@@ -66,5 +66,12 @@ namespace BusinessLayer
                 return null;
             }
         }
+
+        public static byte[] ImageToByte(this PictureBox pic)
+        {
+            MemoryStream ms = new MemoryStream();
+            pic.Image.Save(ms,System.Drawing.Imaging.ImageFormat.Jpeg);
+            return ms.ToArray();
+        }
     }
 }
