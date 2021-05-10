@@ -60,16 +60,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ChildForm\FormDatDichVu.cs">
+    <Compile Include="ChildForm\SubForm\FormDatDichVu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ChildForm\FormDatDichVu.Designer.cs">
+    <Compile Include="ChildForm\SubForm\FormDatDichVu.Designer.cs">
       <DependentUpon>FormDatDichVu.cs</DependentUpon>
     </Compile>
-    <Compile Include="ChildForm\FormDatSan.cs">
+    <Compile Include="ChildForm\SubForm\FormDatSan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ChildForm\FormDatSan.Designer.cs">
+    <Compile Include="ChildForm\SubForm\FormDatSan.Designer.cs">
       <DependentUpon>FormDatSan.cs</DependentUpon>
     </Compile>
     <Compile Include="ChildForm\FormDSKH.cs">
@@ -146,10 +146,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="ChildForm\FormDatDichVu.resx">
+    <EmbeddedResource Include="ChildForm\SubForm\FormDatDichVu.resx">
       <DependentUpon>FormDatDichVu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ChildForm\FormDatSan.resx">
+    <EmbeddedResource Include="ChildForm\SubForm\FormDatSan.resx">
       <DependentUpon>FormDatSan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ChildForm\FormDSKH.resx">

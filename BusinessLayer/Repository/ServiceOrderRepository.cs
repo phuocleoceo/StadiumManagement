@@ -23,18 +23,5 @@ namespace BusinessLayer.Repository
             }
             return listVM;
         }
-        //Load danh sach Bill
-        public void LoadComboBoxBill(ComboBox cbb)
-        {
-            List<Bill> listBill = _db.Bills.Where(c => c.BillStatus == BillStatus.UnPurchased).ToList();
-            foreach (Bill b in listBill)
-            {
-                cbb.Items.Add(new CBBItem
-                {
-                    Value = b.Id,
-                    Text = $"{b.BillCode} | {b.Customer.Name}"
-                });
-            }
-        }
     }
 }

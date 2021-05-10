@@ -4,20 +4,20 @@ using BusinessLayer.ViewModels;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
-using GUILayer.ChildForm.SubForm;
 
-namespace GUILayer.ChildForm
+namespace GUILayer.ChildForm.SubForm
 {
     public partial class FormDatSan : Form
     {
         private readonly RentOrderRepository _db;
-        public FormDatSan()
+        public FormDatSan(int Bill_Id, string Bill_Code)
         {
             InitializeComponent();
+            txtHoaDon.Text = Bill_Code;
+            this.Tag = Bill_Id;
             dgvSan.FormatTable();
             _db = new RentOrderRepository();
             LoadData();
-            _db.LoadComboBoxBill(cbbHoaDon);
         }
 
         private void LoadData()
@@ -31,7 +31,7 @@ namespace GUILayer.ChildForm
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            cbbHoaDon.Text = txtTienCoc.Text = txtTongTien.Text = "";
+            txtTienCoc.Text = txtTongTien.Text = "";
             lblSan.Text = "Click to choose ...";
             picSan.Image = null;
             dtpKetThucThue.Value = dtpBatDauThue.Value = DateTime.Now;
@@ -57,6 +57,14 @@ namespace GUILayer.ChildForm
             lblSan.Text = name;
             picSan.Image = img;
             lblGia.Text = price.ToString();
+        }
+
+        public delegate void LoadDataBill();
+        public LoadDataBill LDB { get; set; }
+        private void btnXacNhan_Click(object sender, EventArgs e)
+        {
+            LDB();
+            this.Dispose();
         }
     }
 }

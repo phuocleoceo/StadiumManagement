@@ -1,5 +1,5 @@
 ﻿
-namespace GUILayer.ChildForm
+namespace GUILayer.ChildForm.SubForm
 {
     partial class FormDatSan
     {
@@ -39,7 +39,6 @@ namespace GUILayer.ChildForm
             this.txtTongTien = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.cbbHoaDon = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -48,6 +47,8 @@ namespace GUILayer.ChildForm
             this.label6 = new System.Windows.Forms.Label();
             this.txtTienCoc = new System.Windows.Forms.TextBox();
             this.lblGia = new System.Windows.Forms.Label();
+            this.txtHoaDon = new System.Windows.Forms.TextBox();
+            this.btnXacNhan = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSan)).BeginInit();
             this.SuspendLayout();
@@ -153,15 +154,6 @@ namespace GUILayer.ChildForm
             this.label4.TabIndex = 58;
             this.label4.Text = "Tổng tiền : ";
             // 
-            // cbbHoaDon
-            // 
-            this.cbbHoaDon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbbHoaDon.FormattingEnabled = true;
-            this.cbbHoaDon.Location = new System.Drawing.Point(132, 17);
-            this.cbbHoaDon.Name = "cbbHoaDon";
-            this.cbbHoaDon.Size = new System.Drawing.Size(259, 28);
-            this.cbbHoaDon.TabIndex = 60;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -239,11 +231,33 @@ namespace GUILayer.ChildForm
             this.lblGia.Size = new System.Drawing.Size(0, 17);
             this.lblGia.TabIndex = 69;
             // 
+            // txtHoaDon
+            // 
+            this.txtHoaDon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHoaDon.Location = new System.Drawing.Point(132, 17);
+            this.txtHoaDon.Name = "txtHoaDon";
+            this.txtHoaDon.ReadOnly = true;
+            this.txtHoaDon.Size = new System.Drawing.Size(173, 26);
+            this.txtHoaDon.TabIndex = 70;
+            // 
+            // btnXacNhan
+            // 
+            this.btnXacNhan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXacNhan.Location = new System.Drawing.Point(869, 123);
+            this.btnXacNhan.Name = "btnXacNhan";
+            this.btnXacNhan.Size = new System.Drawing.Size(93, 36);
+            this.btnXacNhan.TabIndex = 71;
+            this.btnXacNhan.Text = "Xác nhận";
+            this.btnXacNhan.UseVisualStyleBackColor = true;
+            this.btnXacNhan.Click += new System.EventHandler(this.btnXacNhan_Click);
+            // 
             // FormDatSan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1041, 566);
+            this.Controls.Add(this.btnXacNhan);
+            this.Controls.Add(this.txtHoaDon);
             this.Controls.Add(this.lblGia);
             this.Controls.Add(this.dtpKetThucThue);
             this.Controls.Add(this.dtpBatDauThue);
@@ -256,7 +270,6 @@ namespace GUILayer.ChildForm
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.cbbHoaDon);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnXoa);
@@ -264,6 +277,7 @@ namespace GUILayer.ChildForm
             this.Controls.Add(this.btnThem);
             this.Controls.Add(this.dgvSan);
             this.Name = "FormDatSan";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Đặt sân";
             ((System.ComponentModel.ISupportInitialize)(this.dgvSan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSan)).EndInit();
@@ -284,7 +298,6 @@ namespace GUILayer.ChildForm
         private System.Windows.Forms.TextBox txtTongTien;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox cbbHoaDon;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
@@ -293,5 +306,7 @@ namespace GUILayer.ChildForm
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtTienCoc;
         private System.Windows.Forms.Label lblGia;
+        private System.Windows.Forms.TextBox txtHoaDon;
+        private System.Windows.Forms.Button btnXacNhan;
     }
 }

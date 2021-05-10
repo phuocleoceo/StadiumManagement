@@ -42,10 +42,10 @@ namespace GUILayer
             AccountVM currentAcc = (new AccountRepository()).GetAccountById(FormLogin.currentAccount_Id);
             if (currentAcc.Role!="Admin")
             {
-                btnSanBong.Enabled = false;
-                btnDichVu.Enabled = false;
-                btnDSKH.Enabled = false;
-                btnCashier.Enabled = false;
+                btnStadium.Visible = false;
+                btnService.Visible = false;
+                btnCashier.Visible = false;
+                btnStatistic.Visible = false;
             }
             lblUserName.Text = currentAcc.UserName;
             picLogo.Image = currentAcc.Image.ByteArrayToImage();
@@ -56,14 +56,8 @@ namespace GUILayer
 
         private void HideSubMenu()
         {
-            if (pnlStadium.Visible == true)
-                pnlStadium.Visible = false;
-            if (pnlService.Visible == true)
-                pnlService.Visible = false;
             if (pnlCashier.Visible == true)
                 pnlCashier.Visible = false;
-            if (pnlCustomer.Visible == true)
-                pnlCustomer.Visible = false;
         }
 
         private void ShowSubMenu(Panel subMenu)
@@ -213,17 +207,33 @@ namespace GUILayer
         }
         #endregion
 
-        #region ButtonIconClick
+        #region ButtonClick
         private void btnStadium_Click(object sender, EventArgs e)
         {
-            ShowSubMenu(pnlStadium);
+            HideSubMenu();
             ActiveButton(sender, RGBColors.color1);
+            OpenChildForm(new FormQLSan());
         }
 
         private void btnService_Click(object sender, EventArgs e)
         {
-            ShowSubMenu(pnlService);
+            HideSubMenu();
             ActiveButton(sender, RGBColors.color2);
+            OpenChildForm(new FormQLDichVu());
+        }
+
+        private void btnCustomer_Click(object sender, EventArgs e)
+        {
+            HideSubMenu();
+            ActiveButton(sender, RGBColors.color4);
+            OpenChildForm(new FormDSKH());
+        }
+
+        private void btnStatistic_Click(object sender, EventArgs e)
+        {
+            HideSubMenu();
+            ActiveButton(sender, RGBColors.color5);
+            OpenChildForm(new FormThongKe());
         }
 
         private void btnCashier_Click(object sender, EventArgs e)
@@ -232,17 +242,21 @@ namespace GUILayer
             ActiveButton(sender, RGBColors.color3);
         }
 
-        private void btnCustomer_Click(object sender, EventArgs e)
+        private void btnDSNV_Click(object sender, EventArgs e)
         {
-            ShowSubMenu(pnlCustomer);
-            ActiveButton(sender, RGBColors.color4);
+            OpenChildForm(new FormDSNV());
         }
 
-        private void btnStatistic_Click(object sender, EventArgs e)
+        private void btnTaiKhoan_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FormTaiKhoan());
+        }
+
+        private void btnHoaDon_Click(object sender, EventArgs e)
         {
             HideSubMenu();
-            ActiveButton(sender, RGBColors.color5);
-            OpenChildForm(new FormThongKe());
+            ActiveButton(sender, RGBColors.color3);
+            OpenChildForm(new FormHoaDon());
         }
 
         private void btnSetting_Click(object sender, EventArgs e)
@@ -259,48 +273,5 @@ namespace GUILayer
             this.Close();
         }
         #endregion
-
-        #region ButtonClick
-        private void btnDSKH_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new FormDSKH());
-        }
-
-        private void btnDSNV_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new FormDSNV());
-        }
-
-        private void btnTaiKhoan_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new FormTaiKhoan());
-        }
-
-        private void btnSanBong_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new FormQLSan());
-        }
-
-        private void btnDichVu_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new FormQLDichVu());
-        }
-
-        private void btnDatSan_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new FormDatSan());
-        }
-
-        private void btnDatDichVu_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new FormDatDichVu());
-        }
-
-        private void btnThanhToan_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new FormHoaDon());
-        }
-        #endregion
-
     }
 }

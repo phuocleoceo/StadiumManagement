@@ -3,21 +3,21 @@ using System;
 using System.Windows.Forms;
 using BusinessLayer.ViewModels;
 using BusinessLayer;
-using GUILayer.ChildForm.SubForm;
 using System.Drawing;
 
-namespace GUILayer.ChildForm
+namespace GUILayer.ChildForm.SubForm
 {
     public partial class FormDatDichVu : Form
     {
         private readonly ServiceOrderRepository _db;
-        public FormDatDichVu()
+        public FormDatDichVu(int Bill_Id, string Bill_Code)
         {
             InitializeComponent();
+            txtHoaDon.Text = Bill_Code;
+            this.Tag = Bill_Id;
             dgvDV.FormatTable();
             _db = new ServiceOrderRepository();
             LoadData();
-            _db.LoadComboBoxBill(cbbHoaDon);
         }
 
         private void LoadData()
@@ -31,7 +31,7 @@ namespace GUILayer.ChildForm
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            txtTongTien.Text = cbbHoaDon.Text = "";
+            txtTongTien.Text = "";
             NUDSoLuong.Value = 0;
             lblDichVu.Text = "Click to choose ...";
             lblGia.Text = "";
@@ -44,7 +44,6 @@ namespace GUILayer.ChildForm
             DataGridViewSelectedRowCollection r = dgvDV.SelectedRows;
             if (r.Count == 1)
             {
-                cbbHoaDon.Text = r[0].Cells["Bill_Code"].Value.ToString();
                 NUDSoLuong.Value = Convert.ToDecimal(r[0].Cells["Count"].Value);
                 txtTongTien.Text = r[0].Cells["Total"].Value.ToString();
                 lblDichVu.Text = r[0].Cells["Service_Name"].Value.ToString();
@@ -65,6 +64,14 @@ namespace GUILayer.ChildForm
             lblDichVu.Text = name;
             picDV.Image = img;
             lblGia.Text = price.ToString();
+        }
+
+        public delegate void LoadDataBill();
+        public LoadDataBill LDB { get; set; }
+        private void btnXacNhan_Click(object sender, EventArgs e)
+        {
+            LDB();
+            this.Dispose();
         }
     }
 }

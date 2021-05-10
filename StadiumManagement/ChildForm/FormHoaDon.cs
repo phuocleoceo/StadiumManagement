@@ -4,6 +4,7 @@ using BusinessLayer.ViewModels;
 using System;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GUILayer.ChildForm.SubForm;
 
 namespace GUILayer.ChildForm
 {
@@ -16,12 +17,12 @@ namespace GUILayer.ChildForm
             InitializeComponent();
             dgvBill.FormatTable();
             _db = new BillRepository();
-            LoadData();
+            LoadBillData();
             _db.GetComboBoxCustomer(cbbKhachHang);
             currentCashier_Id = (new AccountInformationRepository())
                             .GetAIByAccountId(FormLogin.currentAccount_Id).Id;
         }
-        private void LoadData()
+        private void LoadBillData()
         {
             dgvBill.DataSource = null;
             dgvBill.Rows.Clear();
@@ -64,7 +65,27 @@ namespace GUILayer.ChildForm
                 DateCheckedOut = null,
                 Total = 0
             });
-            LoadData();
+            LoadBillData();
+        }
+
+        private void btnDatDichVu_Click(object sender, EventArgs e)
+        {
+            DataGridViewSelectedRowCollection r = dgvBill.SelectedRows;
+            int Bill_Id = (int)r[0].Cells["Id"].Value;
+            string Bill_Code = r[0].Cells["BillCode"].Value.ToString();
+            FormDatDichVu f = new FormDatDichVu(Bill_Id,Bill_Code);
+            f.LDB += new FormDatDichVu.LoadDataBill(LoadBillData);
+            f.ShowDialog();
+        }
+
+        private void btnDatSan_Click(object sender, EventArgs e)
+        {
+            DataGridViewSelectedRowCollection r = dgvBill.SelectedRows;
+            int Bill_Id = (int)r[0].Cells["Id"].Value;
+            string Bill_Code = r[0].Cells["BillCode"].Value.ToString();
+            FormDatSan f = new FormDatSan(Bill_Id, Bill_Code);
+            f.LDB += new FormDatSan.LoadDataBill(LoadBillData);
+            f.ShowDialog();
         }
     }
 }

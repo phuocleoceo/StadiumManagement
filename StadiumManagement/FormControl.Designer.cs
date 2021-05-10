@@ -31,22 +31,12 @@ namespace GUILayer
         {
             this.components = new System.ComponentModel.Container();
             this.PanelMenu = new System.Windows.Forms.Panel();
-            this.btnStatistic = new FontAwesome.Sharp.IconButton();
-            this.pnlCustomer = new System.Windows.Forms.Panel();
-            this.btnHoaDon = new System.Windows.Forms.Button();
-            this.btnDSKH = new System.Windows.Forms.Button();
             this.btnCustomer = new FontAwesome.Sharp.IconButton();
             this.pnlCashier = new System.Windows.Forms.Panel();
             this.btnTaiKhoan = new System.Windows.Forms.Button();
             this.btnDSNV = new System.Windows.Forms.Button();
             this.btnCashier = new FontAwesome.Sharp.IconButton();
-            this.pnlService = new System.Windows.Forms.Panel();
-            this.btnDatDichVu = new System.Windows.Forms.Button();
-            this.btnDichVu = new System.Windows.Forms.Button();
             this.btnService = new FontAwesome.Sharp.IconButton();
-            this.pnlStadium = new System.Windows.Forms.Panel();
-            this.btnDatSan = new System.Windows.Forms.Button();
-            this.btnSanBong = new System.Windows.Forms.Button();
             this.btnSetting = new FontAwesome.Sharp.IconButton();
             this.btnLogOut = new FontAwesome.Sharp.IconButton();
             this.btnStadium = new FontAwesome.Sharp.IconButton();
@@ -66,11 +56,10 @@ namespace GUILayer
             this.lblDMY = new System.Windows.Forms.Label();
             this.lblTime = new System.Windows.Forms.Label();
             this.timer = new System.Windows.Forms.Timer(this.components);
+            this.btnHoaDon = new FontAwesome.Sharp.IconButton();
+            this.btnStatistic = new FontAwesome.Sharp.IconButton();
             this.PanelMenu.SuspendLayout();
-            this.pnlCustomer.SuspendLayout();
             this.pnlCashier.SuspendLayout();
-            this.pnlService.SuspendLayout();
-            this.pnlStadium.SuspendLayout();
             this.pnlLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.panelTitlebar.SuspendLayout();
@@ -82,13 +71,11 @@ namespace GUILayer
             // 
             this.PanelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.PanelMenu.Controls.Add(this.btnStatistic);
-            this.PanelMenu.Controls.Add(this.pnlCustomer);
+            this.PanelMenu.Controls.Add(this.btnHoaDon);
             this.PanelMenu.Controls.Add(this.btnCustomer);
             this.PanelMenu.Controls.Add(this.pnlCashier);
             this.PanelMenu.Controls.Add(this.btnCashier);
-            this.PanelMenu.Controls.Add(this.pnlService);
             this.PanelMenu.Controls.Add(this.btnService);
-            this.PanelMenu.Controls.Add(this.pnlStadium);
             this.PanelMenu.Controls.Add(this.btnSetting);
             this.PanelMenu.Controls.Add(this.btnLogOut);
             this.PanelMenu.Controls.Add(this.btnStadium);
@@ -98,72 +85,6 @@ namespace GUILayer
             this.PanelMenu.Name = "PanelMenu";
             this.PanelMenu.Size = new System.Drawing.Size(170, 675);
             this.PanelMenu.TabIndex = 0;
-            // 
-            // btnStatistic
-            // 
-            this.btnStatistic.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnStatistic.FlatAppearance.BorderSize = 0;
-            this.btnStatistic.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStatistic.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStatistic.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnStatistic.IconChar = FontAwesome.Sharp.IconChar.Apple;
-            this.btnStatistic.IconColor = System.Drawing.Color.Gainsboro;
-            this.btnStatistic.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnStatistic.IconSize = 35;
-            this.btnStatistic.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnStatistic.Location = new System.Drawing.Point(0, 554);
-            this.btnStatistic.Name = "btnStatistic";
-            this.btnStatistic.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnStatistic.Size = new System.Drawing.Size(170, 50);
-            this.btnStatistic.TabIndex = 16;
-            this.btnStatistic.Text = "Thống kê";
-            this.btnStatistic.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnStatistic.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnStatistic.UseVisualStyleBackColor = true;
-            this.btnStatistic.Click += new System.EventHandler(this.btnStatistic_Click);
-            // 
-            // pnlCustomer
-            // 
-            this.pnlCustomer.BackColor = System.Drawing.Color.Indigo;
-            this.pnlCustomer.Controls.Add(this.btnHoaDon);
-            this.pnlCustomer.Controls.Add(this.btnDSKH);
-            this.pnlCustomer.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlCustomer.ForeColor = System.Drawing.Color.White;
-            this.pnlCustomer.Location = new System.Drawing.Point(0, 486);
-            this.pnlCustomer.Name = "pnlCustomer";
-            this.pnlCustomer.Size = new System.Drawing.Size(170, 68);
-            this.pnlCustomer.TabIndex = 15;
-            this.pnlCustomer.Visible = false;
-            // 
-            // btnHoaDon
-            // 
-            this.btnHoaDon.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnHoaDon.FlatAppearance.BorderSize = 0;
-            this.btnHoaDon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHoaDon.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHoaDon.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnHoaDon.Location = new System.Drawing.Point(0, 33);
-            this.btnHoaDon.Name = "btnHoaDon";
-            this.btnHoaDon.Size = new System.Drawing.Size(170, 32);
-            this.btnHoaDon.TabIndex = 1;
-            this.btnHoaDon.Text = "Hoá đơn";
-            this.btnHoaDon.UseVisualStyleBackColor = true;
-            this.btnHoaDon.Click += new System.EventHandler(this.btnThanhToan_Click);
-            // 
-            // btnDSKH
-            // 
-            this.btnDSKH.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnDSKH.FlatAppearance.BorderSize = 0;
-            this.btnDSKH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDSKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDSKH.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnDSKH.Location = new System.Drawing.Point(0, 0);
-            this.btnDSKH.Name = "btnDSKH";
-            this.btnDSKH.Size = new System.Drawing.Size(170, 33);
-            this.btnDSKH.TabIndex = 0;
-            this.btnDSKH.Text = "DS Khách hàng";
-            this.btnDSKH.UseVisualStyleBackColor = true;
-            this.btnDSKH.Click += new System.EventHandler(this.btnDSKH_Click);
             // 
             // btnCustomer
             // 
@@ -177,7 +98,7 @@ namespace GUILayer
             this.btnCustomer.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCustomer.IconSize = 35;
             this.btnCustomer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCustomer.Location = new System.Drawing.Point(0, 436);
+            this.btnCustomer.Location = new System.Drawing.Point(0, 295);
             this.btnCustomer.Name = "btnCustomer";
             this.btnCustomer.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnCustomer.Size = new System.Drawing.Size(170, 50);
@@ -195,7 +116,7 @@ namespace GUILayer
             this.pnlCashier.Controls.Add(this.btnDSNV);
             this.pnlCashier.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlCashier.ForeColor = System.Drawing.Color.White;
-            this.pnlCashier.Location = new System.Drawing.Point(0, 361);
+            this.pnlCashier.Location = new System.Drawing.Point(0, 220);
             this.pnlCashier.Name = "pnlCashier";
             this.pnlCashier.Size = new System.Drawing.Size(170, 75);
             this.pnlCashier.TabIndex = 13;
@@ -243,7 +164,7 @@ namespace GUILayer
             this.btnCashier.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCashier.IconSize = 35;
             this.btnCashier.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCashier.Location = new System.Drawing.Point(0, 311);
+            this.btnCashier.Location = new System.Drawing.Point(0, 170);
             this.btnCashier.Name = "btnCashier";
             this.btnCashier.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnCashier.Size = new System.Drawing.Size(170, 50);
@@ -253,49 +174,6 @@ namespace GUILayer
             this.btnCashier.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCashier.UseVisualStyleBackColor = true;
             this.btnCashier.Click += new System.EventHandler(this.btnCashier_Click);
-            // 
-            // pnlService
-            // 
-            this.pnlService.BackColor = System.Drawing.Color.Indigo;
-            this.pnlService.Controls.Add(this.btnDatDichVu);
-            this.pnlService.Controls.Add(this.btnDichVu);
-            this.pnlService.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlService.ForeColor = System.Drawing.Color.White;
-            this.pnlService.Location = new System.Drawing.Point(0, 240);
-            this.pnlService.Name = "pnlService";
-            this.pnlService.Size = new System.Drawing.Size(170, 71);
-            this.pnlService.TabIndex = 11;
-            this.pnlService.Visible = false;
-            // 
-            // btnDatDichVu
-            // 
-            this.btnDatDichVu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnDatDichVu.FlatAppearance.BorderSize = 0;
-            this.btnDatDichVu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDatDichVu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDatDichVu.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnDatDichVu.Location = new System.Drawing.Point(0, 35);
-            this.btnDatDichVu.Name = "btnDatDichVu";
-            this.btnDatDichVu.Size = new System.Drawing.Size(170, 33);
-            this.btnDatDichVu.TabIndex = 1;
-            this.btnDatDichVu.Text = "Đặt dịch vụ";
-            this.btnDatDichVu.UseVisualStyleBackColor = true;
-            this.btnDatDichVu.Click += new System.EventHandler(this.btnDatDichVu_Click);
-            // 
-            // btnDichVu
-            // 
-            this.btnDichVu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnDichVu.FlatAppearance.BorderSize = 0;
-            this.btnDichVu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDichVu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDichVu.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnDichVu.Location = new System.Drawing.Point(0, 0);
-            this.btnDichVu.Name = "btnDichVu";
-            this.btnDichVu.Size = new System.Drawing.Size(170, 35);
-            this.btnDichVu.TabIndex = 0;
-            this.btnDichVu.Text = "Quản lý dịch vụ";
-            this.btnDichVu.UseVisualStyleBackColor = true;
-            this.btnDichVu.Click += new System.EventHandler(this.btnDichVu_Click);
             // 
             // btnService
             // 
@@ -309,7 +187,7 @@ namespace GUILayer
             this.btnService.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnService.IconSize = 35;
             this.btnService.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnService.Location = new System.Drawing.Point(0, 190);
+            this.btnService.Location = new System.Drawing.Point(0, 120);
             this.btnService.Name = "btnService";
             this.btnService.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnService.Size = new System.Drawing.Size(170, 50);
@@ -319,49 +197,6 @@ namespace GUILayer
             this.btnService.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnService.UseVisualStyleBackColor = true;
             this.btnService.Click += new System.EventHandler(this.btnService_Click);
-            // 
-            // pnlStadium
-            // 
-            this.pnlStadium.BackColor = System.Drawing.Color.Indigo;
-            this.pnlStadium.Controls.Add(this.btnDatSan);
-            this.pnlStadium.Controls.Add(this.btnSanBong);
-            this.pnlStadium.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlStadium.ForeColor = System.Drawing.Color.White;
-            this.pnlStadium.Location = new System.Drawing.Point(0, 120);
-            this.pnlStadium.Name = "pnlStadium";
-            this.pnlStadium.Size = new System.Drawing.Size(170, 70);
-            this.pnlStadium.TabIndex = 9;
-            this.pnlStadium.Visible = false;
-            // 
-            // btnDatSan
-            // 
-            this.btnDatSan.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnDatSan.FlatAppearance.BorderSize = 0;
-            this.btnDatSan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDatSan.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDatSan.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnDatSan.Location = new System.Drawing.Point(0, 36);
-            this.btnDatSan.Name = "btnDatSan";
-            this.btnDatSan.Size = new System.Drawing.Size(170, 32);
-            this.btnDatSan.TabIndex = 1;
-            this.btnDatSan.Text = "Đặt sân";
-            this.btnDatSan.UseVisualStyleBackColor = true;
-            this.btnDatSan.Click += new System.EventHandler(this.btnDatSan_Click);
-            // 
-            // btnSanBong
-            // 
-            this.btnSanBong.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnSanBong.FlatAppearance.BorderSize = 0;
-            this.btnSanBong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSanBong.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSanBong.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnSanBong.Location = new System.Drawing.Point(0, 0);
-            this.btnSanBong.Name = "btnSanBong";
-            this.btnSanBong.Size = new System.Drawing.Size(170, 36);
-            this.btnSanBong.TabIndex = 0;
-            this.btnSanBong.Text = "Quản lý sân";
-            this.btnSanBong.UseVisualStyleBackColor = true;
-            this.btnSanBong.Click += new System.EventHandler(this.btnSanBong_Click);
             // 
             // btnSetting
             // 
@@ -621,6 +456,52 @@ namespace GUILayer
             // 
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
+            // btnHoaDon
+            // 
+            this.btnHoaDon.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnHoaDon.FlatAppearance.BorderSize = 0;
+            this.btnHoaDon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHoaDon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHoaDon.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnHoaDon.IconChar = FontAwesome.Sharp.IconChar.Sith;
+            this.btnHoaDon.IconColor = System.Drawing.Color.Gainsboro;
+            this.btnHoaDon.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnHoaDon.IconSize = 35;
+            this.btnHoaDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHoaDon.Location = new System.Drawing.Point(0, 345);
+            this.btnHoaDon.Name = "btnHoaDon";
+            this.btnHoaDon.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.btnHoaDon.Size = new System.Drawing.Size(170, 50);
+            this.btnHoaDon.TabIndex = 17;
+            this.btnHoaDon.Text = "Hoá đơn";
+            this.btnHoaDon.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHoaDon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnHoaDon.UseVisualStyleBackColor = true;
+            this.btnHoaDon.Click += new System.EventHandler(this.btnHoaDon_Click);
+            // 
+            // btnStatistic
+            // 
+            this.btnStatistic.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnStatistic.FlatAppearance.BorderSize = 0;
+            this.btnStatistic.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStatistic.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStatistic.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnStatistic.IconChar = FontAwesome.Sharp.IconChar.Apple;
+            this.btnStatistic.IconColor = System.Drawing.Color.Gainsboro;
+            this.btnStatistic.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnStatistic.IconSize = 35;
+            this.btnStatistic.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnStatistic.Location = new System.Drawing.Point(0, 395);
+            this.btnStatistic.Name = "btnStatistic";
+            this.btnStatistic.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.btnStatistic.Size = new System.Drawing.Size(170, 50);
+            this.btnStatistic.TabIndex = 18;
+            this.btnStatistic.Text = "Thống kê";
+            this.btnStatistic.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnStatistic.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnStatistic.UseVisualStyleBackColor = true;
+            this.btnStatistic.Click += new System.EventHandler(this.btnStatistic_Click);
+            // 
             // FormControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -635,10 +516,7 @@ namespace GUILayer
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainControl";
             this.PanelMenu.ResumeLayout(false);
-            this.pnlCustomer.ResumeLayout(false);
             this.pnlCashier.ResumeLayout(false);
-            this.pnlService.ResumeLayout(false);
-            this.pnlStadium.ResumeLayout(false);
             this.pnlLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.panelTitlebar.ResumeLayout(false);
@@ -672,21 +550,13 @@ namespace GUILayer
         private System.Windows.Forms.Label lblTime;
         private System.Windows.Forms.Label lblDMY;
         private System.Windows.Forms.Label lblDate;
-        private System.Windows.Forms.Panel pnlStadium;
-        private System.Windows.Forms.Button btnDatSan;
-        private System.Windows.Forms.Button btnSanBong;
         private FontAwesome.Sharp.IconButton btnService;
-        private System.Windows.Forms.Panel pnlCustomer;
-        private System.Windows.Forms.Button btnHoaDon;
-        private System.Windows.Forms.Button btnDSKH;
         private FontAwesome.Sharp.IconButton btnCustomer;
         private System.Windows.Forms.Panel pnlCashier;
         private System.Windows.Forms.Button btnTaiKhoan;
         private System.Windows.Forms.Button btnDSNV;
         private FontAwesome.Sharp.IconButton btnCashier;
-        private System.Windows.Forms.Panel pnlService;
-        private System.Windows.Forms.Button btnDatDichVu;
-        private System.Windows.Forms.Button btnDichVu;
+        private FontAwesome.Sharp.IconButton btnHoaDon;
         private FontAwesome.Sharp.IconButton btnStatistic;
     }
 }
