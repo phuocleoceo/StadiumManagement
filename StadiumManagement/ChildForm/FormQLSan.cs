@@ -9,7 +9,6 @@ namespace GUILayer.ChildForm
     public partial class FormQLSan : Form
     {
         private readonly StadiumRepository _db;
-        string imgPath = "";
         public FormQLSan()
         {
             InitializeComponent();
@@ -48,7 +47,7 @@ namespace GUILayer.ChildForm
                 Price = double.Parse(txtDonGia.Text),
                 Area = txtDienTich.Text,
                 Note = txtGhiChu.Text,
-                Image = imgPath.ImagePathToByte()
+                Image = picSB.ImageToByte()
             });
             LoadData();
         }
@@ -96,8 +95,7 @@ namespace GUILayer.ChildForm
             OpenFileDialog dlg = new OpenFileDialog();
             if (dlg.ShowDialog() == DialogResult.OK)
             {
-                imgPath = dlg.FileName.ToString();
-                picSB.ImageLocation = imgPath;
+                picSB.ImageLocation = dlg.FileName;
             }
         }
     }

@@ -53,25 +53,18 @@ namespace BusinessLayer
             }
         }
 
-        public static byte[] ImagePathToByte(this string imgPath)
+        public static byte[] ImageToByte(this PictureBox pic)
         {
             try
             {
-                FileStream fs = new FileStream(imgPath, FileMode.Open, FileAccess.Read);
-                BinaryReader br = new BinaryReader(fs);
-                return br.ReadBytes((int)fs.Length);
+                MemoryStream ms = new MemoryStream();
+                pic.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                return ms.ToArray();
             }
             catch
             {
                 return null;
             }
-        }
-
-        public static byte[] ImageToByte(this PictureBox pic)
-        {
-            MemoryStream ms = new MemoryStream();
-            pic.Image.Save(ms,System.Drawing.Imaging.ImageFormat.Jpeg);
-            return ms.ToArray();
         }
     }
 }

@@ -12,7 +12,6 @@ namespace GUILayer.ChildForm
         private readonly AccountInformationRepository _dbAI;
         private readonly AccountVM ac;
         private readonly AccountInformationVM ai;
-        private string imgPath = "";
         public FormThietLap()
         {
             InitializeComponent();
@@ -36,15 +35,14 @@ namespace GUILayer.ChildForm
             OpenFileDialog dlg = new OpenFileDialog();
             if (dlg.ShowDialog() == DialogResult.OK)
             {
-                imgPath = dlg.FileName.ToString();
-                picTaiKhoan.ImageLocation = imgPath;
+                picTaiKhoan.ImageLocation = dlg.FileName;
             }
         }
 
         private void btnLuuAnh_Click(object sender, EventArgs e)
         {
             int id = ac.Id;
-            byte[] img = imgPath.ImagePathToByte();
+            byte[] img = picTaiKhoan.ImageToByte();
             _db.SaveImage(id, img);
         }
 

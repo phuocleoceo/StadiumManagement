@@ -12,7 +12,6 @@ namespace GUILayer.ChildForm
     public partial class FormQLDichVu : Form
     {
         private readonly ServiceRepository _db;
-        string imgPath = "";
         public FormQLDichVu()
         {
             InitializeComponent();
@@ -49,7 +48,7 @@ namespace GUILayer.ChildForm
                 Name = txtTenDichVu.Text,
                 Price = double.Parse(txtDonGia.Text),
                 Unit = txtDonViTinh.Text,
-                Image = imgPath.ImagePathToByte()
+                Image = picDV.ImageToByte()
             });
             LoadData();
         }
@@ -96,8 +95,7 @@ namespace GUILayer.ChildForm
             OpenFileDialog dlg = new OpenFileDialog();
             if (dlg.ShowDialog() == DialogResult.OK)
             {
-                imgPath = dlg.FileName.ToString();
-                picDV.ImageLocation = imgPath;
+                picDV.ImageLocation = dlg.FileName;
             }
         }
     }
