@@ -27,7 +27,7 @@ namespace GUILayer.ChildForm
         public void LoadAccount()
         {
             txtTenTaiKhoan.Text = ac.UserName;
-            picTaiKhoan.LoadImage(ac.Image);
+            picTaiKhoan.Image = ac.Image.ByteArrayToImage();
         }
 
         private void btnChonAnh_Click(object sender, EventArgs e)
@@ -42,7 +42,7 @@ namespace GUILayer.ChildForm
         private void btnLuuAnh_Click(object sender, EventArgs e)
         {
             int id = ac.Id;
-            byte[] img = picTaiKhoan.ImageToByte();
+            byte[] img = picTaiKhoan.Image.ImageToByteArray();
             _db.SaveImage(id, img);
         }
 

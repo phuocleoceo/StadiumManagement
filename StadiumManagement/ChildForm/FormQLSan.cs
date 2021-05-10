@@ -35,7 +35,7 @@ namespace GUILayer.ChildForm
                 txtDonGia.Text = r[0].Cells["Price"].Value.ToString();
                 txtDienTich.Text = r[0].Cells["Area"].Value.ToString();
                 txtGhiChu.Text = r[0].Cells["Note"].Value.ToString();
-                picSB.LoadImage((byte[])(r[0].Cells["Image"].Value));
+                picSB.Image = ((byte[])(r[0].Cells["Image"].Value)).ByteArrayToImage();
             }
         }
 
@@ -47,7 +47,7 @@ namespace GUILayer.ChildForm
                 Price = double.Parse(txtDonGia.Text),
                 Area = txtDienTich.Text,
                 Note = txtGhiChu.Text,
-                Image = picSB.ImageToByte()
+                Image=picSB.Image.ImageToByteArray()
             });
             LoadData();
         }
@@ -62,7 +62,7 @@ namespace GUILayer.ChildForm
                 Price = double.Parse(txtDonGia.Text),
                 Area = txtDienTich.Text,
                 Note = txtGhiChu.Text,
-                Image = picSB.ImageToByte()
+                Image = picSB.Image.ImageToByteArray()
             });
             LoadData();
         }

@@ -38,7 +38,7 @@ namespace GUILayer.ChildForm
             {
                 txtTenTaiKhoan.Text = r[0].Cells["UserName"].Value.ToString();
                 cbbVaiTro.Text = r[0].Cells["Role"].Value.ToString();
-                picTK.LoadImage((byte[])(r[0].Cells["Image"].Value));
+                picTK.Image = ((byte[])(r[0].Cells["Image"].Value)).ByteArrayToImage();
             }
         }
 

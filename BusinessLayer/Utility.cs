@@ -10,6 +10,7 @@ namespace BusinessLayer
 {
     public static class Utility
     {
+        // Dinh dang DGV
         public static void FormatTable(this DataGridView dgv)
         {
             dgv.ReadOnly = true;
@@ -26,6 +27,7 @@ namespace BusinessLayer
             dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
+        // Ma hoa mat khau
         public static string GetMD5(this string str)
         {
             MD5 md5 = MD5.Create();
@@ -40,30 +42,26 @@ namespace BusinessLayer
             return sb.ToString();
         }
 
-        public static void LoadImage(this PictureBox pic, byte[] img)
+        // Xu ly anh
+        public static Image ByteArrayToImage(this byte[] img)
         {
             if (img == null || img.Length == 0)
             {
-                pic.Image = null;
+                return null;
             }
             else
             {
                 MemoryStream ms = new MemoryStream(img);
-                pic.Image = Image.FromStream(ms);
+                return Image.FromStream(ms);
             }
         }
 
-        public static byte[] ImageToByte(this PictureBox pic)
+        public static byte[] ImageToByteArray(this Image img)
         {
-            try
+            using (MemoryStream ms = new MemoryStream())
             {
-                MemoryStream ms = new MemoryStream();
-                pic.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                img.Save(ms, img.RawFormat);
                 return ms.ToArray();
-            }
-            catch
-            {
-                return null;
             }
         }
     }

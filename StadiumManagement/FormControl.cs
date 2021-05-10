@@ -48,7 +48,7 @@ namespace GUILayer
                 btnCashier.Enabled = false;
             }
             lblUserName.Text = currentAcc.UserName;
-            picLogo.LoadImage(currentAcc.Image);
+            picLogo.Image = currentAcc.Image.ByteArrayToImage();
         }
         #endregion
 

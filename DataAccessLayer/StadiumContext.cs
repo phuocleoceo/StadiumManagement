@@ -5,7 +5,7 @@ namespace DataAccessLayer
 {
     public class StadiumContext : DbContext
     {
-        public StadiumContext() : base("name=CNS")
+        public StadiumContext() : base("name=VPSOnline")
         {
 
         }

@@ -43,8 +43,8 @@ namespace GUILayer.ChildForm
                 cbbHoaDon.Text = r[0].Cells["Bill_Code"].Value.ToString();
                 NUDSoLuong.Value = Convert.ToDecimal(r[0].Cells["Count"].Value);
                 txtTongTien.Text = r[0].Cells["Total"].Value.ToString();
-                picDV.LoadImage((byte[])(r[0].Cells["Service_Image"].Value));
                 lblDichVu.Text = r[0].Cells["Service_Name"].Value.ToString();
+                picDV.Image = ((byte[])(r[0].Cells["Service_Image"].Value)).ByteArrayToImage();
             }
         }
 

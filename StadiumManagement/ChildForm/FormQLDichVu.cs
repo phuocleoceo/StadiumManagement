@@ -37,7 +37,7 @@ namespace GUILayer.ChildForm
                 txtTenDichVu.Text = r[0].Cells["Name"].Value.ToString();
                 txtDonGia.Text = r[0].Cells["Price"].Value.ToString();
                 txtDonViTinh.Text = r[0].Cells["Unit"].Value.ToString();
-                picDV.LoadImage((byte[])(r[0].Cells["Image"].Value));
+                picDV.Image = ((byte[])(r[0].Cells["Image"].Value)).ByteArrayToImage();
             }
         }
 
@@ -48,7 +48,7 @@ namespace GUILayer.ChildForm
                 Name = txtTenDichVu.Text,
                 Price = double.Parse(txtDonGia.Text),
                 Unit = txtDonViTinh.Text,
-                Image = picDV.ImageToByte()
+                Image = picDV.Image.ImageToByteArray()
             });
             LoadData();
         }
@@ -62,7 +62,7 @@ namespace GUILayer.ChildForm
                 Name = txtTenDichVu.Text,
                 Price = double.Parse(txtDonGia.Text),
                 Unit = txtDonViTinh.Text,
-                Image = picDV.ImageToByte()
+                Image = picDV.Image.ImageToByteArray()
             });
             LoadData();
         }
