@@ -126,6 +126,12 @@
     <Compile Include="ChildForm\SubForm\FormChonDichVu.Designer.cs">
       <DependentUpon>FormChonDichVu.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChildForm\SubForm\FormChonSan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForm\SubForm\FormChonSan.Designer.cs">
+      <DependentUpon>FormChonSan.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormControl.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -172,6 +178,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ChildForm\SubForm\FormChonDichVu.resx">
       <DependentUpon>FormChonDichVu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForm\SubForm\FormChonSan.resx">
+      <DependentUpon>FormChonSan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormControl.resx">
       <DependentUpon>FormControl.cs</DependentUpon>
