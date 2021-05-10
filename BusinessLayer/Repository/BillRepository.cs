@@ -37,10 +37,15 @@ namespace BusinessLayer.Repository
             }
         }
 
-        //public double GetTotal()
-        //{
-
-        //}
+        public void SetTotal(int Bill_Id)
+        {
+            Bill b = GetById(Bill_Id);
+            double _total = 0;
+            foreach (RentOrder ro in b.RentOrders) _total += ro.Total;
+            foreach (ServiceOrder so in b.ServiceOrders) _total += so.Total;
+            b.Total = _total;
+            Save();
+        }
 
         public void AddBill(BillVM bvm)
         {

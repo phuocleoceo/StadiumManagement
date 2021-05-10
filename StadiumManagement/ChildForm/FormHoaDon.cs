@@ -68,12 +68,18 @@ namespace GUILayer.ChildForm
             LoadBillData();
         }
 
+        private void SetBillTotal()
+        {
+            DataGridViewSelectedRowCollection r = dgvBill.SelectedRows;
+            _db.SetTotal((int)r[0].Cells["Id"].Value);
+        }
         private void btnDatDichVu_Click(object sender, EventArgs e)
         {
             DataGridViewSelectedRowCollection r = dgvBill.SelectedRows;
             int Bill_Id = (int)r[0].Cells["Id"].Value;
             string Bill_Code = r[0].Cells["BillCode"].Value.ToString();
             FormDatDichVu f = new FormDatDichVu(Bill_Id,Bill_Code);
+            f.LDB += new FormDatDichVu.LoadDataBill(SetBillTotal);
             f.LDB += new FormDatDichVu.LoadDataBill(LoadBillData);
             f.ShowDialog();
         }
@@ -84,6 +90,7 @@ namespace GUILayer.ChildForm
             int Bill_Id = (int)r[0].Cells["Id"].Value;
             string Bill_Code = r[0].Cells["BillCode"].Value.ToString();
             FormDatSan f = new FormDatSan(Bill_Id, Bill_Code);
+            f.LDB += new FormDatSan.LoadDataBill(SetBillTotal);
             f.LDB += new FormDatSan.LoadDataBill(LoadBillData);
             f.ShowDialog();
         }

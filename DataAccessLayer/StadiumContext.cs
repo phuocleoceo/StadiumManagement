@@ -13,6 +13,7 @@ namespace DataAccessLayer
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+            //modelBuilder.Entity<RentOrder>().Property(c => c.Total).uni;
         }
 
         public virtual DbSet<Account> Accounts { get; set; }

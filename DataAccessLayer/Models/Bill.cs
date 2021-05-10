@@ -13,9 +13,9 @@ namespace DataAccessLayer.Models
 
         public string BillCode { get; set; }
 
-        public List<RentOrder> RentOrders { get; set; }
+        public virtual List<RentOrder> RentOrders { get; set; }
 
-        public List<ServiceOrder> ServiceOrders { get; set; }
+        public virtual List<ServiceOrder> ServiceOrders { get; set; }
 
         public int Customer_Id { get; set; }
         [ForeignKey(nameof(Customer_Id))]
