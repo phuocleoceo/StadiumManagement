@@ -27,7 +27,7 @@ namespace GUILayer.ChildForm.SubForm
         {
             int i = 0;
             List<ServiceVM> listSVM = _db.GetList();
-            foreach(ServiceVM svm in listSVM)
+            foreach (ServiceVM svm in listSVM)
             {
                 Image img = svm.Image.ByteArrayToImage();
                 if (img != null)
@@ -41,14 +41,22 @@ namespace GUILayer.ChildForm.SubForm
                 ListViewItem item = new ListViewItem();
                 item.Text = $"{svm.Name}\r\n{svm.Price}";
                 item.Tag = svm.Id;
-                item.ImageIndex = i++;  
+                item.ImageIndex = i++;
                 lvDV.Items.Add(item);
             }
         }
 
-        private void lvDV_SelectedIndexChanged(object sender, EventArgs e)
+        public delegate void SendData(int id, string name, double price, Image img);
+        public SendData SD { get; set; }
+        private void lvDV_Click(object sender, EventArgs e)
         {
-            
+            int id = (int)lvDV.SelectedItems[0].Tag;
+            Image img = imgList.Images[lvDV.SelectedItems[0].ImageIndex];
+            string[] NP = lvDV.SelectedItems[0].Text.Split('\n');
+            string name = NP[0];
+            double price = Convert.ToDouble(NP[1]);
+            SD(id, name, price, img);
+            this.Dispose();
         }
     }
 }

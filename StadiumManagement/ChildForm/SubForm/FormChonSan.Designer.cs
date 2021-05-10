@@ -44,6 +44,7 @@ namespace GUILayer.ChildForm.SubForm
             this.lvSan.Size = new System.Drawing.Size(664, 393);
             this.lvSan.TabIndex = 1;
             this.lvSan.UseCompatibleStateImageBehavior = false;
+            this.lvSan.Click += new System.EventHandler(this.lvSan_Click);
             // 
             // imgList
             // 

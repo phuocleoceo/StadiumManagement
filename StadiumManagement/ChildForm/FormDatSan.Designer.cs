@@ -47,6 +47,7 @@ namespace GUILayer.ChildForm
             this.dtpKetThucThue = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.txtTienCoc = new System.Windows.Forms.TextBox();
+            this.lblGia = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSan)).BeginInit();
             this.SuspendLayout();
@@ -100,12 +101,13 @@ namespace GUILayer.ChildForm
             this.dgvSan.Name = "dgvSan";
             this.dgvSan.Size = new System.Drawing.Size(1005, 348);
             this.dgvSan.TabIndex = 10;
+            this.dgvSan.SelectionChanged += new System.EventHandler(this.dgvSan_SelectionChanged);
             // 
             // lblSan
             // 
             this.lblSan.AutoSize = true;
             this.lblSan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSan.Location = new System.Drawing.Point(249, 100);
+            this.lblSan.Location = new System.Drawing.Point(259, 96);
             this.lblSan.Name = "lblSan";
             this.lblSan.Size = new System.Drawing.Size(132, 20);
             this.lblSan.TabIndex = 65;
@@ -120,6 +122,7 @@ namespace GUILayer.ChildForm
             this.picSan.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picSan.TabIndex = 64;
             this.picSan.TabStop = false;
+            this.picSan.Click += new System.EventHandler(this.picSan_Click);
             // 
             // txtTongTien
             // 
@@ -227,11 +230,21 @@ namespace GUILayer.ChildForm
             this.txtTienCoc.Size = new System.Drawing.Size(124, 26);
             this.txtTienCoc.TabIndex = 62;
             // 
+            // lblGia
+            // 
+            this.lblGia.AutoSize = true;
+            this.lblGia.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGia.Location = new System.Drawing.Point(274, 137);
+            this.lblGia.Name = "lblGia";
+            this.lblGia.Size = new System.Drawing.Size(0, 17);
+            this.lblGia.TabIndex = 69;
+            // 
             // FormDatSan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1041, 566);
+            this.Controls.Add(this.lblGia);
             this.Controls.Add(this.dtpKetThucThue);
             this.Controls.Add(this.dtpBatDauThue);
             this.Controls.Add(this.label3);
@@ -279,5 +292,6 @@ namespace GUILayer.ChildForm
         private System.Windows.Forms.DateTimePicker dtpKetThucThue;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtTienCoc;
+        private System.Windows.Forms.Label lblGia;
     }
 }

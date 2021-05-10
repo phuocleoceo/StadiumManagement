@@ -50,7 +50,7 @@ namespace GUILayer.ChildForm.SubForm
             this.lvDV.Size = new System.Drawing.Size(664, 393);
             this.lvDV.TabIndex = 0;
             this.lvDV.UseCompatibleStateImageBehavior = false;
-            this.lvDV.SelectedIndexChanged += new System.EventHandler(this.lvDV_SelectedIndexChanged);
+            this.lvDV.Click += new System.EventHandler(this.lvDV_Click);
             // 
             // FormChonDichVu
             // 

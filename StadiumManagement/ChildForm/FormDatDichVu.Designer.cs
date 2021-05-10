@@ -43,6 +43,7 @@ namespace GUILayer.ChildForm
             this.txtTongTien = new System.Windows.Forms.TextBox();
             this.picDV = new System.Windows.Forms.PictureBox();
             this.lblDichVu = new System.Windows.Forms.Label();
+            this.lblGia = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NUDSoLuong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDV)).BeginInit();
@@ -180,17 +181,27 @@ namespace GUILayer.ChildForm
             // 
             this.lblDichVu.AutoSize = true;
             this.lblDichVu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDichVu.Location = new System.Drawing.Point(260, 109);
+            this.lblDichVu.Location = new System.Drawing.Point(281, 101);
             this.lblDichVu.Name = "lblDichVu";
             this.lblDichVu.Size = new System.Drawing.Size(132, 20);
             this.lblDichVu.TabIndex = 56;
             this.lblDichVu.Text = "Click to choose ...";
+            // 
+            // lblGia
+            // 
+            this.lblGia.AutoSize = true;
+            this.lblGia.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGia.Location = new System.Drawing.Point(292, 145);
+            this.lblGia.Name = "lblGia";
+            this.lblGia.Size = new System.Drawing.Size(0, 17);
+            this.lblGia.TabIndex = 57;
             // 
             // FormDatDichVu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1041, 566);
+            this.Controls.Add(this.lblGia);
             this.Controls.Add(this.lblDichVu);
             this.Controls.Add(this.picDV);
             this.Controls.Add(this.NUDSoLuong);
@@ -231,5 +242,6 @@ namespace GUILayer.ChildForm
         private System.Windows.Forms.TextBox txtTongTien;
         private System.Windows.Forms.PictureBox picDV;
         private System.Windows.Forms.Label lblDichVu;
+        private System.Windows.Forms.Label lblGia;
     }
 }

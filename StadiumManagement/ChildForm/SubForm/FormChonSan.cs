@@ -45,5 +45,18 @@ namespace GUILayer.ChildForm.SubForm
                 lvSan.Items.Add(item);
             }
         }
+
+        public delegate void SendData(int id, string name, double price, Image img);
+        public SendData SD { get; set; }
+        private void lvSan_Click(object sender, EventArgs e)
+        {
+            int id = (int)lvSan.SelectedItems[0].Tag;
+            Image img = imgList.Images[lvSan.SelectedItems[0].ImageIndex];
+            string[] NP = lvSan.SelectedItems[0].Text.Split('\n');
+            string name = NP[0];
+            double price = Convert.ToDouble(NP[1]);
+            SD(id, name, price, img);
+            this.Dispose();
+        }
     }
 }

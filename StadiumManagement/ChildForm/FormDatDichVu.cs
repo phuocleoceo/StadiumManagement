@@ -3,6 +3,8 @@ using System;
 using System.Windows.Forms;
 using BusinessLayer.ViewModels;
 using BusinessLayer;
+using GUILayer.ChildForm.SubForm;
+using System.Drawing;
 
 namespace GUILayer.ChildForm
 {
@@ -32,7 +34,9 @@ namespace GUILayer.ChildForm
             txtTongTien.Text = cbbHoaDon.Text = "";
             NUDSoLuong.Value = 0;
             lblDichVu.Text = "Click to choose ...";
+            lblGia.Text = "";
             picDV.Image = null;
+            picDV.Tag = "";
         }
 
         private void dgvDV_SelectionChanged(object sender, EventArgs e)
@@ -50,7 +54,17 @@ namespace GUILayer.ChildForm
 
         private void picDV_Click(object sender, EventArgs e)
         {
+            FormChonDichVu f = new FormChonDichVu();
+            f.SD += new FormChonDichVu.SendData(GetServiceInfor);
+            f.ShowDialog();
+        }
 
+        public void GetServiceInfor(int id, string name, double price, Image img)
+        {
+            picDV.Tag = id;
+            lblDichVu.Text = name;
+            picDV.Image = img;
+            lblGia.Text = price.ToString();
         }
     }
 }

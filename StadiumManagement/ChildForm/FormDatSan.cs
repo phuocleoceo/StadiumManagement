@@ -2,7 +2,9 @@
 using BusinessLayer.Repository;
 using BusinessLayer.ViewModels;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
+using GUILayer.ChildForm.SubForm;
 
 namespace GUILayer.ChildForm
 {
@@ -33,6 +35,28 @@ namespace GUILayer.ChildForm
             lblSan.Text = "Click to choose ...";
             picSan.Image = null;
             dtpKetThucThue.Value = dtpBatDauThue.Value = DateTime.Now;
+            lblGia.Text = "";
+            picSan.Tag = "";
+        }
+
+        private void dgvSan_SelectionChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void picSan_Click(object sender, EventArgs e)
+        {
+            FormChonSan f = new FormChonSan();
+            f.SD += new FormChonSan.SendData(GetStadiumInfor);
+            f.ShowDialog();
+        }
+
+        public void GetStadiumInfor(int id, string name, double price, Image img)
+        {
+            picSan.Tag = id;
+            lblSan.Text = name;
+            picSan.Image = img;
+            lblGia.Text = price.ToString();
         }
     }
 }
