@@ -33,7 +33,8 @@ namespace BusinessLayer
             CreateMap<ServiceOrder, ServiceOrderVM>()
                 .ForMember(svm => svm.Bill_Code, prop => prop.MapFrom(s => s.Bill.BillCode))
                 .ForMember(svm => svm.Service_Name, prop => prop.MapFrom(s => s.Service.Name))
-                .ForMember(svm => svm.Service_Image, prop => prop.MapFrom(s => s.Service.Image));
+                .ForMember(svm => svm.Service_Image, prop => prop.MapFrom(s => s.Service.Image))
+                .ForMember(svm => svm.Service_Price, prop => prop.MapFrom(s => s.Service.Price));
             CreateMap<ServiceOrderVM, ServiceOrder>();
 
             CreateMap<RentOrder, RentOrderVM>()

@@ -10,11 +10,12 @@ namespace GUILayer.ChildForm.SubForm
     public partial class FormDatSan : Form
     {
         private readonly RentOrderRepository _db;
+        private readonly int _currentBillId;
         public FormDatSan(int Bill_Id, string Bill_Code)
         {
             InitializeComponent();
             txtHoaDon.Text = Bill_Code;
-            this.Tag = Bill_Id;
+            _currentBillId = Bill_Id;
             dgvSan.FormatTable();
             _db = new RentOrderRepository();
             LoadData();

@@ -15,7 +15,7 @@ namespace DataAccessLayer.Models
 
         public DateTime EndRentDate { get; set; }
 
-        public float Total { get; set; }
+        public double Total { get; set; }
 
         public int Stadium_Id { get; set; }
         [ForeignKey(nameof(Stadium_Id))]

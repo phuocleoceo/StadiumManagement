@@ -17,13 +17,13 @@ namespace BusinessLayer.ViewModels
         public int Service_Id { get; set; }
         [DisplayName("Tên dịch vụ")]
         public string Service_Name { get; set; }
-
+        public double Service_Price { get; set; }
         public byte[] Service_Image { get; set; }
 
         [DisplayName("Số lượng")]
         public int Count { get; set; }
 
         [DisplayName("Tổng tiền")]
-        public float Total { get; set; }
+        public double Total { get; set; }
     }
 }

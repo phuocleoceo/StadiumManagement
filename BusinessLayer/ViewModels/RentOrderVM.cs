@@ -34,6 +34,6 @@ namespace BusinessLayer.ViewModels
         public double RentTime => (EndRentDate - StartRentDate).TotalHours;
 
         [DisplayName("Tổng tiền")]
-        public float Total { get; set; }              
+        public double Total { get; set; }              
     }
 }

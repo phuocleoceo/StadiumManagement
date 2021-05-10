@@ -24,14 +24,6 @@ namespace BusinessLayer.Repository
             return listVM;
         }
 
-        public void AddBill(BillVM bvm)
-        {
-            Bill b = mapper.Map<Bill>(bvm);
-            b.BillStatus = BillStatus.UnPurchased;
-            Add(b);
-            Save();
-        }
-
         public void GetComboBoxCustomer(ComboBox cbb)
         {
             List<Customer> listCus = _db.Customers.ToList();
@@ -43,6 +35,19 @@ namespace BusinessLayer.Repository
                     Text = cus.Name
                 });
             }
+        }
+
+        //public double GetTotal()
+        //{
+
+        //}
+
+        public void AddBill(BillVM bvm)
+        {
+            Bill b = mapper.Map<Bill>(bvm);
+            b.BillStatus = BillStatus.UnPurchased;
+            Add(b);
+            Save();
         }
     }
 }

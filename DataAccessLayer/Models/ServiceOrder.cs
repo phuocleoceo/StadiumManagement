@@ -10,7 +10,7 @@ namespace DataAccessLayer.Models
 
         public int Count { get; set; }
 
-        public float Total { get; set; }
+        public double Total { get; set; }
 
         public int Service_Id { get; set; }
         [ForeignKey(nameof(Service_Id))]
