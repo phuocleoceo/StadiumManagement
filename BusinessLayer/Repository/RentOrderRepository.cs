@@ -23,5 +23,21 @@ namespace BusinessLayer.Repository
             }
             return listVM;
         }
+
+        public void AddRentOrder(RentOrderVM rovm) 
+        {
+
+        }
+
+        public void UpdateRentOrder(RentOrderVM rovm)
+        {
+
+        }
+
+        public void DeleteRentOrder(int id)
+        {
+            Remove(id);
+            Save();
+        }
     }
 }

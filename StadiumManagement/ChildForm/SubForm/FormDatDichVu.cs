@@ -18,7 +18,6 @@ namespace GUILayer.ChildForm.SubForm
             txtHoaDon.Text = Bill_Code;
             _currentBillId = Bill_Id;
             dgvDV.FormatTable();
-            _db = new ServiceOrderRepository();
             LoadData();
         }
 
@@ -51,9 +50,9 @@ namespace GUILayer.ChildForm.SubForm
             {
                 NUDSoLuong.Value = Convert.ToDecimal(r[0].Cells["Count"].Value);
                 txtTongTien.Text = r[0].Cells["Total"].Value.ToString();
-                picDV.Tag = r[0].Cells["Service_Id"].Value.ToString();
-                lblDichVu.Text = r[0].Cells["Service_Name"].Value.ToString();
+                picDV.Tag = r[0].Cells["Service_Id"].Value;
                 picDV.Image = ((byte[])(r[0].Cells["Service_Image"].Value)).ByteArrayToImage();
+                lblDichVu.Text = r[0].Cells["Service_Name"].Value.ToString();
                 lblGia.Text = r[0].Cells["Service_Price"].Value.ToString();                
             }
         }

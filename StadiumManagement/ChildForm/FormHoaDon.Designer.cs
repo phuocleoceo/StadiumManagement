@@ -73,6 +73,7 @@ namespace GUILayer.ChildForm
             this.btnInBill.TabIndex = 12;
             this.btnInBill.Text = "In Hoá Đơn";
             this.btnInBill.UseVisualStyleBackColor = true;
+            this.btnInBill.Click += new System.EventHandler(this.btnInBill_Click);
             // 
             // btnThanhToan
             // 
@@ -83,6 +84,7 @@ namespace GUILayer.ChildForm
             this.btnThanhToan.TabIndex = 13;
             this.btnThanhToan.Text = "Thanh Toán";
             this.btnThanhToan.UseVisualStyleBackColor = true;
+            this.btnThanhToan.Click += new System.EventHandler(this.btnThanhToan_Click);
             // 
             // btnThem
             // 

@@ -49,5 +49,17 @@ namespace BusinessLayer.Repository
             stadium.isDeleted = true;
             Save();
         }
+
+        //Dat san
+        public List<StadiumVM> GetListAvailable()
+        {
+            List<Stadium> list = GetAll(c => c.isDeleted == false && c.Status == StadiumStatus.Free);
+            List<StadiumVM> listVM = new List<StadiumVM>();
+            foreach (Stadium s in list)
+            {
+                listVM.Add(mapper.Map<StadiumVM>(s));
+            }
+            return listVM;
+        }
     }
 }

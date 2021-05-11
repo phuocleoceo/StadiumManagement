@@ -40,7 +40,7 @@ namespace GUILayer.ChildForm
         private void btnClear_Click(object sender, EventArgs e)
         {
             txtNgayTao.Text = txtNgayThanhToan.Text = txtMaHoaDon.Text = txtThuNgan.Text
-                = txtTongTien.Text  = cbbKhachHang.Text = "";
+                = txtTongTien.Text = cbbKhachHang.Text = "";
         }
 
         private void dgvBill_SelectionChanged(object sender, EventArgs e)
@@ -80,7 +80,7 @@ namespace GUILayer.ChildForm
             DataGridViewSelectedRowCollection r = dgvBill.SelectedRows;
             int Bill_Id = (int)r[0].Cells["Id"].Value;
             string Bill_Code = r[0].Cells["BillCode"].Value.ToString();
-            FormDatDichVu f = new FormDatDichVu(Bill_Id,Bill_Code);
+            FormDatDichVu f = new FormDatDichVu(Bill_Id, Bill_Code);
             f.ShowDialog();
             SetBillTotal();
             LoadData();
@@ -95,6 +95,16 @@ namespace GUILayer.ChildForm
             f.ShowDialog();
             SetBillTotal();
             LoadData();
+        }
+
+        private void btnThanhToan_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnInBill_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

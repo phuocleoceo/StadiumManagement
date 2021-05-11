@@ -141,6 +141,11 @@ namespace GUILayer.ChildForm.SubForm
             this.NUDSoLuong.Name = "NUDSoLuong";
             this.NUDSoLuong.Size = new System.Drawing.Size(162, 26);
             this.NUDSoLuong.TabIndex = 53;
+            this.NUDSoLuong.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // label4
             // 

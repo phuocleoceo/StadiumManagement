@@ -18,7 +18,7 @@ namespace BusinessLayer.ViewModels
         public int Stadium_Id { get; set; }
         [DisplayName("Tên sân")]
         public string Stadium_Name { get; set; }
-
+        public double Stadium_Price { get; set; }
         public byte[] Stadium_Image { get; set; }
 
         [DisplayName("Tiền cọc")]

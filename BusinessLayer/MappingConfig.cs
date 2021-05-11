@@ -40,7 +40,8 @@ namespace BusinessLayer
             CreateMap<RentOrder, RentOrderVM>()
                 .ForMember(rvm => rvm.Bill_Code, prop => prop.MapFrom(r => r.Bill.BillCode))
                 .ForMember(rvm => rvm.Stadium_Name, prop => prop.MapFrom(r => r.Stadium.Name))
-                .ForMember(rvm => rvm.Stadium_Image, prop => prop.MapFrom(r => r.Stadium.Image));
+                .ForMember(rvm => rvm.Stadium_Image, prop => prop.MapFrom(r => r.Stadium.Image))
+                .ForMember(rvm => rvm.Stadium_Price, prop => prop.MapFrom(r => r.Stadium.Price));
             CreateMap<RentOrderVM, RentOrder>();
 
             CreateMap<Bill, BillVM>()
