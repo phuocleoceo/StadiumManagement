@@ -18,8 +18,7 @@ namespace GUILayer.ChildForm
             dgvBill.FormatTable();
             _db = new BillRepository();
             _db.GetComboBoxCustomer(cbbKhachHang);
-            currentCashier_Id = (new AccountInformationRepository())
-                            .GetAIByAccountId(FormLogin.currentAccount_Id).Id;
+            currentCashier_Id = (new AccountInformationRepository()).GetAIByAccountId(FormLogin.currentAccount_Id).Id;
             LoadData();
         }
         private void LoadData()
@@ -35,7 +34,7 @@ namespace GUILayer.ChildForm
         private void SetBillTotal()
         {
             DataGridViewSelectedRowCollection r = dgvBill.SelectedRows;
-            _db.SetTotal((int)r[0].Cells["Id"].Value);
+            _db.SetTotal(Convert.ToInt32(r[0].Cells["Id"].Value));
         }
 
         private void btnClear_Click(object sender, EventArgs e)

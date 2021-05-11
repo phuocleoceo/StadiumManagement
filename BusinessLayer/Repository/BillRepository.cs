@@ -67,5 +67,7 @@ namespace BusinessLayer.Repository
             b.DateCheckedOut = DateTime.Now;
             Save();
         }
+
+        
     }
 }

@@ -60,6 +60,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChildForm\SubForm\FormChiTietBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForm\SubForm\FormChiTietBill.Designer.cs">
+      <DependentUpon>FormChiTietBill.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChildForm\SubForm\FormDatDichVu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,6 +152,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ChildForm\SubForm\FormChiTietBill.resx">
+      <DependentUpon>FormChiTietBill.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ChildForm\SubForm\FormDatDichVu.resx">
       <DependentUpon>FormDatDichVu.cs</DependentUpon>
     </EmbeddedResource>
