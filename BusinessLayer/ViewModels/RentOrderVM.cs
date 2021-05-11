@@ -30,7 +30,7 @@ namespace BusinessLayer.ViewModels
         public DateTime EndRentDate { get; set; }
 
         [Browsable(false)]
-        public double RentTime => (EndRentDate - StartRentDate).TotalHours;
+        public double RentTime => Convert.ToInt32((EndRentDate - StartRentDate).TotalHours);
 
         [DisplayName("Tổng tiền")]
         public double Total { get; set; }              

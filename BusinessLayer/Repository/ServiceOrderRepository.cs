@@ -26,7 +26,6 @@ namespace BusinessLayer.Repository
 
         public void AddServiceOrder(ServiceOrderVM sovm)
         {
-            sovm.Total = sovm.Service_Price * sovm.Count;
             ServiceOrder so = mapper.Map<ServiceOrder>(sovm);
             Add(so);
             Save();
@@ -35,7 +34,6 @@ namespace BusinessLayer.Repository
         public void UpdateServiceOrder(ServiceOrderVM sovm)
         {
             ServiceOrder so = GetById(sovm.Id);
-            sovm.Total = sovm.Service_Price * sovm.Count;
             mapper.Map(sovm, so);
             Save();
         }

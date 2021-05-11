@@ -26,12 +26,16 @@ namespace BusinessLayer.Repository
 
         public void AddRentOrder(RentOrderVM rovm) 
         {
-
+            RentOrder ro = mapper.Map<RentOrder>(rovm);
+            Add(ro);
+            Save();
         }
 
         public void UpdateRentOrder(RentOrderVM rovm)
         {
-
+            RentOrder ro = GetById(rovm.Id);
+            mapper.Map(rovm, ro);
+            Save();
         }
 
         public void DeleteRentOrder(int id)

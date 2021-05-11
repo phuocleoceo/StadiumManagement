@@ -83,8 +83,7 @@ namespace GUILayer.ChildForm.SubForm
                 Bill_Id = _currentBillId,
                 Service_Id = Convert.ToInt32(picDV.Tag),
                 Count = Convert.ToInt32(NUDSoLuong.Value),
-                Service_Price = Convert.ToDouble(lblGia.Text),
-                Total = 0
+                Total = Convert.ToDouble(lblGia.Text)* Convert.ToInt32(NUDSoLuong.Value)
             });
             LoadData();
         }
@@ -98,8 +97,7 @@ namespace GUILayer.ChildForm.SubForm
                 Bill_Id = _currentBillId,
                 Service_Id = Convert.ToInt32(picDV.Tag),
                 Count = Convert.ToInt32(NUDSoLuong.Value),
-                Service_Price = Convert.ToDouble(lblGia.Text),
-                Total = 0
+                Total = Convert.ToDouble(lblGia.Text) * Convert.ToInt32(NUDSoLuong.Value)
             });
             LoadData();
         }

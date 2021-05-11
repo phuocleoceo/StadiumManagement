@@ -48,6 +48,7 @@ namespace BusinessLayer.Repository
             // Tien coc
             double _deposit = 0;
             foreach (RentOrder ro in b.RentOrders) _deposit += ro.Deposit;
+            b.Deposit = _deposit;
             Save();
         }
 

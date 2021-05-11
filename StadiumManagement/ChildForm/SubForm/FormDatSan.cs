@@ -17,7 +17,7 @@ namespace GUILayer.ChildForm.SubForm
             this.ControlBox = false;
             txtHoaDon.Text = Bill_Code;
             _currentBillId = Bill_Id;
-            dgvSan.FormatTable();            
+            dgvSan.FormatTable();
             LoadData();
         }
 
@@ -48,14 +48,14 @@ namespace GUILayer.ChildForm.SubForm
             DataGridViewSelectedRowCollection r = dgvSan.SelectedRows;
             if (r.Count == 1)
             {
-                txtTongTien.Text= r[0].Cells["Total"].Value.ToString();
-                txtTienCoc.Text= r[0].Cells["Deposit"].Value.ToString();
+                txtTongTien.Text = r[0].Cells["Total"].Value.ToString();
+                txtTienCoc.Text = r[0].Cells["Deposit"].Value.ToString();
                 dtpBatDauThue.Value = Convert.ToDateTime(r[0].Cells["StartRentDate"].Value);
                 dtpKetThucThue.Value = Convert.ToDateTime(r[0].Cells["EndRentDate"].Value);
                 picSan.Tag = r[0].Cells["Stadium_Id"].Value;
                 picSan.Image = ((byte[])r[0].Cells["Stadium_Image"].Value).ByteArrayToImage();
                 lblSan.Text = r[0].Cells["Stadium_Name"].Value.ToString();
-                lblGia.Text= r[0].Cells["Stadium_Price"].Value.ToString();
+                lblGia.Text = r[0].Cells["Stadium_Price"].Value.ToString();
             }
         }
 
@@ -81,20 +81,35 @@ namespace GUILayer.ChildForm.SubForm
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            _db.AddRentOrder(new RentOrderVM
+            RentOrderVM rovm = new RentOrderVM
             {
-
-            });
+                Bill_Id = _currentBillId,
+                Stadium_Id = Convert.ToInt32(picSan.Tag),
+                StartRentDate = dtpBatDauThue.Value,
+                EndRentDate = dtpKetThucThue.Value,
+                Deposit = Convert.ToDouble(txtTienCoc.Text),
+                Total = 0
+            };
+            rovm.Total = Convert.ToDouble(lblGia.Text) * rovm.RentTime;
+            _db.AddRentOrder(rovm);
             LoadData();
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
             DataGridViewSelectedRowCollection r = dgvSan.SelectedRows;
-            _db.UpdateRentOrder(new RentOrderVM
+            RentOrderVM rovm = new RentOrderVM
             {
-                Id = Convert.ToInt32(r[0].Cells["Id"].Value)
-            });
+                Id = Convert.ToInt32(r[0].Cells["Id"].Value),
+                Bill_Id = _currentBillId,
+                Stadium_Id = Convert.ToInt32(picSan.Tag),
+                StartRentDate = dtpBatDauThue.Value,
+                EndRentDate = dtpKetThucThue.Value,
+                Deposit = Convert.ToDouble(txtTienCoc.Text),
+                Total = 0
+            };
+            rovm.Total = Convert.ToDouble(lblGia.Text) * rovm.RentTime;
+            _db.UpdateRentOrder(rovm);
             LoadData();
         }
 
