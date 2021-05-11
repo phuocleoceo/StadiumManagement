@@ -60,11 +60,8 @@ namespace GUILayer.ChildForm.SubForm
             lblGia.Text = price.ToString();
         }
 
-        public delegate void LoadDataBill();
-        public LoadDataBill LDB { get; set; }
         private void btnXacNhan_Click(object sender, EventArgs e)
         {
-            LDB();
             this.Dispose();
         }
     }

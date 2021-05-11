@@ -10,24 +10,31 @@ namespace GUILayer.ChildForm
 {
     public partial class FormHoaDon : Form
     {
-        private readonly BillRepository _db;
+        private BillRepository _db;
         private readonly int currentCashier_Id;
         public FormHoaDon()
         {
             InitializeComponent();
             dgvBill.FormatTable();
             _db = new BillRepository();
-            LoadBillData();
             _db.GetComboBoxCustomer(cbbKhachHang);
             currentCashier_Id = (new AccountInformationRepository())
                             .GetAIByAccountId(FormLogin.currentAccount_Id).Id;
+            LoadData();
         }
-        private void LoadBillData()
+        private void LoadData()
         {
+            // Reset DbContext
+            _db = new BillRepository();
             dgvBill.DataSource = null;
             dgvBill.Rows.Clear();
             dgvBill.DataSource = _db.GetList();
             dgvBill.Columns["Id"].Visible = false;
+        }
+        private void SetBillTotal()
+        {
+            DataGridViewSelectedRowCollection r = dgvBill.SelectedRows;
+            _db.SetTotal((int)r[0].Cells["Id"].Value);
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -65,23 +72,18 @@ namespace GUILayer.ChildForm
                 DateCheckedOut = null,
                 Total = 0
             });
-            LoadBillData();
+            LoadData();
         }
 
-        private void SetBillTotal()
-        {
-            DataGridViewSelectedRowCollection r = dgvBill.SelectedRows;
-            _db.SetTotal((int)r[0].Cells["Id"].Value);
-        }
         private void btnDatDichVu_Click(object sender, EventArgs e)
         {
             DataGridViewSelectedRowCollection r = dgvBill.SelectedRows;
             int Bill_Id = (int)r[0].Cells["Id"].Value;
             string Bill_Code = r[0].Cells["BillCode"].Value.ToString();
             FormDatDichVu f = new FormDatDichVu(Bill_Id,Bill_Code);
-            f.LDB += new FormDatDichVu.LoadDataBill(SetBillTotal);
-            f.LDB += new FormDatDichVu.LoadDataBill(LoadBillData);
             f.ShowDialog();
+            SetBillTotal();
+            LoadData();
         }
 
         private void btnDatSan_Click(object sender, EventArgs e)
@@ -90,9 +92,9 @@ namespace GUILayer.ChildForm
             int Bill_Id = (int)r[0].Cells["Id"].Value;
             string Bill_Code = r[0].Cells["BillCode"].Value.ToString();
             FormDatSan f = new FormDatSan(Bill_Id, Bill_Code);
-            f.LDB += new FormDatSan.LoadDataBill(SetBillTotal);
-            f.LDB += new FormDatSan.LoadDataBill(LoadBillData);
             f.ShowDialog();
+            SetBillTotal();
+            LoadData();
         }
     }
 }

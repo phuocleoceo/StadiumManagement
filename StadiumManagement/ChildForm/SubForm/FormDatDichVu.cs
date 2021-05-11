@@ -9,11 +9,12 @@ namespace GUILayer.ChildForm.SubForm
 {
     public partial class FormDatDichVu : Form
     {
-        private readonly ServiceOrderRepository _db;
+        private ServiceOrderRepository _db;
         private readonly int _currentBillId;
         public FormDatDichVu(int Bill_Id, string Bill_Code)
         {
             InitializeComponent();
+            this.ControlBox = false;
             txtHoaDon.Text = Bill_Code;
             _currentBillId = Bill_Id;
             dgvDV.FormatTable();
@@ -23,12 +24,14 @@ namespace GUILayer.ChildForm.SubForm
 
         private void LoadData()
         {
+            _db = new ServiceOrderRepository();
             dgvDV.DataSource = null;
             dgvDV.Rows.Clear();
             dgvDV.DataSource = _db.GetList(_currentBillId);
             dgvDV.Columns["Id"].Visible = false;
             dgvDV.Columns["Service_Image"].Visible = false;
             dgvDV.Columns["Service_Price"].Visible = false;
+            dgvDV.Columns["Service_Id"].Visible = false;
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -48,9 +51,10 @@ namespace GUILayer.ChildForm.SubForm
             {
                 NUDSoLuong.Value = Convert.ToDecimal(r[0].Cells["Count"].Value);
                 txtTongTien.Text = r[0].Cells["Total"].Value.ToString();
+                picDV.Tag = r[0].Cells["Service_Id"].Value.ToString();
                 lblDichVu.Text = r[0].Cells["Service_Name"].Value.ToString();
                 picDV.Image = ((byte[])(r[0].Cells["Service_Image"].Value)).ByteArrayToImage();
-                lblGia.Text = r[0].Cells["Service_Price"].Value.ToString();
+                lblGia.Text = r[0].Cells["Service_Price"].Value.ToString();                
             }
         }
 
@@ -68,12 +72,8 @@ namespace GUILayer.ChildForm.SubForm
             picDV.Image = img;
             lblGia.Text = price.ToString();
         }
-
-        public delegate void LoadDataBill();
-        public LoadDataBill LDB { get; set; }
         private void btnXacNhan_Click(object sender, EventArgs e)
         {
-            LDB();
             this.Dispose();
         }
 
@@ -82,8 +82,8 @@ namespace GUILayer.ChildForm.SubForm
             _db.AddServiceOrder(new ServiceOrderVM
             {
                 Bill_Id = _currentBillId,
-                Service_Id = (int)picDV.Tag,
-                Count = (int)NUDSoLuong.Value,
+                Service_Id = Convert.ToInt32(picDV.Tag),
+                Count = Convert.ToInt32(NUDSoLuong.Value),
                 Service_Price = Convert.ToDouble(lblGia.Text),
                 Total = 0
             });
@@ -97,8 +97,8 @@ namespace GUILayer.ChildForm.SubForm
             {
                 Id = Convert.ToInt32(r[0].Cells["Id"].Value),
                 Bill_Id = _currentBillId,
-                Service_Id = (int)picDV.Tag,
-                Count = (int)NUDSoLuong.Value,
+                Service_Id = Convert.ToInt32(picDV.Tag),
+                Count = Convert.ToInt32(NUDSoLuong.Value),
                 Service_Price = Convert.ToDouble(lblGia.Text),
                 Total = 0
             });

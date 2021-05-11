@@ -13,7 +13,6 @@ namespace BusinessLayer.ViewModels
         [DisplayName("Mã hoá đơn")]
         public string Bill_Code { get; set; }
 
-        [Browsable(false)]
         public int Service_Id { get; set; }
         [DisplayName("Tên dịch vụ")]
         public string Service_Name { get; set; }
