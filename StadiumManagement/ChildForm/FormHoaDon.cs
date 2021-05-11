@@ -30,6 +30,7 @@ namespace GUILayer.ChildForm
             dgvBill.Rows.Clear();
             dgvBill.DataSource = _db.GetList();
             dgvBill.Columns["Id"].Visible = false;
+            dgvBill.Columns["DateCheckedOut"].Visible = false;
         }
         private void SetBillTotal()
         {
@@ -39,7 +40,7 @@ namespace GUILayer.ChildForm
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            txtNgayTao.Text = txtNgayThanhToan.Text = txtMaHoaDon.Text = txtThuNgan.Text
+            txtNgayTao.Text = txtMaHoaDon.Text = txtThuNgan.Text
                 = txtTongTien.Text = cbbKhachHang.Text = txtSDTKhach.Text = "";
         }
 
@@ -55,14 +56,10 @@ namespace GUILayer.ChildForm
                 txtSDTKhach.Text = r[0].Cells["Customer_Phone"].Value.ToString();
 
                 double TienCoc = Convert.ToDouble(r[0].Cells["Deposit"].Value);
-                double TongTien= Convert.ToDouble(r[0].Cells["Total"].Value);
+                double TongTien = Convert.ToDouble(r[0].Cells["Total"].Value);
                 txtTienCoc.Text = TienCoc.ToString();
                 txtTongTien.Text = TongTien.ToString();
                 txtPhaiTra.Text = (TongTien - TienCoc).ToString();
-
-                if (r[0].Cells["DateCheckedOut"].Value != null)
-                    txtNgayThanhToan.Text = r[0].Cells["DateCheckedOut"].Value.ToString();
-                else txtNgayThanhToan.Text = "";
             }
         }
 
@@ -83,7 +80,7 @@ namespace GUILayer.ChildForm
         private void btnDatDichVu_Click(object sender, EventArgs e)
         {
             DataGridViewSelectedRowCollection r = dgvBill.SelectedRows;
-            int Bill_Id = (int)r[0].Cells["Id"].Value;
+            int Bill_Id = Convert.ToInt32(r[0].Cells["Id"].Value);
             string Bill_Code = r[0].Cells["BillCode"].Value.ToString();
             FormDatDichVu f = new FormDatDichVu(Bill_Id, Bill_Code);
             f.ShowDialog();
@@ -94,7 +91,7 @@ namespace GUILayer.ChildForm
         private void btnDatSan_Click(object sender, EventArgs e)
         {
             DataGridViewSelectedRowCollection r = dgvBill.SelectedRows;
-            int Bill_Id = (int)r[0].Cells["Id"].Value;
+            int Bill_Id = Convert.ToInt32(r[0].Cells["Id"].Value);
             string Bill_Code = r[0].Cells["BillCode"].Value.ToString();
             FormDatSan f = new FormDatSan(Bill_Id, Bill_Code);
             f.ShowDialog();
@@ -104,7 +101,13 @@ namespace GUILayer.ChildForm
 
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
-
+            if (MessageBox.Show("In hoá đơn không ?", "Cân nhắc !", MessageBoxButtons.YesNo) != DialogResult.Yes)
+            {
+                btnInBill.PerformClick();
+            }
+            DataGridViewSelectedRowCollection r = dgvBill.SelectedRows;
+            _db.PurchaseBill(Convert.ToInt32(r[0].Cells["Id"].Value));
+            LoadData();
         }
 
         private void btnInBill_Click(object sender, EventArgs e)

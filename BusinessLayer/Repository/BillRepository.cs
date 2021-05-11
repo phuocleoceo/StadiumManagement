@@ -59,5 +59,13 @@ namespace BusinessLayer.Repository
             Add(b);
             Save();
         }
+
+        public void PurchaseBill(int Bill_Id)
+        {
+            Bill b = GetById(Bill_Id);
+            b.BillStatus = BillStatus.Purchased;
+            b.DateCheckedOut = DateTime.Now;
+            Save();
+        }
     }
 }
