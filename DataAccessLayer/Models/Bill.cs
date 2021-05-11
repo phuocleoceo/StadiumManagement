@@ -31,6 +31,8 @@ namespace DataAccessLayer.Models
 
         public BillStatus BillStatus { get; set; }
 
+        public double Deposit { get; set; }
+
         public double Total { get; set; }
     }
 }

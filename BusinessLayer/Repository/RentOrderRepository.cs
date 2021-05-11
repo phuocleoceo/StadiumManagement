@@ -13,9 +13,9 @@ namespace BusinessLayer.Repository
 {
     public class RentOrderRepository:Repository<RentOrder>
     {
-        public List<RentOrderVM> GetList()
+        public List<RentOrderVM> GetList(int Bill_Id)
         {
-            List<RentOrder> list = GetAll();
+            List<RentOrder> list = GetAll(c=>c.Bill_Id==Bill_Id);
             List<RentOrderVM> listVM = new List<RentOrderVM>();
             foreach (RentOrder s in list)
             {

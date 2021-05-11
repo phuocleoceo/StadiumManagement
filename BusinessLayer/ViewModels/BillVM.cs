@@ -35,6 +35,9 @@ namespace BusinessLayer.ViewModels
         [Browsable(false)]
         public BillStatus BillStatus { get; set; }
 
+        [DisplayName("Đã cọc")]
+        public double Deposit { get; set; }
+
         [DisplayName("Tổng tiền")]
         public double Total { get; set; }
     }

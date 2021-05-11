@@ -14,7 +14,6 @@ namespace BusinessLayer.ViewModels
         [DisplayName("Mã hoá đơn")]
         public string Bill_Code { get; set; }
 
-        [Browsable(false)]
         public int Stadium_Id { get; set; }
         [DisplayName("Tên sân")]
         public string Stadium_Name { get; set; }

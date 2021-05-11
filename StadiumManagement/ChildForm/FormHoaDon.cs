@@ -40,7 +40,7 @@ namespace GUILayer.ChildForm
         private void btnClear_Click(object sender, EventArgs e)
         {
             txtNgayTao.Text = txtNgayThanhToan.Text = txtMaHoaDon.Text = txtThuNgan.Text
-                = txtTongTien.Text = cbbKhachHang.Text = "";
+                = txtTongTien.Text = cbbKhachHang.Text = txtSDTKhach.Text = "";
         }
 
         private void dgvBill_SelectionChanged(object sender, EventArgs e)
@@ -51,9 +51,14 @@ namespace GUILayer.ChildForm
                 txtMaHoaDon.Text = r[0].Cells["BillCode"].Value.ToString();
                 txtNgayTao.Text = r[0].Cells["DateCreated"].Value.ToString();
                 txtThuNgan.Text = r[0].Cells["Cashier_Name"].Value.ToString();
-                txtTongTien.Text = r[0].Cells["Total"].Value.ToString();
                 cbbKhachHang.Text = r[0].Cells["Customer_Name"].Value.ToString();
                 txtSDTKhach.Text = r[0].Cells["Customer_Phone"].Value.ToString();
+
+                double TienCoc = Convert.ToDouble(r[0].Cells["Deposit"].Value);
+                double TongTien= Convert.ToDouble(r[0].Cells["Total"].Value);
+                txtTienCoc.Text = TienCoc.ToString();
+                txtTongTien.Text = TongTien.ToString();
+                txtPhaiTra.Text = (TongTien - TienCoc).ToString();
 
                 if (r[0].Cells["DateCheckedOut"].Value != null)
                     txtNgayThanhToan.Text = r[0].Cells["DateCheckedOut"].Value.ToString();

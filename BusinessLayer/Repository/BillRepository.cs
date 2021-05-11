@@ -40,10 +40,14 @@ namespace BusinessLayer.Repository
         public void SetTotal(int Bill_Id)
         {
             Bill b = GetById(Bill_Id);
+            // Tong tien
             double _total = 0;
             foreach (RentOrder ro in b.RentOrders) _total += ro.Total;
             foreach (ServiceOrder so in b.ServiceOrders) _total += so.Total;
             b.Total = _total;
+            // Tien coc
+            double _deposit = 0;
+            foreach (RentOrder ro in b.RentOrders) _deposit += ro.Deposit;
             Save();
         }
 

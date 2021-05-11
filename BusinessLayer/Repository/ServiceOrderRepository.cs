@@ -15,7 +15,7 @@ namespace BusinessLayer.Repository
     {
         public List<ServiceOrderVM> GetList(int Bill_Id)
         {
-            List<ServiceOrder> list = GetAll(c=>c.Bill_Id==Bill_Id);
+            List<ServiceOrder> list = GetAll(c => c.Bill_Id == Bill_Id);
             List<ServiceOrderVM> listVM = new List<ServiceOrderVM>();
             foreach (ServiceOrder s in list)
             {

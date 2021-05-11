@@ -26,7 +26,7 @@ namespace GUILayer.ChildForm.SubForm
             _db = new RentOrderRepository();
             dgvSan.DataSource = null;
             dgvSan.Rows.Clear();
-            dgvSan.DataSource = _db.GetList();
+            dgvSan.DataSource = _db.GetList(_currentBillId);
             dgvSan.Columns["Id"].Visible = false;
             dgvSan.Columns["Stadium_Image"].Visible = false;
             dgvSan.Columns["Stadium_Price"].Visible = false;
@@ -81,16 +81,38 @@ namespace GUILayer.ChildForm.SubForm
 
         private void btnThem_Click(object sender, EventArgs e)
         {
+            _db.AddRentOrder(new RentOrderVM
+            {
+
+            });
             LoadData();
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
+            DataGridViewSelectedRowCollection r = dgvSan.SelectedRows;
+            _db.UpdateRentOrder(new RentOrderVM
+            {
+                Id = Convert.ToInt32(r[0].Cells["Id"].Value)
+            });
             LoadData();
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
+            DataGridViewSelectedRowCollection r = dgvSan.SelectedRows;
+            if (r.Count > 0)
+            {
+                DialogResult dialogResult = MessageBox.Show("Xác nhận xoá ?", "Bình tĩnh !", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    foreach (DataGridViewRow row in r)
+                    {
+                        _db.DeleteRentOrder(Convert.ToInt32(row.Cells["Id"].Value));
+                    }
+                }
+            }
+            LoadData();
             LoadData();
         }
     }
