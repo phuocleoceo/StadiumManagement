@@ -17,6 +17,7 @@ namespace GUILayer.ChildForm
             dgvBill.FormatTable();
             _db = new StatisticRepository();
             LoadData();
+            CalculateSales();
         }
         // Lich su Bill
         private void LoadData(DateTime? _fromDate = null, DateTime? _toDate = null)
@@ -25,6 +26,16 @@ namespace GUILayer.ChildForm
             dgvBill.Rows.Clear();
             dgvBill.DataSource = _db.GetBillHistory(_fromDate, _toDate);
             dgvBill.Columns["Id"].Visible = false;
+        }
+
+        private void CalculateSales()
+        {
+            double _sale = 0;
+            foreach(DataGridViewRow row in dgvBill.Rows)
+            {
+                _sale += Convert.ToDouble(row.Cells["Total"].Value);
+            }
+            lblTongDoanhTHu.Text = _sale.ToString();
         }
 
         private void dgvBill_DoubleClick(object sender, EventArgs e)
@@ -39,6 +50,7 @@ namespace GUILayer.ChildForm
             DateTime? _fromDate = dtpFromDate.Value;
             DateTime? _toDate = dtpToDate.Value;
             LoadData(_fromDate, _toDate);
+            CalculateSales();
         }
     }
 }
