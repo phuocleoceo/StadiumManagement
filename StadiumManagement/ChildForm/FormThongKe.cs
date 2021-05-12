@@ -30,8 +30,8 @@ namespace GUILayer.ChildForm
         private void dgvBill_DoubleClick(object sender, EventArgs e)
         {
             DataGridViewSelectedRowCollection r = dgvBill.SelectedRows;
-            FormChiTietBill f = new FormChiTietBill();
-            f.ShowDialog();
+            FormChiTietBill f = new FormChiTietBill(Convert.ToInt32(r[0].Cells["Id"].Value));
+            f.Show();
         }
     }
 }

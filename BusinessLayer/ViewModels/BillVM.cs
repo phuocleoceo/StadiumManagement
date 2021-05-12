@@ -32,9 +32,6 @@ namespace BusinessLayer.ViewModels
         [DisplayName("Ngày thanh toán")]
         public DateTime? DateCheckedOut { get; set; }
 
-        [Browsable(false)]
-        public BillStatus BillStatus { get; set; }
-
         [DisplayName("Đã cọc")]
         public double Deposit { get; set; }
 

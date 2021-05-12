@@ -16,6 +16,7 @@ namespace BusinessLayer.ViewModels
         public int Service_Id { get; set; }
         [DisplayName("Tên dịch vụ")]
         public string Service_Name { get; set; }
+        [DisplayName("Đơn giá")]
         public double Service_Price { get; set; }
         public byte[] Service_Image { get; set; }
 

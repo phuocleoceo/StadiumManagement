@@ -60,7 +60,7 @@ namespace GUILayer.ChildForm.SubForm
             this.Controls.Add(this.lvSan);
             this.Name = "FormChonSan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "FormChonSan";
+            this.Text = "Chọn sân";
             this.ResumeLayout(false);
 
         }

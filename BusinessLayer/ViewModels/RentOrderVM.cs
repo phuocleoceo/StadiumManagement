@@ -17,11 +17,9 @@ namespace BusinessLayer.ViewModels
         public int Stadium_Id { get; set; }
         [DisplayName("Tên sân")]
         public string Stadium_Name { get; set; }
+        [DisplayName("Đơn giá")]
         public double Stadium_Price { get; set; }
         public byte[] Stadium_Image { get; set; }
-
-        [DisplayName("Tiền cọc")]
-        public double Deposit { get; set; }
 
         [DisplayName("Bắt đầu thuê")]
         public DateTime StartRentDate { get; set; }
@@ -31,6 +29,9 @@ namespace BusinessLayer.ViewModels
 
         [Browsable(false)]
         public double RentTime => Convert.ToInt32((EndRentDate - StartRentDate).TotalHours);
+
+        [DisplayName("Tiền cọc")]
+        public double Deposit { get; set; }
 
         [DisplayName("Tổng tiền")]
         public double Total { get; set; }              
