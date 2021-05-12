@@ -81,7 +81,7 @@ namespace BusinessLayer.Repository
             content.Append($"\t\t\t\tNgay thanh toan : {b.DateCheckedOut}\n");
             content.Append($"\t\t\t\tThu ngan : {b.Cashier.Name}\n");
             //Thue san
-            content.Append("\n_______________________________________San bong da thue :_______________________________________\n\n");
+            content.Append("\n_______________________________________San the thao thue :______________________________________\n\n");
             content.Append($"{"Ten san",15}\t\t{"Don gia",7}\t\t{"Bat dau thue => Ket thuc thue",44}\t{"Tong cong",9}\t{"Tien coc",8}\n");
             foreach (RentOrder ro in b.RentOrders)
             {
