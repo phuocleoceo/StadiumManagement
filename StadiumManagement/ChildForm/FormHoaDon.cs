@@ -133,7 +133,7 @@ namespace GUILayer.ChildForm
         private void printDocumentBill_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
             string content = _db.GetContentPrint(_Bill_Id);
-            e.Graphics.DrawString(content, new Font("Arial", 12, FontStyle.Regular), Brushes.Black, 100, 200);
+            e.Graphics.DrawString(content, new Font("Arial", 12, FontStyle.Regular), Brushes.Black, 100, 100);
         }
     }
 }
