@@ -5,6 +5,7 @@ using System;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using GUILayer.ChildForm.SubForm;
+using System.Drawing;
 
 namespace GUILayer.ChildForm
 {
@@ -20,6 +21,8 @@ namespace GUILayer.ChildForm
             _db.GetComboBoxCustomer(cbbKhachHang);
             currentCashier_Id = (new AccountInformationRepository()).GetAIByAccountId(FormLogin.currentAccount_Id).Id;
             LoadData();
+            //In ngang
+            printDocumentBill.DefaultPageSettings.Landscape = true;
         }
         private void LoadData()
         {
@@ -98,20 +101,39 @@ namespace GUILayer.ChildForm
             LoadData();
         }
 
+        private int _Bill_Id;
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("In hoá đơn không ?", "Cân nhắc !", MessageBoxButtons.YesNo) != DialogResult.Yes)
-            {
-                btnInBill.PerformClick();
-            }
             DataGridViewSelectedRowCollection r = dgvBill.SelectedRows;
-            _db.PurchaseBill(Convert.ToInt32(r[0].Cells["Id"].Value));
+            _Bill_Id = Convert.ToInt32(r[0].Cells["Id"].Value);
+            _db.PurchaseBill(_Bill_Id);
+            if (MessageBox.Show("In hoá đơn không ?", "Cân nhắc !", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                PrintBill();
+            }
             LoadData();
         }
 
-        private void btnInBill_Click(object sender, EventArgs e)
+        private void PrintBill()
         {
+            try
+            {
+                printDialogBill.Document = printDocumentBill;
+                if (printDialogBill.ShowDialog() == DialogResult.OK)
+                {
+                    printDocumentBill.Print();
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Không in được !", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
+        private void printDocumentBill_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            string content = _db.GetContentPrint(_Bill_Id);
+            e.Graphics.DrawString(content, new Font("Arial", 12, FontStyle.Regular), Brushes.Black, 100, 200);
         }
     }
 }

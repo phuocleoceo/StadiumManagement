@@ -30,7 +30,6 @@ namespace GUILayer.ChildForm
         private void InitializeComponent()
         {
             this.btnClear = new System.Windows.Forms.Button();
-            this.btnInBill = new System.Windows.Forms.Button();
             this.btnThanhToan = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.dgvBill = new System.Windows.Forms.DataGridView();
@@ -52,13 +51,15 @@ namespace GUILayer.ChildForm
             this.txtTienCoc = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtPhaiTra = new System.Windows.Forms.TextBox();
+            this.printDialogBill = new System.Windows.Forms.PrintDialog();
+            this.printDocumentBill = new System.Drawing.Printing.PrintDocument();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBill)).BeginInit();
             this.SuspendLayout();
             // 
             // btnClear
             // 
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(756, 160);
+            this.btnClear.Location = new System.Drawing.Point(671, 153);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(66, 36);
             this.btnClear.TabIndex = 11;
@@ -66,21 +67,10 @@ namespace GUILayer.ChildForm
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
-            // btnInBill
-            // 
-            this.btnInBill.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInBill.Location = new System.Drawing.Point(625, 160);
-            this.btnInBill.Name = "btnInBill";
-            this.btnInBill.Size = new System.Drawing.Size(107, 36);
-            this.btnInBill.TabIndex = 12;
-            this.btnInBill.Text = "In Hoá Đơn";
-            this.btnInBill.UseVisualStyleBackColor = true;
-            this.btnInBill.Click += new System.EventHandler(this.btnInBill_Click);
-            // 
             // btnThanhToan
             // 
             this.btnThanhToan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThanhToan.Location = new System.Drawing.Point(485, 160);
+            this.btnThanhToan.Location = new System.Drawing.Point(526, 153);
             this.btnThanhToan.Name = "btnThanhToan";
             this.btnThanhToan.Size = new System.Drawing.Size(110, 36);
             this.btnThanhToan.TabIndex = 13;
@@ -91,7 +81,7 @@ namespace GUILayer.ChildForm
             // btnThem
             // 
             this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThem.Location = new System.Drawing.Point(387, 160);
+            this.btnThem.Location = new System.Drawing.Point(419, 153);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(66, 36);
             this.btnThem.TabIndex = 14;
@@ -141,7 +131,7 @@ namespace GUILayer.ChildForm
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(445, 45);
+            this.label3.Location = new System.Drawing.Point(444, 47);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(84, 20);
             this.label3.TabIndex = 46;
@@ -150,7 +140,7 @@ namespace GUILayer.ChildForm
             // txtNgayTao
             // 
             this.txtNgayTao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNgayTao.Location = new System.Drawing.Point(535, 39);
+            this.txtNgayTao.Location = new System.Drawing.Point(534, 41);
             this.txtNgayTao.Name = "txtNgayTao";
             this.txtNgayTao.ReadOnly = true;
             this.txtNgayTao.Size = new System.Drawing.Size(177, 26);
@@ -160,7 +150,7 @@ namespace GUILayer.ChildForm
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(424, 92);
+            this.label5.Location = new System.Drawing.Point(423, 94);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(115, 20);
             this.label5.TabIndex = 46;
@@ -169,7 +159,7 @@ namespace GUILayer.ChildForm
             // txtThuNgan
             // 
             this.txtThuNgan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtThuNgan.Location = new System.Drawing.Point(535, 89);
+            this.txtThuNgan.Location = new System.Drawing.Point(534, 91);
             this.txtThuNgan.Name = "txtThuNgan";
             this.txtThuNgan.ReadOnly = true;
             this.txtThuNgan.Size = new System.Drawing.Size(177, 26);
@@ -225,7 +215,7 @@ namespace GUILayer.ChildForm
             // btnDatSan
             // 
             this.btnDatSan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDatSan.Location = new System.Drawing.Point(29, 160);
+            this.btnDatSan.Location = new System.Drawing.Point(29, 153);
             this.btnDatSan.Name = "btnDatSan";
             this.btnDatSan.Size = new System.Drawing.Size(94, 36);
             this.btnDatSan.TabIndex = 14;
@@ -236,7 +226,7 @@ namespace GUILayer.ChildForm
             // btnDatDichVu
             // 
             this.btnDatDichVu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDatDichVu.Location = new System.Drawing.Point(159, 160);
+            this.btnDatDichVu.Location = new System.Drawing.Point(159, 153);
             this.btnDatDichVu.Name = "btnDatDichVu";
             this.btnDatDichVu.Size = new System.Drawing.Size(110, 36);
             this.btnDatDichVu.TabIndex = 13;
@@ -282,6 +272,14 @@ namespace GUILayer.ChildForm
             this.txtPhaiTra.Size = new System.Drawing.Size(161, 26);
             this.txtPhaiTra.TabIndex = 47;
             // 
+            // printDialogBill
+            // 
+            this.printDialogBill.UseEXDialog = true;
+            // 
+            // printDocumentBill
+            // 
+            this.printDocumentBill.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocumentBill_PrintPage);
+            // 
             // FormHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -304,7 +302,6 @@ namespace GUILayer.ChildForm
             this.Controls.Add(this.txtMaHoaDon);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnClear);
-            this.Controls.Add(this.btnInBill);
             this.Controls.Add(this.btnDatDichVu);
             this.Controls.Add(this.btnThanhToan);
             this.Controls.Add(this.btnDatSan);
@@ -321,7 +318,6 @@ namespace GUILayer.ChildForm
         #endregion
 
         private System.Windows.Forms.Button btnClear;
-        private System.Windows.Forms.Button btnInBill;
         private System.Windows.Forms.Button btnThanhToan;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.DataGridView dgvBill;
@@ -343,5 +339,7 @@ namespace GUILayer.ChildForm
         private System.Windows.Forms.TextBox txtTienCoc;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtPhaiTra;
+        private System.Windows.Forms.PrintDialog printDialogBill;
+        private System.Drawing.Printing.PrintDocument printDocumentBill;
     }
 }
