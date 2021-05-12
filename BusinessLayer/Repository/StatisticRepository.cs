@@ -13,9 +13,13 @@ namespace BusinessLayer.Repository
 {
     public class StatisticRepository : Repository<Bill>
     {
-        public List<BillVM> GetBillHistory()
+        public List<BillVM> GetBillHistory(DateTime? _fromDate = null, DateTime? _toDate = null)
         {
             List<Bill> list = GetAll(c => c.BillStatus == BillStatus.Purchased);
+            if (_fromDate != null && _toDate != null)
+            {
+                list = list.Where(c => c.DateCreated >= _fromDate && c.DateCheckedOut <= _toDate).ToList();
+            }
             List<BillVM> listVM = new List<BillVM>();
             foreach (Bill s in list)
             {

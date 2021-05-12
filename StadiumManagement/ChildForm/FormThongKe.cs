@@ -19,11 +19,11 @@ namespace GUILayer.ChildForm
             LoadData();
         }
         // Lich su Bill
-        private void LoadData()
+        private void LoadData(DateTime? _fromDate = null, DateTime? _toDate = null)
         {
             dgvBill.DataSource = null;
             dgvBill.Rows.Clear();
-            dgvBill.DataSource = _db.GetBillHistory();
+            dgvBill.DataSource = _db.GetBillHistory(_fromDate, _toDate);
             dgvBill.Columns["Id"].Visible = false;
         }
 
@@ -32,6 +32,13 @@ namespace GUILayer.ChildForm
             DataGridViewSelectedRowCollection r = dgvBill.SelectedRows;
             FormChiTietBill f = new FormChiTietBill(Convert.ToInt32(r[0].Cells["Id"].Value));
             f.Show();
+        }
+
+        private void btnLoc_Click(object sender, EventArgs e)
+        {
+            DateTime? _fromDate = dtpFromDate.Value;
+            DateTime? _toDate = dtpToDate.Value;
+            LoadData(_fromDate, _toDate);
         }
     }
 }
