@@ -68,6 +68,12 @@ namespace BusinessLayer.Repository
             Save();
         }
 
+        public void DeleteBill(int Bill_Id)
+        {
+            Remove(Bill_Id);
+            Save();
+        }
+
         public string GetContentPrint(int Bill_Id)
         {
             Bill b = GetById(Bill_Id);
