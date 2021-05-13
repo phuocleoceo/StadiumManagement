@@ -18,7 +18,8 @@ namespace BusinessLayer.Repository
             List<Bill> list = GetAll(c => c.BillStatus == BillStatus.Purchased);
             if (_fromDate != null && _toDate != null)
             {
-                list = list.Where(c => c.DateCreated >= _fromDate && c.DateCheckedOut <= _toDate).ToList();
+                list = list.Where(c => c.DateCreated.Date >= ((DateTime)_fromDate).Date
+                && ((DateTime)c.DateCheckedOut).Date <= ((DateTime)_toDate).Date).ToList();                
             }
             List<BillVM> listVM = new List<BillVM>();
             foreach (Bill s in list)

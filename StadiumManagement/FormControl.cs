@@ -45,7 +45,6 @@ namespace GUILayer
                 btnStadium.Visible = false;
                 btnService.Visible = false;
                 btnCashier.Visible = false;
-                btnStatistic.Visible = false;
             }
             lblUserName.Text = currentAcc.UserName;
             picLogo.Image = currentAcc.Image.ByteArrayToImage();
