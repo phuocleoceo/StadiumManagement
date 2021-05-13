@@ -19,7 +19,7 @@ namespace GUILayer.ChildForm
             LoadData();
             CalculateSales();
         }
-        // Lich su Bill
+        #region Lich su Bill
         private void LoadData(DateTime? _fromDate = null, DateTime? _toDate = null)
         {
             dgvBill.DataSource = null;
@@ -31,7 +31,7 @@ namespace GUILayer.ChildForm
         private void CalculateSales()
         {
             double _sale = 0;
-            foreach(DataGridViewRow row in dgvBill.Rows)
+            foreach (DataGridViewRow row in dgvBill.Rows)
             {
                 _sale += Convert.ToDouble(row.Cells["Total"].Value);
             }
@@ -52,5 +52,40 @@ namespace GUILayer.ChildForm
             LoadData(_fromDate, _toDate);
             CalculateSales();
         }
+        #endregion
+
+        #region ThongKeSoLieu
+        // Khi chuyen sang tab2 , tab2 xu ly nhieu nen khi chon moi load du lieu
+        private void TCThongKe_Selected(object sender, TabControlEventArgs e)
+        {
+            ThongKeThangVaHomNay();
+            SanThueNhieu();
+            DichVuDungNhieu();
+        }
+
+        private void ThongKeThangVaHomNay()
+        {
+            int _billMonth, _billToday, _cusMonth, _cusToday;
+            double _saleMonth, _saleToday;
+            _db.StatisticMonthAndToday(out _billMonth, out _billToday, out _cusMonth,
+                                        out _cusToday, out _saleMonth, out _saleToday);
+            lblHoaDonThang.Text = _billMonth.ToString();
+            lblHoaDonHomNay.Text = _billToday.ToString();
+            lblKhachHangThang.Text = _cusMonth.ToString();
+            lblKhachHangHomNay.Text = _cusToday.ToString();
+            lblDoanhThuThang.Text = _saleMonth.ToString();
+            lblDoanhThuHomNay.Text = _saleToday.ToString();
+        }
+
+        private void SanThueNhieu()
+        {
+
+        }
+
+        private void DichVuDungNhieu()
+        {
+
+        }
+        #endregion
     }
 }

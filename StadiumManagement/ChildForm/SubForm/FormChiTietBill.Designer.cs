@@ -189,7 +189,7 @@ namespace GUILayer.ChildForm.SubForm
             // 
             this.dgvSan.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvSan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSan.Location = new System.Drawing.Point(39, 183);
+            this.dgvSan.Location = new System.Drawing.Point(41, 183);
             this.dgvSan.Name = "dgvSan";
             this.dgvSan.RowHeadersVisible = false;
             this.dgvSan.Size = new System.Drawing.Size(844, 181);
@@ -209,7 +209,7 @@ namespace GUILayer.ChildForm.SubForm
             // 
             this.dgvDV.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvDV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDV.Location = new System.Drawing.Point(39, 422);
+            this.dgvDV.Location = new System.Drawing.Point(41, 422);
             this.dgvDV.Name = "dgvDV";
             this.dgvDV.RowHeadersVisible = false;
             this.dgvDV.Size = new System.Drawing.Size(844, 194);
@@ -219,7 +219,7 @@ namespace GUILayer.ChildForm.SubForm
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(703, 31);
+            this.label9.Location = new System.Drawing.Point(710, 31);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(106, 22);
             this.label9.TabIndex = 0;
@@ -229,7 +229,7 @@ namespace GUILayer.ChildForm.SubForm
             // 
             this.lblTongCong.AutoSize = true;
             this.lblTongCong.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTongCong.Location = new System.Drawing.Point(811, 33);
+            this.lblTongCong.Location = new System.Drawing.Point(818, 33);
             this.lblTongCong.Name = "lblTongCong";
             this.lblTongCong.Size = new System.Drawing.Size(31, 22);
             this.lblTongCong.TabIndex = 0;
@@ -239,7 +239,7 @@ namespace GUILayer.ChildForm.SubForm
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(733, 68);
+            this.label11.Location = new System.Drawing.Point(740, 68);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(76, 22);
             this.label11.TabIndex = 0;
@@ -249,7 +249,7 @@ namespace GUILayer.ChildForm.SubForm
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(727, 107);
+            this.label12.Location = new System.Drawing.Point(734, 107);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(82, 22);
             this.label12.TabIndex = 0;
@@ -259,7 +259,7 @@ namespace GUILayer.ChildForm.SubForm
             // 
             this.lblDaCoc.AutoSize = true;
             this.lblDaCoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDaCoc.Location = new System.Drawing.Point(811, 70);
+            this.lblDaCoc.Location = new System.Drawing.Point(818, 70);
             this.lblDaCoc.Name = "lblDaCoc";
             this.lblDaCoc.Size = new System.Drawing.Size(31, 22);
             this.lblDaCoc.TabIndex = 0;
@@ -269,7 +269,7 @@ namespace GUILayer.ChildForm.SubForm
             // 
             this.lblPhaiTra.AutoSize = true;
             this.lblPhaiTra.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPhaiTra.Location = new System.Drawing.Point(811, 109);
+            this.lblPhaiTra.Location = new System.Drawing.Point(818, 109);
             this.lblPhaiTra.Name = "lblPhaiTra";
             this.lblPhaiTra.Size = new System.Drawing.Size(31, 22);
             this.lblPhaiTra.TabIndex = 0;
@@ -279,7 +279,7 @@ namespace GUILayer.ChildForm.SubForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(919, 628);
+            this.ClientSize = new System.Drawing.Size(922, 628);
             this.Controls.Add(this.dgvDV);
             this.Controls.Add(this.dgvSan);
             this.Controls.Add(this.lblPhaiTra);

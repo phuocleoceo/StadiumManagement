@@ -45,13 +45,9 @@ namespace BusinessLayer
         // Xu ly anh
         public static Image ByteArrayToImage(this byte[] img)
         {
-            if (img == null || img.Length == 0)
+            if (img == null || img.Length == 0) return null;
+            using (MemoryStream ms = new MemoryStream(img))
             {
-                return null;
-            }
-            else
-            {
-                MemoryStream ms = new MemoryStream(img);
                 return Image.FromStream(ms);
             }
         }

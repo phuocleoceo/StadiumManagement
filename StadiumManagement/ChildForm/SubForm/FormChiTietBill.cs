@@ -1,10 +1,8 @@
 ﻿using BusinessLayer.Repository;
-using System;
 using System.Windows.Forms;
 using BusinessLayer.ViewModels;
 using BusinessLayer;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace GUILayer.ChildForm.SubForm
 {
@@ -45,6 +43,8 @@ namespace GUILayer.ChildForm.SubForm
             dgvSan.Columns["Bill_Code"].Visible = false;
             dgvSan.Columns["Stadium_Image"].Visible = false;
             dgvSan.Columns["Stadium_Id"].Visible = false;
+            dgvSan.RowsDefaultCellStyle.SelectionBackColor = dgvSan.DefaultCellStyle.BackColor;
+            dgvSan.RowsDefaultCellStyle.SelectionForeColor = dgvSan.DefaultCellStyle.ForeColor;
         }
 
         private void LoadServiceOrder()
@@ -55,6 +55,8 @@ namespace GUILayer.ChildForm.SubForm
             dgvDV.Columns["Bill_Code"].Visible = false;
             dgvDV.Columns["Service_Image"].Visible = false;
             dgvDV.Columns["Service_Id"].Visible = false;
+            dgvDV.RowsDefaultCellStyle.SelectionBackColor = dgvSan.DefaultCellStyle.BackColor;
+            dgvDV.RowsDefaultCellStyle.SelectionForeColor = dgvSan.DefaultCellStyle.ForeColor;
         }
     }
 }
