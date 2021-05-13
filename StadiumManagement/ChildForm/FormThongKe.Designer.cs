@@ -66,6 +66,8 @@ namespace GUILayer.ChildForm
             this.label4 = new System.Windows.Forms.Label();
             this.chartDV = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chartSan = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.btnSan = new System.Windows.Forms.Button();
+            this.btnDV = new System.Windows.Forms.Button();
             this.TCThongKe.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBill)).BeginInit();
@@ -190,6 +192,8 @@ namespace GUILayer.ChildForm
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.btnDV);
+            this.tabPage1.Controls.Add(this.btnSan);
             this.tabPage1.Controls.Add(this.panel3);
             this.tabPage1.Controls.Add(this.panel2);
             this.tabPage1.Controls.Add(this.panel1);
@@ -211,7 +215,7 @@ namespace GUILayer.ChildForm
             this.panel3.Controls.Add(this.lblDoanhThuHomNay);
             this.panel3.Controls.Add(this.lblDoanhThuThang);
             this.panel3.Controls.Add(this.label9);
-            this.panel3.Location = new System.Drawing.Point(697, 15);
+            this.panel3.Location = new System.Drawing.Point(697, 13);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(290, 136);
             this.panel3.TabIndex = 8;
@@ -281,7 +285,7 @@ namespace GUILayer.ChildForm
             this.panel2.Controls.Add(this.lblKhachHangHomNay);
             this.panel2.Controls.Add(this.lblKhachHangThang);
             this.panel2.Controls.Add(this.label6);
-            this.panel2.Location = new System.Drawing.Point(375, 14);
+            this.panel2.Location = new System.Drawing.Point(375, 12);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(290, 136);
             this.panel2.TabIndex = 7;
@@ -351,7 +355,7 @@ namespace GUILayer.ChildForm
             this.panel1.Controls.Add(this.lblHoaDonHomNay);
             this.panel1.Controls.Add(this.lblHoaDonThang);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Location = new System.Drawing.Point(52, 14);
+            this.panel1.Location = new System.Drawing.Point(52, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(290, 136);
             this.panel1.TabIndex = 6;
@@ -447,6 +451,24 @@ namespace GUILayer.ChildForm
             this.chartSan.TabIndex = 0;
             this.chartSan.Text = "Sân được thuê";
             // 
+            // btnSan
+            // 
+            this.btnSan.Location = new System.Drawing.Point(509, 297);
+            this.btnSan.Name = "btnSan";
+            this.btnSan.Size = new System.Drawing.Size(63, 34);
+            this.btnSan.TabIndex = 9;
+            this.btnSan.Text = "Sân";
+            this.btnSan.UseVisualStyleBackColor = true;
+            // 
+            // btnDV
+            // 
+            this.btnDV.Location = new System.Drawing.Point(509, 349);
+            this.btnDV.Name = "btnDV";
+            this.btnDV.Size = new System.Drawing.Size(63, 34);
+            this.btnDV.TabIndex = 9;
+            this.btnDV.Text = "Dịch vụ";
+            this.btnDV.UseVisualStyleBackColor = true;
+            // 
             // FormThongKe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -508,5 +530,7 @@ namespace GUILayer.ChildForm
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label lblKhachHangHomNay;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnDV;
+        private System.Windows.Forms.Button btnSan;
     }
 }
