@@ -30,7 +30,8 @@ namespace BusinessLayer.Repository
             return listVM;
         }
 
-        public void GetBillInformation(int Bill_Id, out BillVM _bvm, out List<RentOrderVM> _rovm, out List<ServiceOrderVM> _sovm)
+        public void GetBillInformation(int Bill_Id, out BillVM _bvm, out List<RentOrderVM> _rovm,
+                                                                    out List<ServiceOrderVM> _sovm)
         {
             Bill bvm = GetById(Bill_Id);
             _bvm = mapper.Map<BillVM>(bvm);
@@ -54,10 +55,11 @@ namespace BusinessLayer.Repository
         #region Thong Ke So Lieu   
 
         public void StatisticMonthAndToday(out int _billMonth, out int _billToday,
-                                    out int _cusMonth, out int _cusToday, out double _saleMonth, out double _saleToday)
+                            out int _cusMonth, out int _cusToday, out double _saleMonth, out double _saleToday)
         {
-            //Hoa don thang nay
-            List<Bill> listBill = GetAll(c => c.DateCheckedOut.Value.Month == DateTime.Now.Month);
+            //Hoa don thang nay, co DateCheckedOut nghia la da thanh toan
+            List<Bill> listBill = GetAll(c => c.DateCheckedOut.Value.Month == DateTime.Now.Month
+                                            && c.DateCheckedOut.Value.Year == DateTime.Now.Year);
             _billMonth = listBill.Count;
             _billToday = 0;
             _saleMonth = 0;
@@ -75,6 +77,58 @@ namespace BusinessLayer.Repository
             _cusToday = listBill.Where(c => c.DateCheckedOut.Value.Day == DateTime.Now.Day)
                                 .GroupBy(c => c.Customer_Id).Count();
         }
+
+        public void StatisticSalePerMonth(out double[] _doanhThuThang)
+        {
+            _doanhThuThang = new double[13];
+            List<Bill> list = GetAll(c => c.BillStatus == BillStatus.Purchased &&
+                                            c.DateCheckedOut.Value.Year == DateTime.Now.Year);
+            for (int i = 1; i <= 12; i++)
+            {
+                _doanhThuThang[i] += list.Where(c => c.DateCheckedOut.Value.Month == i)
+                                            .Sum(c => c.Total);
+            }
+        }
+
+        public List<Frequency> StatisticStadium()
+        {
+            List<Bill> listBill = GetAll(c => c.DateCheckedOut.Value.Month == DateTime.Now.Month
+                                            && c.DateCheckedOut.Value.Year == DateTime.Now.Year);
+            List<RentOrder> listAllRO = new List<RentOrder>();
+            foreach (Bill b in listBill)
+            {
+                listAllRO.AddRange(b.RentOrders);
+            }
+            List<Frequency> listFre = listAllRO.GroupBy(c => c.Stadium.Name).Select(c => new Frequency
+            {
+                Name = c.First().Stadium.Name,
+                Count = c.Sum(x => Convert.ToInt32((x.EndRentDate - x.StartRentDate).TotalHours))
+            }).ToList();
+            return listFre;
+        }
+
+        public List<Frequency> StatisticService()
+        {
+            List<Bill> listBill = GetAll(c => c.DateCheckedOut.Value.Month == DateTime.Now.Month
+                                            && c.DateCheckedOut.Value.Year == DateTime.Now.Year);
+            List<ServiceOrder> listAllSO = new List<ServiceOrder>();
+            foreach (Bill b in listBill)
+            {
+                listAllSO.AddRange(b.ServiceOrders);
+            }
+            List<Frequency> listFre = listAllSO.GroupBy(c => c.Service.Name).Select(c => new Frequency
+            {
+                Name = c.First().Service.Name,
+                Count = c.Sum(x => x.Count)
+            }).ToList();
+            return listFre;
+        }
         #endregion
+    }
+
+    public class Frequency
+    {
+        public string Name { get; set; }
+        public int Count { get; set; }
     }
 }

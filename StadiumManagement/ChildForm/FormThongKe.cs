@@ -5,6 +5,7 @@ using System;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using GUILayer.ChildForm.SubForm;
+using System.Collections.Generic;
 
 namespace GUILayer.ChildForm
 {
@@ -59,8 +60,8 @@ namespace GUILayer.ChildForm
         private void TCThongKe_Selected(object sender, TabControlEventArgs e)
         {
             ThongKeThangVaHomNay();
-            SanThueNhieu();
-            DichVuDungNhieu();
+            DoanhThuTungThang();
+            btnSan.PerformClick();
         }
 
         private void ThongKeThangVaHomNay()
@@ -77,15 +78,47 @@ namespace GUILayer.ChildForm
             lblDoanhThuHomNay.Text = _saleToday.ToString();
         }
 
-        private void SanThueNhieu()
+        private void DoanhThuTungThang()
         {
+            chartDoanhThu.Series["Doanh thu"].Points.Clear();
+            chartDoanhThu.Series["Doanh thu"].IsValueShownAsLabel = true;
+            chartDoanhThu.ChartAreas["ChartDoanhThu"].AxisX.Title = "Tháng";
+            chartDoanhThu.ChartAreas["ChartDoanhThu"].AxisY.Title = "VND";
 
+            double[] _doanhThuThang;
+            _db.StatisticSalePerMonth(out _doanhThuThang);
+            for(int i = 1; i <= 12; i++)
+            {
+                chartDoanhThu.Series["Doanh thu"].Points.AddXY(i, _doanhThuThang[i]);
+            }
         }
 
-        private void DichVuDungNhieu()
+        private void btnSan_Click(object sender, EventArgs e)
         {
+            chartSanDV.Series["SanDV"].Points.Clear();
+            chartSanDV.DataSource = _db.StatisticStadium();
+            chartSanDV.Series["SanDV"].XValueMember = "Name";
+            chartSanDV.Series["SanDV"].XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+            chartSanDV.Series["SanDV"].YValueMembers = "Count";
+            chartSanDV.Series["SanDV"].YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
+            chartSanDV.Series["SanDV"].IsValueShownAsLabel = true;
+            chartSanDV.ChartAreas["ChartSDVArea"].AxisX.Title = "Sân";
+            chartSanDV.ChartAreas["ChartSDVArea"].AxisY.Title = "Thời lượng";
+        }
 
+        private void btnDV_Click(object sender, EventArgs e)
+        {
+            chartSanDV.Series["SanDV"].Points.Clear();
+            chartSanDV.DataSource = _db.StatisticService();
+            chartSanDV.Series["SanDV"].XValueMember = "Name";
+            chartSanDV.Series["SanDV"].XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+            chartSanDV.Series["SanDV"].YValueMembers = "Count";
+            chartSanDV.Series["SanDV"].YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
+            chartSanDV.Series["SanDV"].IsValueShownAsLabel = true;
+            chartSanDV.ChartAreas["ChartSDVArea"].AxisX.Title = "Dịch vụ";
+            chartSanDV.ChartAreas["ChartSDVArea"].AxisY.Title = "Số lượng";
         }
         #endregion
+
     }
 }
