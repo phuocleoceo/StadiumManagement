@@ -29,14 +29,14 @@ namespace GUILayer.ChildForm
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.TCThongKe = new System.Windows.Forms.TabControl();
             this.TPLichSuBill = new System.Windows.Forms.TabPage();
             this.lblTongDoanhTHu = new System.Windows.Forms.Label();
@@ -137,6 +137,7 @@ namespace GUILayer.ChildForm
             // 
             // btnLoc
             // 
+            this.btnLoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLoc.Location = new System.Drawing.Point(483, 15);
             this.btnLoc.Name = "btnLoc";
@@ -443,44 +444,44 @@ namespace GUILayer.ChildForm
             // 
             // chartSanDV
             // 
-            chartArea3.Name = "ChartSDVArea";
-            this.chartSanDV.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chartSanDV.Legends.Add(legend3);
+            chartArea1.Name = "ChartSDVArea";
+            this.chartSanDV.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartSanDV.Legends.Add(legend1);
             this.chartSanDV.Location = new System.Drawing.Point(645, 182);
             this.chartSanDV.Name = "chartSanDV";
-            series3.ChartArea = "ChartSDVArea";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series3.Legend = "Legend1";
-            series3.Name = "SanDV";
-            this.chartSanDV.Series.Add(series3);
+            series1.ChartArea = "ChartSDVArea";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series1.Legend = "Legend1";
+            series1.Name = "SanDV";
+            this.chartSanDV.Series.Add(series1);
             this.chartSanDV.Size = new System.Drawing.Size(393, 389);
             this.chartSanDV.TabIndex = 0;
             this.chartSanDV.Text = "Sân được thuê";
-            title3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            title3.Name = "Title1";
-            title3.Text = "Thịnh hành";
-            this.chartSanDV.Titles.Add(title3);
+            title1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            title1.Name = "Title1";
+            title1.Text = "Thịnh hành";
+            this.chartSanDV.Titles.Add(title1);
             // 
             // chartDoanhThu
             // 
-            chartArea4.Name = "ChartDoanhThu";
-            this.chartDoanhThu.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.chartDoanhThu.Legends.Add(legend4);
+            chartArea2.Name = "ChartDoanhThu";
+            this.chartDoanhThu.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartDoanhThu.Legends.Add(legend2);
             this.chartDoanhThu.Location = new System.Drawing.Point(-17, 187);
             this.chartDoanhThu.Name = "chartDoanhThu";
-            series4.ChartArea = "ChartDoanhThu";
-            series4.Legend = "Legend1";
-            series4.Name = "Doanh thu";
-            this.chartDoanhThu.Series.Add(series4);
+            series2.ChartArea = "ChartDoanhThu";
+            series2.Legend = "Legend1";
+            series2.Name = "Doanh thu";
+            this.chartDoanhThu.Series.Add(series2);
             this.chartDoanhThu.Size = new System.Drawing.Size(686, 383);
             this.chartDoanhThu.TabIndex = 0;
             this.chartDoanhThu.Text = "Doanh thu ";
-            title4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            title4.Name = "TitleDoanhThu";
-            title4.Text = "Doanh thu từng tháng";
-            this.chartDoanhThu.Titles.Add(title4);
+            title2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            title2.Name = "TitleDoanhThu";
+            title2.Text = "Doanh thu từng tháng";
+            this.chartDoanhThu.Titles.Add(title2);
             // 
             // FormThongKe
             // 

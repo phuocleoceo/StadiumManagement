@@ -67,6 +67,7 @@ namespace GUILayer.ChildForm
             // 
             // btnXoa
             // 
+            this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoa.Location = new System.Drawing.Point(650, 138);
             this.btnXoa.Name = "btnXoa";
@@ -78,6 +79,7 @@ namespace GUILayer.ChildForm
             // 
             // btnSua
             // 
+            this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSua.Location = new System.Drawing.Point(537, 138);
             this.btnSua.Name = "btnSua";
@@ -89,6 +91,7 @@ namespace GUILayer.ChildForm
             // 
             // btnThem
             // 
+            this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.Location = new System.Drawing.Point(428, 138);
             this.btnThem.Name = "btnThem";
@@ -254,6 +257,7 @@ namespace GUILayer.ChildForm
             // 
             // btnClear
             // 
+            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.Location = new System.Drawing.Point(767, 138);
             this.btnClear.Name = "btnClear";

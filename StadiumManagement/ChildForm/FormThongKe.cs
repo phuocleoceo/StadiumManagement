@@ -61,7 +61,7 @@ namespace GUILayer.ChildForm
         {
             ThongKeThangVaHomNay();
             DoanhThuTungThang();
-            btnSan.PerformClick();
+            btnSan_Click(new object(), new EventArgs());
         }
 
         private void ThongKeThangVaHomNay()
@@ -87,7 +87,7 @@ namespace GUILayer.ChildForm
 
             double[] _doanhThuThang;
             _db.StatisticSalePerMonth(out _doanhThuThang);
-            for(int i = 1; i <= 12; i++)
+            for (int i = 1; i <= 12; i++)
             {
                 chartDoanhThu.Series["Doanh thu"].Points.AddXY(i, _doanhThuThang[i]);
             }

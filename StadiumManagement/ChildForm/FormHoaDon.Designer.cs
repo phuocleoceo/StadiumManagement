@@ -59,6 +59,7 @@ namespace GUILayer.ChildForm
             // 
             // btnClear
             // 
+            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.Location = new System.Drawing.Point(707, 153);
             this.btnClear.Name = "btnClear";
@@ -70,6 +71,7 @@ namespace GUILayer.ChildForm
             // 
             // btnThanhToan
             // 
+            this.btnThanhToan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThanhToan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThanhToan.Location = new System.Drawing.Point(495, 153);
             this.btnThanhToan.Name = "btnThanhToan";
@@ -81,6 +83,7 @@ namespace GUILayer.ChildForm
             // 
             // btnThem
             // 
+            this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.Location = new System.Drawing.Point(403, 153);
             this.btnThem.Name = "btnThem";
@@ -215,6 +218,7 @@ namespace GUILayer.ChildForm
             // 
             // btnDatSan
             // 
+            this.btnDatSan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDatSan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDatSan.Location = new System.Drawing.Point(29, 153);
             this.btnDatSan.Name = "btnDatSan";
@@ -226,6 +230,7 @@ namespace GUILayer.ChildForm
             // 
             // btnDatDichVu
             // 
+            this.btnDatDichVu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDatDichVu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDatDichVu.Location = new System.Drawing.Point(159, 153);
             this.btnDatDichVu.Name = "btnDatDichVu";
@@ -283,6 +288,7 @@ namespace GUILayer.ChildForm
             // 
             // btnXoa
             // 
+            this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoa.Location = new System.Drawing.Point(623, 153);
             this.btnXoa.Name = "btnXoa";

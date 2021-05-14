@@ -55,8 +55,9 @@ namespace GUILayer.ChildForm.SubForm
             // 
             // btnClear
             // 
+            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(769, 123);
+            this.btnClear.Location = new System.Drawing.Point(769, 127);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(66, 36);
             this.btnClear.TabIndex = 11;
@@ -66,8 +67,9 @@ namespace GUILayer.ChildForm.SubForm
             // 
             // btnXoa
             // 
+            this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoa.Location = new System.Drawing.Point(672, 123);
+            this.btnXoa.Location = new System.Drawing.Point(672, 127);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(66, 36);
             this.btnXoa.TabIndex = 12;
@@ -77,8 +79,9 @@ namespace GUILayer.ChildForm.SubForm
             // 
             // btnSua
             // 
+            this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSua.Location = new System.Drawing.Point(567, 123);
+            this.btnSua.Location = new System.Drawing.Point(567, 127);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(66, 36);
             this.btnSua.TabIndex = 13;
@@ -88,8 +91,9 @@ namespace GUILayer.ChildForm.SubForm
             // 
             // btnThem
             // 
+            this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThem.Location = new System.Drawing.Point(458, 123);
+            this.btnThem.Location = new System.Drawing.Point(458, 127);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(66, 36);
             this.btnThem.TabIndex = 14;
@@ -245,8 +249,9 @@ namespace GUILayer.ChildForm.SubForm
             // 
             // btnXacNhan
             // 
+            this.btnXacNhan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXacNhan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXacNhan.Location = new System.Drawing.Point(869, 123);
+            this.btnXacNhan.Location = new System.Drawing.Point(869, 127);
             this.btnXacNhan.Name = "btnXacNhan";
             this.btnXacNhan.Size = new System.Drawing.Size(93, 36);
             this.btnXacNhan.TabIndex = 71;

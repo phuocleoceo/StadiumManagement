@@ -51,6 +51,7 @@ namespace GUILayer.ChildForm
             this.btnChonAnh = new System.Windows.Forms.Button();
             this.btnLuuAnh = new System.Windows.Forms.Button();
             this.grbDoiMK = new System.Windows.Forms.GroupBox();
+            this.ckbShowPass = new System.Windows.Forms.CheckBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -58,7 +59,6 @@ namespace GUILayer.ChildForm
             this.btnXacNhanDoiMK = new System.Windows.Forms.Button();
             this.txtMKMoi = new System.Windows.Forms.TextBox();
             this.txtMKCu = new System.Windows.Forms.TextBox();
-            this.ckbShowPass = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTaiKhoan)).BeginInit();
             this.grbDoiMK.SuspendLayout();
@@ -202,7 +202,8 @@ namespace GUILayer.ChildForm
             // 
             // btnLuu
             // 
-            this.btnLuu.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLuu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLuu.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLuu.Location = new System.Drawing.Point(560, 155);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(190, 37);
@@ -253,6 +254,7 @@ namespace GUILayer.ChildForm
             // 
             // btnChonAnh
             // 
+            this.btnChonAnh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnChonAnh.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChonAnh.Location = new System.Drawing.Point(95, 369);
             this.btnChonAnh.Name = "btnChonAnh";
@@ -264,6 +266,7 @@ namespace GUILayer.ChildForm
             // 
             // btnLuuAnh
             // 
+            this.btnLuuAnh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLuuAnh.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLuuAnh.Location = new System.Drawing.Point(95, 450);
             this.btnLuuAnh.Name = "btnLuuAnh";
@@ -290,6 +293,17 @@ namespace GUILayer.ChildForm
             this.grbDoiMK.TabIndex = 51;
             this.grbDoiMK.TabStop = false;
             this.grbDoiMK.Text = "Đổi mật khẩu : ";
+            // 
+            // ckbShowPass
+            // 
+            this.ckbShowPass.AutoSize = true;
+            this.ckbShowPass.Location = new System.Drawing.Point(138, 166);
+            this.ckbShowPass.Name = "ckbShowPass";
+            this.ckbShowPass.Size = new System.Drawing.Size(131, 24);
+            this.ckbShowPass.TabIndex = 49;
+            this.ckbShowPass.Text = "Hiện mật khẩu";
+            this.ckbShowPass.UseVisualStyleBackColor = true;
+            this.ckbShowPass.CheckedChanged += new System.EventHandler(this.ckbShowPass_CheckedChanged);
             // 
             // label11
             // 
@@ -331,6 +345,7 @@ namespace GUILayer.ChildForm
             // 
             // btnXacNhanDoiMK
             // 
+            this.btnXacNhanDoiMK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXacNhanDoiMK.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXacNhanDoiMK.Location = new System.Drawing.Point(117, 203);
             this.btnXacNhanDoiMK.Name = "btnXacNhanDoiMK";
@@ -355,17 +370,6 @@ namespace GUILayer.ChildForm
             this.txtMKCu.Name = "txtMKCu";
             this.txtMKCu.Size = new System.Drawing.Size(226, 26);
             this.txtMKCu.TabIndex = 47;
-            // 
-            // ckbShowPass
-            // 
-            this.ckbShowPass.AutoSize = true;
-            this.ckbShowPass.Location = new System.Drawing.Point(138, 166);
-            this.ckbShowPass.Name = "ckbShowPass";
-            this.ckbShowPass.Size = new System.Drawing.Size(131, 24);
-            this.ckbShowPass.TabIndex = 49;
-            this.ckbShowPass.Text = "Hiện mật khẩu";
-            this.ckbShowPass.UseVisualStyleBackColor = true;
-            this.ckbShowPass.CheckedChanged += new System.EventHandler(this.ckbShowPass_CheckedChanged);
             // 
             // FormThietLap
             // 
