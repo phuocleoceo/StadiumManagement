@@ -49,6 +49,7 @@ namespace GUILayer.ChildForm.SubForm
             this.lblGia = new System.Windows.Forms.Label();
             this.txtHoaDon = new System.Windows.Forms.TextBox();
             this.btnXacNhan = new System.Windows.Forms.Button();
+            this.btnTrangThai = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSan)).BeginInit();
             this.SuspendLayout();
@@ -259,6 +260,18 @@ namespace GUILayer.ChildForm.SubForm
             this.btnXacNhan.UseVisualStyleBackColor = true;
             this.btnXacNhan.Click += new System.EventHandler(this.btnXacNhan_Click);
             // 
+            // btnTrangThai
+            // 
+            this.btnTrangThai.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTrangThai.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTrangThai.Location = new System.Drawing.Point(132, 167);
+            this.btnTrangThai.Name = "btnTrangThai";
+            this.btnTrangThai.Size = new System.Drawing.Size(100, 32);
+            this.btnTrangThai.TabIndex = 14;
+            this.btnTrangThai.Text = "Trạng thái";
+            this.btnTrangThai.UseVisualStyleBackColor = true;
+            this.btnTrangThai.Click += new System.EventHandler(this.btnTrangThai_Click);
+            // 
             // FormDatSan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -282,6 +295,7 @@ namespace GUILayer.ChildForm.SubForm
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnSua);
+            this.Controls.Add(this.btnTrangThai);
             this.Controls.Add(this.btnThem);
             this.Controls.Add(this.dgvSan);
             this.Name = "FormDatSan";
@@ -316,5 +330,6 @@ namespace GUILayer.ChildForm.SubForm
         private System.Windows.Forms.Label lblGia;
         private System.Windows.Forms.TextBox txtHoaDon;
         private System.Windows.Forms.Button btnXacNhan;
+        private System.Windows.Forms.Button btnTrangThai;
     }
 }

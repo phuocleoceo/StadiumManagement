@@ -26,7 +26,7 @@ namespace GUILayer.ChildForm.SubForm
         private void LoadListView()
         {
             int i = 0;
-            List<StadiumVM> listSVM = _db.GetListAvailable();
+            List<StadiumVM> listSVM = _db.GetList();
             foreach (StadiumVM svm in listSVM)
             {
                 Image img = svm.Image.ByteArrayToImage();

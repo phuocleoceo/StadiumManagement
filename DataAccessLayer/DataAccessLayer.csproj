@@ -52,7 +52,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Enums\BillStatus.cs" />
-    <Compile Include="Enums\StadiumStatus.cs" />
     <Compile Include="Models\Bill.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\RentOrder.cs" />

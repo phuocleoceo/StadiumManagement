@@ -31,6 +31,7 @@ namespace GUILayer.ChildForm.SubForm
             dgvDV.Columns["Service_Image"].Visible = false;
             dgvDV.Columns["Service_Price"].Visible = false;
             dgvDV.Columns["Service_Id"].Visible = false;
+            dgvDV.Columns["Bill_Code"].Visible = false;
         }
 
         private void btnClear_Click(object sender, EventArgs e)

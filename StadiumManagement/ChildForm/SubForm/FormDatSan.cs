@@ -31,6 +31,7 @@ namespace GUILayer.ChildForm.SubForm
             dgvSan.Columns["Stadium_Image"].Visible = false;
             dgvSan.Columns["Stadium_Price"].Visible = false;
             dgvSan.Columns["Stadium_Id"].Visible = false;
+            dgvSan.Columns["Bill_Code"].Visible = false;
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -41,6 +42,7 @@ namespace GUILayer.ChildForm.SubForm
             lblGia.Text = "";
             picSan.Image = null;
             picSan.Tag = "";
+            btnTrangThai.Visible = false;
         }
 
         private void dgvSan_SelectionChanged(object sender, EventArgs e)
@@ -72,6 +74,7 @@ namespace GUILayer.ChildForm.SubForm
             lblSan.Text = name;
             picSan.Image = img;
             lblGia.Text = price.ToString();
+            btnTrangThai.Visible = true;
         }
 
         private void btnXacNhan_Click(object sender, EventArgs e)
@@ -128,7 +131,13 @@ namespace GUILayer.ChildForm.SubForm
                 }
             }
             LoadData();
-            LoadData();
+        }
+
+        private void btnTrangThai_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(picSan.Tag);
+            MessageBox.Show(_db.ListRentTime(id),"Sân đã được đặt lúc : ",MessageBoxButtons.OK,MessageBoxIcon.Information);
         }
     }
 }
+

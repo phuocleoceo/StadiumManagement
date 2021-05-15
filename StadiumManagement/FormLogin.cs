@@ -21,7 +21,7 @@ namespace GUILayer
             string un = txtUser.Text;
             string pw = txtPass.Text;
             currentAccount_Id = _db.Authentication(un, pw);
-            if (currentAccount_Id != 0)
+            if (currentAccount_Id > 0)
             {
                 FormControl fc = new FormControl();
                 this.Hide();

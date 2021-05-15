@@ -15,8 +15,6 @@ namespace DataAccessLayer.Models
 
         public double Price { get; set; }
 
-        public StadiumStatus Status { get; set; }
-
         public string Area { get; set; }
 
         public string Note { get; set; }

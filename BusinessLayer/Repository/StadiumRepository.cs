@@ -27,7 +27,6 @@ namespace BusinessLayer.Repository
         {
             Stadium s = mapper.Map<Stadium>(c);
             s.isDeleted = false;
-            s.Status = StadiumStatus.Free;
             Add(s);
             Save();
         }
@@ -48,18 +47,6 @@ namespace BusinessLayer.Repository
             Stadium stadium = GetById(id);
             stadium.isDeleted = true;
             Save();
-        }
-
-        //Dat san
-        public List<StadiumVM> GetListAvailable()
-        {
-            List<Stadium> list = GetAll(c => c.isDeleted == false && c.Status == StadiumStatus.Free);
-            List<StadiumVM> listVM = new List<StadiumVM>();
-            foreach (Stadium s in list)
-            {
-                listVM.Add(mapper.Map<StadiumVM>(s));
-            }
-            return listVM;
         }
     }
 }
