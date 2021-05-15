@@ -84,36 +84,50 @@ namespace GUILayer.ChildForm.SubForm
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            RentOrderVM rovm = new RentOrderVM
+            try
             {
-                Bill_Id = _currentBillId,
-                Stadium_Id = Convert.ToInt32(picSan.Tag),
-                StartRentDate = dtpBatDauThue.Value,
-                EndRentDate = dtpKetThucThue.Value,
-                Deposit = Convert.ToDouble(txtTienCoc.Text),
-                Total = 0
-            };
-            rovm.Total = Convert.ToDouble(lblGia.Text) * rovm.RentTime;
-            _db.AddRentOrder(rovm);
-            LoadData();
+                RentOrderVM rovm = new RentOrderVM
+                {
+                    Bill_Id = _currentBillId,
+                    Stadium_Id = Convert.ToInt32(picSan.Tag),
+                    StartRentDate = dtpBatDauThue.Value,
+                    EndRentDate = dtpKetThucThue.Value,
+                    Deposit = Convert.ToDouble(txtTienCoc.Text),
+                    Total = 0
+                };
+                rovm.Total = Convert.ToDouble(lblGia.Text) * rovm.RentTime;
+                _db.AddRentOrder(rovm);
+                LoadData();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Không thêm được", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            DataGridViewSelectedRowCollection r = dgvSan.SelectedRows;
-            RentOrderVM rovm = new RentOrderVM
+            try
             {
-                Id = Convert.ToInt32(r[0].Cells["Id"].Value),
-                Bill_Id = _currentBillId,
-                Stadium_Id = Convert.ToInt32(picSan.Tag),
-                StartRentDate = dtpBatDauThue.Value,
-                EndRentDate = dtpKetThucThue.Value,
-                Deposit = Convert.ToDouble(txtTienCoc.Text),
-                Total = 0
-            };
-            rovm.Total = Convert.ToDouble(lblGia.Text) * rovm.RentTime;
-            _db.UpdateRentOrder(rovm);
-            LoadData();
+                DataGridViewSelectedRowCollection r = dgvSan.SelectedRows;
+                RentOrderVM rovm = new RentOrderVM
+                {
+                    Id = Convert.ToInt32(r[0].Cells["Id"].Value),
+                    Bill_Id = _currentBillId,
+                    Stadium_Id = Convert.ToInt32(picSan.Tag),
+                    StartRentDate = dtpBatDauThue.Value,
+                    EndRentDate = dtpKetThucThue.Value,
+                    Deposit = Convert.ToDouble(txtTienCoc.Text),
+                    Total = 0
+                };
+                rovm.Total = Convert.ToDouble(lblGia.Text) * rovm.RentTime;
+                _db.UpdateRentOrder(rovm);
+                LoadData();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Không sửa được", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
