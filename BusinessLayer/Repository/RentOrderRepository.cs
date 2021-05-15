@@ -73,8 +73,8 @@ namespace BusinessLayer.Repository
             listRO = listRO.Where(c => c.Bill.BillStatus == BillStatus.UnPurchased);
             //Dieu kien de thoi gian khong hop le => lay ! (not)
             return !listRO.Any(c => (c.StartRentDate.TrimSeconds() <= _start.TrimSeconds()
-                                        && _start.TrimSeconds() <= c.EndRentDate.TrimSeconds())
-                                || (c.StartRentDate.TrimSeconds() <= _end.TrimSeconds()
+                                        && _start.TrimSeconds() < c.EndRentDate.TrimSeconds())
+                                || (c.StartRentDate.TrimSeconds() < _end.TrimSeconds()
                                         && _end.TrimSeconds() <= c.EndRentDate.TrimSeconds()));
         }
     }
