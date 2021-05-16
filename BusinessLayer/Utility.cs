@@ -62,9 +62,9 @@ namespace BusinessLayer
             }
         }
 
-        public static DateTime TrimSeconds(this DateTime a)
+        public static DateTime TrimSeconds(this DateTime dt)
         {
-            return new DateTime(a.Year, a.Month, a.Day, a.Hour, a.Minute, 0, a.Kind);
+            return dt.AddSeconds(-dt.Second);
         }
     }
 }
