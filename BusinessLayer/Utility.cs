@@ -55,11 +55,15 @@ namespace BusinessLayer
 
         public static byte[] ImageToByteArray(this Image img)
         {
-            using (MemoryStream ms = new MemoryStream())
+            if (img != null)
             {
-                img.Save(ms, img.RawFormat);
-                return ms.ToArray();
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    img.Save(ms, img.RawFormat);
+                    return ms.ToArray();
+                }
             }
+            else return null;
         }
 
         public static DateTime TrimSeconds(this DateTime dt)
