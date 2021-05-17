@@ -18,6 +18,9 @@ namespace BusinessLayer.ViewModels
         [DisplayName("Đơn giá")]
         public double Price { get; set; }
 
+        [DisplayName("Cho thuê được")]
+        public bool Rentable { get; set; }
+
         [DisplayName("Diện tích")]
         public string Area { get; set; }
 

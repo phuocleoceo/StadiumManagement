@@ -34,8 +34,7 @@ namespace GUILayer.ChildForm
                 txtTenNhanVien.Text = r[0].Cells["Name"].Value.ToString();
                 txtDiaChi.Text = r[0].Cells["Address"].Value.ToString();
                 txtSoDienThoai.Text = r[0].Cells["PhoneNumber"].Value.ToString();
-                bool gender = Convert.ToBoolean(r[0].Cells["Gender"].Value);
-                if (gender)
+                if (Convert.ToBoolean(r[0].Cells["Gender"].Value))
                     rdbNam.Checked = true;
                 else
                     rdbNu.Checked = true;

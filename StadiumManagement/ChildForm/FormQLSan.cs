@@ -36,6 +36,8 @@ namespace GUILayer.ChildForm
                 txtDienTich.Text = r[0].Cells["Area"].Value.ToString();
                 txtGhiChu.Text = r[0].Cells["Note"].Value.ToString();
                 picSB.Image = ((byte[])(r[0].Cells["Image"].Value)).ByteArrayToImage();
+                if (Convert.ToBoolean(r[0].Cells["Rentable"].Value)) rdbCo.Checked = true;
+                else rdbKhong.Checked = true;
             }
         }
 
@@ -45,9 +47,10 @@ namespace GUILayer.ChildForm
             {
                 Name = txtTenSan.Text,
                 Price = double.Parse(txtDonGia.Text),
+                Rentable = rdbCo.Checked ? true : false,
                 Area = txtDienTich.Text,
                 Note = txtGhiChu.Text,
-                Image=picSB.Image.ImageToByteArray()
+                Image = picSB.Image.ImageToByteArray()
             });
             LoadData();
         }
@@ -60,6 +63,7 @@ namespace GUILayer.ChildForm
                 Id = Convert.ToInt32(r[0].Cells["Id"].Value),
                 Name = txtTenSan.Text,
                 Price = double.Parse(txtDonGia.Text),
+                Rentable = rdbCo.Checked ? true : false,
                 Area = txtDienTich.Text,
                 Note = txtGhiChu.Text,
                 Image = picSB.Image.ImageToByteArray()

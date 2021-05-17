@@ -34,11 +34,10 @@ namespace BusinessLayer.Repository
         public void UpdateStadium(StadiumVM c)
         {
             Stadium stadium = GetById(c.Id);
-            stadium.Name = c.Name;
-            stadium.Price = c.Price;
-            stadium.Area = c.Area;
-            stadium.Note = c.Note;
-            stadium.Image = c.Image;
+            //StadiumVM khong co thuoc tinh isDeleted
+            bool isDeleted = stadium.isDeleted;
+            mapper.Map(c, stadium);
+            stadium.isDeleted = isDeleted;
             Save();
         }
 
@@ -47,6 +46,18 @@ namespace BusinessLayer.Repository
             Stadium stadium = GetById(id);
             stadium.isDeleted = true;
             Save();
+        }
+
+        //Dat san
+        public List<StadiumVM> GetListAvailable()
+        {
+            List<Stadium> list = GetAll(c => c.isDeleted == false && c.Rentable == true);
+            List<StadiumVM> listVM = new List<StadiumVM>();
+            foreach (Stadium s in list)
+            {
+                listVM.Add(mapper.Map<StadiumVM>(s));
+            }
+            return listVM;
         }
     }
 }

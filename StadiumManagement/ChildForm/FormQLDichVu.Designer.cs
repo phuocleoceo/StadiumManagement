@@ -50,7 +50,7 @@ namespace GUILayer.ChildForm
             // 
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(543, 133);
+            this.btnClear.Location = new System.Drawing.Point(544, 133);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(69, 36);
             this.btnClear.TabIndex = 53;
@@ -61,16 +61,16 @@ namespace GUILayer.ChildForm
             // txtDonViTinh
             // 
             this.txtDonViTinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDonViTinh.Location = new System.Drawing.Point(635, 24);
+            this.txtDonViTinh.Location = new System.Drawing.Point(584, 24);
             this.txtDonViTinh.Name = "txtDonViTinh";
-            this.txtDonViTinh.Size = new System.Drawing.Size(235, 26);
+            this.txtDonViTinh.Size = new System.Drawing.Size(174, 26);
             this.txtDonViTinh.TabIndex = 52;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(531, 26);
+            this.label7.Location = new System.Drawing.Point(478, 24);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(91, 20);
             this.label7.TabIndex = 50;
@@ -80,7 +80,7 @@ namespace GUILayer.ChildForm
             // 
             this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoa.Location = new System.Drawing.Point(437, 133);
+            this.btnXoa.Location = new System.Drawing.Point(438, 133);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(69, 36);
             this.btnXoa.TabIndex = 46;
@@ -104,7 +104,7 @@ namespace GUILayer.ChildForm
             // 
             this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThem.Location = new System.Drawing.Point(223, 133);
+            this.btnThem.Location = new System.Drawing.Point(222, 133);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(69, 36);
             this.btnThem.TabIndex = 48;
@@ -162,7 +162,7 @@ namespace GUILayer.ChildForm
             // 
             this.btnChonAnh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnChonAnh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChonAnh.Location = new System.Drawing.Point(646, 133);
+            this.btnChonAnh.Location = new System.Drawing.Point(649, 133);
             this.btnChonAnh.Name = "btnChonAnh";
             this.btnChonAnh.Size = new System.Drawing.Size(89, 36);
             this.btnChonAnh.TabIndex = 53;
@@ -173,9 +173,9 @@ namespace GUILayer.ChildForm
             // picDV
             // 
             this.picDV.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picDV.Location = new System.Drawing.Point(761, 60);
+            this.picDV.Location = new System.Drawing.Point(843, 23);
             this.picDV.Name = "picDV";
-            this.picDV.Size = new System.Drawing.Size(109, 109);
+            this.picDV.Size = new System.Drawing.Size(148, 145);
             this.picDV.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picDV.TabIndex = 54;
             this.picDV.TabStop = false;

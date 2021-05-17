@@ -15,6 +15,8 @@ namespace DataAccessLayer.Models
 
         public double Price { get; set; }
 
+        public bool Rentable { get; set; }
+
         public string Area { get; set; }
 
         public string Note { get; set; }
