@@ -99,7 +99,7 @@ namespace GUILayer.ChildForm.SubForm
                 _db.AddRentOrder(rovm);
                 LoadData();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Không thêm được", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -121,7 +121,10 @@ namespace GUILayer.ChildForm.SubForm
                     Total = 0
                 };
                 rovm.Total = Convert.ToDouble(lblGia.Text) * rovm.RentTime;
-                _db.UpdateRentOrder(rovm);
+                //Luc nay Thoi gian cu dang hien thi tren DGV
+                DateTime _startBeforeUpdate = Convert.ToDateTime(r[0].Cells["StartRentDate"].Value);
+                DateTime _endBeforeUpdate = Convert.ToDateTime(r[0].Cells["EndRentDate"].Value);
+                _db.UpdateRentOrder(rovm, _startBeforeUpdate, _endBeforeUpdate);
                 LoadData();
             }
             catch (Exception ex)
@@ -150,7 +153,7 @@ namespace GUILayer.ChildForm.SubForm
         private void btnTrangThai_Click(object sender, EventArgs e)
         {
             int id = Convert.ToInt32(picSan.Tag);
-            MessageBox.Show(_db.ListRentTime(id),"Sân đã được đặt lúc : ",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            MessageBox.Show(_db.ListRentTime(id), "Sân đã được đặt lúc : ", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

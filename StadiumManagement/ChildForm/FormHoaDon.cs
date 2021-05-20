@@ -42,8 +42,8 @@ namespace GUILayer.ChildForm
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            txtNgayTao.Text = txtMaHoaDon.Text = txtThuNgan.Text
-                = txtTongTien.Text = cbbKhachHang.Text = txtSDTKhach.Text = "";
+            txtNgayTao.Text = txtMaHoaDon.Text = txtThuNgan.Text = txtTongTien.Text 
+                = cbbKhachHang.Text = txtSDTKhach.Text = txtTienCoc.Text = txtPhaiTra.Text = "";
         }
 
         private void dgvBill_SelectionChanged(object sender, EventArgs e)
@@ -76,6 +76,23 @@ namespace GUILayer.ChildForm
                 DateCheckedOut = null,
                 Total = 0
             });
+            LoadData();
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            DataGridViewSelectedRowCollection r = dgvBill.SelectedRows;
+            if (r.Count > 0)
+            {
+                DialogResult dialogResult = MessageBox.Show("Xác nhận xoá ?", "Bình tĩnh !", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    foreach (DataGridViewRow row in r)
+                    {
+                        _db.DeleteBill(Convert.ToInt32(row.Cells["Id"].Value));
+                    }
+                }
+            }
             LoadData();
         }
 
@@ -134,23 +151,6 @@ namespace GUILayer.ChildForm
         {
             string content = _db.GetContentPrint(_Bill_Id);
             e.Graphics.DrawString(content, new Font("Arial", 12, FontStyle.Regular), Brushes.Black, 100, 100);
-        }
-
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-            DataGridViewSelectedRowCollection r = dgvBill.SelectedRows;
-            if (r.Count > 0)
-            {
-                DialogResult dialogResult = MessageBox.Show("Xác nhận xoá ?", "Bình tĩnh !", MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes)
-                {
-                    foreach (DataGridViewRow row in r)
-                    {
-                        _db.DeleteBill(Convert.ToInt32(row.Cells["Id"].Value));
-                    }
-                }
-            }
-            LoadData();
         }
     }
 }

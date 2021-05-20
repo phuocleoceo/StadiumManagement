@@ -35,9 +35,9 @@ namespace BusinessLayer.Repository
             else throw new Exception("Trùng giờ mất rồi !");
         }
 
-        public void UpdateRentOrder(RentOrderVM rovm)
+        public void UpdateRentOrder(RentOrderVM rovm, DateTime _startBeforeUpdate, DateTime _endBeforeUpdate)
         {
-            if (isValidTime(rovm.Stadium_Id, rovm.StartRentDate, rovm.EndRentDate))
+            if (isValidTime(rovm.Stadium_Id, rovm.StartRentDate, rovm.EndRentDate, _startBeforeUpdate, _endBeforeUpdate))
             {
                 RentOrder ro = GetById(rovm.Id);
                 mapper.Map(rovm, ro);
@@ -67,11 +67,26 @@ namespace BusinessLayer.Repository
             return sb.ToString();
         }
 
-        public bool isValidTime(int stadium_id, DateTime _start, DateTime _end)
+        public bool isValidTime(int stadium_id, DateTime _start, DateTime _end,
+                                        DateTime? _startBeforeUpdate = null, DateTime? _endBeforeUpdate = null)
         {
             IEnumerable<RentOrder> listRO = _db.Stadiums.Find(stadium_id).RentOrders;
-            listRO = listRO.Where(c => c.Bill.BillStatus == BillStatus.UnPurchased);
+            //Neu la dang cap nhat thi loai di khoang thoi gian hien tai de tranh viec khong cho Update
+            if (_startBeforeUpdate != null && _endBeforeUpdate != null)
+            {
+                //Loai di khoang thoi gian ban dau khi Update, lay not (!)
+                // c.StartRentDate == _startBeforeUpdate && c.EndRentDate == _endBeforeUpdate)
+                listRO = listRO.Where(c => (c.StartRentDate != _startBeforeUpdate || c.EndRentDate != _endBeforeUpdate)
+                && (c.Bill.BillStatus == BillStatus.UnPurchased));
+            }
+            else
+            {
+                listRO = listRO.Where(c => c.Bill.BillStatus == BillStatus.UnPurchased);
+            }
             //Dieu kien de thoi gian khong hop le => lay ! (not)
+            // Them [A;B] vao sao cho no khong co doan nao trung voi cac doan [C;D] cho truoc tru 2 dau mut (A<B,C<D)
+            // De [A;B] trung voi 1 doan voi [C;D] thi :
+            // C<=A<D (luc nay B nam dau cung duoc) hoac C<B<=D (luc nay A nam dau cung duoc)
             return !listRO.Any(c => (c.StartRentDate.TrimSeconds() <= _start.TrimSeconds()
                                         && _start.TrimSeconds() < c.EndRentDate.TrimSeconds())
                                 || (c.StartRentDate.TrimSeconds() < _end.TrimSeconds()
