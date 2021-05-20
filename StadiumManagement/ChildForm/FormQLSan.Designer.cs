@@ -187,7 +187,7 @@ namespace GUILayer.ChildForm
             this.picSB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.picSB.Location = new System.Drawing.Point(877, 33);
             this.picSB.Name = "picSB";
-            this.picSB.Size = new System.Drawing.Size(148, 146);
+            this.picSB.Size = new System.Drawing.Size(148, 148);
             this.picSB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picSB.TabIndex = 55;
             this.picSB.TabStop = false;

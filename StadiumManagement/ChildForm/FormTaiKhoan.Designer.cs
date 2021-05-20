@@ -192,9 +192,9 @@ namespace GUILayer.ChildForm
             // picTK
             // 
             this.picTK.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picTK.Location = new System.Drawing.Point(488, 12);
+            this.picTK.Location = new System.Drawing.Point(488, 11);
             this.picTK.Name = "picTK";
-            this.picTK.Size = new System.Drawing.Size(91, 84);
+            this.picTK.Size = new System.Drawing.Size(91, 91);
             this.picTK.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picTK.TabIndex = 56;
             this.picTK.TabStop = false;

@@ -102,7 +102,7 @@ namespace GUILayer
             this.btnLogin.Size = new System.Drawing.Size(150, 41);
             this.btnLogin.TabIndex = 5;
             this.btnLogin.TabStop = false;
-            this.btnLogin.Text = "Đăng nhập";
+            this.btnLogin.Text = "Xác nhận";
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
@@ -135,11 +135,11 @@ namespace GUILayer
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(119, 141);
+            this.label1.Location = new System.Drawing.Point(78, 136);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(118, 46);
+            this.label1.Size = new System.Drawing.Size(214, 46);
             this.label1.TabIndex = 12;
-            this.label1.Text = "Login";
+            this.label1.Text = "Đăng nhập";
             // 
             // btnShowPass
             // 

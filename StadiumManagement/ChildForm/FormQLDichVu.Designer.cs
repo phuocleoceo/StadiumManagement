@@ -175,7 +175,7 @@ namespace GUILayer.ChildForm
             this.picDV.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.picDV.Location = new System.Drawing.Point(843, 23);
             this.picDV.Name = "picDV";
-            this.picDV.Size = new System.Drawing.Size(148, 145);
+            this.picDV.Size = new System.Drawing.Size(148, 148);
             this.picDV.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picDV.TabIndex = 54;
             this.picDV.TabStop = false;
