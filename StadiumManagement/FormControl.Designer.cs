@@ -31,6 +31,8 @@ namespace GUILayer
         {
             this.components = new System.ComponentModel.Container();
             this.PanelMenu = new System.Windows.Forms.Panel();
+            this.btnStatistic = new FontAwesome.Sharp.IconButton();
+            this.btnHoaDon = new FontAwesome.Sharp.IconButton();
             this.btnCustomer = new FontAwesome.Sharp.IconButton();
             this.pnlCashier = new System.Windows.Forms.Panel();
             this.btnTaiKhoan = new System.Windows.Forms.Button();
@@ -56,8 +58,6 @@ namespace GUILayer
             this.lblDMY = new System.Windows.Forms.Label();
             this.lblTime = new System.Windows.Forms.Label();
             this.timer = new System.Windows.Forms.Timer(this.components);
-            this.btnHoaDon = new FontAwesome.Sharp.IconButton();
-            this.btnStatistic = new FontAwesome.Sharp.IconButton();
             this.PanelMenu.SuspendLayout();
             this.pnlCashier.SuspendLayout();
             this.pnlLogo.SuspendLayout();
@@ -85,6 +85,52 @@ namespace GUILayer
             this.PanelMenu.Name = "PanelMenu";
             this.PanelMenu.Size = new System.Drawing.Size(170, 675);
             this.PanelMenu.TabIndex = 0;
+            // 
+            // btnStatistic
+            // 
+            this.btnStatistic.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnStatistic.FlatAppearance.BorderSize = 0;
+            this.btnStatistic.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStatistic.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStatistic.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnStatistic.IconChar = FontAwesome.Sharp.IconChar.Apple;
+            this.btnStatistic.IconColor = System.Drawing.Color.Gainsboro;
+            this.btnStatistic.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnStatistic.IconSize = 35;
+            this.btnStatistic.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnStatistic.Location = new System.Drawing.Point(0, 395);
+            this.btnStatistic.Name = "btnStatistic";
+            this.btnStatistic.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.btnStatistic.Size = new System.Drawing.Size(170, 50);
+            this.btnStatistic.TabIndex = 18;
+            this.btnStatistic.Text = "Thống kê";
+            this.btnStatistic.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnStatistic.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnStatistic.UseVisualStyleBackColor = true;
+            this.btnStatistic.Click += new System.EventHandler(this.btnStatistic_Click);
+            // 
+            // btnHoaDon
+            // 
+            this.btnHoaDon.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnHoaDon.FlatAppearance.BorderSize = 0;
+            this.btnHoaDon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHoaDon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHoaDon.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnHoaDon.IconChar = FontAwesome.Sharp.IconChar.Sith;
+            this.btnHoaDon.IconColor = System.Drawing.Color.Gainsboro;
+            this.btnHoaDon.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnHoaDon.IconSize = 35;
+            this.btnHoaDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHoaDon.Location = new System.Drawing.Point(0, 345);
+            this.btnHoaDon.Name = "btnHoaDon";
+            this.btnHoaDon.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.btnHoaDon.Size = new System.Drawing.Size(170, 50);
+            this.btnHoaDon.TabIndex = 17;
+            this.btnHoaDon.Text = "Hoá đơn";
+            this.btnHoaDon.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHoaDon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnHoaDon.UseVisualStyleBackColor = true;
+            this.btnHoaDon.Click += new System.EventHandler(this.btnHoaDon_Click);
             // 
             // btnCustomer
             // 
@@ -455,52 +501,6 @@ namespace GUILayer
             // timer
             // 
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
-            // 
-            // btnHoaDon
-            // 
-            this.btnHoaDon.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnHoaDon.FlatAppearance.BorderSize = 0;
-            this.btnHoaDon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHoaDon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHoaDon.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnHoaDon.IconChar = FontAwesome.Sharp.IconChar.Sith;
-            this.btnHoaDon.IconColor = System.Drawing.Color.Gainsboro;
-            this.btnHoaDon.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnHoaDon.IconSize = 35;
-            this.btnHoaDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHoaDon.Location = new System.Drawing.Point(0, 345);
-            this.btnHoaDon.Name = "btnHoaDon";
-            this.btnHoaDon.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnHoaDon.Size = new System.Drawing.Size(170, 50);
-            this.btnHoaDon.TabIndex = 17;
-            this.btnHoaDon.Text = "Hoá đơn";
-            this.btnHoaDon.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHoaDon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnHoaDon.UseVisualStyleBackColor = true;
-            this.btnHoaDon.Click += new System.EventHandler(this.btnHoaDon_Click);
-            // 
-            // btnStatistic
-            // 
-            this.btnStatistic.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnStatistic.FlatAppearance.BorderSize = 0;
-            this.btnStatistic.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStatistic.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStatistic.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnStatistic.IconChar = FontAwesome.Sharp.IconChar.Apple;
-            this.btnStatistic.IconColor = System.Drawing.Color.Gainsboro;
-            this.btnStatistic.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnStatistic.IconSize = 35;
-            this.btnStatistic.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnStatistic.Location = new System.Drawing.Point(0, 395);
-            this.btnStatistic.Name = "btnStatistic";
-            this.btnStatistic.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnStatistic.Size = new System.Drawing.Size(170, 50);
-            this.btnStatistic.TabIndex = 18;
-            this.btnStatistic.Text = "Thống kê";
-            this.btnStatistic.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnStatistic.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnStatistic.UseVisualStyleBackColor = true;
-            this.btnStatistic.Click += new System.EventHandler(this.btnStatistic_Click);
             // 
             // FormControl
             // 

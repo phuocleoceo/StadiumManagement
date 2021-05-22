@@ -34,13 +34,15 @@ namespace GUILayer
             this.ControlBox = false;
             this.DoubleBuffered = true;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+            //RoundCorner
+            this.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 40, 40));
         }
 
         #region Authorization
         public void Authorization()
         {
             AccountVM currentAcc = (new AccountRepository()).GetAccountById(FormLogin.currentAccount_Id);
-            if (currentAcc.Role!="Admin")
+            if (currentAcc.Role != "Admin")
             {
                 btnStadium.Visible = false;
                 btnService.Visible = false;
@@ -204,6 +206,20 @@ namespace GUILayer
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
+        #endregion
+
+        #region RoundCorner
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private extern static IntPtr CreateRoundRectRgn
+        (
+            int nLeftRect,
+            int nTopRect,
+            int nRightRect,
+            int nBottomRect,
+            int nWidthEllipse,
+            int nHeightEllipse
+        );
+
         #endregion
 
         #region ButtonClick
