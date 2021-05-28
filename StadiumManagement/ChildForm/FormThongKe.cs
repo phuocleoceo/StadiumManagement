@@ -25,7 +25,7 @@ namespace GUILayer.ChildForm
         {
             dgvBill.DataSource = null;
             dgvBill.Rows.Clear();
-            dgvBill.DataSource = _db.GetBillHistory(_fromDate, _toDate, CustomerName);
+            dgvBill.DataSource = _db.GetBillHistory(CustomerName,_fromDate, _toDate);
             dgvBill.Columns["Id"].Visible = false;
         }
 

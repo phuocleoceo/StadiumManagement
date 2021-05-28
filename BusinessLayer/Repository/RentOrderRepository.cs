@@ -13,7 +13,7 @@ namespace BusinessLayer.Repository
 {
     public class RentOrderRepository : Repository<RentOrder>
     {
-        public List<RentOrderVM> GetList(int Bill_Id, string StadiumName = "")
+        public List<RentOrderVM> GetList(int Bill_Id, string StadiumName)
         {
             List<RentOrder> list = GetAll(c => c.Bill_Id == Bill_Id && c.Stadium.Name.Contains(StadiumName));
             List<RentOrderVM> listVM = new List<RentOrderVM>();

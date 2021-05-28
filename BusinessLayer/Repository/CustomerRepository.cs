@@ -7,7 +7,7 @@ namespace BusinessLayer.Repository
 {
     public class CustomerRepository : Repository<Customer>
     {
-        public List<CustomerVM> GetList(string Name = "")
+        public List<CustomerVM> GetList(string Name)
         {
             List<Customer> list = GetAll(c => c.Name.Contains(Name));
             List<CustomerVM> listVM = new List<CustomerVM>();
