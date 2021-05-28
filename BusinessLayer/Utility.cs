@@ -16,11 +16,11 @@ namespace BusinessLayer
         public static string Validate(this object obj)
         {
             StringBuilder sb = new StringBuilder();
-            ValidationContext context = new ValidationContext(obj,null,null);
+            ValidationContext context = new ValidationContext(obj, null, null);
             IList<ValidationResult> errors = new List<ValidationResult>();
             if (!Validator.TryValidateObject(obj, context, errors, true))
             {
-                foreach(ValidationResult vr in errors)
+                foreach (ValidationResult vr in errors)
                 {
                     sb.AppendLine(vr.ErrorMessage);
                 }

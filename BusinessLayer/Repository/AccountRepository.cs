@@ -27,7 +27,7 @@ namespace BusinessLayer.Repository
         {
             List<Account> list = GetAll();
             List<AccountVM> listVM = new List<AccountVM>();
-            foreach(Account a in list)
+            foreach (Account a in list)
             {
                 listVM.Add(mapper.Map<AccountVM>(a));
             }
@@ -47,26 +47,34 @@ namespace BusinessLayer.Repository
 
         public void AddAccount(AccountVM c)
         {
-            if (CheckUserName(c.UserName))
+            if (c.Validate().Length == 0)
             {
-                Account account = mapper.Map<Account>(c);
-                account.Image = null;
-                Add(account);
-                Save();
+                if (CheckUserName(c.UserName))
+                {
+                    Account account = mapper.Map<Account>(c);
+                    account.Image = null;
+                    Add(account);
+                    Save();
+                }
+                else throw new Exception("Tài khoản đã tồn tại !");
             }
-            else throw new Exception("Tài khoản đã tồn tại !");
+            else throw new Exception(c.Validate());
         }
 
-        public void UpdateAccount(AccountVM avm)
-        {            
-            if (CheckUserName(avm.UserName, avm.Id))
+        public void UpdateAccount(AccountVM c)
+        {
+            if (c.Validate().Length == 0)
             {
-                Account account = GetById(avm.Id);
-                account.UserName = avm.UserName;
-                account.Role = (Role)Enum.Parse(typeof(Role), avm.Role);
-                Save();
+                if (CheckUserName(c.UserName, c.Id))
+                {
+                    Account account = GetById(c.Id);
+                    account.UserName = c.UserName;
+                    account.Role = (Role)Enum.Parse(typeof(Role), c.Role);
+                    Save();
+                }
+                else throw new Exception("Tài khoản đã tồn tại !");
             }
-            else throw new Exception("Tài khoản đã tồn tại !");
+            else throw new Exception(c.Validate());
         }
 
         public void DeleteAccount(int id)
@@ -90,14 +98,14 @@ namespace BusinessLayer.Repository
             return mapper.Map<AccountVM>(account);
         }
 
-        public bool CheckPassword(int id,string oldPW)
+        public bool CheckPassword(int id, string oldPW)
         {
             Account ac = GetById(id);
             if (ac.PassWord == oldPW.GetMD5()) return true;
             return false;
         }
 
-        public void ChangePassword(int id,string newPW)
+        public void ChangePassword(int id, string newPW)
         {
             Account ac = GetById(id);
             ac.PassWord = newPW.GetMD5();

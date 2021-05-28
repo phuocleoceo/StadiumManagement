@@ -26,16 +26,24 @@ namespace BusinessLayer.Repository
 
         public void AddServiceOrder(ServiceOrderVM sovm)
         {
-            ServiceOrder so = mapper.Map<ServiceOrder>(sovm);
-            Add(so);
-            Save();
+            if (sovm.Validate().Length == 0)
+            {
+                ServiceOrder so = mapper.Map<ServiceOrder>(sovm);
+                Add(so);
+                Save();
+            }
+            else throw new Exception(sovm.Validate());
         }
 
         public void UpdateServiceOrder(ServiceOrderVM sovm)
         {
-            ServiceOrder so = GetById(sovm.Id);
-            mapper.Map(sovm, so);
-            Save();
+            if (sovm.Validate().Length == 0)
+            {
+                ServiceOrder so = GetById(sovm.Id);
+                mapper.Map(sovm, so);
+                Save();
+            }
+            else throw new Exception(sovm.Validate());
         }
 
         public void DeleteServiceOrder(int id)

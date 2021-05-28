@@ -25,20 +25,28 @@ namespace BusinessLayer.Repository
 
         public void AddStadium(StadiumVM c)
         {
-            Stadium s = mapper.Map<Stadium>(c);
-            s.isDeleted = false;
-            Add(s);
-            Save();
+            if (c.Validate().Length == 0)
+            {
+                Stadium s = mapper.Map<Stadium>(c);
+                s.isDeleted = false;
+                Add(s);
+                Save();
+            }
+            else throw new Exception(c.Validate());
         }
 
         public void UpdateStadium(StadiumVM c)
         {
-            Stadium stadium = GetById(c.Id);
-            //StadiumVM khong co thuoc tinh isDeleted
-            bool isDeleted = stadium.isDeleted;
-            mapper.Map(c, stadium);
-            stadium.isDeleted = isDeleted;
-            Save();
+            if (c.Validate().Length == 0)
+            {
+                Stadium stadium = GetById(c.Id);
+                //StadiumVM khong co thuoc tinh isDeleted
+                bool isDeleted = stadium.isDeleted;
+                mapper.Map(c, stadium);
+                stadium.isDeleted = isDeleted;
+                Save();
+            }
+            else throw new Exception(c.Validate());
         }
 
         public void DeleteStadium(int id)

@@ -24,16 +24,24 @@ namespace BusinessLayer.Repository
 
         public void AddAccountInformation(AccountInformationVM c)
         {
-            AccountInformation ai = mapper.Map<AccountInformation>(c);
-            Add(ai);
-            Save();
+            if (c.Validate().Length == 0)
+            {
+                AccountInformation ai = mapper.Map<AccountInformation>(c);
+                Add(ai);
+                Save();
+            }
+            else throw new Exception(c.Validate());
         }
 
-        public void UpdateAccountInformation(AccountInformationVM aivm)
+        public void UpdateAccountInformation(AccountInformationVM c)
         {
-            AccountInformation ai = GetById(aivm.Id);
-            mapper.Map(aivm, ai);
-            Save();
+            if (c.Validate().Length == 0)
+            {
+                AccountInformation ai = GetById(c.Id);
+                mapper.Map(c, ai);
+                Save();
+            }
+            else throw new Exception(c.Validate());
         }
 
         public void DeleteAccountInformation(int id)

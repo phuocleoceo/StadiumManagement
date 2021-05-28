@@ -54,10 +54,14 @@ namespace BusinessLayer.Repository
 
         public void AddBill(BillVM bvm)
         {
-            Bill b = mapper.Map<Bill>(bvm);
-            b.BillStatus = BillStatus.UnPurchased;
-            Add(b);
-            Save();
+            if (bvm.Validate().Length == 0)
+            {
+                Bill b = mapper.Map<Bill>(bvm);
+                b.BillStatus = BillStatus.UnPurchased;
+                Add(b);
+                Save();
+            }
+            else throw new Exception(bvm.Validate());
         }
 
         public void PurchaseBill(int Bill_Id)

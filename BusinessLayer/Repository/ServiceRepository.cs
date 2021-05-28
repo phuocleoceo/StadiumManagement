@@ -25,20 +25,28 @@ namespace BusinessLayer.Repository
 
         public void AddService(ServiceVM c)
         {
-            Service s = mapper.Map<Service>(c);
-            s.isDeleted = false;
-            Add(s);
-            Save();
+            if (c.Validate().Length == 0)
+            {
+                Service s = mapper.Map<Service>(c);
+                s.isDeleted = false;
+                Add(s);
+                Save();
+            }
+            else throw new Exception(c.Validate());
         }
 
         public void UpdateService(ServiceVM c)
         {
-            Service service = GetById(c.Id);
-            service.Name = c.Name;
-            service.Price = c.Price;
-            service.Unit = c.Unit;
-            service.Image = c.Image;
-            Save();
+            if (c.Validate().Length == 0)
+            {
+                Service service = GetById(c.Id);
+                service.Name = c.Name;
+                service.Price = c.Price;
+                service.Unit = c.Unit;
+                service.Image = c.Image;
+                Save();
+            }
+            else throw new Exception(c.Validate());
         }
 
         public void DeleteService(int id)

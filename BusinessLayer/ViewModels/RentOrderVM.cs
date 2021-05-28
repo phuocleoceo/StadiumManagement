@@ -1,12 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BusinessLayer.ViewModels
 {
-    public class RentOrderVM
-    {        
+    public class RentOrderVM : IValidatableObject
+    {
         public int Id { get; set; }
 
         [Browsable(false)]
@@ -22,18 +22,29 @@ namespace BusinessLayer.ViewModels
         public byte[] Stadium_Image { get; set; }
 
         [DisplayName("Bắt đầu thuê")]
+        [Required(ErrorMessage = "Giờ thuê không được để trống")]
         public DateTime StartRentDate { get; set; }
 
         [DisplayName("Kết thúc thuê")]
+        [Required(ErrorMessage = "Giờ trả không được để trống")]
         public DateTime EndRentDate { get; set; }
 
         [Browsable(false)]
         public double RentTime => Convert.ToInt32((EndRentDate - StartRentDate).TotalHours);
 
         [DisplayName("Tiền cọc")]
+        [Required(ErrorMessage = "Tiền cọc không được để trống")]
         public double Deposit { get; set; }
 
         [DisplayName("Tổng tiền")]
-        public double Total { get; set; }              
+        public double Total { get; set; }
+
+        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+        {
+            if (StartRentDate <= DateTime.Now)
+                yield return new ValidationResult("Giờ thuê không được sớm hơn hiện tại");
+            if (EndRentDate <= StartRentDate)
+                yield return new ValidationResult("Giờ trả không được sớm hơn giờ thuê");
+        }
     }
 }

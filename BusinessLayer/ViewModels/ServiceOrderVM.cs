@@ -1,10 +1,10 @@
-﻿using System.ComponentModel;
+﻿using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BusinessLayer.ViewModels
 {
-    public class ServiceOrderVM
+    public class ServiceOrderVM : IValidatableObject
     {
         public int Id { get; set; }
 
@@ -21,9 +21,16 @@ namespace BusinessLayer.ViewModels
         public byte[] Service_Image { get; set; }
 
         [DisplayName("Số lượng")]
+        [Required(ErrorMessage = "Số lượng không được để trống")]
         public int Count { get; set; }
 
         [DisplayName("Tổng tiền")]
         public double Total { get; set; }
+
+        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+        {
+            if (Count <= 0)
+                yield return new ValidationResult("Số lượng không hợp lệ");
+        }
     }
 }

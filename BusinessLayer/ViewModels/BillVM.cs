@@ -12,6 +12,7 @@ namespace BusinessLayer.ViewModels
         public int Id { get; set; }
 
         [DisplayName("Mã hoá đơn")]
+        [Required(ErrorMessage = "Mã hoá đơn không được để trống")]
         public string BillCode { get; set; }
 
         [Browsable(false)]

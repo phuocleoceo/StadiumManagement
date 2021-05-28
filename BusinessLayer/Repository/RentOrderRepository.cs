@@ -26,24 +26,32 @@ namespace BusinessLayer.Repository
 
         public void AddRentOrder(RentOrderVM rovm)
         {
-            if (isValidTime(rovm.Stadium_Id, rovm.StartRentDate, rovm.EndRentDate))
+            if (rovm.Validate().Length == 0)
             {
-                RentOrder ro = mapper.Map<RentOrder>(rovm);
-                Add(ro);
-                Save();
+                if (isValidTime(rovm.Stadium_Id, rovm.StartRentDate, rovm.EndRentDate))
+                {
+                    RentOrder ro = mapper.Map<RentOrder>(rovm);
+                    Add(ro);
+                    Save();
+                }
+                else throw new Exception("Trùng giờ mất rồi !");
             }
-            else throw new Exception("Trùng giờ mất rồi !");
+            else throw new Exception(rovm.Validate());
         }
 
         public void UpdateRentOrder(RentOrderVM rovm, DateTime _startBeforeUpdate, DateTime _endBeforeUpdate)
         {
-            if (isValidTime(rovm.Stadium_Id, rovm.StartRentDate, rovm.EndRentDate, _startBeforeUpdate, _endBeforeUpdate))
+            if (rovm.Validate().Length == 0)
             {
-                RentOrder ro = GetById(rovm.Id);
-                mapper.Map(rovm, ro);
-                Save();
+                if (isValidTime(rovm.Stadium_Id, rovm.StartRentDate, rovm.EndRentDate, _startBeforeUpdate, _endBeforeUpdate))
+                {
+                    RentOrder ro = GetById(rovm.Id);
+                    mapper.Map(rovm, ro);
+                    Save();
+                }
+                else throw new Exception("Trùng giờ mất rồi !");
             }
-            else throw new Exception("Trùng giờ mất rồi !");
+            else throw new Exception(rovm.Validate());
         }
 
         public void DeleteRentOrder(int id)

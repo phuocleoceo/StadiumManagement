@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace BusinessLayer.ViewModels
 {
-    public class CustomerVM : IValidatableObject
+    public class CustomerVM
     {
         public int Id { get; set; }
 
@@ -24,10 +24,5 @@ namespace BusinessLayer.ViewModels
         [Required(ErrorMessage ="Số điện thoại không được để trống")]
         [MaxLength(10)]
         public string PhoneNumber { get; set; }
-
-        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
-        {
-            throw new System.NotImplementedException();
-        }
     }
 }
