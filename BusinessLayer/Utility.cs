@@ -7,6 +7,8 @@ using System.Security.Cryptography;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
 using System.Collections.Generic;
+using System.Data;
+using System.ComponentModel;
 
 namespace BusinessLayer
 {
@@ -84,6 +86,7 @@ namespace BusinessLayer
             else return null;
         }
 
+        //Bo qua second trong DateTime
         public static DateTime TrimSeconds(this DateTime dt)
         {
             return dt.AddSeconds(-dt.Second);

@@ -21,12 +21,12 @@ namespace GUILayer.ChildForm.SubForm
             LoadData();
         }
 
-        private void LoadData()
+        private void LoadData(string StadiumName = "")
         {
             _db = new RentOrderRepository();
             dgvSan.DataSource = null;
             dgvSan.Rows.Clear();
-            dgvSan.DataSource = _db.GetList(_currentBillId);
+            dgvSan.DataSource = _db.GetList(_currentBillId, StadiumName);
             dgvSan.Columns["Id"].Visible = false;
             dgvSan.Columns["Stadium_Image"].Visible = false;
             dgvSan.Columns["Stadium_Price"].Visible = false;
@@ -161,6 +161,11 @@ namespace GUILayer.ChildForm.SubForm
             {
                 MessageBox.Show("Chưa chọn sân", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            LoadData(txtSearch.Text);
         }
     }
 }

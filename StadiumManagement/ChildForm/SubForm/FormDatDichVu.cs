@@ -21,12 +21,12 @@ namespace GUILayer.ChildForm.SubForm
             LoadData();
         }
 
-        private void LoadData()
+        private void LoadData(string ServiceName = "")
         {
             _db = new ServiceOrderRepository();
             dgvDV.DataSource = null;
             dgvDV.Rows.Clear();
-            dgvDV.DataSource = _db.GetList(_currentBillId);
+            dgvDV.DataSource = _db.GetList(_currentBillId, ServiceName);
             dgvDV.Columns["Id"].Visible = false;
             dgvDV.Columns["Service_Image"].Visible = false;
             dgvDV.Columns["Service_Price"].Visible = false;
@@ -132,6 +132,11 @@ namespace GUILayer.ChildForm.SubForm
                 }
             }
             LoadData();
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            LoadData(txtSearch.Text);
         }
     }
 }

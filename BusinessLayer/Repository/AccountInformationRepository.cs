@@ -11,9 +11,9 @@ namespace BusinessLayer.Repository
     public class AccountInformationRepository : Repository<AccountInformation>
     {
         #region Admin
-        public List<AccountInformationVM> GetList()
+        public List<AccountInformationVM> GetList(string Name = "")
         {
-            List<AccountInformation> list = GetAll();
+            List<AccountInformation> list = GetAll(c => c.Name.Contains(Name));
             List<AccountInformationVM> listVM = new List<AccountInformationVM>();
             foreach (AccountInformation ai in list)
             {

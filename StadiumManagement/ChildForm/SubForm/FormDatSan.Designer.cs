@@ -50,8 +50,11 @@ namespace GUILayer.ChildForm.SubForm
             this.txtHoaDon = new System.Windows.Forms.TextBox();
             this.btnXacNhan = new System.Windows.Forms.Button();
             this.btnTrangThai = new System.Windows.Forms.Button();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSan)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnClear
@@ -272,11 +275,36 @@ namespace GUILayer.ChildForm.SubForm
             this.btnTrangThai.UseVisualStyleBackColor = true;
             this.btnTrangThai.Click += new System.EventHandler(this.btnTrangThai_Click);
             // 
+            // txtSearch
+            // 
+            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.Location = new System.Drawing.Point(917, 179);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(100, 21);
+            this.txtSearch.TabIndex = 72;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            // 
+            // iconPictureBox1
+            // 
+            this.iconPictureBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.iconPictureBox1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.Search;
+            this.iconPictureBox1.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox1.IconSize = 25;
+            this.iconPictureBox1.Location = new System.Drawing.Point(892, 178);
+            this.iconPictureBox1.Name = "iconPictureBox1";
+            this.iconPictureBox1.Size = new System.Drawing.Size(25, 25);
+            this.iconPictureBox1.TabIndex = 73;
+            this.iconPictureBox1.TabStop = false;
+            // 
             // FormDatSan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1041, 566);
+            this.Controls.Add(this.txtSearch);
+            this.Controls.Add(this.iconPictureBox1);
             this.Controls.Add(this.btnXacNhan);
             this.Controls.Add(this.txtHoaDon);
             this.Controls.Add(this.lblGia);
@@ -303,6 +331,7 @@ namespace GUILayer.ChildForm.SubForm
             this.Text = "Đặt sân";
             ((System.ComponentModel.ISupportInitialize)(this.dgvSan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSan)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -331,5 +360,7 @@ namespace GUILayer.ChildForm.SubForm
         private System.Windows.Forms.TextBox txtHoaDon;
         private System.Windows.Forms.Button btnXacNhan;
         private System.Windows.Forms.Button btnTrangThai;
+        private System.Windows.Forms.TextBox txtSearch;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
     }
 }

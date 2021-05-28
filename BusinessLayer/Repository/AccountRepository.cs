@@ -23,9 +23,9 @@ namespace BusinessLayer.Repository
         #endregion
 
         #region Admin
-        public List<AccountVM> GetList()
+        public List<AccountVM> GetList(string UserName = "")
         {
-            List<Account> list = GetAll();
+            List<Account> list = GetAll(c => c.UserName.Contains(UserName));
             List<AccountVM> listVM = new List<AccountVM>();
             foreach (Account a in list)
             {

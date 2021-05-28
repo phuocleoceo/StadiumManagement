@@ -45,9 +45,12 @@ namespace GUILayer.ChildForm.SubForm
             this.lblGia = new System.Windows.Forms.Label();
             this.txtHoaDon = new System.Windows.Forms.TextBox();
             this.btnXacNhan = new System.Windows.Forms.Button();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NUDSoLuong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvDV
@@ -64,7 +67,7 @@ namespace GUILayer.ChildForm.SubForm
             // 
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(782, 148);
+            this.btnClear.Location = new System.Drawing.Point(777, 116);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(66, 36);
             this.btnClear.TabIndex = 6;
@@ -76,7 +79,7 @@ namespace GUILayer.ChildForm.SubForm
             // 
             this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoa.Location = new System.Drawing.Point(685, 148);
+            this.btnXoa.Location = new System.Drawing.Point(680, 116);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(66, 36);
             this.btnXoa.TabIndex = 7;
@@ -88,7 +91,7 @@ namespace GUILayer.ChildForm.SubForm
             // 
             this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSua.Location = new System.Drawing.Point(580, 148);
+            this.btnSua.Location = new System.Drawing.Point(575, 116);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(66, 36);
             this.btnSua.TabIndex = 8;
@@ -100,7 +103,7 @@ namespace GUILayer.ChildForm.SubForm
             // 
             this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThem.Location = new System.Drawing.Point(471, 148);
+            this.btnThem.Location = new System.Drawing.Point(466, 116);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(66, 36);
             this.btnThem.TabIndex = 9;
@@ -132,7 +135,7 @@ namespace GUILayer.ChildForm.SubForm
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(454, 63);
+            this.label3.Location = new System.Drawing.Point(450, 53);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(84, 20);
             this.label3.TabIndex = 49;
@@ -141,7 +144,7 @@ namespace GUILayer.ChildForm.SubForm
             // NUDSoLuong
             // 
             this.NUDSoLuong.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NUDSoLuong.Location = new System.Drawing.Point(544, 57);
+            this.NUDSoLuong.Location = new System.Drawing.Point(540, 47);
             this.NUDSoLuong.Name = "NUDSoLuong";
             this.NUDSoLuong.Size = new System.Drawing.Size(162, 26);
             this.NUDSoLuong.TabIndex = 53;
@@ -155,7 +158,7 @@ namespace GUILayer.ChildForm.SubForm
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(763, 63);
+            this.label4.Location = new System.Drawing.Point(759, 53);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(87, 20);
             this.label4.TabIndex = 49;
@@ -164,7 +167,7 @@ namespace GUILayer.ChildForm.SubForm
             // txtTongTien
             // 
             this.txtTongTien.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTongTien.Location = new System.Drawing.Point(856, 57);
+            this.txtTongTien.Location = new System.Drawing.Point(852, 47);
             this.txtTongTien.Name = "txtTongTien";
             this.txtTongTien.ReadOnly = true;
             this.txtTongTien.Size = new System.Drawing.Size(162, 26);
@@ -213,7 +216,7 @@ namespace GUILayer.ChildForm.SubForm
             // 
             this.btnXacNhan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXacNhan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXacNhan.Location = new System.Drawing.Point(885, 148);
+            this.btnXacNhan.Location = new System.Drawing.Point(880, 116);
             this.btnXacNhan.Name = "btnXacNhan";
             this.btnXacNhan.Size = new System.Drawing.Size(93, 36);
             this.btnXacNhan.TabIndex = 6;
@@ -221,11 +224,36 @@ namespace GUILayer.ChildForm.SubForm
             this.btnXacNhan.UseVisualStyleBackColor = true;
             this.btnXacNhan.Click += new System.EventHandler(this.btnXacNhan_Click);
             // 
+            // txtSearch
+            // 
+            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.Location = new System.Drawing.Point(918, 177);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(100, 21);
+            this.txtSearch.TabIndex = 72;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            // 
+            // iconPictureBox1
+            // 
+            this.iconPictureBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.iconPictureBox1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.Search;
+            this.iconPictureBox1.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox1.IconSize = 25;
+            this.iconPictureBox1.Location = new System.Drawing.Point(893, 176);
+            this.iconPictureBox1.Name = "iconPictureBox1";
+            this.iconPictureBox1.Size = new System.Drawing.Size(25, 25);
+            this.iconPictureBox1.TabIndex = 73;
+            this.iconPictureBox1.TabStop = false;
+            // 
             // FormDatDichVu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1041, 566);
+            this.Controls.Add(this.txtSearch);
+            this.Controls.Add(this.iconPictureBox1);
             this.Controls.Add(this.txtHoaDon);
             this.Controls.Add(this.lblGia);
             this.Controls.Add(this.lblDichVu);
@@ -248,6 +276,7 @@ namespace GUILayer.ChildForm.SubForm
             ((System.ComponentModel.ISupportInitialize)(this.dgvDV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NUDSoLuong)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -271,5 +300,7 @@ namespace GUILayer.ChildForm.SubForm
         private System.Windows.Forms.Label lblGia;
         private System.Windows.Forms.TextBox txtHoaDon;
         private System.Windows.Forms.Button btnXacNhan;
+        private System.Windows.Forms.TextBox txtSearch;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
     }
 }

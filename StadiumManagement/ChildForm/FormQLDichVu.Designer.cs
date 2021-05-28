@@ -42,8 +42,11 @@ namespace GUILayer.ChildForm
             this.dgvDSDichVu = new System.Windows.Forms.DataGridView();
             this.btnChonAnh = new System.Windows.Forms.Button();
             this.picDV = new System.Windows.Forms.PictureBox();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSDichVu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnClear
@@ -180,11 +183,36 @@ namespace GUILayer.ChildForm
             this.picDV.TabIndex = 54;
             this.picDV.TabStop = false;
             // 
+            // txtSearch
+            // 
+            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.Location = new System.Drawing.Point(44, 165);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(100, 21);
+            this.txtSearch.TabIndex = 55;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            // 
+            // iconPictureBox1
+            // 
+            this.iconPictureBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.iconPictureBox1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.Search;
+            this.iconPictureBox1.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox1.IconSize = 25;
+            this.iconPictureBox1.Location = new System.Drawing.Point(19, 164);
+            this.iconPictureBox1.Name = "iconPictureBox1";
+            this.iconPictureBox1.Size = new System.Drawing.Size(25, 25);
+            this.iconPictureBox1.TabIndex = 56;
+            this.iconPictureBox1.TabStop = false;
+            // 
             // FormQLDichVu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1041, 566);
+            this.Controls.Add(this.txtSearch);
+            this.Controls.Add(this.iconPictureBox1);
             this.Controls.Add(this.picDV);
             this.Controls.Add(this.btnChonAnh);
             this.Controls.Add(this.btnClear);
@@ -202,6 +230,7 @@ namespace GUILayer.ChildForm
             this.Text = "Quản lý dịch vụ";
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSDichVu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -222,5 +251,7 @@ namespace GUILayer.ChildForm
         private System.Windows.Forms.DataGridView dgvDSDichVu;
         private System.Windows.Forms.PictureBox picDV;
         private System.Windows.Forms.Button btnChonAnh;
+        private System.Windows.Forms.TextBox txtSearch;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
     }
 }

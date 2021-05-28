@@ -70,6 +70,8 @@ namespace GUILayer.ChildForm
             this.label4 = new System.Windows.Forms.Label();
             this.chartSanDV = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chartDoanhThu = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.TCThongKe.SuspendLayout();
             this.TPLichSuBill.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBill)).BeginInit();
@@ -82,6 +84,7 @@ namespace GUILayer.ChildForm
             ((System.ComponentModel.ISupportInitialize)(this.iconDBHoaDon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartSanDV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartDoanhThu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // TCThongKe
@@ -99,6 +102,8 @@ namespace GUILayer.ChildForm
             // 
             // TPLichSuBill
             // 
+            this.TPLichSuBill.Controls.Add(this.txtSearch);
+            this.TPLichSuBill.Controls.Add(this.iconPictureBox1);
             this.TPLichSuBill.Controls.Add(this.lblTongDoanhTHu);
             this.TPLichSuBill.Controls.Add(this.label3);
             this.TPLichSuBill.Controls.Add(this.btnLoc);
@@ -483,6 +488,29 @@ namespace GUILayer.ChildForm
             title2.Text = "Doanh thu từng tháng";
             this.chartDoanhThu.Titles.Add(title2);
             // 
+            // txtSearch
+            // 
+            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.Location = new System.Drawing.Point(51, 513);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(100, 21);
+            this.txtSearch.TabIndex = 62;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            // 
+            // iconPictureBox1
+            // 
+            this.iconPictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.iconPictureBox1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.Search;
+            this.iconPictureBox1.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox1.IconSize = 25;
+            this.iconPictureBox1.Location = new System.Drawing.Point(26, 512);
+            this.iconPictureBox1.Name = "iconPictureBox1";
+            this.iconPictureBox1.Size = new System.Drawing.Size(25, 25);
+            this.iconPictureBox1.TabIndex = 63;
+            this.iconPictureBox1.TabStop = false;
+            // 
             // FormThongKe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -507,6 +535,7 @@ namespace GUILayer.ChildForm
             ((System.ComponentModel.ISupportInitialize)(this.iconDBHoaDon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartSanDV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartDoanhThu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -546,5 +575,7 @@ namespace GUILayer.ChildForm
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnDV;
         private System.Windows.Forms.Button btnSan;
+        private System.Windows.Forms.TextBox txtSearch;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
     }
 }

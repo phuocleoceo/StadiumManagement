@@ -17,11 +17,11 @@ namespace GUILayer.ChildForm
             LoadData();
         }
 
-        private void LoadData()
+        private void LoadData(string UserName="")
         {
             dgvDSTK.DataSource = null;
             dgvDSTK.Rows.Clear();
-            dgvDSTK.DataSource = _db.GetList();
+            dgvDSTK.DataSource = _db.GetList(UserName);
             dgvDSTK.Columns["Id"].Visible = false;
             dgvDSTK.Columns["Image"].Visible = false;
         }
@@ -106,6 +106,11 @@ namespace GUILayer.ChildForm
         private void btnCancel_Click(object sender, EventArgs e)
         {
             grbThem.Visible = false;
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            LoadData(txtSearch.Text);
         }
     }
 }

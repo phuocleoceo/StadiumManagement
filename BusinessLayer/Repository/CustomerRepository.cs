@@ -7,11 +7,11 @@ namespace BusinessLayer.Repository
 {
     public class CustomerRepository : Repository<Customer>
     {
-        public List<CustomerVM> GetList()
+        public List<CustomerVM> GetList(string Name = "")
         {
-            List<Customer> list = GetAll();
+            List<Customer> list = GetAll(c => c.Name.Contains(Name));
             List<CustomerVM> listVM = new List<CustomerVM>();
-            foreach(Customer c in list)
+            foreach (Customer c in list)
             {
                 listVM.Add(mapper.Map<CustomerVM>(c));
             }

@@ -14,9 +14,10 @@ namespace BusinessLayer.Repository
     public class StatisticRepository : Repository<Bill>
     {
         #region Thong Ke Bill
-        public List<BillVM> GetBillHistory(DateTime? _fromDate = null, DateTime? _toDate = null)
+        public List<BillVM> GetBillHistory(DateTime? _fromDate = null, DateTime? _toDate = null, string CustomerName = "")
         {
-            List<Bill> list = GetAll(c => c.BillStatus == BillStatus.Purchased);
+            List<Bill> list = GetAll(c => c.BillStatus == BillStatus.Purchased 
+                                        && c.Customer.Name.Contains(CustomerName));
             if (_fromDate != null && _toDate != null)
             {
                 list = list.Where(c => c.DateCheckedOut.Value.Date >= _fromDate.Value.Date

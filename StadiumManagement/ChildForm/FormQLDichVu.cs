@@ -20,11 +20,11 @@ namespace GUILayer.ChildForm
             LoadData();
         }
 
-        private void LoadData()
+        private void LoadData(string ServiceName = "")
         {
             dgvDSDichVu.DataSource = null;
             dgvDSDichVu.Rows.Clear();
-            dgvDSDichVu.DataSource = _db.GetList();
+            dgvDSDichVu.DataSource = _db.GetList(ServiceName);
             dgvDSDichVu.Columns["Id"].Visible = false;
             dgvDSDichVu.Columns["Image"].Visible = false;
         }
@@ -111,6 +111,11 @@ namespace GUILayer.ChildForm
             {
                 picDV.ImageLocation = dlg.FileName;
             }
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            LoadData(txtSearch.Text);
         }
     }
 }

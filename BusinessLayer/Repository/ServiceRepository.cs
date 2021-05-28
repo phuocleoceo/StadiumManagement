@@ -12,9 +12,9 @@ namespace BusinessLayer.Repository
 {
     public class ServiceRepository : Repository<Service>
     {
-        public List<ServiceVM> GetList()
+        public List<ServiceVM> GetList(string ServiceName = "")
         {
-            List<Service> list = GetAll(c => c.isDeleted == false);
+            List<Service> list = GetAll(c => c.isDeleted == false && c.Name.Contains(ServiceName));
             List<ServiceVM> listVM = new List<ServiceVM>();
             foreach (Service s in list)
             {

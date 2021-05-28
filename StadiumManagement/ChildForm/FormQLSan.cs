@@ -17,11 +17,11 @@ namespace GUILayer.ChildForm
             LoadData();
         }
 
-        private void LoadData()
+        private void LoadData(string StadiumName = "")
         {
             dgvDSSan.DataSource = null;
             dgvDSSan.Rows.Clear();
-            dgvDSSan.DataSource = _db.GetList();
+            dgvDSSan.DataSource = _db.GetList(StadiumName);
             dgvDSSan.Columns["Id"].Visible = false;
             dgvDSSan.Columns["Image"].Visible = false;
         }
@@ -115,6 +115,11 @@ namespace GUILayer.ChildForm
             {
                 picSB.ImageLocation = dlg.FileName;
             }
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            LoadData(txtSearch.Text);
         }
     }
 }

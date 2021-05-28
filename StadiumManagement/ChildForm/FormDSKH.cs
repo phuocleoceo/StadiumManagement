@@ -17,11 +17,11 @@ namespace GUILayer.ChildForm
             LoadData();
         }
 
-        private void LoadData()
+        private void LoadData(string Name="")
         {
             dgvDSKH.DataSource = null;
             dgvDSKH.Rows.Clear();
-            dgvDSKH.DataSource = _db.GetList();
+            dgvDSKH.DataSource = _db.GetList(Name);
             dgvDSKH.Columns["Id"].Visible = false;
         }
 
@@ -101,6 +101,11 @@ namespace GUILayer.ChildForm
         private void btnClear_Click(object sender, EventArgs e)
         {
             txtTenKhachHang.Text = txtSoDienThoai.Text = txtDiaChi.Text = "";
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            LoadData(txtSearch.Text);
         }
     }
 }

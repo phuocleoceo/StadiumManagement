@@ -21,11 +21,11 @@ namespace GUILayer.ChildForm
             CalculateSales();
         }
         #region Lich su Bill
-        private void LoadData(DateTime? _fromDate = null, DateTime? _toDate = null)
+        private void LoadData(DateTime? _fromDate = null, DateTime? _toDate = null, string CustomerName = "")
         {
             dgvBill.DataSource = null;
             dgvBill.Rows.Clear();
-            dgvBill.DataSource = _db.GetBillHistory(_fromDate, _toDate);
+            dgvBill.DataSource = _db.GetBillHistory(_fromDate, _toDate, CustomerName);
             dgvBill.Columns["Id"].Visible = false;
         }
 
@@ -52,6 +52,11 @@ namespace GUILayer.ChildForm
             DateTime? _toDate = dtpToDate.Value;
             LoadData(_fromDate, _toDate);
             CalculateSales();
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            LoadData(null, null, txtSearch.Text);
         }
         #endregion
 
@@ -119,6 +124,5 @@ namespace GUILayer.ChildForm
             chartSanDV.ChartAreas["ChartSDVArea"].AxisY.Title = "Số lượng";
         }
         #endregion
-
     }
 }

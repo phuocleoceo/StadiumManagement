@@ -18,11 +18,11 @@ namespace GUILayer.ChildForm
             _db.LoadComboBoxAccount(cbbTaiKhoan);
         }
 
-        private void LoadData()
+        private void LoadData(string Name="")
         {
             dgvDSNV.DataSource = null;
             dgvDSNV.Rows.Clear();
-            dgvDSNV.DataSource = _db.GetList();
+            dgvDSNV.DataSource = _db.GetList(Name);
             dgvDSNV.Columns["Id"].Visible = false;
         }
 
@@ -117,6 +117,11 @@ namespace GUILayer.ChildForm
             {
                 MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            LoadData(txtSearch.Text);
         }
     }
 }

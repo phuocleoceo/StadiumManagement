@@ -47,9 +47,12 @@ namespace GUILayer.ChildForm
             this.grbChoThue = new System.Windows.Forms.GroupBox();
             this.rdbCo = new System.Windows.Forms.RadioButton();
             this.rdbKhong = new System.Windows.Forms.RadioButton();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSSan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSB)).BeginInit();
             this.grbChoThue.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvDSSan
@@ -240,11 +243,36 @@ namespace GUILayer.ChildForm
             this.rdbKhong.Text = "Không";
             this.rdbKhong.UseVisualStyleBackColor = true;
             // 
+            // txtSearch
+            // 
+            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.Location = new System.Drawing.Point(46, 178);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(100, 21);
+            this.txtSearch.TabIndex = 58;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            // 
+            // iconPictureBox1
+            // 
+            this.iconPictureBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.iconPictureBox1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.Search;
+            this.iconPictureBox1.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox1.IconSize = 25;
+            this.iconPictureBox1.Location = new System.Drawing.Point(21, 177);
+            this.iconPictureBox1.Name = "iconPictureBox1";
+            this.iconPictureBox1.Size = new System.Drawing.Size(25, 25);
+            this.iconPictureBox1.TabIndex = 59;
+            this.iconPictureBox1.TabStop = false;
+            // 
             // FormQLSan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1041, 566);
+            this.Controls.Add(this.txtSearch);
+            this.Controls.Add(this.iconPictureBox1);
             this.Controls.Add(this.grbChoThue);
             this.Controls.Add(this.btnChonAnh);
             this.Controls.Add(this.picSB);
@@ -267,6 +295,7 @@ namespace GUILayer.ChildForm
             ((System.ComponentModel.ISupportInitialize)(this.picSB)).EndInit();
             this.grbChoThue.ResumeLayout(false);
             this.grbChoThue.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -292,5 +321,7 @@ namespace GUILayer.ChildForm
         private System.Windows.Forms.GroupBox grbChoThue;
         private System.Windows.Forms.RadioButton rdbCo;
         private System.Windows.Forms.RadioButton rdbKhong;
+        private System.Windows.Forms.TextBox txtSearch;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
     }
 }

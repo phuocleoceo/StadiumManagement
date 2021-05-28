@@ -24,13 +24,13 @@ namespace GUILayer.ChildForm
             //In ngang
             printDocumentBill.DefaultPageSettings.Landscape = true;
         }
-        private void LoadData()
+        private void LoadData(string BillCode = "")
         {
             // Reset DbContext
             _db = new BillRepository();
             dgvBill.DataSource = null;
             dgvBill.Rows.Clear();
-            dgvBill.DataSource = _db.GetList();
+            dgvBill.DataSource = _db.GetList(BillCode);
             dgvBill.Columns["Id"].Visible = false;
             dgvBill.Columns["DateCheckedOut"].Visible = false;
         }
@@ -179,6 +179,11 @@ namespace GUILayer.ChildForm
         {
             string content = _db.GetContentPrint(_Bill_Id);
             e.Graphics.DrawString(content, new Font("Arial", 12, FontStyle.Regular), Brushes.Black, 100, 100);
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            LoadData(txtSearch.Text);
         }
     }
 }

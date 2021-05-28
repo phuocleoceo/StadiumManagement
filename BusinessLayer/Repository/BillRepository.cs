@@ -13,9 +13,9 @@ namespace BusinessLayer.Repository
 {
     public class BillRepository : Repository<Bill>
     {
-        public List<BillVM> GetList()
+        public List<BillVM> GetList(string BillCode = "")
         {
-            List<Bill> list = GetAll(c => c.BillStatus == BillStatus.UnPurchased);
+            List<Bill> list = GetAll(c => c.BillStatus == BillStatus.UnPurchased && c.BillCode.Contains(BillCode));
             List<BillVM> listVM = new List<BillVM>();
             foreach (Bill s in list)
             {

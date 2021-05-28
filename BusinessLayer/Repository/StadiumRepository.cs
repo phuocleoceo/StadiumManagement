@@ -12,9 +12,9 @@ namespace BusinessLayer.Repository
 {
     public class StadiumRepository : Repository<Stadium>
     {
-        public List<StadiumVM> GetList()
+        public List<StadiumVM> GetList(string StadiumName = "")
         {
-            List<Stadium> list = GetAll(c => c.isDeleted == false);
+            List<Stadium> list = GetAll(c => c.isDeleted == false && c.Name.Contains(StadiumName));
             List<StadiumVM> listVM = new List<StadiumVM>();
             foreach (Stadium s in list)
             {
