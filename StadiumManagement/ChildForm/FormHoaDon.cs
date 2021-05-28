@@ -42,7 +42,7 @@ namespace GUILayer.ChildForm
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            txtNgayTao.Text = txtMaHoaDon.Text = txtThuNgan.Text = txtTongTien.Text 
+            txtNgayTao.Text = txtMaHoaDon.Text = txtThuNgan.Text = txtTongTien.Text
                 = cbbKhachHang.Text = txtSDTKhach.Text = txtTienCoc.Text = txtPhaiTra.Text = "";
         }
 
@@ -67,16 +67,23 @@ namespace GUILayer.ChildForm
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            _db.AddBill(new BillVM
+            try
             {
-                BillCode = txtMaHoaDon.Text,
-                Customer_Id = ((CBBItem)cbbKhachHang.SelectedItem).Value,
-                Cashier_Id = currentCashier_Id,
-                DateCreated = DateTime.Now,
-                DateCheckedOut = null,
-                Total = 0
-            });
-            LoadData();
+                _db.AddBill(new BillVM
+                {
+                    BillCode = txtMaHoaDon.Text,
+                    Customer_Id = ((CBBItem)cbbKhachHang.SelectedItem).Value,
+                    Cashier_Id = currentCashier_Id,
+                    DateCreated = DateTime.Now,
+                    DateCheckedOut = null,
+                    Total = 0
+                });
+                LoadData();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -99,36 +106,57 @@ namespace GUILayer.ChildForm
         private void btnDatDichVu_Click(object sender, EventArgs e)
         {
             DataGridViewSelectedRowCollection r = dgvBill.SelectedRows;
-            int Bill_Id = Convert.ToInt32(r[0].Cells["Id"].Value);
-            string Bill_Code = r[0].Cells["BillCode"].Value.ToString();
-            FormDatDichVu f = new FormDatDichVu(Bill_Id, Bill_Code);
-            f.ShowDialog();
-            SetBillTotal();
-            LoadData();
+            if (r.Count == 1)
+            {
+                int Bill_Id = Convert.ToInt32(r[0].Cells["Id"].Value);
+                string Bill_Code = r[0].Cells["BillCode"].Value.ToString();
+                FormDatDichVu f = new FormDatDichVu(Bill_Id, Bill_Code);
+                f.ShowDialog();
+                SetBillTotal();
+                LoadData();
+            }
+            else
+            {
+                MessageBox.Show("Chưa chọn hoá đơn", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void btnDatSan_Click(object sender, EventArgs e)
         {
             DataGridViewSelectedRowCollection r = dgvBill.SelectedRows;
-            int Bill_Id = Convert.ToInt32(r[0].Cells["Id"].Value);
-            string Bill_Code = r[0].Cells["BillCode"].Value.ToString();
-            FormDatSan f = new FormDatSan(Bill_Id, Bill_Code);
-            f.ShowDialog();
-            SetBillTotal();
-            LoadData();
+            if (r.Count == 1)
+            {
+                int Bill_Id = Convert.ToInt32(r[0].Cells["Id"].Value);
+                string Bill_Code = r[0].Cells["BillCode"].Value.ToString();
+                FormDatSan f = new FormDatSan(Bill_Id, Bill_Code);
+                f.ShowDialog();
+                SetBillTotal();
+                LoadData();
+            }
+            else
+            {
+                MessageBox.Show("Chưa chọn hoá đơn", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private int _Bill_Id;
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
-            DataGridViewSelectedRowCollection r = dgvBill.SelectedRows;
-            _Bill_Id = Convert.ToInt32(r[0].Cells["Id"].Value);
-            _db.PurchaseBill(_Bill_Id);
-            if (MessageBox.Show("In hoá đơn không ?", "Cân nhắc !", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            try
             {
-                PrintBill();
+                DataGridViewSelectedRowCollection r = dgvBill.SelectedRows;
+                _Bill_Id = Convert.ToInt32(r[0].Cells["Id"].Value);
+                _db.PurchaseBill(_Bill_Id);
+                if (MessageBox.Show("In hoá đơn không ?", "Cân nhắc !", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    PrintBill();
+                }
+                LoadData();
             }
-            LoadData();
+            catch
+            {
+                MessageBox.Show("Chưa chọn hoá đơn !", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void PrintBill()

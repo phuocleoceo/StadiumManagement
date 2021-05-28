@@ -43,28 +43,42 @@ namespace GUILayer.ChildForm
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            _db.AddCustomer(new CustomerVM
+            try
             {
-                Name = txtTenKhachHang.Text,
-                Gender = rdbNam.Checked ? true : false,
-                Address = txtDiaChi.Text,
-                PhoneNumber = txtSoDienThoai.Text
-            });
-            LoadData();
+                _db.AddCustomer(new CustomerVM
+                {
+                    Name = txtTenKhachHang.Text,
+                    Gender = rdbNam.Checked ? true : false,
+                    Address = txtDiaChi.Text,
+                    PhoneNumber = txtSoDienThoai.Text
+                });
+                LoadData();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            DataGridViewSelectedRowCollection r = dgvDSKH.SelectedRows;
-            _db.UpdateCustomer(new CustomerVM
+            try
             {
-                Id = Convert.ToInt32(r[0].Cells["Id"].Value),
-                Name = txtTenKhachHang.Text,
-                Gender = rdbNam.Checked ? true : false,
-                Address = txtDiaChi.Text,
-                PhoneNumber = txtSoDienThoai.Text
-            });
-            LoadData();
+                DataGridViewSelectedRowCollection r = dgvDSKH.SelectedRows;
+                _db.UpdateCustomer(new CustomerVM
+                {
+                    Id = Convert.ToInt32(r[0].Cells["Id"].Value),
+                    Name = txtTenKhachHang.Text,
+                    Gender = rdbNam.Checked ? true : false,
+                    Address = txtDiaChi.Text,
+                    PhoneNumber = txtSoDienThoai.Text
+                });
+                LoadData();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnXoa_Click(object sender, EventArgs e)

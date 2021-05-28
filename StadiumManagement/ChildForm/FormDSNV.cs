@@ -13,7 +13,7 @@ namespace GUILayer.ChildForm
         {
             InitializeComponent();
             dgvDSNV.FormatTable();
-            _db = new AccountInformationRepository();            
+            _db = new AccountInformationRepository();
             LoadData();
             _db.LoadComboBoxAccount(cbbTaiKhoan);
         }
@@ -71,38 +71,52 @@ namespace GUILayer.ChildForm
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            _db.AddAccountInformation(new AccountInformationVM
+            try
             {
-                Name = txtTenNhanVien.Text,
-                Gender = rdbNam.Checked ? true : false,
-                DateOfBirth = dtpNgaySinh.Value,
-                PhoneNumber = txtSoDienThoai.Text,
-                IdentityCard = txtCMND.Text,
-                Salary = float.Parse(txtLuong.Text),
-                Address = txtDiaChi.Text,
-                Account_Name = cbbTaiKhoan.Text,
-                Account_Id = ((CBBItem)cbbTaiKhoan.SelectedItem).Value
-            });
-            LoadData();
+                _db.AddAccountInformation(new AccountInformationVM
+                {
+                    Name = txtTenNhanVien.Text,
+                    Gender = rdbNam.Checked ? true : false,
+                    DateOfBirth = dtpNgaySinh.Value,
+                    PhoneNumber = txtSoDienThoai.Text,
+                    IdentityCard = txtCMND.Text,
+                    Salary = float.Parse(txtLuong.Text),
+                    Address = txtDiaChi.Text,
+                    Account_Name = cbbTaiKhoan.Text,
+                    Account_Id = ((CBBItem)cbbTaiKhoan.SelectedItem).Value
+                });
+                LoadData();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            DataGridViewSelectedRowCollection r = dgvDSNV.SelectedRows;
-            _db.UpdateAccountInformation(new AccountInformationVM
+            try
             {
-                Id = Convert.ToInt32(r[0].Cells["Id"].Value),
-                Name = txtTenNhanVien.Text,
-                Gender = rdbNam.Checked ? true : false,
-                DateOfBirth = dtpNgaySinh.Value,
-                PhoneNumber = txtSoDienThoai.Text,
-                IdentityCard = txtCMND.Text,
-                Salary = float.Parse(txtLuong.Text),
-                Address = txtDiaChi.Text,
-                Account_Name = cbbTaiKhoan.Text,
-                Account_Id = ((CBBItem)cbbTaiKhoan.SelectedItem).Value
-            });
-            LoadData();
+                DataGridViewSelectedRowCollection r = dgvDSNV.SelectedRows;
+                _db.UpdateAccountInformation(new AccountInformationVM
+                {
+                    Id = Convert.ToInt32(r[0].Cells["Id"].Value),
+                    Name = txtTenNhanVien.Text,
+                    Gender = rdbNam.Checked ? true : false,
+                    DateOfBirth = dtpNgaySinh.Value,
+                    PhoneNumber = txtSoDienThoai.Text,
+                    IdentityCard = txtCMND.Text,
+                    Salary = float.Parse(txtLuong.Text),
+                    Address = txtDiaChi.Text,
+                    Account_Name = cbbTaiKhoan.Text,
+                    Account_Id = ((CBBItem)cbbTaiKhoan.SelectedItem).Value
+                });
+                LoadData();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

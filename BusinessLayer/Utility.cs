@@ -16,6 +16,7 @@ namespace BusinessLayer
             dgv.ReadOnly = true;
             dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
+            //dgv.BorderStyle = BorderStyle.None;
             dgv.DefaultCellStyle.Font = new Font("Cambria", 12);
             dgv.DefaultCellStyle.ForeColor = Color.Black;
             dgv.DefaultCellStyle.BackColor = Color.WhiteSmoke;

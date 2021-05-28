@@ -43,28 +43,42 @@ namespace GUILayer.ChildForm
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            _db.AddService(new ServiceVM
+            try
             {
-                Name = txtTenDichVu.Text,
-                Price = double.Parse(txtDonGia.Text),
-                Unit = txtDonViTinh.Text,
-                Image = picDV.Image.ImageToByteArray()
-            });
-            LoadData();
+                _db.AddService(new ServiceVM
+                {
+                    Name = txtTenDichVu.Text,
+                    Price = double.Parse(txtDonGia.Text),
+                    Unit = txtDonViTinh.Text,
+                    Image = picDV.Image.ImageToByteArray()
+                });
+                LoadData();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            DataGridViewSelectedRowCollection r = dgvDSDichVu.SelectedRows;
-            _db.UpdateService(new ServiceVM
+            try
             {
-                Id = Convert.ToInt32(r[0].Cells["Id"].Value),
-                Name = txtTenDichVu.Text,
-                Price = double.Parse(txtDonGia.Text),
-                Unit = txtDonViTinh.Text,
-                Image = picDV.Image.ImageToByteArray()
-            });
-            LoadData();
+                DataGridViewSelectedRowCollection r = dgvDSDichVu.SelectedRows;
+                _db.UpdateService(new ServiceVM
+                {
+                    Id = Convert.ToInt32(r[0].Cells["Id"].Value),
+                    Name = txtTenDichVu.Text,
+                    Price = double.Parse(txtDonGia.Text),
+                    Unit = txtDonViTinh.Text,
+                    Image = picDV.Image.ImageToByteArray()
+                });
+                LoadData();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnXoa_Click(object sender, EventArgs e)

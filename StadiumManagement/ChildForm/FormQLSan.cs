@@ -43,32 +43,46 @@ namespace GUILayer.ChildForm
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            _db.AddStadium(new StadiumVM
+            try
             {
-                Name = txtTenSan.Text,
-                Price = double.Parse(txtDonGia.Text),
-                Rentable = rdbCo.Checked ? true : false,
-                Area = txtDienTich.Text,
-                Note = txtGhiChu.Text,
-                Image = picSB.Image.ImageToByteArray()
-            });
-            LoadData();
+                _db.AddStadium(new StadiumVM
+                {
+                    Name = txtTenSan.Text,
+                    Price = double.Parse(txtDonGia.Text),
+                    Rentable = rdbCo.Checked ? true : false,
+                    Area = txtDienTich.Text,
+                    Note = txtGhiChu.Text,
+                    Image = picSB.Image.ImageToByteArray()
+                });
+                LoadData();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            DataGridViewSelectedRowCollection r = dgvDSSan.SelectedRows;
-            _db.UpdateStadium(new StadiumVM
+            try
             {
-                Id = Convert.ToInt32(r[0].Cells["Id"].Value),
-                Name = txtTenSan.Text,
-                Price = double.Parse(txtDonGia.Text),
-                Rentable = rdbCo.Checked ? true : false,
-                Area = txtDienTich.Text,
-                Note = txtGhiChu.Text,
-                Image = picSB.Image.ImageToByteArray()
-            });
-            LoadData();
+                DataGridViewSelectedRowCollection r = dgvDSSan.SelectedRows;
+                _db.UpdateStadium(new StadiumVM
+                {
+                    Id = Convert.ToInt32(r[0].Cells["Id"].Value),
+                    Name = txtTenSan.Text,
+                    Price = double.Parse(txtDonGia.Text),
+                    Rentable = rdbCo.Checked ? true : false,
+                    Area = txtDienTich.Text,
+                    Note = txtGhiChu.Text,
+                    Image = picSB.Image.ImageToByteArray()
+                });
+                LoadData();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnXoa_Click(object sender, EventArgs e)

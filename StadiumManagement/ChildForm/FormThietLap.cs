@@ -89,18 +89,25 @@ namespace GUILayer.ChildForm
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            _dbAI.UpdateAccountInformation(new AccountInformationVM
+            try
             {
-                Id = ai.Id,
-                Name = txtTen.Text,
-                Gender = (rdbNam.Checked) ? true : false,
-                DateOfBirth = dtpNgaySinh.Value,
-                PhoneNumber = txtSoDienThoai.Text,
-                IdentityCard = txtCMND.Text,
-                Salary = ai.Salary,
-                Address = txtDiaChi.Text,
-                Account_Id = ai.Account_Id
-            });
+                _dbAI.UpdateAccountInformation(new AccountInformationVM
+                {
+                    Id = ai.Id,
+                    Name = txtTen.Text,
+                    Gender = (rdbNam.Checked) ? true : false,
+                    DateOfBirth = dtpNgaySinh.Value,
+                    PhoneNumber = txtSoDienThoai.Text,
+                    IdentityCard = txtCMND.Text,
+                    Salary = ai.Salary,
+                    Address = txtDiaChi.Text,
+                    Account_Id = ai.Account_Id
+                });
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }            
         }
 
         private void HidePassword()
