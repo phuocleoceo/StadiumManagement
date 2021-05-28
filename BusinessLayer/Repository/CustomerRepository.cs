@@ -2,8 +2,6 @@
 using DataAccessLayer.Models;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace BusinessLayer.Repository
 {
@@ -22,16 +20,24 @@ namespace BusinessLayer.Repository
 
         public void AddCustomer(CustomerVM c)
         {
-            Customer customer = mapper.Map<Customer>(c);
-            Add(customer);
-            Save();
+            if (c.Validate().Length == 0)
+            {
+                Customer customer = mapper.Map<Customer>(c);
+                Add(customer);
+                Save();
+            }
+            else throw new Exception(c.Validate());
         }
 
         public void UpdateCustomer(CustomerVM c)
         {
-            Customer customer = GetById(c.Id);
-            mapper.Map(c, customer);
-            Save();
+            if (c.Validate().Length == 0)
+            {
+                Customer customer = GetById(c.Id);
+                mapper.Map(c, customer);
+                Save();
+            }
+            else throw new Exception(c.Validate());
         }
 
         public void DeleteCustomer(int id)

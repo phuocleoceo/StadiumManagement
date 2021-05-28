@@ -104,10 +104,10 @@ namespace GUILayer.ChildForm
                     Account_Id = ai.Account_Id
                 });
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
-            }            
+                MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void HidePassword()

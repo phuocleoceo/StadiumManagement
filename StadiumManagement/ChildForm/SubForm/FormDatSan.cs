@@ -101,7 +101,7 @@ namespace GUILayer.ChildForm.SubForm
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Không thêm được", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -129,7 +129,7 @@ namespace GUILayer.ChildForm.SubForm
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Không sửa được", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -152,8 +152,15 @@ namespace GUILayer.ChildForm.SubForm
 
         private void btnTrangThai_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(picSan.Tag);
-            MessageBox.Show(_db.ListRentTime(id), "Sân đã được đặt lúc : ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            try
+            {
+                int id = Convert.ToInt32(picSan.Tag);
+                MessageBox.Show(_db.ListRentTime(id), "Sân đã được đặt lúc : ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch
+            {
+                MessageBox.Show("Chưa chọn sân", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }

@@ -54,7 +54,7 @@ namespace GUILayer.ChildForm.SubForm
                 picDV.Tag = r[0].Cells["Service_Id"].Value;
                 picDV.Image = ((byte[])(r[0].Cells["Service_Image"].Value)).ByteArrayToImage();
                 lblDichVu.Text = r[0].Cells["Service_Name"].Value.ToString();
-                lblGia.Text = r[0].Cells["Service_Price"].Value.ToString();                
+                lblGia.Text = r[0].Cells["Service_Price"].Value.ToString();
             }
         }
 
@@ -79,28 +79,42 @@ namespace GUILayer.ChildForm.SubForm
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            _db.AddServiceOrder(new ServiceOrderVM
+            try
             {
-                Bill_Id = _currentBillId,
-                Service_Id = Convert.ToInt32(picDV.Tag),
-                Count = Convert.ToInt32(NUDSoLuong.Value),
-                Total = Convert.ToDouble(lblGia.Text)* Convert.ToInt32(NUDSoLuong.Value)
-            });
-            LoadData();
+                _db.AddServiceOrder(new ServiceOrderVM
+                {
+                    Bill_Id = _currentBillId,
+                    Service_Id = Convert.ToInt32(picDV.Tag),
+                    Count = Convert.ToInt32(NUDSoLuong.Value),
+                    Total = Convert.ToDouble(lblGia.Text) * Convert.ToInt32(NUDSoLuong.Value)
+                });
+                LoadData();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            DataGridViewSelectedRowCollection r = dgvDV.SelectedRows;
-            _db.UpdateServiceOrder(new ServiceOrderVM
+            try
             {
-                Id = Convert.ToInt32(r[0].Cells["Id"].Value),
-                Bill_Id = _currentBillId,
-                Service_Id = Convert.ToInt32(picDV.Tag),
-                Count = Convert.ToInt32(NUDSoLuong.Value),
-                Total = Convert.ToDouble(lblGia.Text) * Convert.ToInt32(NUDSoLuong.Value)
-            });
-            LoadData();
+                DataGridViewSelectedRowCollection r = dgvDV.SelectedRows;
+                _db.UpdateServiceOrder(new ServiceOrderVM
+                {
+                    Id = Convert.ToInt32(r[0].Cells["Id"].Value),
+                    Bill_Id = _currentBillId,
+                    Service_Id = Convert.ToInt32(picDV.Tag),
+                    Count = Convert.ToInt32(NUDSoLuong.Value),
+                    Total = Convert.ToDouble(lblGia.Text) * Convert.ToInt32(NUDSoLuong.Value)
+                });
+                LoadData();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void btnXoa_Click(object sender, EventArgs e)

@@ -74,7 +74,7 @@ namespace GUILayer.ChildForm
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -99,7 +99,7 @@ namespace GUILayer.ChildForm
             }
             catch(Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

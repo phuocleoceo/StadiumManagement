@@ -82,7 +82,7 @@ namespace GUILayer.ChildForm
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -142,9 +142,9 @@ namespace GUILayer.ChildForm
         private int _Bill_Id;
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
-            try
+            DataGridViewSelectedRowCollection r = dgvBill.SelectedRows;
+            if (r.Count == 1)
             {
-                DataGridViewSelectedRowCollection r = dgvBill.SelectedRows;
                 _Bill_Id = Convert.ToInt32(r[0].Cells["Id"].Value);
                 _db.PurchaseBill(_Bill_Id);
                 if (MessageBox.Show("In hoá đơn không ?", "Cân nhắc !", MessageBoxButtons.YesNo) == DialogResult.Yes)
@@ -153,7 +153,7 @@ namespace GUILayer.ChildForm
                 }
                 LoadData();
             }
-            catch
+            else
             {
                 MessageBox.Show("Chưa chọn hoá đơn !", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }

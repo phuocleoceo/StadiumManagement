@@ -5,11 +5,28 @@ using System.Text;
 using System.Windows.Forms;
 using System.Security.Cryptography;
 using System.IO;
+using System.ComponentModel.DataAnnotations;
+using System.Collections.Generic;
 
 namespace BusinessLayer
 {
     public static class Utility
     {
+        // Validate
+        public static string Validate(this object obj)
+        {
+            StringBuilder sb = new StringBuilder();
+            ValidationContext context = new ValidationContext(obj,null,null);
+            IList<ValidationResult> errors = new List<ValidationResult>();
+            if (!Validator.TryValidateObject(obj, context, errors, true))
+            {
+                foreach(ValidationResult vr in errors)
+                {
+                    sb.AppendLine(vr.ErrorMessage);
+                }
+            }
+            return sb.ToString();
+        }
         // Dinh dang DGV
         public static void FormatTable(this DataGridView dgv)
         {
