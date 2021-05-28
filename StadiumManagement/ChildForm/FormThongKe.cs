@@ -21,11 +21,11 @@ namespace GUILayer.ChildForm
             CalculateSales();
         }
         #region Lich su Bill
-        private void LoadData(DateTime? _fromDate = null, DateTime? _toDate = null, string CustomerName = "")
+        private void LoadData(string CustomerName = "", DateTime? _fromDate = null, DateTime? _toDate = null)
         {
             dgvBill.DataSource = null;
             dgvBill.Rows.Clear();
-            dgvBill.DataSource = _db.GetBillHistory(CustomerName,_fromDate, _toDate);
+            dgvBill.DataSource = _db.GetBillHistory(CustomerName, _fromDate, _toDate);
             dgvBill.Columns["Id"].Visible = false;
         }
 
@@ -50,13 +50,13 @@ namespace GUILayer.ChildForm
         {
             DateTime? _fromDate = dtpFromDate.Value;
             DateTime? _toDate = dtpToDate.Value;
-            LoadData(_fromDate, _toDate);
+            LoadData("", _fromDate, _toDate);
             CalculateSales();
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            LoadData(null, null, txtSearch.Text);
+            LoadData(txtSearch.Text);
         }
         #endregion
 

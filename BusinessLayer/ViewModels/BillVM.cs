@@ -1,13 +1,13 @@
-﻿using DataAccessLayer.Enums;
+﻿using DataAccessLayer;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
 
 namespace BusinessLayer.ViewModels
 {
-    public class BillVM
+    public class BillVM : IValidatableObject
     {
         public int Id { get; set; }
 
@@ -38,5 +38,14 @@ namespace BusinessLayer.ViewModels
 
         [DisplayName("Tổng tiền")]
         public double Total { get; set; }
+
+        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+        {
+            using (StadiumContext db = new StadiumContext())
+            {
+                if (db.Bills.Any(c => c.BillCode == BillCode))
+                    yield return new ValidationResult("Mã BillCode không được trùng");
+            }
+        }
     }
 }

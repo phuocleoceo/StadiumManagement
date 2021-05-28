@@ -41,7 +41,6 @@ namespace BusinessLayer.ViewModels
         public string Address { get; set; }
 
         [Browsable(false)]
-        [Required(ErrorMessage = "Chưa chọn tài khoản")]
         public int Account_Id { get; set; }
 
         [DisplayName("Tài khoản")]

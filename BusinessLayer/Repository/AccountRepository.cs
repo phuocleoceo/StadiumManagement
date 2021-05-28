@@ -34,29 +34,14 @@ namespace BusinessLayer.Repository
             return listVM;
         }
 
-        private bool CheckUserName(string username, int id = 0)
-        {
-            //Mac dinh id=0 thi lay toan bo, id khac 0 thi lay nhung tai khoan khac tai khoan muon update
-            List<Account> list = GetAll(c => c.Id != id);
-            foreach (Account a in list)
-            {
-                if (a.UserName == username) return false;
-            }
-            return true;
-        }
-
         public void AddAccount(AccountVM c)
         {
             if (c.Validate().Length == 0)
             {
-                if (CheckUserName(c.UserName))
-                {
-                    Account account = mapper.Map<Account>(c);
-                    account.Image = null;
-                    Add(account);
-                    Save();
-                }
-                else throw new Exception("Tài khoản đã tồn tại !");
+                Account account = mapper.Map<Account>(c);
+                account.Image = null;
+                Add(account);
+                Save();
             }
             else throw new Exception(c.Validate());
         }
@@ -65,14 +50,10 @@ namespace BusinessLayer.Repository
         {
             if (c.Validate().Length == 0)
             {
-                if (CheckUserName(c.UserName, c.Id))
-                {
-                    Account account = GetById(c.Id);
-                    account.UserName = c.UserName;
-                    account.Role = (Role)Enum.Parse(typeof(Role), c.Role);
-                    Save();
-                }
-                else throw new Exception("Tài khoản đã tồn tại !");
+                Account account = GetById(c.Id);
+                account.UserName = c.UserName;
+                account.Role = (Role)Enum.Parse(typeof(Role), c.Role);
+                Save();
             }
             else throw new Exception(c.Validate());
         }
