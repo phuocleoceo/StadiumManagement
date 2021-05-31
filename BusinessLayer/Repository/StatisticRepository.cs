@@ -18,7 +18,7 @@ namespace BusinessLayer.Repository
             if (_fromDate != null && _toDate != null)
             {
                 list = list.Where(c => c.DateCheckedOut.Value.Date >= _fromDate.Value.Date
-                                    && c.DateCheckedOut.Value.Date <= _toDate.Value.Date).ToList();
+                                    && c.DateCheckedOut.Value.Date <= _toDate.Value.Date);
             }
             foreach (Bill s in list)
             {

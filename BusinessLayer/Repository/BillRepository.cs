@@ -23,7 +23,7 @@ namespace BusinessLayer.Repository
 
         public void GetComboBoxCustomer(ComboBox cbb)
         {
-            List<Customer> listCus = _db.Customers.ToList();
+            IEnumerable<Customer> listCus = _db.Customers;
             foreach (Customer cus in listCus)
             {
                 cbb.Items.Add(new CBBItem

@@ -49,7 +49,7 @@ namespace BusinessLayer.Repository
 
         public void LoadComboBoxAccount(ComboBox cbb)
         {
-            List<Account> listAC = _db.Accounts.ToList();
+            IEnumerable<Account> listAC = _db.Accounts;
             foreach (Account ac in listAC)
             {
                 cbb.Items.Add(new CBBItem
