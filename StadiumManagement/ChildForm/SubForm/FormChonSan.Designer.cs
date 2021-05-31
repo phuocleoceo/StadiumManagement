@@ -41,7 +41,7 @@ namespace GUILayer.ChildForm.SubForm
             this.lvSan.LargeImageList = this.imgList;
             this.lvSan.Location = new System.Drawing.Point(0, 0);
             this.lvSan.Name = "lvSan";
-            this.lvSan.Size = new System.Drawing.Size(664, 393);
+            this.lvSan.Size = new System.Drawing.Size(677, 393);
             this.lvSan.TabIndex = 1;
             this.lvSan.UseCompatibleStateImageBehavior = false;
             this.lvSan.Click += new System.EventHandler(this.lvSan_Click);
@@ -56,7 +56,7 @@ namespace GUILayer.ChildForm.SubForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(665, 393);
+            this.ClientSize = new System.Drawing.Size(678, 393);
             this.Controls.Add(this.lvSan);
             this.Name = "FormChonSan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

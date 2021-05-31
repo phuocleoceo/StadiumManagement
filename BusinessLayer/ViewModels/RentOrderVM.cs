@@ -30,7 +30,7 @@ namespace BusinessLayer.ViewModels
         public DateTime EndRentDate { get; set; }
 
         [Browsable(false)]
-        public double RentTime => Utility.RentTime(StartRentDate,EndRentDate);
+        public double RentTime => Utility.RentTime(StartRentDate, EndRentDate);
 
         [DisplayName("Tiền cọc")]
         [Required(ErrorMessage = "Tiền cọc không được để trống")]

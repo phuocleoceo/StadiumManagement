@@ -104,8 +104,6 @@ namespace GUILayer.ChildForm
             chartSanDV.Series["SanDV"].YValueMembers = "Count";
             chartSanDV.Series["SanDV"].YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
             chartSanDV.Series["SanDV"].IsValueShownAsLabel = true;
-            chartSanDV.ChartAreas["ChartSDVArea"].AxisX.Title = "Sân";
-            chartSanDV.ChartAreas["ChartSDVArea"].AxisY.Title = "Thời lượng";
         }
 
         private void btnDV_Click(object sender, EventArgs e)
@@ -117,8 +115,6 @@ namespace GUILayer.ChildForm
             chartSanDV.Series["SanDV"].YValueMembers = "Count";
             chartSanDV.Series["SanDV"].YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
             chartSanDV.Series["SanDV"].IsValueShownAsLabel = true;
-            chartSanDV.ChartAreas["ChartSDVArea"].AxisX.Title = "Dịch vụ";
-            chartSanDV.ChartAreas["ChartSDVArea"].AxisY.Title = "Số lượng";
         }
         #endregion
     }
