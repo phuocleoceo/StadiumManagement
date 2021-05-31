@@ -2,6 +2,7 @@
 using BusinessLayer.Repository;
 using BusinessLayer.ViewModels;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace GUILayer.ChildForm.SubForm
@@ -10,8 +11,8 @@ namespace GUILayer.ChildForm.SubForm
     {
         private readonly StatisticRepository _db;
         private readonly BillVM _bvm;
-        private readonly List<RentOrderVM> _rovm;
-        private readonly List<ServiceOrderVM> _sovm;
+        private readonly IEnumerable<RentOrderVM> _rovm;
+        private readonly IEnumerable<ServiceOrderVM> _sovm;
         public FormChiTietBill(int Bill_Id)
         {
             InitializeComponent();
@@ -38,7 +39,7 @@ namespace GUILayer.ChildForm.SubForm
         private void LoadRentOrder()
         {
             dgvSan.FormatTable();
-            dgvSan.DataSource = _rovm;
+            dgvSan.DataSource = _rovm.ToList();
             dgvSan.Columns["Id"].Visible = false;
             dgvSan.Columns["Bill_Code"].Visible = false;
             dgvSan.Columns["Stadium_Image"].Visible = false;
@@ -50,7 +51,7 @@ namespace GUILayer.ChildForm.SubForm
         private void LoadServiceOrder()
         {
             dgvDV.FormatTable();
-            dgvDV.DataSource = _sovm;
+            dgvDV.DataSource = _sovm.ToList();
             dgvDV.Columns["Id"].Visible = false;
             dgvDV.Columns["Bill_Code"].Visible = false;
             dgvDV.Columns["Service_Image"].Visible = false;
