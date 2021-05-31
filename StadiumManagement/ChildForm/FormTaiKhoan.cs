@@ -4,6 +4,7 @@ using BusinessLayer.ViewModels;
 using System;
 using System.Linq;
 using System.Windows.Forms;
+using static GUILayer.FormAlert.AlertType;
 
 namespace GUILayer.ChildForm
 {
@@ -55,6 +56,7 @@ namespace GUILayer.ChildForm
                     {
                         _db.DeleteAccount(Convert.ToInt32(row.Cells["Id"].Value));
                     }
+                    new FormAlert("Xoá tài khoản thành công", Success);
                 }
             }
             LoadData();
@@ -71,11 +73,12 @@ namespace GUILayer.ChildForm
                     UserName = txtTenTaiKhoan.Text,
                     Role = cbbVaiTro.Text
                 });
+                new FormAlert("Sửa tài khoản thành công", Success);
                 LoadData();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                new FormAlert(ex.Message, Warning);
             }
         }
 
@@ -95,12 +98,13 @@ namespace GUILayer.ChildForm
                     PassWord = txtMatKhau.Text,
                     Role = cbbVaiTro.Text
                 });
+                new FormAlert("Thêm tài khoản thành công", Success);
                 LoadData();
                 grbThem.Visible = false;
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                new FormAlert(ex.Message, Warning);
             }
         }
 

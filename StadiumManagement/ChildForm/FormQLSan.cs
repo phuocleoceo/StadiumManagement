@@ -4,6 +4,7 @@ using BusinessLayer.ViewModels;
 using System;
 using System.Linq;
 using System.Windows.Forms;
+using static GUILayer.FormAlert.AlertType;
 
 namespace GUILayer.ChildForm
 {
@@ -55,11 +56,12 @@ namespace GUILayer.ChildForm
                     Note = txtGhiChu.Text,
                     Image = picSB.Image.ImageToByteArray()
                 });
+                new FormAlert("Thêm sân thành công", Success);
                 LoadData();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                new FormAlert(ex.Message, Warning);
             }
         }
 
@@ -78,11 +80,12 @@ namespace GUILayer.ChildForm
                     Note = txtGhiChu.Text,
                     Image = picSB.Image.ImageToByteArray()
                 });
+                new FormAlert("Sửa sân thành công", Success);
                 LoadData();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                new FormAlert(ex.Message, Warning);
             }
         }
 
@@ -98,6 +101,7 @@ namespace GUILayer.ChildForm
                     {
                         _db.DeleteStadium(Convert.ToInt32(row.Cells["Id"].Value));
                     }
+                    new FormAlert("Xoá sân thành công", Success);
                 }
             }
             LoadData();

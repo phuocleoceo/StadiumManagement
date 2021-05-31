@@ -4,6 +4,7 @@ using BusinessLayer.ViewModels;
 using System;
 using System.Linq;
 using System.Windows.Forms;
+using static GUILayer.FormAlert.AlertType;
 
 namespace GUILayer.ChildForm
 {
@@ -65,6 +66,7 @@ namespace GUILayer.ChildForm
                     {
                         _db.DeleteAccountInformation(Convert.ToInt32(row.Cells["Id"].Value));
                     }
+                    new FormAlert("Xoá nhân viên thành công", Success);
                 }
             }
             LoadData();
@@ -86,11 +88,12 @@ namespace GUILayer.ChildForm
                     Account_Name = cbbTaiKhoan.Text,
                     Account_Id = ((CBBItem)cbbTaiKhoan.SelectedItem).Value
                 });
+                new FormAlert("Thêm nhân viên thành công", Success);
                 LoadData();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                new FormAlert(ex.Message, Warning);
             }
         }
 
@@ -112,11 +115,12 @@ namespace GUILayer.ChildForm
                     Account_Name = cbbTaiKhoan.Text,
                     Account_Id = ((CBBItem)cbbTaiKhoan.SelectedItem).Value
                 });
+                new FormAlert("Sửa nhân viên thành công", Success);
                 LoadData();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                new FormAlert(ex.Message, Warning);
             }
         }
 

@@ -5,6 +5,7 @@ using System;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using static GUILayer.FormAlert.AlertType;
 
 namespace GUILayer.ChildForm.SubForm
 {
@@ -89,11 +90,12 @@ namespace GUILayer.ChildForm.SubForm
                     Count = Convert.ToInt32(NUDSoLuong.Value),
                     Total = Convert.ToDouble(lblGia.Text) * Convert.ToInt32(NUDSoLuong.Value)
                 });
+                new FormAlert("Đặt dịch vụ thành công", Success);
                 LoadData();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                new FormAlert(ex.Message, Warning);
             }
         }
 
@@ -110,11 +112,12 @@ namespace GUILayer.ChildForm.SubForm
                     Count = Convert.ToInt32(NUDSoLuong.Value),
                     Total = Convert.ToDouble(lblGia.Text) * Convert.ToInt32(NUDSoLuong.Value)
                 });
+                new FormAlert("Sửa thông tin thành công", Success);
                 LoadData();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                new FormAlert(ex.Message, Warning);
             }
         }
 
@@ -130,6 +133,7 @@ namespace GUILayer.ChildForm.SubForm
                     {
                         _db.DeleteServiceOrder(Convert.ToInt32(row.Cells["Id"].Value));
                     }
+                    new FormAlert("Xoá đặt dịch vụ thành công", Success);
                 }
             }
             LoadData();

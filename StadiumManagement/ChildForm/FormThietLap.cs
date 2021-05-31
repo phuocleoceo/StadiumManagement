@@ -3,6 +3,7 @@ using BusinessLayer.Repository;
 using BusinessLayer.ViewModels;
 using System;
 using System.Windows.Forms;
+using static GUILayer.FormAlert.AlertType;
 
 namespace GUILayer.ChildForm
 {
@@ -44,6 +45,7 @@ namespace GUILayer.ChildForm
             int id = ac.Id;
             byte[] img = picTaiKhoan.Image.ImageToByteArray();
             _db.SaveImage(id, img);
+            new FormAlert("Lưu ảnh thành công", Success);
         }
 
         private void btnXacNhanDoiMK_Click(object sender, EventArgs e)
@@ -56,17 +58,17 @@ namespace GUILayer.ChildForm
                 if (_db.CheckPassword(id, oldPW))
                 {
                     _db.ChangePassword(id, newPW);
-                    MessageBox.Show("Đổi mật khẩu thành công", "Tuyệt vời", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    new FormAlert("Đổi mật khẩu thành công", Success);
                     txtMKCu.Text = txtMKMoi.Text = txtXacNhanMK.Text = "";
                 }
                 else
                 {
-                    MessageBox.Show("Mật khẩu cũ không đúng !", "Bình tĩnh", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    new FormAlert("Mật khẩu cũ không đúng !", Error);
                 }
             }
             else
             {
-                MessageBox.Show("Xác nhận mật khẩu sai !", "Bình tĩnh", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                new FormAlert("Xác nhận mật khẩu sai !", Warning);
             }
         }
 
@@ -103,10 +105,11 @@ namespace GUILayer.ChildForm
                     Address = txtDiaChi.Text,
                     Account_Id = ai.Account_Id
                 });
+                new FormAlert("Lưu thông tin thành công", Success);
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                new FormAlert(ex.Message, Warning);
             }
         }
 

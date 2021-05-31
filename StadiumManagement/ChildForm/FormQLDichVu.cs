@@ -4,6 +4,7 @@ using BusinessLayer.ViewModels;
 using System;
 using System.Linq;
 using System.Windows.Forms;
+using static GUILayer.FormAlert.AlertType;
 
 namespace GUILayer.ChildForm
 {
@@ -50,11 +51,12 @@ namespace GUILayer.ChildForm
                     Unit = txtDonViTinh.Text,
                     Image = picDV.Image.ImageToByteArray()
                 });
+                new FormAlert("Thêm dịch vụ thành công", Success);
                 LoadData();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                new FormAlert(ex.Message, Warning);
             }
         }
 
@@ -71,11 +73,12 @@ namespace GUILayer.ChildForm
                     Unit = txtDonViTinh.Text,
                     Image = picDV.Image.ImageToByteArray()
                 });
+                new FormAlert("Sửa dịch vụ thành công", Success);
                 LoadData();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                new FormAlert(ex.Message, Warning);
             }
         }
 
@@ -91,6 +94,7 @@ namespace GUILayer.ChildForm
                     {
                         _db.DeleteService(Convert.ToInt32(row.Cells["Id"].Value));
                     }
+                    new FormAlert("Xoá dịch vụ thành công", Success);
                 }
             }
             LoadData();

@@ -5,6 +5,7 @@ using System;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using static GUILayer.FormAlert.AlertType;
 
 namespace GUILayer.ChildForm.SubForm
 {
@@ -98,11 +99,12 @@ namespace GUILayer.ChildForm.SubForm
                 };
                 rovm.Total = Convert.ToDouble(lblGia.Text) * rovm.RentTime;
                 _db.AddRentOrder(rovm);
+                new FormAlert("Đặt sân thành công", Success);
                 LoadData();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                new FormAlert(ex.Message, Warning);
             }
         }
 
@@ -126,11 +128,12 @@ namespace GUILayer.ChildForm.SubForm
                 DateTime _startBeforeUpdate = Convert.ToDateTime(r[0].Cells["StartRentDate"].Value);
                 DateTime _endBeforeUpdate = Convert.ToDateTime(r[0].Cells["EndRentDate"].Value);
                 _db.UpdateRentOrder(rovm, _startBeforeUpdate, _endBeforeUpdate);
+                new FormAlert("Sửa thông tin thành công", Success);
                 LoadData();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                new FormAlert(ex.Message, Warning);
             }
         }
 
@@ -146,6 +149,7 @@ namespace GUILayer.ChildForm.SubForm
                     {
                         _db.DeleteRentOrder(Convert.ToInt32(row.Cells["Id"].Value));
                     }
+                    new FormAlert("Xoá đặt sân thành công", Success);
                 }
             }
             LoadData();
@@ -160,7 +164,7 @@ namespace GUILayer.ChildForm.SubForm
             }
             catch
             {
-                MessageBox.Show("Chưa chọn sân", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                new FormAlert("Chưa chọn sân", Infor);
             }
         }
 

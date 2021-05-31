@@ -4,6 +4,7 @@ using BusinessLayer.ViewModels;
 using System;
 using System.Linq;
 using System.Windows.Forms;
+using static GUILayer.FormAlert.AlertType;
 
 namespace GUILayer.ChildForm
 {
@@ -53,11 +54,12 @@ namespace GUILayer.ChildForm
                     Address = txtDiaChi.Text,
                     PhoneNumber = txtSoDienThoai.Text
                 });
+                new FormAlert("Thêm khách hàng thành công", Success);
                 LoadData();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                new FormAlert(ex.Message, Warning);
             }
         }
 
@@ -74,11 +76,12 @@ namespace GUILayer.ChildForm
                     Address = txtDiaChi.Text,
                     PhoneNumber = txtSoDienThoai.Text
                 });
+                new FormAlert("Sửa khách hàng thành công", Success);
                 LoadData();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                new FormAlert(ex.Message, Warning);
             }
         }
 
@@ -94,6 +97,7 @@ namespace GUILayer.ChildForm
                     {
                         _db.DeleteCustomer(Convert.ToInt32(row.Cells["Id"].Value));
                     }
+                    new FormAlert("Xoá khách hàng thành công", Success);
                 }
             }
             LoadData();

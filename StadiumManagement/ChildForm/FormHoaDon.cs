@@ -6,6 +6,7 @@ using System;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using static GUILayer.FormAlert.AlertType;
 
 namespace GUILayer.ChildForm
 {
@@ -78,11 +79,12 @@ namespace GUILayer.ChildForm
                     DateCheckedOut = null,
                     Total = 0
                 });
+                new FormAlert("Thêm hoá đơn thành công", Success);
                 LoadData();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                new FormAlert(ex.Message, Warning);
             }
         }
 
@@ -98,6 +100,7 @@ namespace GUILayer.ChildForm
                     {
                         _db.DeleteBill(Convert.ToInt32(row.Cells["Id"].Value));
                     }
+                    new FormAlert("Xoá hoá đơn thành công", Success);
                 }
             }
             LoadData();
@@ -117,7 +120,7 @@ namespace GUILayer.ChildForm
             }
             else
             {
-                MessageBox.Show("Chưa chọn hoá đơn", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                new FormAlert("Chưa chọn hoá đơn", Infor);
             }
         }
 
@@ -135,7 +138,7 @@ namespace GUILayer.ChildForm
             }
             else
             {
-                MessageBox.Show("Chưa chọn hoá đơn", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                new FormAlert("Chưa chọn hoá đơn", Infor);
             }
         }
 
@@ -151,11 +154,12 @@ namespace GUILayer.ChildForm
                 {
                     PrintBill();
                 }
+                new FormAlert("Thanh toán thành công", Success);
                 LoadData();
             }
             else
             {
-                MessageBox.Show("Chưa chọn hoá đơn !", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                new FormAlert("Chưa chọn hoá đơn !", Infor);
             }
         }
 
@@ -171,7 +175,7 @@ namespace GUILayer.ChildForm
             }
             catch
             {
-                MessageBox.Show("Không in được !", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                new FormAlert("Không in được !", Error);
             }
         }
 
