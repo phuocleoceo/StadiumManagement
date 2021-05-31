@@ -34,10 +34,8 @@ namespace BusinessLayer.Repository
             if (c.Validate().Length == 0)
             {
                 Service service = GetById(c.Id);
-                service.Name = c.Name;
-                service.Price = c.Price;
-                service.Unit = c.Unit;
-                service.Image = c.Image;
+                mapper.Map(c, service);
+                service.isDeleted = false;
                 Save();
             }
             else throw new Exception(c.Validate());

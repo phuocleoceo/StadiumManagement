@@ -34,10 +34,8 @@ namespace BusinessLayer.Repository
             if (c.Validate().Length == 0)
             {
                 Stadium stadium = GetById(c.Id);
-                //StadiumVM khong co thuoc tinh isDeleted
-                bool isDeleted = stadium.isDeleted;
                 mapper.Map(c, stadium);
-                stadium.isDeleted = isDeleted;
+                stadium.isDeleted = false;
                 Save();
             }
             else throw new Exception(c.Validate());

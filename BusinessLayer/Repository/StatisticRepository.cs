@@ -84,7 +84,7 @@ namespace BusinessLayer.Repository
             IEnumerable<Frequency> listFre = listAllRO.GroupBy(c => c.Stadium.Name).Select(c => new Frequency
             {
                 Name = c.First().Stadium.Name,
-                Count = c.Sum(x => Convert.ToInt32((x.EndRentDate - x.StartRentDate).TotalHours))
+                Count = c.Sum(x => Utility.RentTime(x.StartRentDate, x.EndRentDate))
             });
             return listFre;
         }
@@ -109,6 +109,6 @@ namespace BusinessLayer.Repository
     public class Frequency
     {
         public string Name { get; set; }
-        public int Count { get; set; }
+        public double Count { get; set; }
     }
 }

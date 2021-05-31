@@ -102,7 +102,7 @@ namespace GUILayer.ChildForm
             chartSanDV.Series["SanDV"].XValueMember = "Name";
             chartSanDV.Series["SanDV"].XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
             chartSanDV.Series["SanDV"].YValueMembers = "Count";
-            chartSanDV.Series["SanDV"].YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
+            chartSanDV.Series["SanDV"].YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
             chartSanDV.Series["SanDV"].IsValueShownAsLabel = true;
             chartSanDV.ChartAreas["ChartSDVArea"].AxisX.Title = "Sân";
             chartSanDV.ChartAreas["ChartSDVArea"].AxisY.Title = "Thời lượng";
@@ -115,7 +115,7 @@ namespace GUILayer.ChildForm
             chartSanDV.Series["SanDV"].XValueMember = "Name";
             chartSanDV.Series["SanDV"].XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
             chartSanDV.Series["SanDV"].YValueMembers = "Count";
-            chartSanDV.Series["SanDV"].YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
+            chartSanDV.Series["SanDV"].YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
             chartSanDV.Series["SanDV"].IsValueShownAsLabel = true;
             chartSanDV.ChartAreas["ChartSDVArea"].AxisX.Title = "Dịch vụ";
             chartSanDV.ChartAreas["ChartSDVArea"].AxisY.Title = "Số lượng";

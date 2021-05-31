@@ -88,5 +88,15 @@ namespace BusinessLayer
         {
             return dt.AddSeconds(-dt.Second);
         }
+
+        // Lam tron thoi gian thue theo tung khoang 30 phut - 0.5 gio
+        public static double RentTime(DateTime StartRentDate, DateTime EndRentDate)
+        {
+            double hours = (EndRentDate - StartRentDate).TotalHours;
+            double remainder = hours - (int)hours;
+            if (remainder < 0.5) hours = (int)hours + 0.5;
+            if (remainder > 0.5) hours = (int)hours + 1;
+            return hours;
+        }
     }
 }
