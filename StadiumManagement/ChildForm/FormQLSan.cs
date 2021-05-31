@@ -1,8 +1,9 @@
-﻿using BusinessLayer.Repository;
-using System;
-using System.Windows.Forms;
+﻿using BusinessLayer;
+using BusinessLayer.Repository;
 using BusinessLayer.ViewModels;
-using BusinessLayer;
+using System;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace GUILayer.ChildForm
 {
@@ -21,7 +22,7 @@ namespace GUILayer.ChildForm
         {
             dgvDSSan.DataSource = null;
             dgvDSSan.Rows.Clear();
-            dgvDSSan.DataSource = _db.GetList(StadiumName);
+            dgvDSSan.DataSource = _db.GetList(StadiumName).ToList();
             dgvDSSan.Columns["Id"].Visible = false;
             dgvDSSan.Columns["Image"].Visible = false;
         }

@@ -1,11 +1,9 @@
-﻿using BusinessLayer.Repository;
-using System;
-using System.Windows.Forms;
+﻿using BusinessLayer;
+using BusinessLayer.Repository;
 using BusinessLayer.ViewModels;
-using BusinessLayer;
-using System.IO;
-using System.Drawing;
-using System.Text;
+using System;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace GUILayer.ChildForm
 {
@@ -24,7 +22,7 @@ namespace GUILayer.ChildForm
         {
             dgvDSDichVu.DataSource = null;
             dgvDSDichVu.Rows.Clear();
-            dgvDSDichVu.DataSource = _db.GetList(ServiceName);
+            dgvDSDichVu.DataSource = _db.GetList(ServiceName).ToList();
             dgvDSDichVu.Columns["Id"].Visible = false;
             dgvDSDichVu.Columns["Image"].Visible = false;
         }

@@ -1,11 +1,11 @@
 ﻿using BusinessLayer;
 using BusinessLayer.Repository;
 using BusinessLayer.ViewModels;
-using System;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using GUILayer.ChildForm.SubForm;
+using System;
 using System.Drawing;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace GUILayer.ChildForm
 {
@@ -30,7 +30,7 @@ namespace GUILayer.ChildForm
             _db = new BillRepository();
             dgvBill.DataSource = null;
             dgvBill.Rows.Clear();
-            dgvBill.DataSource = _db.GetList(BillCode);
+            dgvBill.DataSource = _db.GetList(BillCode).ToList();
             dgvBill.Columns["Id"].Visible = false;
             dgvBill.Columns["DateCheckedOut"].Visible = false;
         }

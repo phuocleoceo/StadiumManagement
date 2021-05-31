@@ -1,8 +1,9 @@
-﻿using BusinessLayer.Repository;
-using System;
-using System.Windows.Forms;
+﻿using BusinessLayer;
+using BusinessLayer.Repository;
 using BusinessLayer.ViewModels;
-using BusinessLayer;
+using System;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace GUILayer.ChildForm
 {
@@ -17,11 +18,11 @@ namespace GUILayer.ChildForm
             LoadData();
         }
 
-        private void LoadData(string Name="")
+        private void LoadData(string Name = "")
         {
             dgvDSKH.DataSource = null;
             dgvDSKH.Rows.Clear();
-            dgvDSKH.DataSource = _db.GetList(Name);
+            dgvDSKH.DataSource = _db.GetList(Name).ToList();
             dgvDSKH.Columns["Id"].Visible = false;
         }
 

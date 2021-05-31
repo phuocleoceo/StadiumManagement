@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using AutoMapper;
-using DataAccessLayer.Models;
+﻿using AutoMapper;
 using BusinessLayer.ViewModels;
 using DataAccessLayer.Enums;
+using DataAccessLayer.Models;
+using System;
 
 namespace BusinessLayer
 {

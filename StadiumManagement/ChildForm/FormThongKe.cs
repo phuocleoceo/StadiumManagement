@@ -1,11 +1,9 @@
 ﻿using BusinessLayer;
 using BusinessLayer.Repository;
-using BusinessLayer.ViewModels;
-using System;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using GUILayer.ChildForm.SubForm;
-using System.Collections.Generic;
+using System;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace GUILayer.ChildForm
 {
@@ -25,7 +23,7 @@ namespace GUILayer.ChildForm
         {
             dgvBill.DataSource = null;
             dgvBill.Rows.Clear();
-            dgvBill.DataSource = _db.GetBillHistory(CustomerName, _fromDate, _toDate);
+            dgvBill.DataSource = _db.GetBillHistory(CustomerName, _fromDate, _toDate).ToList();
             dgvBill.Columns["Id"].Visible = false;
         }
 

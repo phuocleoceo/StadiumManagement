@@ -3,12 +3,8 @@ using BusinessLayer.Repository;
 using BusinessLayer.ViewModels;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GUILayer.ChildForm.SubForm
@@ -26,7 +22,7 @@ namespace GUILayer.ChildForm.SubForm
         private void LoadListView()
         {
             int i = 0;
-            List<StadiumVM> listSVM = _db.GetListAvailable();
+            List<StadiumVM> listSVM = _db.GetListAvailable().ToList();
             foreach (StadiumVM svm in listSVM)
             {
                 Image img = svm.Image.ByteArrayToImage();
@@ -36,7 +32,7 @@ namespace GUILayer.ChildForm.SubForm
                 }
                 else
                 {
-                    imgList.Images.Add(new Bitmap(120,120));
+                    imgList.Images.Add(new Bitmap(120, 120));
                 }
                 ListViewItem item = new ListViewItem();
                 item.Text = $"{svm.Name}\r\n{svm.Price}";

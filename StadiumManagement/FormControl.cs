@@ -1,18 +1,12 @@
-﻿using FontAwesome.Sharp;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using GUILayer.ChildForm;
-using BusinessLayer;
-using BusinessLayer.ViewModels;
+﻿using BusinessLayer;
 using BusinessLayer.Repository;
+using BusinessLayer.ViewModels;
+using FontAwesome.Sharp;
+using GUILayer.ChildForm;
+using System;
+using System.Drawing;
+using System.Runtime.InteropServices;
+using System.Windows.Forms;
 
 namespace GUILayer
 {

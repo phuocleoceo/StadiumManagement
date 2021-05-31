@@ -1,8 +1,9 @@
-﻿using BusinessLayer.Repository;
-using System;
-using System.Windows.Forms;
+﻿using BusinessLayer;
+using BusinessLayer.Repository;
 using BusinessLayer.ViewModels;
-using BusinessLayer;
+using System;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace GUILayer.ChildForm
 {
@@ -18,11 +19,11 @@ namespace GUILayer.ChildForm
             _db.LoadComboBoxAccount(cbbTaiKhoan);
         }
 
-        private void LoadData(string Name="")
+        private void LoadData(string Name = "")
         {
             dgvDSNV.DataSource = null;
             dgvDSNV.Rows.Clear();
-            dgvDSNV.DataSource = _db.GetList(Name);
+            dgvDSNV.DataSource = _db.GetList(Name).ToList();
             dgvDSNV.Columns["Id"].Visible = false;
         }
 

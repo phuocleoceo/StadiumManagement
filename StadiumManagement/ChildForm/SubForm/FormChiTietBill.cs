@@ -1,8 +1,8 @@
-﻿using BusinessLayer.Repository;
-using System.Windows.Forms;
+﻿using BusinessLayer;
+using BusinessLayer.Repository;
 using BusinessLayer.ViewModels;
-using BusinessLayer;
 using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace GUILayer.ChildForm.SubForm
 {

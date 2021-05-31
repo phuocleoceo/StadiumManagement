@@ -3,6 +3,7 @@ using BusinessLayer.Repository;
 using BusinessLayer.ViewModels;
 using System;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace GUILayer.ChildForm.SubForm
@@ -26,7 +27,7 @@ namespace GUILayer.ChildForm.SubForm
             _db = new RentOrderRepository();
             dgvSan.DataSource = null;
             dgvSan.Rows.Clear();
-            dgvSan.DataSource = _db.GetList(_currentBillId, StadiumName);
+            dgvSan.DataSource = _db.GetList(_currentBillId, StadiumName).ToList();
             dgvSan.Columns["Id"].Visible = false;
             dgvSan.Columns["Stadium_Image"].Visible = false;
             dgvSan.Columns["Stadium_Price"].Visible = false;

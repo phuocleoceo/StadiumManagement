@@ -1,9 +1,10 @@
-﻿using BusinessLayer.Repository;
-using System;
-using System.Windows.Forms;
+﻿using BusinessLayer;
+using BusinessLayer.Repository;
 using BusinessLayer.ViewModels;
-using BusinessLayer;
+using System;
 using System.Drawing;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace GUILayer.ChildForm.SubForm
 {
@@ -26,7 +27,7 @@ namespace GUILayer.ChildForm.SubForm
             _db = new ServiceOrderRepository();
             dgvDV.DataSource = null;
             dgvDV.Rows.Clear();
-            dgvDV.DataSource = _db.GetList(_currentBillId, ServiceName);
+            dgvDV.DataSource = _db.GetList(_currentBillId, ServiceName).ToList();
             dgvDV.Columns["Id"].Visible = false;
             dgvDV.Columns["Service_Image"].Visible = false;
             dgvDV.Columns["Service_Price"].Visible = false;

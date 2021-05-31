@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BusinessLayer.ViewModels;
-using DataAccessLayer;
+﻿using BusinessLayer.ViewModels;
 using DataAccessLayer.Enums;
 using DataAccessLayer.Models;
+using System;
+using System.Collections.Generic;
 
 namespace BusinessLayer.Repository
 {
@@ -23,15 +19,13 @@ namespace BusinessLayer.Repository
         #endregion
 
         #region Admin
-        public List<AccountVM> GetList(string UserName)
+        public IEnumerable<AccountVM> GetList(string UserName)
         {
-            List<Account> list = GetAll(c => c.UserName.Contains(UserName));
-            List<AccountVM> listVM = new List<AccountVM>();
+            IEnumerable<Account> list = GetAll(c => c.UserName.Contains(UserName));
             foreach (Account a in list)
             {
-                listVM.Add(mapper.Map<AccountVM>(a));
+                yield return mapper.Map<AccountVM>(a);
             }
-            return listVM;
         }
 
         public void AddAccount(AccountVM c)

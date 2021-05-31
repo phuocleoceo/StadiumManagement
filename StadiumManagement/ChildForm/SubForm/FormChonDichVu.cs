@@ -1,15 +1,11 @@
-﻿using BusinessLayer.Repository;
+﻿using BusinessLayer;
+using BusinessLayer.Repository;
 using BusinessLayer.ViewModels;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using BusinessLayer;
 
 namespace GUILayer.ChildForm.SubForm
 {
@@ -26,7 +22,7 @@ namespace GUILayer.ChildForm.SubForm
         private void LoadListView()
         {
             int i = 0;
-            List<ServiceVM> listSVM = _db.GetList("");
+            List<ServiceVM> listSVM = _db.GetList("").ToList();
             foreach (ServiceVM svm in listSVM)
             {
                 Image img = svm.Image.ByteArrayToImage();

@@ -1,27 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using BusinessLayer.ViewModels;
-using DataAccessLayer;
-using DataAccessLayer.Enums;
+﻿using BusinessLayer.ViewModels;
 using DataAccessLayer.Models;
+using System;
+using System.Collections.Generic;
 
 namespace BusinessLayer.Repository
 {
     public class ServiceOrderRepository : Repository<ServiceOrder>
     {
-        public List<ServiceOrderVM> GetList(int Bill_Id, string ServiceName)
+        public IEnumerable<ServiceOrderVM> GetList(int Bill_Id, string ServiceName)
         {
-            List<ServiceOrder> list = GetAll(c => c.Bill_Id == Bill_Id && c.Service.Name.Contains(ServiceName));
-            List<ServiceOrderVM> listVM = new List<ServiceOrderVM>();
+            IEnumerable<ServiceOrder> list = GetAll(c => c.Bill_Id == Bill_Id 
+                                                && c.Service.Name.Contains(ServiceName));
             foreach (ServiceOrder s in list)
             {
-                listVM.Add(mapper.Map<ServiceOrderVM>(s));
+                yield return mapper.Map<ServiceOrderVM>(s);
             }
-            return listVM;
         }
 
         public void AddServiceOrder(ServiceOrderVM sovm)

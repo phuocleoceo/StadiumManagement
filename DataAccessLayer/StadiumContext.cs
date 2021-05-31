@@ -5,7 +5,7 @@ namespace DataAccessLayer
 {
     public class StadiumContext : DbContext
     {
-        public StadiumContext() : base("name=VPSOnline"){}
+        public StadiumContext() : base("name=VPSOnline") { }
         //public StadiumContext() : base("name=CNS"){}
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

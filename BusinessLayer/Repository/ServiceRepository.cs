@@ -1,26 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BusinessLayer.ViewModels;
-using DataAccessLayer;
-using DataAccessLayer.Enums;
+﻿using BusinessLayer.ViewModels;
 using DataAccessLayer.Models;
+using System;
+using System.Collections.Generic;
 
 namespace BusinessLayer.Repository
 {
     public class ServiceRepository : Repository<Service>
     {
-        public List<ServiceVM> GetList(string ServiceName)
+        public IEnumerable<ServiceVM> GetList(string ServiceName)
         {
-            List<Service> list = GetAll(c => c.isDeleted == false && c.Name.Contains(ServiceName));
-            List<ServiceVM> listVM = new List<ServiceVM>();
+            IEnumerable<Service> list = GetAll(c => c.isDeleted == false 
+                                            && c.Name.Contains(ServiceName));
             foreach (Service s in list)
             {
-                listVM.Add(mapper.Map<ServiceVM>(s));
+                yield return mapper.Map<ServiceVM>(s);
             }
-            return listVM;
         }
 
         public void AddService(ServiceVM c)

@@ -2,6 +2,7 @@
 using BusinessLayer.Repository;
 using BusinessLayer.ViewModels;
 using System;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace GUILayer.ChildForm
@@ -17,11 +18,11 @@ namespace GUILayer.ChildForm
             LoadData();
         }
 
-        private void LoadData(string UserName="")
+        private void LoadData(string UserName = "")
         {
             dgvDSTK.DataSource = null;
             dgvDSTK.Rows.Clear();
-            dgvDSTK.DataSource = _db.GetList(UserName);
+            dgvDSTK.DataSource = _db.GetList(UserName).ToList();
             dgvDSTK.Columns["Id"].Visible = false;
             dgvDSTK.Columns["Image"].Visible = false;
         }
@@ -60,7 +61,7 @@ namespace GUILayer.ChildForm
         }
 
         private void btnSua_Click(object sender, EventArgs e)
-        {            
+        {
             try
             {
                 DataGridViewSelectedRowCollection r = dgvDSTK.SelectedRows;
@@ -97,7 +98,7 @@ namespace GUILayer.ChildForm
                 LoadData();
                 grbThem.Visible = false;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }

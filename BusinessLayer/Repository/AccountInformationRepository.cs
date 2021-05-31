@@ -3,7 +3,6 @@ using DataAccessLayer.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace BusinessLayer.Repository
@@ -11,15 +10,13 @@ namespace BusinessLayer.Repository
     public class AccountInformationRepository : Repository<AccountInformation>
     {
         #region Admin
-        public List<AccountInformationVM> GetList(string Name)
+        public IEnumerable<AccountInformationVM> GetList(string Name)
         {
-            List<AccountInformation> list = GetAll(c => c.Name.Contains(Name));
-            List<AccountInformationVM> listVM = new List<AccountInformationVM>();
+            IEnumerable<AccountInformation> list = GetAll(c => c.Name.Contains(Name));
             foreach (AccountInformation ai in list)
             {
-                listVM.Add(mapper.Map<AccountInformationVM>(ai));
+                yield return mapper.Map<AccountInformationVM>(ai);
             }
-            return listVM;
         }
 
         public void AddAccountInformation(AccountInformationVM c)

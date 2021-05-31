@@ -1,27 +1,24 @@
-﻿using System;
+﻿using BusinessLayer.ViewModels;
+using DataAccessLayer.Enums;
+using DataAccessLayer.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using BusinessLayer.ViewModels;
-using DataAccessLayer;
-using DataAccessLayer.Enums;
-using DataAccessLayer.Models;
 
 namespace BusinessLayer.Repository
 {
     public class BillRepository : Repository<Bill>
     {
-        public List<BillVM> GetList(string BillCode)
+        public IEnumerable<BillVM> GetList(string BillCode)
         {
-            List<Bill> list = GetAll(c => c.BillStatus == BillStatus.UnPurchased && c.BillCode.Contains(BillCode));
-            List<BillVM> listVM = new List<BillVM>();
+            IEnumerable<Bill> list = GetAll(c => c.BillStatus == BillStatus.UnPurchased
+                                            && c.BillCode.Contains(BillCode));
             foreach (Bill s in list)
             {
-                listVM.Add(mapper.Map<BillVM>(s));
+                yield return mapper.Map<BillVM>(s);
             }
-            return listVM;
         }
 
         public void GetComboBoxCustomer(ComboBox cbb)

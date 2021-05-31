@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using BusinessLayer.ViewModels;
-using DataAccessLayer;
+﻿using BusinessLayer.ViewModels;
 using DataAccessLayer.Enums;
 using DataAccessLayer.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace BusinessLayer.Repository
 {
@@ -16,7 +12,7 @@ namespace BusinessLayer.Repository
         #region Thong Ke Bill
         public List<BillVM> GetBillHistory(string CustomerName, DateTime? _fromDate = null, DateTime? _toDate = null)
         {
-            List<Bill> list = GetAll(c => c.BillStatus == BillStatus.Purchased 
+            IEnumerable<Bill> list = GetAll(c => c.BillStatus == BillStatus.Purchased
                                         && c.Customer.Name.Contains(CustomerName));
             if (_fromDate != null && _toDate != null)
             {
@@ -59,9 +55,9 @@ namespace BusinessLayer.Repository
                             out int _cusMonth, out int _cusToday, out double _saleMonth, out double _saleToday)
         {
             //Hoa don thang nay, co DateCheckedOut nghia la da thanh toan
-            List<Bill> listBill = GetAll(c => c.DateCheckedOut.Value.Month == DateTime.Now.Month
+            IEnumerable<Bill> listBill = GetAll(c => c.DateCheckedOut.Value.Month == DateTime.Now.Month
                                             && c.DateCheckedOut.Value.Year == DateTime.Now.Year);
-            _billMonth = listBill.Count;
+            _billMonth = listBill.Count();
             _billToday = 0;
             _saleMonth = 0;
             _saleToday = 0;
@@ -82,7 +78,7 @@ namespace BusinessLayer.Repository
         public void StatisticSalePerMonth(out double[] _doanhThuThang)
         {
             _doanhThuThang = new double[13];
-            List<Bill> list = GetAll(c => c.BillStatus == BillStatus.Purchased &&
+            IEnumerable<Bill> list = GetAll(c => c.BillStatus == BillStatus.Purchased &&
                                             c.DateCheckedOut.Value.Year == DateTime.Now.Year);
             for (int i = 1; i <= 12; i++)
             {
@@ -93,7 +89,7 @@ namespace BusinessLayer.Repository
 
         public List<Frequency> StatisticStadium()
         {
-            List<Bill> listBill = GetAll(c => c.DateCheckedOut.Value.Month == DateTime.Now.Month
+            IEnumerable<Bill> listBill = GetAll(c => c.DateCheckedOut.Value.Month == DateTime.Now.Month
                                             && c.DateCheckedOut.Value.Year == DateTime.Now.Year);
             List<RentOrder> listAllRO = new List<RentOrder>();
             foreach (Bill b in listBill)
@@ -110,7 +106,7 @@ namespace BusinessLayer.Repository
 
         public List<Frequency> StatisticService()
         {
-            List<Bill> listBill = GetAll(c => c.DateCheckedOut.Value.Month == DateTime.Now.Month
+            IEnumerable<Bill> listBill = GetAll(c => c.DateCheckedOut.Value.Month == DateTime.Now.Month
                                             && c.DateCheckedOut.Value.Year == DateTime.Now.Year);
             List<ServiceOrder> listAllSO = new List<ServiceOrder>();
             foreach (Bill b in listBill)

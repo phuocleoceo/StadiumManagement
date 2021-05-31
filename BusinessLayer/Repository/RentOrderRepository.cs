@@ -1,27 +1,23 @@
-﻿using System;
+﻿using BusinessLayer.ViewModels;
+using DataAccessLayer.Enums;
+using DataAccessLayer.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using BusinessLayer.ViewModels;
-using DataAccessLayer;
-using DataAccessLayer.Enums;
-using DataAccessLayer.Models;
 
 namespace BusinessLayer.Repository
 {
     public class RentOrderRepository : Repository<RentOrder>
     {
-        public List<RentOrderVM> GetList(int Bill_Id, string StadiumName)
+        public IEnumerable<RentOrderVM> GetList(int Bill_Id, string StadiumName)
         {
-            List<RentOrder> list = GetAll(c => c.Bill_Id == Bill_Id && c.Stadium.Name.Contains(StadiumName));
-            List<RentOrderVM> listVM = new List<RentOrderVM>();
+            IEnumerable<RentOrder> list = GetAll(c => c.Bill_Id == Bill_Id 
+                                            && c.Stadium.Name.Contains(StadiumName));
             foreach (RentOrder s in list)
             {
-                listVM.Add(mapper.Map<RentOrderVM>(s));
+                yield return mapper.Map<RentOrderVM>(s);
             }
-            return listVM;
         }
 
         public void AddRentOrder(RentOrderVM rovm)

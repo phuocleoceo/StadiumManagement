@@ -1,26 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BusinessLayer.ViewModels;
-using DataAccessLayer;
-using DataAccessLayer.Enums;
+﻿using BusinessLayer.ViewModels;
 using DataAccessLayer.Models;
+using System;
+using System.Collections.Generic;
 
 namespace BusinessLayer.Repository
 {
     public class StadiumRepository : Repository<Stadium>
     {
-        public List<StadiumVM> GetList(string StadiumName)
+        public IEnumerable<StadiumVM> GetList(string StadiumName)
         {
-            List<Stadium> list = GetAll(c => c.isDeleted == false && c.Name.Contains(StadiumName));
-            List<StadiumVM> listVM = new List<StadiumVM>();
+            IEnumerable<Stadium> list = GetAll(c => c.isDeleted == false 
+                                            && c.Name.Contains(StadiumName));
             foreach (Stadium s in list)
             {
-                listVM.Add(mapper.Map<StadiumVM>(s));
+                yield return mapper.Map<StadiumVM>(s);
             }
-            return listVM;
         }
 
         public void AddStadium(StadiumVM c)
@@ -57,15 +51,13 @@ namespace BusinessLayer.Repository
         }
 
         //Dat san
-        public List<StadiumVM> GetListAvailable()
+        public IEnumerable<StadiumVM> GetListAvailable()
         {
-            List<Stadium> list = GetAll(c => c.isDeleted == false && c.Rentable == true);
-            List<StadiumVM> listVM = new List<StadiumVM>();
+            IEnumerable<Stadium> list = GetAll(c => c.isDeleted == false && c.Rentable == true);
             foreach (Stadium s in list)
             {
-                listVM.Add(mapper.Map<StadiumVM>(s));
+                yield return mapper.Map<StadiumVM>(s);
             }
-            return listVM;
         }
     }
 }
