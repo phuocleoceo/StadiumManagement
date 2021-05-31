@@ -19,7 +19,8 @@ namespace GUILayer.ChildForm
             CalculateSales();
         }
         #region Lich su Bill
-        private void LoadData(string CustomerName = "", DateTime? _fromDate = null, DateTime? _toDate = null)
+        private void LoadData(string CustomerName = "", DateTime? _fromDate = null, 
+                                DateTime? _toDate = null)
         {
             dgvBill.DataSource = null;
             dgvBill.Rows.Clear();
@@ -69,10 +70,9 @@ namespace GUILayer.ChildForm
 
         private void ThongKeThangVaHomNay()
         {
-            int _billMonth, _billToday, _cusMonth, _cusToday;
-            double _saleMonth, _saleToday;
-            _db.StatisticMonthAndToday(out _billMonth, out _billToday, out _cusMonth,
-                                        out _cusToday, out _saleMonth, out _saleToday);
+            _db.StatisticMonthAndToday(out int _billMonth, out int _billToday,
+                                       out int _cusMonth, out int _cusToday,
+                                       out double _saleMonth, out double _saleToday);
             lblHoaDonThang.Text = _billMonth.ToString();
             lblHoaDonHomNay.Text = _billToday.ToString();
             lblKhachHangThang.Text = _cusMonth.ToString();
@@ -88,8 +88,7 @@ namespace GUILayer.ChildForm
             chartDoanhThu.ChartAreas["ChartDoanhThu"].AxisX.Title = "Tháng";
             chartDoanhThu.ChartAreas["ChartDoanhThu"].AxisY.Title = "VND";
 
-            double[] _doanhThuThang;
-            _db.StatisticSalePerMonth(out _doanhThuThang);
+            _db.StatisticSalePerMonth(out double[] _doanhThuThang);
             for (int i = 1; i <= 12; i++)
             {
                 chartDoanhThu.Series["Doanh thu"].Points.AddXY(i, _doanhThuThang[i]);

@@ -10,7 +10,7 @@ namespace BusinessLayer.Repository
     public class StatisticRepository : Repository<Bill>
     {
         #region Thong Ke Bill
-        public List<BillVM> GetBillHistory(string CustomerName, DateTime? _fromDate = null, DateTime? _toDate = null)
+        public IEnumerable<BillVM> GetBillHistory(string CustomerName, DateTime? _fromDate = null, DateTime? _toDate = null)
         {
             IEnumerable<Bill> list = GetAll(c => c.BillStatus == BillStatus.Purchased
                                         && c.Customer.Name.Contains(CustomerName));
@@ -19,12 +19,10 @@ namespace BusinessLayer.Repository
                 list = list.Where(c => c.DateCheckedOut.Value.Date >= _fromDate.Value.Date
                                     && c.DateCheckedOut.Value.Date <= _toDate.Value.Date).ToList();
             }
-            List<BillVM> listVM = new List<BillVM>();
             foreach (Bill s in list)
             {
-                listVM.Add(mapper.Map<BillVM>(s));
+                yield return mapper.Map<BillVM>(s);
             }
-            return listVM;
         }
 
         public void GetBillInformation(int Bill_Id, out BillVM _bvm, out List<RentOrderVM> _rovm,
@@ -87,37 +85,34 @@ namespace BusinessLayer.Repository
             }
         }
 
-        public List<Frequency> StatisticStadium()
+        public IEnumerable<Frequency> StatisticStadium()
         {
             IEnumerable<Bill> listBill = GetAll(c => c.DateCheckedOut.Value.Month == DateTime.Now.Month
                                             && c.DateCheckedOut.Value.Year == DateTime.Now.Year);
-            List<RentOrder> listAllRO = new List<RentOrder>();
-            foreach (Bill b in listBill)
-            {
-                listAllRO.AddRange(b.RentOrders);
-            }
-            List<Frequency> listFre = listAllRO.GroupBy(c => c.Stadium.Name).Select(c => new Frequency
+            
+            //Neu chi dung Select thi no tra ve RentOrders = List<RentOrder>
+            IEnumerable<RentOrder> listAllRO = listBill.SelectMany(c => c.RentOrders);
+
+            IEnumerable<Frequency> listFre = listAllRO.GroupBy(c => c.Stadium.Name).Select(c => new Frequency
             {
                 Name = c.First().Stadium.Name,
                 Count = c.Sum(x => Convert.ToInt32((x.EndRentDate - x.StartRentDate).TotalHours))
-            }).ToList();
+            });
             return listFre;
         }
 
-        public List<Frequency> StatisticService()
+        public IEnumerable<Frequency> StatisticService()
         {
             IEnumerable<Bill> listBill = GetAll(c => c.DateCheckedOut.Value.Month == DateTime.Now.Month
                                             && c.DateCheckedOut.Value.Year == DateTime.Now.Year);
-            List<ServiceOrder> listAllSO = new List<ServiceOrder>();
-            foreach (Bill b in listBill)
-            {
-                listAllSO.AddRange(b.ServiceOrders);
-            }
-            List<Frequency> listFre = listAllSO.GroupBy(c => c.Service.Name).Select(c => new Frequency
+
+            IEnumerable<ServiceOrder> listAllSO = listBill.SelectMany(c => c.ServiceOrders);
+
+            IEnumerable<Frequency> listFre = listAllSO.GroupBy(c => c.Service.Name).Select(c => new Frequency
             {
                 Name = c.First().Service.Name,
                 Count = c.Sum(x => x.Count)
-            }).ToList();
+            });
             return listFre;
         }
         #endregion
