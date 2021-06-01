@@ -40,7 +40,7 @@ namespace GUILayer
             // 
             this.lblMsg.AutoSize = true;
             this.lblMsg.ForeColor = System.Drawing.Color.White;
-            this.lblMsg.Location = new System.Drawing.Point(64, 13);
+            this.lblMsg.Location = new System.Drawing.Point(64, 14);
             this.lblMsg.Name = "lblMsg";
             this.lblMsg.Size = new System.Drawing.Size(114, 20);
             this.lblMsg.TabIndex = 0;
@@ -58,7 +58,7 @@ namespace GUILayer
             this.iconAlert.IconChar = FontAwesome.Sharp.IconChar.Music;
             this.iconAlert.IconColor = System.Drawing.Color.Black;
             this.iconAlert.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconAlert.Location = new System.Drawing.Point(4, 16);
+            this.iconAlert.Location = new System.Drawing.Point(4, 19);
             this.iconAlert.Name = "iconAlert";
             this.iconAlert.Size = new System.Drawing.Size(46, 46);
             this.iconAlert.TabIndex = 2;

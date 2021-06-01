@@ -107,7 +107,7 @@ namespace GUILayer
             switch (type)
             {
                 case AlertType.Success:
-                    this.iconAlert.IconChar = FontAwesome.Sharp.IconChar.Procedures;
+                    this.iconAlert.IconChar = FontAwesome.Sharp.IconChar.CheckCircle;
                     this.BackColor = Color.SeaGreen;
                     this.iconAlert.ForeColor = Color.SeaGreen;
                     break;
@@ -117,12 +117,12 @@ namespace GUILayer
                     this.iconAlert.ForeColor = Color.DarkOrange;
                     break;
                 case AlertType.Error:
-                    this.iconAlert.IconChar = FontAwesome.Sharp.IconChar.Redhat;
+                    this.iconAlert.IconChar = FontAwesome.Sharp.IconChar.TimesCircle;
                     this.BackColor = Color.DarkRed;
                     this.iconAlert.ForeColor = Color.DarkRed;
                     break;
                 case AlertType.Infor:
-                    this.iconAlert.IconChar = FontAwesome.Sharp.IconChar.Exclamation;
+                    this.iconAlert.IconChar = FontAwesome.Sharp.IconChar.ExclamationCircle;
                     this.BackColor = Color.RoyalBlue;
                     this.iconAlert.ForeColor = Color.RoyalBlue;
                     break;
