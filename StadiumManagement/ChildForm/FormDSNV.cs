@@ -4,7 +4,7 @@ using BusinessLayer.ViewModels;
 using System;
 using System.Linq;
 using System.Windows.Forms;
-using static GUILayer.FormAlert.AlertType;
+using static GUILayer.AlertType;
 
 namespace GUILayer.ChildForm
 {

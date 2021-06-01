@@ -16,7 +16,7 @@ namespace BusinessLayer.ViewModels
         public double Price { get; set; }
 
         [DisplayName("Đơn vị tính")]
-        [Required(ErrorMessage = "Đơn vị tính không được để trống")]
+        [Required(ErrorMessage = "Đơn vị tính không được trống")]
         public string Unit { get; set; }
 
         public byte[] Image { get; set; }

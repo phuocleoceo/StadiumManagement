@@ -20,7 +20,7 @@ namespace BusinessLayer.ViewModels
         public string Address { get; set; }
 
         [DisplayName("SĐT")]
-        [Required(ErrorMessage = "Số điện thoại không được để trống")]
+        [Required(ErrorMessage = "SĐT không được để trống")]
         [MaxLength(10)]
         public string PhoneNumber { get; set; }
     }

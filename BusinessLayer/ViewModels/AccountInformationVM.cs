@@ -21,7 +21,7 @@ namespace BusinessLayer.ViewModels
         public DateTime DateOfBirth { get; set; }
 
         [DisplayName("SĐT")]
-        [Required(ErrorMessage = "Số điện thoại được để trống")]
+        [Required(ErrorMessage = "SĐT không được để trống")]
         public string PhoneNumber { get; set; }
 
         [DisplayName("CMND")]

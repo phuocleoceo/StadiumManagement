@@ -16,7 +16,7 @@ namespace BusinessLayer.ViewModels
         public double Price { get; set; }
 
         [DisplayName("Cho thuê")]
-        [Required(ErrorMessage = "Phải xác định sân cho thuê hay không")]
+        [Required(ErrorMessage = "Chưa chọn trạng thái sân")]
         public bool Rentable { get; set; }
 
         [DisplayName("Diện tích")]

@@ -4,19 +4,29 @@ using System.Windows.Forms;
 
 namespace GUILayer
 {
+    public enum AlertType
+    {
+        Success, Warning, Error, Infor
+    }
+
     public partial class FormAlert : Form
     {
         public FormAlert(string msg, AlertType type)
         {
             InitializeComponent();
-            ShowAlert(msg, type);
-        }
-        public enum AlertType
-        {
-            Success, Warning, Error, Infor
+            SubmitAlertDisplay(type);
+            msg = ChangeDefaultMessage(msg);
+            ShowAlert(msg);
         }
 
-        public enum Action
+        private string ChangeDefaultMessage(string msg)
+        {
+            if (msg.Equals("Input string was not in a correct format."))
+                msg = "Định dạng số không hợp lệ";
+            return msg;
+        }
+
+        private enum Action
         {
             Wait, Start, Close
         }
@@ -29,7 +39,7 @@ namespace GUILayer
             switch (this.action)
             {
                 case Action.Wait:
-                    timerAlert.Interval = 5000;
+                    timerAlert.Interval = 3500;  //Thoi gian tat
                     action = Action.Close;
                     break;
                 case Action.Start:
@@ -65,7 +75,7 @@ namespace GUILayer
             action = Action.Close;
         }
 
-        public void ShowAlert(string msg, AlertType type)
+        private void ShowAlert(string msg)
         {
             this.Opacity = 0.0;
             this.StartPosition = FormStartPosition.Manual;
@@ -83,33 +93,40 @@ namespace GUILayer
                     break;
                 }
             }
-            this.x = Screen.PrimaryScreen.WorkingArea.Width - base.Width - 5;
-
-            switch (type)
-            {
-                case AlertType.Success:
-                    this.iconAlert.IconChar = FontAwesome.Sharp.IconChar.Procedures;
-                    this.BackColor = Color.SeaGreen;
-                    break;
-                case AlertType.Warning:
-                    this.iconAlert.IconChar = FontAwesome.Sharp.IconChar.ExclamationTriangle;
-                    this.BackColor = Color.DarkOrange;
-                    break;
-                case AlertType.Error:
-                    this.iconAlert.IconChar = FontAwesome.Sharp.IconChar.Redhat;
-                    this.BackColor = Color.DarkRed;
-                    break;
-                case AlertType.Infor:
-                    this.iconAlert.IconChar = FontAwesome.Sharp.IconChar.Exclamation;
-                    this.BackColor = Color.RoyalBlue;
-                    break;
-            }
+            this.x = Screen.PrimaryScreen.WorkingArea.Width - base.Width - 5;            
 
             this.lblMsg.Text = msg;
             this.Show();
             this.action = Action.Start;
             this.timerAlert.Interval = 1;
             timerAlert.Start();
+        }
+
+        private void SubmitAlertDisplay(AlertType type)
+        {
+            switch (type)
+            {
+                case AlertType.Success:
+                    this.iconAlert.IconChar = FontAwesome.Sharp.IconChar.Procedures;
+                    this.BackColor = Color.SeaGreen;
+                    this.iconAlert.ForeColor = Color.SeaGreen;
+                    break;
+                case AlertType.Warning:
+                    this.iconAlert.IconChar = FontAwesome.Sharp.IconChar.ExclamationTriangle;
+                    this.BackColor = Color.DarkOrange;
+                    this.iconAlert.ForeColor = Color.DarkOrange;
+                    break;
+                case AlertType.Error:
+                    this.iconAlert.IconChar = FontAwesome.Sharp.IconChar.Redhat;
+                    this.BackColor = Color.DarkRed;
+                    this.iconAlert.ForeColor = Color.DarkRed;
+                    break;
+                case AlertType.Infor:
+                    this.iconAlert.IconChar = FontAwesome.Sharp.IconChar.Exclamation;
+                    this.BackColor = Color.RoyalBlue;
+                    this.iconAlert.ForeColor = Color.RoyalBlue;
+                    break;
+            }
         }
     }
 }

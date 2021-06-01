@@ -5,7 +5,7 @@ using System;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using static GUILayer.FormAlert.AlertType;
+using static GUILayer.AlertType;
 
 namespace GUILayer.ChildForm.SubForm
 {

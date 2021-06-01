@@ -40,7 +40,7 @@ namespace GUILayer
             // 
             this.lblMsg.AutoSize = true;
             this.lblMsg.ForeColor = System.Drawing.Color.White;
-            this.lblMsg.Location = new System.Drawing.Point(67, 15);
+            this.lblMsg.Location = new System.Drawing.Point(64, 13);
             this.lblMsg.Name = "lblMsg";
             this.lblMsg.Size = new System.Drawing.Size(114, 20);
             this.lblMsg.TabIndex = 0;
@@ -54,10 +54,11 @@ namespace GUILayer
             // 
             this.iconAlert.FlatAppearance.BorderSize = 0;
             this.iconAlert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconAlert.ForeColor = System.Drawing.Color.Transparent;
             this.iconAlert.IconChar = FontAwesome.Sharp.IconChar.Music;
             this.iconAlert.IconColor = System.Drawing.Color.Black;
             this.iconAlert.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconAlert.Location = new System.Drawing.Point(4, 15);
+            this.iconAlert.Location = new System.Drawing.Point(4, 16);
             this.iconAlert.Name = "iconAlert";
             this.iconAlert.Size = new System.Drawing.Size(46, 46);
             this.iconAlert.TabIndex = 2;
@@ -67,12 +68,13 @@ namespace GUILayer
             // 
             this.iconClose.FlatAppearance.BorderSize = 0;
             this.iconClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconClose.ForeColor = System.Drawing.Color.Transparent;
             this.iconClose.IconChar = FontAwesome.Sharp.IconChar.WindowClose;
             this.iconClose.IconColor = System.Drawing.Color.Black;
             this.iconClose.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconClose.Location = new System.Drawing.Point(368, 4);
+            this.iconClose.Location = new System.Drawing.Point(360, -1);
             this.iconClose.Name = "iconClose";
-            this.iconClose.Size = new System.Drawing.Size(54, 83);
+            this.iconClose.Size = new System.Drawing.Size(54, 85);
             this.iconClose.TabIndex = 3;
             this.iconClose.UseVisualStyleBackColor = true;
             this.iconClose.Click += new System.EventHandler(this.iconClose_Click);
@@ -81,7 +83,7 @@ namespace GUILayer
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.Highlight;
-            this.ClientSize = new System.Drawing.Size(420, 85);
+            this.ClientSize = new System.Drawing.Size(415, 85);
             this.Controls.Add(this.iconClose);
             this.Controls.Add(this.iconAlert);
             this.Controls.Add(this.lblMsg);
