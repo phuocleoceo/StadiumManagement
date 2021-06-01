@@ -56,7 +56,7 @@ namespace GUILayer.ChildForm
             }
             catch (Exception ex)
             {
-                new FormAlert(ex.Message, Warning);
+                new FormAlert(ex.Message, Infor);
             }
         }
 
@@ -78,7 +78,7 @@ namespace GUILayer.ChildForm
             }
             catch (Exception ex)
             {
-                new FormAlert(ex.Message, Warning);
+                new FormAlert(ex.Message, Infor);
             }
         }
 

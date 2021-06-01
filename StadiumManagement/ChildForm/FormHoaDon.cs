@@ -84,7 +84,7 @@ namespace GUILayer.ChildForm
             }
             catch (Exception ex)
             {
-                new FormAlert(ex.Message, Warning);
+                new FormAlert(ex.Message, Infor);
             }
         }
 
@@ -120,7 +120,7 @@ namespace GUILayer.ChildForm
             }
             else
             {
-                new FormAlert("Chưa chọn hoá đơn", Infor);
+                new FormAlert("Chưa chọn hoá đơn", Warning);
             }
         }
 
@@ -138,7 +138,7 @@ namespace GUILayer.ChildForm
             }
             else
             {
-                new FormAlert("Chưa chọn hoá đơn", Infor);
+                new FormAlert("Chưa chọn hoá đơn", Warning);
             }
         }
 
@@ -150,16 +150,16 @@ namespace GUILayer.ChildForm
             {
                 _Bill_Id = Convert.ToInt32(r[0].Cells["Id"].Value);
                 _db.PurchaseBill(_Bill_Id);
+                new FormAlert("Thanh toán thành công", Success);
                 if (MessageBox.Show("In hoá đơn không ?", "Cân nhắc !", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     PrintBill();
                 }
-                new FormAlert("Thanh toán thành công", Success);
                 LoadData();
             }
             else
             {
-                new FormAlert("Chưa chọn hoá đơn !", Infor);
+                new FormAlert("Chưa chọn hoá đơn !", Warning);
             }
         }
 
@@ -183,6 +183,7 @@ namespace GUILayer.ChildForm
         {
             string content = _db.GetContentPrint(_Bill_Id);
             e.Graphics.DrawString(content, new Font("Arial", 12, FontStyle.Regular), Brushes.Black, 100, 100);
+            new FormAlert("In hoá đơn thành công", Success);
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
