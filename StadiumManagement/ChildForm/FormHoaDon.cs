@@ -149,12 +149,12 @@ namespace GUILayer.ChildForm
             if (r.Count == 1)
             {
                 _Bill_Id = Convert.ToInt32(r[0].Cells["Id"].Value);
-                _db.PurchaseBill(_Bill_Id);
-                new FormAlert("Thanh toán thành công", Success);
                 if (MessageBox.Show("In hoá đơn không ?", "Cân nhắc !", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     PrintBill();
                 }
+                _db.PurchaseBill(_Bill_Id);
+                new FormAlert("Thanh toán thành công", Success);
                 LoadData();
             }
             else
