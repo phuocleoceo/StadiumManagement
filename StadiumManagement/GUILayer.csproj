@@ -159,6 +159,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="System\Windows\SystemParameters.cs" />
     <EmbeddedResource Include="ChildForm\SubForm\FormChiTietBill.resx">
       <DependentUpon>FormChiTietBill.cs</DependentUpon>
     </EmbeddedResource>

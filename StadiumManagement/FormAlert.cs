@@ -17,6 +17,7 @@ namespace GUILayer
             SubmitAlertDisplay(type);
             msg = ChangeDefaultMessage(msg);
             ShowAlert(msg);
+            this.AutoSize = true;
         }
 
         private string ChangeDefaultMessage(string msg)

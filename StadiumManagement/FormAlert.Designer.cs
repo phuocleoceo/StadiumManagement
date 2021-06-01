@@ -40,7 +40,7 @@ namespace GUILayer
             // 
             this.lblMsg.AutoSize = true;
             this.lblMsg.ForeColor = System.Drawing.Color.White;
-            this.lblMsg.Location = new System.Drawing.Point(64, 14);
+            this.lblMsg.Location = new System.Drawing.Point(64, 12);
             this.lblMsg.Name = "lblMsg";
             this.lblMsg.Size = new System.Drawing.Size(114, 20);
             this.lblMsg.TabIndex = 0;
