@@ -44,11 +44,9 @@ namespace GUILayer.ChildForm
             this.picDV = new System.Windows.Forms.PictureBox();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
-            this.iconSapXep = new FontAwesome.Sharp.IconPictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSDichVu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconSapXep)).BeginInit();
             this.SuspendLayout();
             // 
             // btnClear
@@ -208,27 +206,11 @@ namespace GUILayer.ChildForm
             this.iconPictureBox1.TabIndex = 56;
             this.iconPictureBox1.TabStop = false;
             // 
-            // iconSapXep
-            // 
-            this.iconSapXep.BackColor = System.Drawing.Color.White;
-            this.iconSapXep.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.iconSapXep.IconChar = FontAwesome.Sharp.IconChar.Sort;
-            this.iconSapXep.IconColor = System.Drawing.SystemColors.ControlText;
-            this.iconSapXep.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconSapXep.IconSize = 22;
-            this.iconSapXep.Location = new System.Drawing.Point(28, 201);
-            this.iconSapXep.Name = "iconSapXep";
-            this.iconSapXep.Size = new System.Drawing.Size(22, 22);
-            this.iconSapXep.TabIndex = 61;
-            this.iconSapXep.TabStop = false;
-            this.iconSapXep.Click += new System.EventHandler(this.iconSapXep_Click);
-            // 
             // FormQLDichVu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1041, 566);
-            this.Controls.Add(this.iconSapXep);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.iconPictureBox1);
             this.Controls.Add(this.picDV);
@@ -249,7 +231,6 @@ namespace GUILayer.ChildForm
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSDichVu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconSapXep)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -272,6 +253,5 @@ namespace GUILayer.ChildForm
         private System.Windows.Forms.Button btnChonAnh;
         private System.Windows.Forms.TextBox txtSearch;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
-        private FontAwesome.Sharp.IconPictureBox iconSapXep;
     }
 }

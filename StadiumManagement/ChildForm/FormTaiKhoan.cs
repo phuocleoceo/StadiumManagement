@@ -23,7 +23,7 @@ namespace GUILayer.ChildForm
         {
             dgvDSTK.DataSource = null;
             dgvDSTK.Rows.Clear();
-            dgvDSTK.DataSource = _db.GetList(UserName).ToList();
+            dgvDSTK.DataSource = _db.GetList(UserName).ToSortableBindingList();
             dgvDSTK.Columns["Id"].Visible = false;
             dgvDSTK.Columns["Image"].Visible = false;
         }

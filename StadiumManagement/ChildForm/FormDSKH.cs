@@ -23,7 +23,7 @@ namespace GUILayer.ChildForm
         {
             dgvDSKH.DataSource = null;
             dgvDSKH.Rows.Clear();
-            dgvDSKH.DataSource = _db.GetList(Name).ToList();
+            dgvDSKH.DataSource = _db.GetList(Name).ToSortableBindingList();
             dgvDSKH.Columns["Id"].Visible = false;
         }
 

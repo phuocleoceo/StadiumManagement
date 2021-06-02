@@ -28,7 +28,7 @@ namespace GUILayer.ChildForm.SubForm
             _db = new RentOrderRepository();
             dgvSan.DataSource = null;
             dgvSan.Rows.Clear();
-            dgvSan.DataSource = _db.GetList(_currentBillId, StadiumName).ToList();
+            dgvSan.DataSource = _db.GetList(_currentBillId, StadiumName).ToSortableBindingList();
             dgvSan.Columns["Id"].Visible = false;
             dgvSan.Columns["Stadium_Image"].Visible = false;
             dgvSan.Columns["Stadium_Price"].Visible = false;

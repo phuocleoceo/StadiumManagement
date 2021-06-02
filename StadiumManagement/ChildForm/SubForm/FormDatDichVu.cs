@@ -28,7 +28,7 @@ namespace GUILayer.ChildForm.SubForm
             _db = new ServiceOrderRepository();
             dgvDV.DataSource = null;
             dgvDV.Rows.Clear();
-            dgvDV.DataSource = _db.GetList(_currentBillId, ServiceName).ToList();
+            dgvDV.DataSource = _db.GetList(_currentBillId, ServiceName).ToSortableBindingList();
             dgvDV.Columns["Id"].Visible = false;
             dgvDV.Columns["Service_Image"].Visible = false;
             dgvDV.Columns["Service_Price"].Visible = false;

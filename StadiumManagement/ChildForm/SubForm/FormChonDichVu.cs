@@ -22,7 +22,7 @@ namespace GUILayer.ChildForm.SubForm
         private void LoadListView()
         {
             int i = 0;
-            List<ServiceVM> listSVM = _db.GetList("").ToList();
+            IEnumerable<ServiceVM> listSVM = _db.GetList("");
             foreach (ServiceVM svm in listSVM)
             {
                 Image img = svm.Image.ByteArrayToImage();

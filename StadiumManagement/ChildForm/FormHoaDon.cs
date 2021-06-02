@@ -31,7 +31,7 @@ namespace GUILayer.ChildForm
             _db = new BillRepository();
             dgvBill.DataSource = null;
             dgvBill.Rows.Clear();
-            dgvBill.DataSource = _db.GetList(BillCode).ToList();
+            dgvBill.DataSource = _db.GetList(BillCode).ToSortableBindingList();
             dgvBill.Columns["Id"].Visible = false;
             dgvBill.Columns["DateCheckedOut"].Visible = false;
         }

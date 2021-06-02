@@ -19,12 +19,11 @@ namespace GUILayer.ChildForm
             LoadData();
         }
 
-        private void LoadData(string StadiumName = "", bool Sortable = false)
+        private void LoadData(string StadiumName = "")
         {
             dgvDSSan.DataSource = null;
             dgvDSSan.Rows.Clear();
-            if (!Sortable) dgvDSSan.DataSource = _db.GetList(StadiumName).ToList();
-            else dgvDSSan.DataSource = _db.GetList(StadiumName).ToSortableBindingList();
+            dgvDSSan.DataSource = _db.GetList(StadiumName).ToSortableBindingList();
             dgvDSSan.Columns["Id"].Visible = false;
             dgvDSSan.Columns["Image"].Visible = false;
         }
@@ -126,12 +125,6 @@ namespace GUILayer.ChildForm
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             LoadData(txtSearch.Text);
-        }
-
-        private void iconSapXep_Click(object sender, EventArgs e)
-        {
-            new FormAlert("Chọn tên cột tương ứng\r\nđể sắp xếp", Infor);
-            LoadData(txtSearch.Text, true);
         }
     }
 }

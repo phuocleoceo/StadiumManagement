@@ -19,12 +19,11 @@ namespace GUILayer.ChildForm
             LoadData();
         }
 
-        private void LoadData(string ServiceName = "", bool Sortable = false)
+        private void LoadData(string ServiceName = "")
         {
             dgvDSDichVu.DataSource = null;
             dgvDSDichVu.Rows.Clear();
-            if (!Sortable) dgvDSDichVu.DataSource = _db.GetList(ServiceName).ToList();
-            else dgvDSDichVu.DataSource = _db.GetList(ServiceName).ToSortableBindingList();
+            dgvDSDichVu.DataSource = _db.GetList(ServiceName).ToSortableBindingList();
             dgvDSDichVu.Columns["Id"].Visible = false;
             dgvDSDichVu.Columns["Image"].Visible = false;
         }
@@ -119,12 +118,6 @@ namespace GUILayer.ChildForm
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             LoadData(txtSearch.Text);
-        }
-
-        private void iconSapXep_Click(object sender, EventArgs e)
-        {
-            new FormAlert("Chọn tên cột tương ứng\r\nđể sắp xếp", Infor);
-            LoadData(txtSearch.Text, true);
         }
     }
 }

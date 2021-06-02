@@ -24,7 +24,7 @@ namespace GUILayer.ChildForm
         {
             dgvDSNV.DataSource = null;
             dgvDSNV.Rows.Clear();
-            dgvDSNV.DataSource = _db.GetList(Name).ToList();
+            dgvDSNV.DataSource = _db.GetList(Name).ToSortableBindingList();
             dgvDSNV.Columns["Id"].Visible = false;
         }
 
