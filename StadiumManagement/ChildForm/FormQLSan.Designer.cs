@@ -250,7 +250,7 @@ namespace GUILayer.ChildForm
             this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearch.Location = new System.Drawing.Point(46, 178);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(100, 21);
+            this.txtSearch.Size = new System.Drawing.Size(101, 21);
             this.txtSearch.TabIndex = 58;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
@@ -270,15 +270,15 @@ namespace GUILayer.ChildForm
             // 
             // iconSapXep
             // 
-            this.iconSapXep.BackColor = System.Drawing.SystemColors.Control;
+            this.iconSapXep.BackColor = System.Drawing.Color.White;
             this.iconSapXep.ForeColor = System.Drawing.SystemColors.ControlText;
             this.iconSapXep.IconChar = FontAwesome.Sharp.IconChar.Sort;
             this.iconSapXep.IconColor = System.Drawing.SystemColors.ControlText;
             this.iconSapXep.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconSapXep.IconSize = 25;
-            this.iconSapXep.Location = new System.Drawing.Point(150, 176);
+            this.iconSapXep.IconSize = 22;
+            this.iconSapXep.Location = new System.Drawing.Point(30, 211);
             this.iconSapXep.Name = "iconSapXep";
-            this.iconSapXep.Size = new System.Drawing.Size(25, 25);
+            this.iconSapXep.Size = new System.Drawing.Size(22, 22);
             this.iconSapXep.TabIndex = 60;
             this.iconSapXep.TabStop = false;
             this.iconSapXep.Click += new System.EventHandler(this.iconSapXep_Click);
