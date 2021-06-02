@@ -13,7 +13,7 @@ namespace BusinessLayer
 
         public SortableBindingList(){}
 
-        public SortableBindingList(IList<T> list)
+        public SortableBindingList(IEnumerable<T> list)
         {
             foreach (object o in list)
             {

@@ -11,7 +11,7 @@ namespace BusinessLayer
 {
     public static class Utility
     {
-        // Validate
+        #region ValidateSupport
         public static string Validate(this object obj)
         {
             StringBuilder sb = new StringBuilder();
@@ -26,6 +26,9 @@ namespace BusinessLayer
             }
             return sb.ToString();
         }
+        #endregion
+
+        #region XuLyGUI
         // Dinh dang DGV
         public static void FormatTable(this DataGridView dgv)
         {
@@ -44,23 +47,9 @@ namespace BusinessLayer
             dgv.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
+        #endregion
 
-        // Ma hoa mat khau
-        public static string GetMD5(this string str)
-        {
-            MD5 md5 = MD5.Create();
-            byte[] fromData = Encoding.ASCII.GetBytes(str);
-            byte[] targetData = md5.ComputeHash(fromData);
-
-            StringBuilder sb = new StringBuilder();
-            for (int i = 0; i < targetData.Length; i++)
-            {
-                sb.Append(targetData[i].ToString("x2"));
-            }
-            return sb.ToString();
-        }
-
-        // Xu ly anh
+        #region XuLyAnh
         public static Image ByteArrayToImage(this byte[] img)
         {
             if (img == null || img.Length == 0) return null;
@@ -83,6 +72,23 @@ namespace BusinessLayer
             }
             else return null;
         }
+        #endregion
+
+        #region XuLyDuLieu
+        // Ma hoa mat khau
+        public static string GetMD5(this string str)
+        {
+            MD5 md5 = MD5.Create();
+            byte[] fromData = Encoding.ASCII.GetBytes(str);
+            byte[] targetData = md5.ComputeHash(fromData);
+
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < targetData.Length; i++)
+            {
+                sb.Append(targetData[i].ToString("x2"));
+            }
+            return sb.ToString();
+        }
 
         //Bo qua second trong DateTime
         public static DateTime TrimSeconds(this DateTime dt)
@@ -99,5 +105,13 @@ namespace BusinessLayer
             if (remainder > 0.5) hours = (int)hours + 1;
             return hours;
         }
+        #endregion
+
+        #region MappingListSupport
+        public static SortableBindingList<T> ToSortableBindingList<T>(this IEnumerable<T> list)
+        {
+            return new SortableBindingList<T>(list);
+        }
+        #endregion
     }
 }
