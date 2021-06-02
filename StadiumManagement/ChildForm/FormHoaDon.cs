@@ -200,11 +200,11 @@ namespace GUILayer.ChildForm
             string tmp2 = "0123456789";
             for (int i = 0; i < 3; i++)
             {
-                code.Append(tmp1.Substring(rd.Next(0, 25), 1));
+                code.Append(tmp1[rd.Next(0, 25)]);
             }
             for (int i = 0; i < 3; i++)
             {
-                code.Append(tmp2.Substring(rd.Next(0, 9), 1));
+                code.Append(tmp2[rd.Next(0, 9)]);
             }
             txtMaHoaDon.Text = code.ToString();
         }
