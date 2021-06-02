@@ -49,10 +49,12 @@ namespace GUILayer.ChildForm
             this.rdbKhong = new System.Windows.Forms.RadioButton();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+            this.iconSapXep = new FontAwesome.Sharp.IconPictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSSan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSB)).BeginInit();
             this.grbChoThue.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconSapXep)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvDSSan
@@ -266,11 +268,27 @@ namespace GUILayer.ChildForm
             this.iconPictureBox1.TabIndex = 59;
             this.iconPictureBox1.TabStop = false;
             // 
+            // iconSapXep
+            // 
+            this.iconSapXep.BackColor = System.Drawing.SystemColors.Control;
+            this.iconSapXep.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconSapXep.IconChar = FontAwesome.Sharp.IconChar.Sort;
+            this.iconSapXep.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconSapXep.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconSapXep.IconSize = 25;
+            this.iconSapXep.Location = new System.Drawing.Point(150, 176);
+            this.iconSapXep.Name = "iconSapXep";
+            this.iconSapXep.Size = new System.Drawing.Size(25, 25);
+            this.iconSapXep.TabIndex = 60;
+            this.iconSapXep.TabStop = false;
+            this.iconSapXep.Click += new System.EventHandler(this.iconSapXep_Click);
+            // 
             // FormQLSan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1041, 566);
+            this.Controls.Add(this.iconSapXep);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.iconPictureBox1);
             this.Controls.Add(this.grbChoThue);
@@ -296,6 +314,7 @@ namespace GUILayer.ChildForm
             this.grbChoThue.ResumeLayout(false);
             this.grbChoThue.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconSapXep)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -323,5 +342,6 @@ namespace GUILayer.ChildForm
         private System.Windows.Forms.RadioButton rdbKhong;
         private System.Windows.Forms.TextBox txtSearch;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
+        private FontAwesome.Sharp.IconPictureBox iconSapXep;
     }
 }

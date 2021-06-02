@@ -68,6 +68,7 @@
     <Compile Include="Repository\ServiceRepository.cs" />
     <Compile Include="Repository\StadiumRepository.cs" />
     <Compile Include="Repository\StatisticRepository.cs" />
+    <Compile Include="SortableBindingList.cs" />
     <Compile Include="Utility.cs" />
     <Compile Include="ViewModels\AccountInformationVM.cs" />
     <Compile Include="ViewModels\AccountVM.cs" />

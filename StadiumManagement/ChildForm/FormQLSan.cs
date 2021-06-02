@@ -126,5 +126,17 @@ namespace GUILayer.ChildForm
         {
             LoadData(txtSearch.Text);
         }
+
+        private void iconSapXep_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Click vào tên cột tương ứng để sắp xếp", "Lưu ý", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            dgvDSSan.DataSource = null;
+            dgvDSSan.Rows.Clear();
+            SortableBindingList<StadiumVM> list = new SortableBindingList<StadiumVM>
+                                                (_db.GetList(txtSearch.Text).ToList());
+            dgvDSSan.DataSource = list;
+            dgvDSSan.Columns["Id"].Visible = false;
+            dgvDSSan.Columns["Image"].Visible = false;
+        }
     }
 }

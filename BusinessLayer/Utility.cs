@@ -31,6 +31,7 @@ namespace BusinessLayer
         {
             dgv.ReadOnly = true;
             dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgv.AllowUserToAddRows = false;
 
             //dgv.BorderStyle = BorderStyle.None;
             dgv.DefaultCellStyle.Font = new Font("Cambria", 12);
