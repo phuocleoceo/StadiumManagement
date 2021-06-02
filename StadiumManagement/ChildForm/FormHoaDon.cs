@@ -5,6 +5,7 @@ using GUILayer.ChildForm.SubForm;
 using System;
 using System.Drawing;
 using System.Linq;
+using System.Text;
 using System.Windows.Forms;
 using static GUILayer.AlertType;
 
@@ -189,6 +190,23 @@ namespace GUILayer.ChildForm
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             LoadData(txtSearch.Text);
+        }
+
+        private void iconDice_Click(object sender, EventArgs e)
+        {
+            StringBuilder code = new StringBuilder();
+            Random rd = new Random();
+            string tmp1 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            string tmp2 = "0123456789";
+            for (int i = 0; i < 3; i++)
+            {
+                code.Append(tmp1.Substring(rd.Next(0, 25), 1));
+            }
+            for (int i = 0; i < 3; i++)
+            {
+                code.Append(tmp2.Substring(rd.Next(0, 9), 1));
+            }
+            txtMaHoaDon.Text = code.ToString();
         }
     }
 }

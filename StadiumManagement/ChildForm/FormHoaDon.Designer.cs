@@ -56,8 +56,10 @@ namespace GUILayer.ChildForm
             this.btnXoa = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+            this.iconDice = new FontAwesome.Sharp.IconPictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBill)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconDice)).BeginInit();
             this.SuspendLayout();
             // 
             // btnClear
@@ -324,11 +326,27 @@ namespace GUILayer.ChildForm
             this.iconPictureBox1.TabIndex = 50;
             this.iconPictureBox1.TabStop = false;
             // 
+            // iconDice
+            // 
+            this.iconDice.BackColor = System.Drawing.SystemColors.Control;
+            this.iconDice.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconDice.IconChar = FontAwesome.Sharp.IconChar.Dice;
+            this.iconDice.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconDice.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconDice.IconSize = 30;
+            this.iconDice.Location = new System.Drawing.Point(375, 18);
+            this.iconDice.Name = "iconDice";
+            this.iconDice.Size = new System.Drawing.Size(30, 30);
+            this.iconDice.TabIndex = 51;
+            this.iconDice.TabStop = false;
+            this.iconDice.Click += new System.EventHandler(this.iconDice_Click);
+            // 
             // FormHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1041, 566);
+            this.Controls.Add(this.iconDice);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.iconPictureBox1);
             this.Controls.Add(this.cbbKhachHang);
@@ -358,6 +376,7 @@ namespace GUILayer.ChildForm
             this.Text = "Hoá đơn";
             ((System.ComponentModel.ISupportInitialize)(this.dgvBill)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconDice)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -392,5 +411,6 @@ namespace GUILayer.ChildForm
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.TextBox txtSearch;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
+        private FontAwesome.Sharp.IconPictureBox iconDice;
     }
 }

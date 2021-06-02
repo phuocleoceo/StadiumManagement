@@ -32,6 +32,7 @@ namespace BusinessLayer.Repository
                     Text = cus.Name
                 });
             }
+            cbb.SelectedIndex = 0;
         }
 
         public void SetTotal(int Bill_Id)

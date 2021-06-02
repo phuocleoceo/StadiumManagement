@@ -58,6 +58,7 @@ namespace BusinessLayer.Repository
                     Text = ac.UserName
                 });
             }
+            cbb.SelectedIndex = 0;
         }
         #endregion
 

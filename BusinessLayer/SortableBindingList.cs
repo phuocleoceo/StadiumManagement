@@ -65,9 +65,8 @@ namespace BusinessLayer
             }
             else
             {
-                throw new NotSupportedException("Cannot sort by " + prop.Name +
-                    ". This" + prop.PropertyType +
-                    " does not implement IComparable");
+                throw new NotSupportedException($@"Cannot sort by {prop.Name}
+                        . This {prop.PropertyType} does not implement IComparable");
             }
         }
 
