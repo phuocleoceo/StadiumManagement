@@ -101,8 +101,9 @@ namespace BusinessLayer
         {
             double hours = (EndRentDate.TrimSeconds() - StartRentDate.TrimSeconds()).TotalHours;
             double remainder = hours - (int)hours;
-            if (0 < remainder && remainder < 0.5) hours = (int)hours + 0.5;
-            if (0.5 < remainder && remainder < 1) hours = (int)hours + 1;
+            if (remainder == 0 || remainder == 0.5) return hours;
+            if (remainder < 0.5) hours = (int)hours + 0.5;
+            if (remainder > 0.5) hours = (int)hours + 1;
             return hours;
         }
         #endregion
