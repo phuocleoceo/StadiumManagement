@@ -5,6 +5,8 @@ using GUILayer.ChildForm.SubForm;
 using System;
 using System.Windows.Forms;
 using System.Collections.Generic;
+using System.Linq;
+using System.Drawing;
 
 namespace GUILayer.ChildForm
 {
@@ -16,6 +18,7 @@ namespace GUILayer.ChildForm
         {
             InitializeComponent();
             dgvBill.FormatTable();
+            dgvKhachTB.FormatMiniTable();
             _db = new StatisticRepository();
             LoadData();
             CalculateSales();
@@ -127,6 +130,7 @@ namespace GUILayer.ChildForm
             _lr = new LinearRegression();
             DuDoanDoanhThu();
             PhuongTrinhHoiQuy();
+            KhachHangTrungBinh();
         }
         private void PhuongTrinhHoiQuy()
         {
@@ -151,6 +155,17 @@ namespace GUILayer.ChildForm
             chartDuDoan.Series["Doanh thu"].Points.AddXY("Thứ 6", _predit[5]);
             chartDuDoan.Series["Doanh thu"].Points.AddXY("Thứ 7", _predit[6]);
             chartDuDoan.Series["Doanh thu"].Points.AddXY("Chủ nhật", _predit[0]);
+        }
+        private void KhachHangTrungBinh()
+        {
+            SortableBindingList<double> list = (new GetData()).GetAverageCustomer().ToSortableBindingList();
+            dgvKhachTB.Rows.Add(new string[] { "Thứ 2", list[1].ToString() });
+            dgvKhachTB.Rows.Add(new string[] { "Thứ 3", list[2].ToString() });
+            dgvKhachTB.Rows.Add(new string[] { "Thứ 4", list[3].ToString() });
+            dgvKhachTB.Rows.Add(new string[] { "Thứ 5", list[4].ToString() });
+            dgvKhachTB.Rows.Add(new string[] { "Thứ 6", list[5].ToString() });
+            dgvKhachTB.Rows.Add(new string[] { "Thứ 7", list[6].ToString() });
+            dgvKhachTB.Rows.Add(new string[] { "Chủ nhật", list[0].ToString() });
         }
         #endregion
     }

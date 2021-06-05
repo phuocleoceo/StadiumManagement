@@ -77,6 +77,9 @@ namespace GUILayer.ChildForm
             this.chartSanDV = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chartDoanhThu = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.TPDuDoan = new System.Windows.Forms.TabPage();
+            this.dgvKhachTB = new System.Windows.Forms.DataGridView();
+            this.Ngay = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoKhach = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblPhuongTrinh = new System.Windows.Forms.Label();
             this.chartDuDoan = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.TCThongKe.SuspendLayout();
@@ -93,6 +96,7 @@ namespace GUILayer.ChildForm
             ((System.ComponentModel.ISupportInitialize)(this.chartSanDV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartDoanhThu)).BeginInit();
             this.TPDuDoan.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvKhachTB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartDuDoan)).BeginInit();
             this.SuspendLayout();
             // 
@@ -132,7 +136,7 @@ namespace GUILayer.ChildForm
             // txtSearch
             // 
             this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.Location = new System.Drawing.Point(51, 513);
+            this.txtSearch.Location = new System.Drawing.Point(51, 519);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(100, 21);
             this.txtSearch.TabIndex = 62;
@@ -146,7 +150,7 @@ namespace GUILayer.ChildForm
             this.iconPictureBox1.IconColor = System.Drawing.SystemColors.ControlText;
             this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBox1.IconSize = 25;
-            this.iconPictureBox1.Location = new System.Drawing.Point(26, 512);
+            this.iconPictureBox1.Location = new System.Drawing.Point(26, 518);
             this.iconPictureBox1.Name = "iconPictureBox1";
             this.iconPictureBox1.Size = new System.Drawing.Size(25, 25);
             this.iconPictureBox1.TabIndex = 63;
@@ -156,7 +160,7 @@ namespace GUILayer.ChildForm
             // 
             this.lblTongDoanhTHu.AutoSize = true;
             this.lblTongDoanhTHu.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTongDoanhTHu.Location = new System.Drawing.Point(540, 525);
+            this.lblTongDoanhTHu.Location = new System.Drawing.Point(540, 527);
             this.lblTongDoanhTHu.Name = "lblTongDoanhTHu";
             this.lblTongDoanhTHu.Size = new System.Drawing.Size(91, 31);
             this.lblTongDoanhTHu.TabIndex = 15;
@@ -166,7 +170,7 @@ namespace GUILayer.ChildForm
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(307, 525);
+            this.label3.Location = new System.Drawing.Point(307, 527);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(218, 31);
             this.label3.TabIndex = 15;
@@ -226,7 +230,7 @@ namespace GUILayer.ChildForm
             this.dgvBill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBill.Location = new System.Drawing.Point(26, 68);
             this.dgvBill.Name = "dgvBill";
-            this.dgvBill.Size = new System.Drawing.Size(986, 438);
+            this.dgvBill.Size = new System.Drawing.Size(986, 444);
             this.dgvBill.TabIndex = 11;
             this.dgvBill.DoubleClick += new System.EventHandler(this.dgvBill_DoubleClick);
             // 
@@ -523,6 +527,7 @@ namespace GUILayer.ChildForm
             // 
             // TPDuDoan
             // 
+            this.TPDuDoan.Controls.Add(this.dgvKhachTB);
             this.TPDuDoan.Controls.Add(this.lblPhuongTrinh);
             this.TPDuDoan.Controls.Add(this.chartDuDoan);
             this.TPDuDoan.Location = new System.Drawing.Point(4, 25);
@@ -533,6 +538,29 @@ namespace GUILayer.ChildForm
             this.TPDuDoan.Text = "Dự đoán doanh thu";
             this.TPDuDoan.UseVisualStyleBackColor = true;
             this.TPDuDoan.Enter += new System.EventHandler(this.TPDuDoan_Enter);
+            // 
+            // dgvKhachTB
+            // 
+            this.dgvKhachTB.BackgroundColor = System.Drawing.Color.White;
+            this.dgvKhachTB.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvKhachTB.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Ngay,
+            this.SoKhach});
+            this.dgvKhachTB.Location = new System.Drawing.Point(843, 84);
+            this.dgvKhachTB.Name = "dgvKhachTB";
+            this.dgvKhachTB.RowHeadersVisible = false;
+            this.dgvKhachTB.Size = new System.Drawing.Size(178, 259);
+            this.dgvKhachTB.TabIndex = 17;
+            // 
+            // Ngay
+            // 
+            this.Ngay.HeaderText = "Ngày";
+            this.Ngay.Name = "Ngay";
+            // 
+            // SoKhach
+            // 
+            this.SoKhach.HeaderText = "Số khách trung bình";
+            this.SoKhach.Name = "SoKhach";
             // 
             // lblPhuongTrinh
             // 
@@ -550,18 +578,18 @@ namespace GUILayer.ChildForm
             this.chartDuDoan.ChartAreas.Add(chartArea3);
             legend3.Name = "Legend1";
             this.chartDuDoan.Legends.Add(legend3);
-            this.chartDuDoan.Location = new System.Drawing.Point(72, -12);
+            this.chartDuDoan.Location = new System.Drawing.Point(55, -9);
             this.chartDuDoan.Name = "chartDuDoan";
             series3.ChartArea = "ChartDuDoan";
             series3.Legend = "Legend1";
             series3.Name = "Doanh thu";
             this.chartDuDoan.Series.Add(series3);
-            this.chartDuDoan.Size = new System.Drawing.Size(893, 532);
+            this.chartDuDoan.Size = new System.Drawing.Size(906, 532);
             this.chartDuDoan.TabIndex = 1;
             this.chartDuDoan.Text = "Doanh thu ";
             title3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             title3.Name = "TitleDoanhThu";
-            title3.Text = "Dự đoán doanh thu từng ngày";
+            title3.Text = "Dự đoán doanh thu từng ngày trong tuần";
             this.chartDuDoan.Titles.Add(title3);
             // 
             // FormThongKe
@@ -591,6 +619,7 @@ namespace GUILayer.ChildForm
             ((System.ComponentModel.ISupportInitialize)(this.chartDoanhThu)).EndInit();
             this.TPDuDoan.ResumeLayout(false);
             this.TPDuDoan.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvKhachTB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartDuDoan)).EndInit();
             this.ResumeLayout(false);
 
@@ -636,5 +665,8 @@ namespace GUILayer.ChildForm
         private System.Windows.Forms.TabPage TPDuDoan;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartDuDoan;
         private System.Windows.Forms.Label lblPhuongTrinh;
+        private System.Windows.Forms.DataGridView dgvKhachTB;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ngay;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SoKhach;
     }
 }

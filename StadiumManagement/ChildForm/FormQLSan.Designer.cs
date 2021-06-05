@@ -61,7 +61,7 @@ namespace GUILayer.ChildForm
             this.dgvDSSan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDSSan.Location = new System.Drawing.Point(20, 206);
             this.dgvDSSan.Name = "dgvDSSan";
-            this.dgvDSSan.Size = new System.Drawing.Size(1005, 347);
+            this.dgvDSSan.Size = new System.Drawing.Size(1005, 357);
             this.dgvDSSan.TabIndex = 2;
             this.dgvDSSan.SelectionChanged += new System.EventHandler(this.dgvDSSan_SelectionChanged);
             // 
@@ -270,7 +270,7 @@ namespace GUILayer.ChildForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1041, 566);
+            this.ClientSize = new System.Drawing.Size(1041, 573);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.iconPictureBox1);
             this.Controls.Add(this.grbChoThue);

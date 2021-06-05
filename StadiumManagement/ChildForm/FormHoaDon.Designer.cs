@@ -104,7 +104,7 @@ namespace GUILayer.ChildForm
             this.dgvBill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBill.Location = new System.Drawing.Point(12, 217);
             this.dgvBill.Name = "dgvBill";
-            this.dgvBill.Size = new System.Drawing.Size(1017, 343);
+            this.dgvBill.Size = new System.Drawing.Size(1017, 358);
             this.dgvBill.TabIndex = 10;
             this.dgvBill.SelectionChanged += new System.EventHandler(this.dgvBill_SelectionChanged);
             // 
@@ -345,7 +345,7 @@ namespace GUILayer.ChildForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1041, 566);
+            this.ClientSize = new System.Drawing.Size(1041, 585);
             this.Controls.Add(this.iconDice);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.iconPictureBox1);

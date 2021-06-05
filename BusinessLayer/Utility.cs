@@ -47,6 +47,20 @@ namespace BusinessLayer
             dgv.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
+        public static void FormatMiniTable(this DataGridView dgv)
+        {
+            dgv.Rows.Clear();
+            dgv.ReadOnly = true;
+            dgv.AllowUserToAddRows = false;
+            dgv.BorderStyle = BorderStyle.None;
+            dgv.DefaultCellStyle.Font = new Font("Cambria", 12);
+            dgv.ColumnHeadersDefaultCellStyle.Font = new Font("Cambria", 12);
+            dgv.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgv.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgv.RowsDefaultCellStyle.SelectionBackColor = dgv.DefaultCellStyle.BackColor;
+            dgv.RowsDefaultCellStyle.SelectionForeColor = dgv.DefaultCellStyle.ForeColor;
+        }
         #endregion
 
         #region XuLyAnh

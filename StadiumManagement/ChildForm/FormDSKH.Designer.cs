@@ -56,7 +56,7 @@ namespace GUILayer.ChildForm
             this.dgvDSKH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDSKH.Location = new System.Drawing.Point(12, 206);
             this.dgvDSKH.Name = "dgvDSKH";
-            this.dgvDSKH.Size = new System.Drawing.Size(1005, 348);
+            this.dgvDSKH.Size = new System.Drawing.Size(1005, 360);
             this.dgvDSKH.TabIndex = 0;
             this.dgvDSKH.SelectionChanged += new System.EventHandler(this.dgvDSKH_SelectionChanged);
             // 
@@ -225,7 +225,7 @@ namespace GUILayer.ChildForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1041, 566);
+            this.ClientSize = new System.Drawing.Size(1041, 577);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnXoa);

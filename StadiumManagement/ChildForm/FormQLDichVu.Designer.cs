@@ -157,7 +157,7 @@ namespace GUILayer.ChildForm
             this.dgvDSDichVu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDSDichVu.Location = new System.Drawing.Point(18, 196);
             this.dgvDSDichVu.Name = "dgvDSDichVu";
-            this.dgvDSDichVu.Size = new System.Drawing.Size(1005, 347);
+            this.dgvDSDichVu.Size = new System.Drawing.Size(1005, 358);
             this.dgvDSDichVu.TabIndex = 41;
             this.dgvDSDichVu.SelectionChanged += new System.EventHandler(this.dgvDSDichVu_SelectionChanged);
             // 
