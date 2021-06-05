@@ -49,7 +49,6 @@ namespace BusinessLayer
         }
         public static void FormatMiniTable(this DataGridView dgv)
         {
-            dgv.Rows.Clear();
             dgv.ReadOnly = true;
             dgv.AllowUserToAddRows = false;
             dgv.BorderStyle = BorderStyle.None;

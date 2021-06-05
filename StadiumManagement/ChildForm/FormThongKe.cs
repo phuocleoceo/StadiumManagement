@@ -155,6 +155,7 @@ namespace GUILayer.ChildForm
         }
         private void KhachHangTrungBinh()
         {
+            dgvKhachTB.Rows.Clear();
             SortableBindingList<double> list = (new GetData()).GetAverageCustomer().ToSortableBindingList();
             dgvKhachTB.Rows.Add(new string[] { "Thứ 2", list[1].ToString() });
             dgvKhachTB.Rows.Add(new string[] { "Thứ 3", list[2].ToString() });
