@@ -1,15 +1,17 @@
 ﻿using BusinessLayer;
 using BusinessLayer.Repository;
+using BusinessLayer.LinearRegression;
 using GUILayer.ChildForm.SubForm;
 using System;
-using System.Linq;
 using System.Windows.Forms;
+using System.Collections.Generic;
 
 namespace GUILayer.ChildForm
 {
     public partial class FormThongKe : Form
     {
         private readonly StatisticRepository _db;
+        private LinearRegression _lr;
         public FormThongKe()
         {
             InitializeComponent();
@@ -19,7 +21,7 @@ namespace GUILayer.ChildForm
             CalculateSales();
         }
         #region Lich su Bill
-        private void LoadData(string CustomerName = "", DateTime? _fromDate = null, 
+        private void LoadData(string CustomerName = "", DateTime? _fromDate = null,
                                 DateTime? _toDate = null)
         {
             dgvBill.DataSource = null;
@@ -56,13 +58,12 @@ namespace GUILayer.ChildForm
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             LoadData(txtSearch.Text);
-            CalculateSales();
         }
         #endregion
 
         #region ThongKeSoLieu
         // Khi chuyen sang tab2 , tab2 xu ly nhieu nen khi chon moi load du lieu
-        private void TCThongKe_Selected(object sender, TabControlEventArgs e)
+        private void TPSoLieu_Enter(object sender, EventArgs e)
         {
             ThongKeThangVaHomNay();
             DoanhThuTungThang();
@@ -85,6 +86,7 @@ namespace GUILayer.ChildForm
         private void DoanhThuTungThang()
         {
             chartDoanhThu.Series["Doanh thu"].Points.Clear();
+            chartDoanhThu.Series["Doanh thu"]["PixelPointWidth"] = "20";
             chartDoanhThu.Series["Doanh thu"].IsValueShownAsLabel = true;
             chartDoanhThu.ChartAreas["ChartDoanhThu"].AxisX.Title = "Tháng";
             chartDoanhThu.ChartAreas["ChartDoanhThu"].AxisY.Title = "VND";
@@ -116,6 +118,39 @@ namespace GUILayer.ChildForm
             chartSanDV.Series["SanDV"].YValueMembers = "Count";
             chartSanDV.Series["SanDV"].YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
             chartSanDV.Series["SanDV"].IsValueShownAsLabel = true;
+        }
+        #endregion
+
+        #region PhanTichDoanhThu
+        private void TPDuDoan_Enter(object sender, EventArgs e)
+        {
+            _lr = new LinearRegression();
+            DuDoanDoanhThu();
+            PhuongTrinhHoiQuy();
+        }
+        private void PhuongTrinhHoiQuy()
+        {
+            _lr.CalculateCoefficient(out double a, out double b);
+            a = Math.Round(a);
+            b = Math.Round(b);
+            lblPhuongTrinh.Text = $"Phương trình hồi quy : Doanh Thu = Số Khách * {a} + {b}";
+        }
+        private void DuDoanDoanhThu()
+        {
+            chartDuDoan.Series["Doanh thu"].Points.Clear();
+            chartDuDoan.Series["Doanh thu"]["PixelPointWidth"] = "40";
+            chartDuDoan.Series["Doanh thu"].IsValueShownAsLabel = true;
+            chartDuDoan.ChartAreas["ChartDuDoan"].AxisX.Title = "Ngày";
+            chartDuDoan.ChartAreas["ChartDuDoan"].AxisY.Title = "VND";
+
+            double[] _predit = _lr.PredictSalePerDayWeek();
+            chartDuDoan.Series["Doanh thu"].Points.AddXY("Thứ 2", _predit[1]);
+            chartDuDoan.Series["Doanh thu"].Points.AddXY("Thứ 3", _predit[2]);
+            chartDuDoan.Series["Doanh thu"].Points.AddXY("Thứ 4", _predit[3]);
+            chartDuDoan.Series["Doanh thu"].Points.AddXY("Thứ 5", _predit[4]);
+            chartDuDoan.Series["Doanh thu"].Points.AddXY("Thứ 6", _predit[5]);
+            chartDuDoan.Series["Doanh thu"].Points.AddXY("Thứ 7", _predit[6]);
+            chartDuDoan.Series["Doanh thu"].Points.AddXY("Chủ nhật", _predit[0]);
         }
         #endregion
     }

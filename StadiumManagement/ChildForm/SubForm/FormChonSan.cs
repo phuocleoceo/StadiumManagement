@@ -34,10 +34,12 @@ namespace GUILayer.ChildForm.SubForm
                 {
                     imgList.Images.Add(new Bitmap(120, 120));
                 }
-                ListViewItem item = new ListViewItem();
-                item.Text = $"{svm.Name}\r\n{svm.Price}";
-                item.Tag = svm.Id;
-                item.ImageIndex = i++;
+                ListViewItem item = new ListViewItem
+                {
+                    Text = $"{svm.Name}\r\n{svm.Price}",
+                    Tag = svm.Id,
+                    ImageIndex = i++
+                };
                 lvSan.Items.Add(item);
             }
         }

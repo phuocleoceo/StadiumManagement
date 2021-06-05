@@ -37,8 +37,14 @@ namespace GUILayer.ChildForm
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.TCThongKe = new System.Windows.Forms.TabControl();
             this.TPLichSuBill = new System.Windows.Forms.TabPage();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.lblTongDoanhTHu = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnLoc = new System.Windows.Forms.Button();
@@ -70,10 +76,12 @@ namespace GUILayer.ChildForm
             this.label4 = new System.Windows.Forms.Label();
             this.chartSanDV = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chartDoanhThu = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.txtSearch = new System.Windows.Forms.TextBox();
-            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+            this.TPDuDoan = new System.Windows.Forms.TabPage();
+            this.lblPhuongTrinh = new System.Windows.Forms.Label();
+            this.chartDuDoan = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.TCThongKe.SuspendLayout();
             this.TPLichSuBill.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBill)).BeginInit();
             this.TPSoLieu.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -84,13 +92,15 @@ namespace GUILayer.ChildForm
             ((System.ComponentModel.ISupportInitialize)(this.iconDBHoaDon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartSanDV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartDoanhThu)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
+            this.TPDuDoan.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartDuDoan)).BeginInit();
             this.SuspendLayout();
             // 
             // TCThongKe
             // 
             this.TCThongKe.Controls.Add(this.TPLichSuBill);
             this.TCThongKe.Controls.Add(this.TPSoLieu);
+            this.TCThongKe.Controls.Add(this.TPDuDoan);
             this.TCThongKe.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TCThongKe.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TCThongKe.Location = new System.Drawing.Point(0, 0);
@@ -98,7 +108,6 @@ namespace GUILayer.ChildForm
             this.TCThongKe.SelectedIndex = 0;
             this.TCThongKe.Size = new System.Drawing.Size(1041, 602);
             this.TCThongKe.TabIndex = 0;
-            this.TCThongKe.Selected += new System.Windows.Forms.TabControlEventHandler(this.TCThongKe_Selected);
             // 
             // TPLichSuBill
             // 
@@ -119,6 +128,29 @@ namespace GUILayer.ChildForm
             this.TPLichSuBill.TabIndex = 1;
             this.TPLichSuBill.Text = "Lịch sử hoá đơn";
             this.TPLichSuBill.UseVisualStyleBackColor = true;
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.Location = new System.Drawing.Point(51, 513);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(100, 21);
+            this.txtSearch.TabIndex = 62;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            // 
+            // iconPictureBox1
+            // 
+            this.iconPictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.iconPictureBox1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.Search;
+            this.iconPictureBox1.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox1.IconSize = 25;
+            this.iconPictureBox1.Location = new System.Drawing.Point(26, 512);
+            this.iconPictureBox1.Name = "iconPictureBox1";
+            this.iconPictureBox1.Size = new System.Drawing.Size(25, 25);
+            this.iconPictureBox1.TabIndex = 63;
+            this.iconPictureBox1.TabStop = false;
             // 
             // lblTongDoanhTHu
             // 
@@ -214,6 +246,7 @@ namespace GUILayer.ChildForm
             this.TPSoLieu.TabIndex = 2;
             this.TPSoLieu.Text = "Thống kê số liệu";
             this.TPSoLieu.UseVisualStyleBackColor = true;
+            this.TPSoLieu.Enter += new System.EventHandler(this.TPSoLieu_Enter);
             // 
             // btnDV
             // 
@@ -488,28 +521,48 @@ namespace GUILayer.ChildForm
             title2.Text = "Doanh thu từng tháng";
             this.chartDoanhThu.Titles.Add(title2);
             // 
-            // txtSearch
+            // TPDuDoan
             // 
-            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.Location = new System.Drawing.Point(51, 513);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(100, 21);
-            this.txtSearch.TabIndex = 62;
-            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            this.TPDuDoan.Controls.Add(this.lblPhuongTrinh);
+            this.TPDuDoan.Controls.Add(this.chartDuDoan);
+            this.TPDuDoan.Location = new System.Drawing.Point(4, 25);
+            this.TPDuDoan.Name = "TPDuDoan";
+            this.TPDuDoan.Padding = new System.Windows.Forms.Padding(3);
+            this.TPDuDoan.Size = new System.Drawing.Size(1033, 573);
+            this.TPDuDoan.TabIndex = 3;
+            this.TPDuDoan.Text = "Dự đoán doanh thu";
+            this.TPDuDoan.UseVisualStyleBackColor = true;
+            this.TPDuDoan.Enter += new System.EventHandler(this.TPDuDoan_Enter);
             // 
-            // iconPictureBox1
+            // lblPhuongTrinh
             // 
-            this.iconPictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.iconPictureBox1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.Search;
-            this.iconPictureBox1.IconColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox1.IconSize = 25;
-            this.iconPictureBox1.Location = new System.Drawing.Point(26, 512);
-            this.iconPictureBox1.Name = "iconPictureBox1";
-            this.iconPictureBox1.Size = new System.Drawing.Size(25, 25);
-            this.iconPictureBox1.TabIndex = 63;
-            this.iconPictureBox1.TabStop = false;
+            this.lblPhuongTrinh.AutoSize = true;
+            this.lblPhuongTrinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPhuongTrinh.Location = new System.Drawing.Point(154, 525);
+            this.lblPhuongTrinh.Name = "lblPhuongTrinh";
+            this.lblPhuongTrinh.Size = new System.Drawing.Size(46, 29);
+            this.lblPhuongTrinh.TabIndex = 16;
+            this.lblPhuongTrinh.Text = "xxx";
+            // 
+            // chartDuDoan
+            // 
+            chartArea3.Name = "ChartDuDoan";
+            this.chartDuDoan.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chartDuDoan.Legends.Add(legend3);
+            this.chartDuDoan.Location = new System.Drawing.Point(72, -12);
+            this.chartDuDoan.Name = "chartDuDoan";
+            series3.ChartArea = "ChartDuDoan";
+            series3.Legend = "Legend1";
+            series3.Name = "Doanh thu";
+            this.chartDuDoan.Series.Add(series3);
+            this.chartDuDoan.Size = new System.Drawing.Size(893, 532);
+            this.chartDuDoan.TabIndex = 1;
+            this.chartDuDoan.Text = "Doanh thu ";
+            title3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            title3.Name = "TitleDoanhThu";
+            title3.Text = "Dự đoán doanh thu từng ngày";
+            this.chartDuDoan.Titles.Add(title3);
             // 
             // FormThongKe
             // 
@@ -522,6 +575,7 @@ namespace GUILayer.ChildForm
             this.TCThongKe.ResumeLayout(false);
             this.TPLichSuBill.ResumeLayout(false);
             this.TPLichSuBill.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBill)).EndInit();
             this.TPSoLieu.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
@@ -535,7 +589,9 @@ namespace GUILayer.ChildForm
             ((System.ComponentModel.ISupportInitialize)(this.iconDBHoaDon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartSanDV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartDoanhThu)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
+            this.TPDuDoan.ResumeLayout(false);
+            this.TPDuDoan.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartDuDoan)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -577,5 +633,8 @@ namespace GUILayer.ChildForm
         private System.Windows.Forms.Button btnSan;
         private System.Windows.Forms.TextBox txtSearch;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
+        private System.Windows.Forms.TabPage TPDuDoan;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartDuDoan;
+        private System.Windows.Forms.Label lblPhuongTrinh;
     }
 }
