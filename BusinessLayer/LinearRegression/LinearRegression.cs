@@ -6,7 +6,7 @@ namespace BusinessLayer.LinearRegression
 {
     public class LinearRegression
     {
-        private readonly IEnumerable<double> _AverageCustomer;
+        private readonly double[] _AverageCustomer;
         private readonly IEnumerable<PricePerCustomer> _PricePerCustomer;
         private readonly double avgX;
         private readonly double avgY;
@@ -36,12 +36,10 @@ namespace BusinessLayer.LinearRegression
         {
             CalculateCoefficient(out double a, out double b);
             double[] predict = new double[7];
-            int i = 0;
-            foreach (double avg in _AverageCustomer)
+            for(int i = 0; i < 7; i++)
             {
-                if (avg == 0) predict[i] = 0;
-                else predict[i] = Math.Round(avg * a + b);
-                i++;
+                if (_AverageCustomer[i] == 0) predict[i] = 0;
+                else predict[i] = Math.Round(_AverageCustomer[i] * a + b);
             }
             return predict;
         }

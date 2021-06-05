@@ -4,9 +4,6 @@ using BusinessLayer.LinearRegression;
 using GUILayer.ChildForm.SubForm;
 using System;
 using System.Windows.Forms;
-using System.Collections.Generic;
-using System.Linq;
-using System.Drawing;
 
 namespace GUILayer.ChildForm
 {

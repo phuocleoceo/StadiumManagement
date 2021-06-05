@@ -10,8 +10,9 @@ namespace BusinessLayer.LinearRegression
     public class GetData : Repository<Bill>
     {
         // Số khách trung bình mỗi ngày(thứ) trong tuần
-        public IEnumerable<double> GetAverageCustomer()
+        public double[] GetAverageCustomer()
         {
+            double[] result = new double[7];
             IEnumerable<Bill> listBill = GetAll(c => c.BillStatus == BillStatus.Purchased);
             for (int i = 0; i < 7; i++)
             {
@@ -19,11 +20,10 @@ namespace BusinessLayer.LinearRegression
                                                           == (DayOfWeek)i);                //0 : Sunday
                 int totalRecord = listBillPerDOW.GroupBy(c => c.BillCode).Count();
                 int totalDay = listBillPerDOW.GroupBy(c => c.DateCheckedOut.Value.Date).Count();
-                if (totalDay == 0) totalDay = 1; //totalRecord va totalDay deu bang 0
-                // Cùng ngày nhưng khác giờ thì tính thành 2 => Chỉ lấy Date
-                //int totalDay = listBillPerDOW.Select(c => c.c.DateCheckedOut.Value.Date).Distinct().Count();
-                yield return (double)totalRecord / totalDay;
+                if (totalRecord == 0) result[i] = 0;
+                else result[i] = (double)totalRecord / totalDay;
             }
+            return result;
         }
 
         // Trong mỗi ngày, có bao nhiêu khách và doanh thu bao nhiêu
