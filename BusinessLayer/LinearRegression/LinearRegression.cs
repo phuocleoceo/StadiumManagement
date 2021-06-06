@@ -36,7 +36,7 @@ namespace BusinessLayer.LinearRegression
         {
             CalculateCoefficient(out double a, out double b);
             double[] predict = new double[7];
-            for(int i = 0; i < 7; i++)
+            for (int i = 0; i < 7; i++)
             {
                 if (_AverageCustomer[i] == 0) predict[i] = 0;
                 else predict[i] = Math.Round(_AverageCustomer[i] * a + b);

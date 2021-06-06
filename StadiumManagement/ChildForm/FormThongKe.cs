@@ -1,6 +1,6 @@
 ﻿using BusinessLayer;
-using BusinessLayer.Repository;
 using BusinessLayer.LinearRegression;
+using BusinessLayer.Repository;
 using GUILayer.ChildForm.SubForm;
 using System;
 using System.Windows.Forms;
@@ -134,7 +134,9 @@ namespace GUILayer.ChildForm
             _lr.CalculateCoefficient(out double a, out double b);
             a = Math.Round(a);
             b = Math.Round(b);
-            lblPhuongTrinh.Text = $"Phương trình hồi quy : Doanh Thu = Số Khách * {a} + {b}";
+            string preOperator = (b < 0) ? "-" : "+";
+            if (b < 0) b *= (-1);
+            lblPhuongTrinh.Text = $@"Phương trình hồi quy : Doanh Thu = Số Khách * {a} {preOperator} {b}";
         }
         private void DuDoanDoanhThu()
         {

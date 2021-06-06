@@ -3,7 +3,6 @@ using DataAccessLayer.Enums;
 using DataAccessLayer.Models;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
@@ -75,6 +74,21 @@ namespace BusinessLayer.Repository
             Save();
         }
 
+        //Kiểm tra còn sân nào chưa sử dụng xong không
+        public string UnFinishedStadium(int Bill_Id)
+        {
+            StringBuilder sb = new StringBuilder();
+            List<RentOrder> listRO = GetById(Bill_Id).RentOrders;
+            foreach (RentOrder ro in listRO)
+            {
+                if (ro.EndRentDate > DateTime.Now)
+                {
+                    sb.AppendLine($"- {ro.Stadium.Name}");
+                }
+            }
+            return sb.ToString();
+        }
+
         public void DeleteBill(int Bill_Id)
         {
             Remove(Bill_Id);
@@ -97,17 +111,17 @@ namespace BusinessLayer.Repository
             content.Append($"\t\t\t\t\tThu ngan : {b.Cashier.Name}\n");
             //Thue san
             content.Append("\n_______________________________________San the thao thue :______________________________________\n\n");
-            content.Append($"{"Ten san",15}\t\t{"Don gia",7}\t{"Bat dau thue",22}\t{"Ket thuc thue",22}\t{"Tong cong",9}\t{"Tien coc",8}\n");
+            content.Append($"{"Ten san",13}\t\t{"Don gia",7}\t{"Bat dau thue",22}\t{"Ket thuc thue",22}\t{"Tong cong",9}\t{"Tien coc",8}\n");
             foreach (RentOrder ro in b.RentOrders)
             {
-                content.Append($"{ro.Stadium.Name,15}\t{ro.Stadium.Price,7}\t{ro.StartRentDate,22}\t{ro.EndRentDate,22}\t{ro.Total,9}\t{ro.Deposit,8}\n");
+                content.Append($"{ro.Stadium.Name,13}\t\t{ro.Stadium.Price,7}\t{ro.StartRentDate,22}\t{ro.EndRentDate,22}\t{ro.Total,9}\t{ro.Deposit,8}\n");
             }
             //Dich vu
             content.Append("\n_______________________________________Su dung dich vu  :_______________________________________\n\n");
-            content.Append($"\t\t{"Ten dich vu",15}\t\t{"Don gia",7}\t\t{"So luong",8}\t{"Tong cong",9}\n");
+            content.Append($"\t\t{"Ten dich vu",26}\t\t{"Don gia",7}\t\t{"So luong",8}\t{"Tong cong",9}\n");
             foreach (ServiceOrder so in b.ServiceOrders)
             {
-                content.Append($"\t\t{so.Service.Name,15}\t\t{so.Service.Price,7}\t\t{so.Count,8}\t\t{so.Total,9}\n");
+                content.Append($"\t\t{so.Service.Name,26}\t\t{so.Service.Price,7}\t\t{so.Count,8}\t\t{so.Total,9}\n");
             }
             //Tong ket
             content.Append("\n_______________________________________Tong thanh toan :________________________________________\n\n");

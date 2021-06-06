@@ -11,7 +11,7 @@ namespace BusinessLayer
         ListSortDirection sortDirectionValue;
         PropertyDescriptor sortPropertyValue;
 
-        public SortableBindingList(){}
+        public SortableBindingList() { }
 
         public SortableBindingList(IEnumerable<T> list)
         {

@@ -9,7 +9,7 @@ namespace BusinessLayer.Repository
     {
         public IEnumerable<ServiceVM> GetList(string ServiceName)
         {
-            IEnumerable<Service> list = GetAll(c => c.isDeleted == false 
+            IEnumerable<Service> list = GetAll(c => c.isDeleted == false
                                             && c.Name.Contains(ServiceName));
             foreach (Service s in list)
             {

@@ -4,7 +4,6 @@ using BusinessLayer.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace GUILayer.ChildForm.SubForm

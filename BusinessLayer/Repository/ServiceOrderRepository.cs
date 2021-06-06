@@ -9,7 +9,7 @@ namespace BusinessLayer.Repository
     {
         public IEnumerable<ServiceOrderVM> GetList(int Bill_Id, string ServiceName)
         {
-            IEnumerable<ServiceOrder> list = GetAll(c => c.Bill_Id == Bill_Id 
+            IEnumerable<ServiceOrder> list = GetAll(c => c.Bill_Id == Bill_Id
                                                 && c.Service.Name.Contains(ServiceName));
             foreach (ServiceOrder s in list)
             {

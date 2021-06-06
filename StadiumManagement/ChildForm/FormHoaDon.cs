@@ -4,7 +4,6 @@ using BusinessLayer.ViewModels;
 using GUILayer.ChildForm.SubForm;
 using System;
 using System.Drawing;
-using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using static GUILayer.AlertType;
@@ -150,18 +149,33 @@ namespace GUILayer.ChildForm
             if (r.Count == 1)
             {
                 _Bill_Id = Convert.ToInt32(r[0].Cells["Id"].Value);
-                if (MessageBox.Show("In hoá đơn không ?", "Cân nhắc !", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                string SanChuaSuDungXong = _db.UnFinishedStadium(_Bill_Id);
+                if (SanChuaSuDungXong.Length == 0)
                 {
-                    PrintBill();
+                    ThanhToan();
                 }
-                _db.PurchaseBill(_Bill_Id);
-                new FormAlert("Thanh toán thành công", Success);
-                LoadData();
+                else if (MessageBox.Show($"Các sân sau chưa sử dụng xong :\r\n{SanChuaSuDungXong}\nVẫn xác nhận thanh toán ?",
+                        "Cân nhắc !", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                {
+                    ThanhToan();
+                }
             }
             else
             {
                 new FormAlert("Chưa chọn hoá đơn !", Warning);
             }
+        }
+
+        private void ThanhToan()
+        {
+            if (MessageBox.Show("In hoá đơn không ?", "Cân nhắc !",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+            {
+                PrintBill();
+            }
+            _db.PurchaseBill(_Bill_Id);
+            new FormAlert("Thanh toán thành công", Success);
+            LoadData();
         }
 
         private void PrintBill()

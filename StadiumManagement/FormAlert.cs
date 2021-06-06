@@ -94,7 +94,7 @@ namespace GUILayer
                     break;
                 }
             }
-            this.x = Screen.PrimaryScreen.WorkingArea.Width - base.Width - 5;            
+            this.x = Screen.PrimaryScreen.WorkingArea.Width - base.Width - 5;
 
             this.lblMsg.Text = msg;
             this.Show();
