@@ -50,25 +50,29 @@ namespace GUILayer.ChildForm
 
         private void btnXacNhanDoiMK_Click(object sender, EventArgs e)
         {
-            if (txtMKMoi.Text == txtXacNhanMK.Text)
+            int id = ac.Id;
+            string oldPW = txtMKCu.Text;
+            string newPW = txtMKMoi.Text;
+            string newConfirmPW = txtXacNhanMK.Text;
+            if (newPW != newConfirmPW)
             {
-                int id = ac.Id;
-                string oldPW = txtMKCu.Text;
-                string newPW = txtMKMoi.Text;
-                if (_db.CheckPassword(id, oldPW))
-                {
-                    _db.ChangePassword(id, newPW);
-                    new FormAlert("Đổi mật khẩu thành công", Success);
-                    txtMKCu.Text = txtMKMoi.Text = txtXacNhanMK.Text = "";
-                }
-                else
-                {
-                    new FormAlert("Mật khẩu cũ không đúng !", Error);
-                }
+                new FormAlert("Xác nhận mật khẩu sai", Infor);
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(newPW))
+            {
+                new FormAlert("Mật khẩu không được là\nkhoảng trắng", Error);
+                return;
+            }
+            if (_db.CheckPassword(id, oldPW))
+            {
+                _db.ChangePassword(id, newPW);
+                new FormAlert("Đổi mật khẩu thành công", Success);
+                txtMKCu.Text = txtMKMoi.Text = txtXacNhanMK.Text = "";
             }
             else
             {
-                new FormAlert("Xác nhận mật khẩu sai !", Infor);
+                new FormAlert("Mật khẩu cũ không đúng !", Error);
             }
         }
 
