@@ -72,7 +72,7 @@ namespace GUILayer
             this.iconClose.IconChar = FontAwesome.Sharp.IconChar.WindowClose;
             this.iconClose.IconColor = System.Drawing.Color.Black;
             this.iconClose.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconClose.Location = new System.Drawing.Point(360, -1);
+            this.iconClose.Location = new System.Drawing.Point(332, 0);
             this.iconClose.Name = "iconClose";
             this.iconClose.Size = new System.Drawing.Size(54, 85);
             this.iconClose.TabIndex = 3;
@@ -83,7 +83,7 @@ namespace GUILayer
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.Highlight;
-            this.ClientSize = new System.Drawing.Size(415, 85);
+            this.ClientSize = new System.Drawing.Size(387, 85);
             this.Controls.Add(this.iconClose);
             this.Controls.Add(this.iconAlert);
             this.Controls.Add(this.lblMsg);

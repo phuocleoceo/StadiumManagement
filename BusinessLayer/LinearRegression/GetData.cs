@@ -18,10 +18,10 @@ namespace BusinessLayer.LinearRegression
             {
                 IEnumerable<Bill> listBillPerDOW = listBill.Where(c => c.DateCheckedOut.Value.DayOfWeek
                                                           == (DayOfWeek)i);                //0 : Sunday
-                int totalRecord = listBillPerDOW.GroupBy(c => c.BillCode).Count();
-                int totalDay = listBillPerDOW.GroupBy(c => c.DateCheckedOut.Value.Date).Count();
-                if (totalRecord == 0) result[i] = 0;
-                else result[i] = (double)totalRecord / totalDay;
+                int totalCus = listBillPerDOW.Count();
+                int totalDate = listBillPerDOW.GroupBy(c => c.DateCheckedOut.Value.Date).Count();
+                if (totalCus == 0) result[i] = 0;
+                else result[i] = (double)totalCus / totalDate;
             }
             return result;
         }

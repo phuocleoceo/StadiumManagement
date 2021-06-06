@@ -42,9 +42,9 @@ namespace BusinessLayer.ViewModels
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         {
             if (StartRentDate <= DateTime.Now)
-                yield return new ValidationResult("Giờ thuê không được sớm hơn hiện tại");
+                yield return new ValidationResult("Giờ thuê không được sớm hơn\nhiện tại");
             if (EndRentDate <= StartRentDate)
-                yield return new ValidationResult("Giờ trả không được sớm hơn giờ thuê");
+                yield return new ValidationResult("Giờ trả không được sớm hơn\ngiờ thuê");
         }
     }
 }
