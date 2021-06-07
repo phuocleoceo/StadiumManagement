@@ -25,10 +25,13 @@ namespace BusinessLayer.ViewModels
 
         [DisplayName("SĐT")]
         [Required(ErrorMessage = "SĐT không được để trống")]
+        [MaxLength(10, ErrorMessage = "SĐT không được quá 10 chữ số")]
         public string PhoneNumber { get; set; }
 
         [DisplayName("CMND")]
         [Required(ErrorMessage = "CMND không được để trống")]
+        [MinLength(9, ErrorMessage = "CMND phải gồm 9 chữ số")]
+        [MaxLength(9, ErrorMessage = "CMND phải gồm 9 chữ số")]
         public string IdentityCard { get; set; }
 
         [DisplayName("Lương")]

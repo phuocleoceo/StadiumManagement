@@ -21,7 +21,7 @@ namespace BusinessLayer.ViewModels
 
         [DisplayName("SĐT")]
         [Required(ErrorMessage = "SĐT không được để trống")]
-        [MaxLength(10)]
+        [MaxLength(10, ErrorMessage = "SĐT không được quá 10 chữ số")]
         public string PhoneNumber { get; set; }
     }
 }

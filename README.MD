@@ -99,17 +99,25 @@ You still need to install these things first:
    ```sh
    git clone https://github.com/phuocleoceo/StadiumManagement
    ```
-3. Open solution file with Visual Studio and follow these steps : 
+3. Add your connection string in App.config (GUI, BUS, DAL): 
+	```sh
+  <add name="DefaultCNS" connectionString="{Your CNS};MultipleActiveResultSets=true;" providerName="System.Data.SqlClient" />
+   ```
+4. Edit connection string name in StadiumContext.cs (DAL): 
+	```sh
+  public StadiumContext() : base("name=DefaultCNS") { }
+   ```
+5. Open solution file with Visual Studio and follow these steps : 
    ```
    Tools -> NuGet Package Manager -> Package Manager Console
    ```
-4. Type this command then Enter to migrate the database
+6. Type this command then Enter to migrate the database
    ```sh
     update-database
    ```
-5. Build and use the application with default Account : 
+7. Build and use the application with default Account : 
 	```sh
-    Username : admin
+  Username : admin
 	Password : 1
    ```
 
@@ -122,7 +130,7 @@ You still need to install these things first:
     <br/>
     ![image_login](https://scontent-hkg4-1.xx.fbcdn.net/v/t1.6435-9/195736060_814940409147226_2029524974074936563_n.jpg?_nc_cat=108&ccb=1-3&_nc_sid=0debeb&_nc_ohc=R1TbFeGjcXAAX_XEpua&_nc_ht=scontent-hkg4-1.xx&oh=aa88034d45dc65998df4a31d85e16c6d&oe=60E49834)
     
-**2. Control Form**
+**2. Home Screen**
     <br/>
     <br/>
     ![image_control](https://scontent.fdad3-3.fna.fbcdn.net/v/t1.6435-9/195874634_814940479147219_4303966792492402157_n.jpg?_nc_cat=101&ccb=1-3&_nc_sid=0debeb&_nc_ohc=AhlYGyRTunkAX9E1i-W&_nc_ht=scontent.fdad3-3.fna&oh=2ffde635824c6a3ee88c4ad448835e6a&oe=60E28DA0)
@@ -146,7 +154,7 @@ You still need to install these things first:
 **5. Customer Form**
     <br/>
     <br/>
-    ![image_customer](https://scontent-hkg4-2.xx.fbcdn.net/v/t1.6435-9/196709792_814940545813879_7640919019193175107_n.jpg?_nc_cat=109&ccb=1-3&_nc_sid=0debeb&_nc_ohc=VmHE-0H8cj4AX-0mSBH&tn=LmsjCjdx2PD-F9Wv&_nc_ht=scontent-hkg4-2.xx&oh=8a5eeacc7eae30256ae2b9091afb397e&oe=60E446A9)
+    ![image_customer](https://scontent-hkg4-2.xx.fbcdn.net/v/t1.6435-9/196958863_814940589147208_1679152574939243695_n.jpg?_nc_cat=109&ccb=1-3&_nc_sid=0debeb&_nc_ohc=hpjePvedIkkAX90lESp&_nc_oc=AQmELHnp-Hblm-9UBjPLqI5L_s3TFF11DcSiT-LoSwEoQSdMYHRWNnfG6MdktvzIor1DUW3Upe4JZU9OuKXl1gOd&_nc_ht=scontent-hkg4-2.xx&oh=bc603b873cdbb61318cc05a9c447aa77&oe=60E3CA02)
     
 **6. Bill Form**
     <br/>
@@ -161,7 +169,7 @@ You still need to install these things first:
     <br/>
     ![image_serviceorder](https://scontent-hkg4-1.xx.fbcdn.net/v/t1.6435-9/193989042_814940622480538_7967961522847868338_n.jpg?_nc_cat=103&ccb=1-3&_nc_sid=0debeb&_nc_ohc=UaQUVNu4k6UAX90J7w0&_nc_ht=scontent-hkg4-1.xx&oh=222f67cda96cc3bf54f19748c53e51a8&oe=60E31AE5)
     
-**8. Print Bill**
+**8. Bill Printing**
     <br/>
     <br/>
     ![image_print](https://scontent.fdad3-3.fna.fbcdn.net/v/t1.6435-9/196645051_814940735813860_6052191270681388999_n.jpg?_nc_cat=100&ccb=1-3&_nc_sid=0debeb&_nc_ohc=O2NPAU6bw5QAX_DFpaS&_nc_ht=scontent.fdad3-3.fna&oh=25545ab27430b1de01a0f51b92a5fd8f&oe=60E16E40)
@@ -187,7 +195,7 @@ You still need to install these things first:
     <br/>
     ![image_alert](https://scontent-hkg4-1.xx.fbcdn.net/v/t1.6435-9/193941902_814940725813861_4694572823386304395_n.jpg?_nc_cat=106&ccb=1-3&_nc_sid=0debeb&_nc_ohc=pQd8jEr4FkwAX-QhGUE&_nc_oc=AQnpuBkf0CznUKXJPKNw_xHQUawRy0XcN5DTxN-gBvsg8Y_C7MNrTZmotZhqZ5djKz73Y9qN3BZ211uy82ca32Pf&_nc_ht=scontent-hkg4-1.xx&oh=6e61542db227d86fddb7d8b011404bb4&oe=60E2192F)
 
-**12. Sorting data by clicking the column header (SortableBindingList)**
+**12. Sorting data by clicking the column header (SortableBindingList<T>)**
     <br/>
     <br/>
     ![image_sort](https://scontent-hkg4-2.xx.fbcdn.net/v/t1.6435-9/195321683_814940665813867_282083044151868099_n.jpg?_nc_cat=110&ccb=1-3&_nc_sid=0debeb&_nc_ohc=UPcmS5nI5PIAX8ciW9w&_nc_ht=scontent-hkg4-2.xx&oh=249afb05c6109571410cd9e0d87e1019&oe=60E256B4)
@@ -236,7 +244,7 @@ Project Link : [Stadium Management](https://github.com/phuocleoceo/StadiumManage
 * [Beautiful Alert](https://www.youtube.com/watch?v=QTWKUkiEqpQ)
 * [Chart in WF](https://www.youtube.com/watch?v=gqo2TGpCOlA)
 * [StackoverFlow](https://stackoverflow.com/)
-* [Choose an Open Source License](https://choosealicense.com)
+* [Open Source License](https://choosealicense.com)
 * [Font Awesome](https://fontawesome.com)
 
 

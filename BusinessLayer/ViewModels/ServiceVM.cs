@@ -9,6 +9,7 @@ namespace BusinessLayer.ViewModels
 
         [DisplayName("Tên sân")]
         [Required(ErrorMessage = "Tên không được để trống")]
+        [MaxLength(26, ErrorMessage = "Tên không được dài quá 26 kí tự")]
         public string Name { get; set; }
 
         [DisplayName("Đơn giá")]

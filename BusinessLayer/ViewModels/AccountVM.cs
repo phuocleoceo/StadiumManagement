@@ -15,7 +15,6 @@ namespace BusinessLayer.ViewModels
         public string UserName { get; set; }
 
         [Browsable(false)]
-        [Required(ErrorMessage = "Mật khẩu không được để trống")]
         public string PassWord { get; set; }
 
         [DisplayName("Vai trò")]
