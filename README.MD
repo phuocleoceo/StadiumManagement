@@ -99,25 +99,17 @@ You still need to install these things first:
    ```sh
    git clone https://github.com/phuocleoceo/StadiumManagement
    ```
-3. Add your connection string in App.config (GUI, BUS, DAL): 
-	```sh
-  <add name="DefaultCNS" connectionString="{Your CNS};MultipleActiveResultSets=true;" providerName="System.Data.SqlClient" />
-   ```
-4. Edit connection string name in StadiumContext.cs (DAL): 
-	```sh
-  public StadiumContext() : base("name=DefaultCNS") { }
-   ```
-5. Open solution file with Visual Studio and follow these steps : 
+3. Open solution file with Visual Studio and follow these steps : 
    ```
    Tools -> NuGet Package Manager -> Package Manager Console
    ```
-6. Type this command then Enter to migrate the database
+4. Type this command then Enter to migrate the database
    ```sh
     update-database
    ```
-7. Build and use the application with default Account : 
+5. Build and use the application with default Account : 
 	```sh
-  Username : admin
+    Username : admin
 	Password : 1
    ```
 
@@ -154,7 +146,7 @@ You still need to install these things first:
 **5. Customer Form**
     <br/>
     <br/>
-    ![image_customer](https://scontent-hkg4-2.xx.fbcdn.net/v/t1.6435-9/196958863_814940589147208_1679152574939243695_n.jpg?_nc_cat=109&ccb=1-3&_nc_sid=0debeb&_nc_ohc=hpjePvedIkkAX90lESp&_nc_oc=AQmELHnp-Hblm-9UBjPLqI5L_s3TFF11DcSiT-LoSwEoQSdMYHRWNnfG6MdktvzIor1DUW3Upe4JZU9OuKXl1gOd&_nc_ht=scontent-hkg4-2.xx&oh=bc603b873cdbb61318cc05a9c447aa77&oe=60E3CA02)
+    ![image_customer](https://scontent-hkg4-1.xx.fbcdn.net/v/t1.6435-9/198012362_815103342464266_5760808713249926999_n.jpg?_nc_cat=105&ccb=1-3&_nc_sid=0debeb&_nc_ohc=b0U3GcmXsAgAX9zFk-b&_nc_ht=scontent-hkg4-1.xx&oh=110cb82c763ac3d02bd19550dacd88a8&oe=60E24F5D)
     
 **6. Bill Form**
     <br/>
@@ -244,7 +236,7 @@ Project Link : [Stadium Management](https://github.com/phuocleoceo/StadiumManage
 * [Beautiful Alert](https://www.youtube.com/watch?v=QTWKUkiEqpQ)
 * [Chart in WF](https://www.youtube.com/watch?v=gqo2TGpCOlA)
 * [StackoverFlow](https://stackoverflow.com/)
-* [Open Source License](https://choosealicense.com)
+* [Choose an Open Source License](https://choosealicense.com)
 * [Font Awesome](https://fontawesome.com)
 
 
