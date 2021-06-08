@@ -7,6 +7,8 @@ using System;
 using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using MaterialSkin;
+using MaterialSkin.Controls;
 
 namespace GUILayer
 {
@@ -18,18 +20,9 @@ namespace GUILayer
         public FormControl()
         {
             InitializeComponent();
+            InitializeUI();
             Authorization();
-            leftBorderBtn = new Panel();
-            leftBorderBtn.Size = new Size(7, 50);
-            PanelMenu.Controls.Add(leftBorderBtn);
-            timer.Start();//dong ho
-            //Form
-            this.Text = string.Empty;
-            this.ControlBox = false;
-            this.DoubleBuffered = true;
-            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
-            //RoundCorner
-            this.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 40, 40));
+            SettupMaterialSkin();
         }
 
         #region Authorization
@@ -44,6 +37,34 @@ namespace GUILayer
             }
             lblUserName.Text = currentAcc.UserName;
             picLogo.Image = currentAcc.Image.ByteArrayToImage();
+        }
+        #endregion
+
+        #region InitializeUI
+        private void InitializeUI()
+        {
+            leftBorderBtn = new Panel();
+            leftBorderBtn.Size = new Size(7, 50);
+            PanelMenu.Controls.Add(leftBorderBtn);
+            timer.Start();//dong ho
+            //Form
+            this.Text = string.Empty;
+            this.ControlBox = false;
+            this.DoubleBuffered = true;
+            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+            //RoundCorner
+            this.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 40, 40));
+        }
+        #endregion
+
+        #region MaterialSkin
+        private void SettupMaterialSkin()
+        {
+            MaterialSkinManager materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.ROBOTO_REGULAR_11 = new Font("Microsoft Sans Serif", 12f, FontStyle.Regular);
+            materialSkinManager.ROBOTO_MEDIUM_12 = new Font("Microsoft Sans Serif", 12f, FontStyle.Regular);
+            materialSkinManager.ROBOTO_MEDIUM_11 = new Font("Microsoft Sans Serif", 12f, FontStyle.Regular);
+            //materialSkinManager.ROBOTO_MEDIUM_10 = new Font("Microsoft Sans Serif", 12f, FontStyle.Regular);
         }
         #endregion
 
@@ -134,6 +155,7 @@ namespace GUILayer
             childForm.BringToFront();
             childForm.Show();
             lblCurrentForm.Text = childForm.Text;
+            childForm.BackColor = Color.WhiteSmoke;
         }
 
         private void Reset()

@@ -36,10 +36,15 @@ namespace BusinessLayer
             dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgv.AllowUserToAddRows = false;
 
-            //dgv.BorderStyle = BorderStyle.None;
+            dgv.BorderStyle = BorderStyle.None;
+            dgv.RowHeadersVisible = false;
+            dgv.AllowUserToResizeRows = false;
+
+            dgv.GridColor = Color.Gainsboro;
+            dgv.BackgroundColor = Color.WhiteSmoke;
             dgv.DefaultCellStyle.Font = new Font("Cambria", 12);
             dgv.DefaultCellStyle.ForeColor = Color.Black;
-            dgv.DefaultCellStyle.BackColor = Color.WhiteSmoke;
+            dgv.DefaultCellStyle.BackColor = Color.White;
             dgv.DefaultCellStyle.SelectionForeColor = Color.White;
             dgv.DefaultCellStyle.SelectionBackColor = Color.LightPink;
             dgv.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;

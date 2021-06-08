@@ -30,21 +30,21 @@ namespace GUILayer.ChildForm
         private void InitializeComponent()
         {
             this.dgvDSTK = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtTenTaiKhoan = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.cbbVaiTro = new System.Windows.Forms.ComboBox();
-            this.btnClear = new System.Windows.Forms.Button();
-            this.btnXoa = new System.Windows.Forms.Button();
-            this.btnSua = new System.Windows.Forms.Button();
-            this.btnThem = new System.Windows.Forms.Button();
             this.grbThem = new System.Windows.Forms.GroupBox();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnOK = new System.Windows.Forms.Button();
             this.txtMatKhau = new System.Windows.Forms.TextBox();
             this.picTK = new System.Windows.Forms.PictureBox();
-            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.btnClear = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnXoa = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnSua = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnThem = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.txtSearch = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
+            this.txtTenTaiKhoan = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSTK)).BeginInit();
             this.grbThem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTK)).BeginInit();
@@ -55,106 +55,32 @@ namespace GUILayer.ChildForm
             // 
             this.dgvDSTK.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvDSTK.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDSTK.Location = new System.Drawing.Point(76, 194);
+            this.dgvDSTK.Location = new System.Drawing.Point(76, 199);
             this.dgvDSTK.Name = "dgvDSTK";
             this.dgvDSTK.Size = new System.Drawing.Size(844, 347);
             this.dgvDSTK.TabIndex = 2;
             this.dgvDSTK.SelectionChanged += new System.EventHandler(this.dgvDSTK_SelectionChanged);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(657, 61);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 20);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "Vai trò : ";
-            // 
-            // txtTenTaiKhoan
-            // 
-            this.txtTenTaiKhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenTaiKhoan.Location = new System.Drawing.Point(175, 58);
-            this.txtTenTaiKhoan.Name = "txtTenTaiKhoan";
-            this.txtTenTaiKhoan.Size = new System.Drawing.Size(241, 26);
-            this.txtTenTaiKhoan.TabIndex = 17;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(59, 58);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(117, 20);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "Tên tài khoản : ";
-            // 
             // cbbVaiTro
             // 
+            this.cbbVaiTro.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cbbVaiTro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbbVaiTro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbVaiTro.FormattingEnabled = true;
             this.cbbVaiTro.Items.AddRange(new object[] {
             "Admin",
             "Cashier"});
-            this.cbbVaiTro.Location = new System.Drawing.Point(730, 58);
+            this.cbbVaiTro.Location = new System.Drawing.Point(739, 58);
             this.cbbVaiTro.Name = "cbbVaiTro";
             this.cbbVaiTro.Size = new System.Drawing.Size(135, 28);
             this.cbbVaiTro.TabIndex = 18;
-            // 
-            // btnClear
-            // 
-            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(630, 119);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(66, 36);
-            this.btnClear.TabIndex = 25;
-            this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = true;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoa.Location = new System.Drawing.Point(513, 119);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(66, 36);
-            this.btnXoa.TabIndex = 22;
-            this.btnXoa.Text = "Xoá";
-            this.btnXoa.UseVisualStyleBackColor = true;
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
-            // 
-            // btnSua
-            // 
-            this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSua.Location = new System.Drawing.Point(400, 119);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(66, 36);
-            this.btnSua.TabIndex = 23;
-            this.btnSua.Text = "Sửa";
-            this.btnSua.UseVisualStyleBackColor = true;
-            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
-            // 
-            // btnThem
-            // 
-            this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThem.Location = new System.Drawing.Point(291, 119);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(66, 36);
-            this.btnThem.TabIndex = 24;
-            this.btnThem.Text = "Thêm";
-            this.btnThem.UseVisualStyleBackColor = true;
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // grbThem
             // 
             this.grbThem.Controls.Add(this.btnCancel);
             this.grbThem.Controls.Add(this.btnOK);
             this.grbThem.Controls.Add(this.txtMatKhau);
-            this.grbThem.Location = new System.Drawing.Point(400, 119);
+            this.grbThem.Location = new System.Drawing.Point(432, 108);
             this.grbThem.Name = "grbThem";
             this.grbThem.Size = new System.Drawing.Size(197, 100);
             this.grbThem.TabIndex = 26;
@@ -194,7 +120,6 @@ namespace GUILayer.ChildForm
             // 
             // picTK
             // 
-            this.picTK.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.picTK.Location = new System.Drawing.Point(488, 11);
             this.picTK.Name = "picTK";
             this.picTK.Size = new System.Drawing.Size(91, 91);
@@ -202,13 +127,81 @@ namespace GUILayer.ChildForm
             this.picTK.TabIndex = 56;
             this.picTK.TabStop = false;
             // 
+            // btnClear
+            // 
+            this.btnClear.BackColor = System.Drawing.SystemColors.Control;
+            this.btnClear.Depth = 0;
+            this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.Location = new System.Drawing.Point(656, 128);
+            this.btnClear.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Primary = true;
+            this.btnClear.Size = new System.Drawing.Size(71, 36);
+            this.btnClear.TabIndex = 63;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.BackColor = System.Drawing.SystemColors.Control;
+            this.btnXoa.Depth = 0;
+            this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoa.Location = new System.Drawing.Point(547, 128);
+            this.btnXoa.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Primary = true;
+            this.btnXoa.Size = new System.Drawing.Size(71, 36);
+            this.btnXoa.TabIndex = 64;
+            this.btnXoa.Text = "Xoá";
+            this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
+            // 
+            // btnSua
+            // 
+            this.btnSua.BackColor = System.Drawing.SystemColors.Control;
+            this.btnSua.Depth = 0;
+            this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSua.Location = new System.Drawing.Point(444, 128);
+            this.btnSua.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Primary = true;
+            this.btnSua.Size = new System.Drawing.Size(71, 36);
+            this.btnSua.TabIndex = 65;
+            this.btnSua.Text = "Sửa";
+            this.btnSua.UseVisualStyleBackColor = false;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
+            // 
+            // btnThem
+            // 
+            this.btnThem.BackColor = System.Drawing.SystemColors.Control;
+            this.btnThem.Depth = 0;
+            this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThem.Location = new System.Drawing.Point(340, 128);
+            this.btnThem.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Primary = true;
+            this.btnThem.Size = new System.Drawing.Size(71, 36);
+            this.btnThem.TabIndex = 66;
+            this.btnThem.Text = "Thêm";
+            this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            // 
             // txtSearch
             // 
-            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.Location = new System.Drawing.Point(820, 167);
+            this.txtSearch.Depth = 0;
+            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.Hint = "";
+            this.txtSearch.Location = new System.Drawing.Point(818, 168);
+            this.txtSearch.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(100, 21);
-            this.txtSearch.TabIndex = 60;
+            this.txtSearch.PasswordChar = '\0';
+            this.txtSearch.SelectedText = "";
+            this.txtSearch.SelectionLength = 0;
+            this.txtSearch.SelectionStart = 0;
+            this.txtSearch.Size = new System.Drawing.Size(102, 23);
+            this.txtSearch.TabIndex = 68;
+            this.txtSearch.UseSystemPasswordChar = false;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // iconPictureBox1
@@ -219,29 +212,72 @@ namespace GUILayer.ChildForm
             this.iconPictureBox1.IconColor = System.Drawing.SystemColors.ControlText;
             this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBox1.IconSize = 25;
-            this.iconPictureBox1.Location = new System.Drawing.Point(795, 166);
+            this.iconPictureBox1.Location = new System.Drawing.Point(787, 168);
             this.iconPictureBox1.Name = "iconPictureBox1";
             this.iconPictureBox1.Size = new System.Drawing.Size(25, 25);
-            this.iconPictureBox1.TabIndex = 61;
+            this.iconPictureBox1.TabIndex = 67;
             this.iconPictureBox1.TabStop = false;
+            // 
+            // materialLabel2
+            // 
+            this.materialLabel2.AutoSize = true;
+            this.materialLabel2.Depth = 0;
+            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel2.Location = new System.Drawing.Point(89, 62);
+            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel2.Name = "materialLabel2";
+            this.materialLabel2.Size = new System.Drawing.Size(108, 19);
+            this.materialLabel2.TabIndex = 70;
+            this.materialLabel2.Text = "Tên tài khoản :";
+            // 
+            // txtTenTaiKhoan
+            // 
+            this.txtTenTaiKhoan.Depth = 0;
+            this.txtTenTaiKhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenTaiKhoan.Hint = "";
+            this.txtTenTaiKhoan.Location = new System.Drawing.Point(203, 58);
+            this.txtTenTaiKhoan.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtTenTaiKhoan.Name = "txtTenTaiKhoan";
+            this.txtTenTaiKhoan.PasswordChar = '\0';
+            this.txtTenTaiKhoan.SelectedText = "";
+            this.txtTenTaiKhoan.SelectionLength = 0;
+            this.txtTenTaiKhoan.SelectionStart = 0;
+            this.txtTenTaiKhoan.Size = new System.Drawing.Size(200, 23);
+            this.txtTenTaiKhoan.TabIndex = 69;
+            this.txtTenTaiKhoan.UseSystemPasswordChar = false;
+            // 
+            // materialLabel1
+            // 
+            this.materialLabel1.AutoSize = true;
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel1.Location = new System.Drawing.Point(661, 62);
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            this.materialLabel1.Size = new System.Drawing.Size(66, 19);
+            this.materialLabel1.TabIndex = 70;
+            this.materialLabel1.Text = "Vai trò : ";
             // 
             // FormTaiKhoan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1041, 566);
+            this.Controls.Add(this.materialLabel1);
+            this.Controls.Add(this.materialLabel2);
+            this.Controls.Add(this.txtTenTaiKhoan);
+            this.Controls.Add(this.grbThem);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.iconPictureBox1);
-            this.Controls.Add(this.picTK);
-            this.Controls.Add(this.grbThem);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnSua);
             this.Controls.Add(this.btnThem);
+            this.Controls.Add(this.picTK);
             this.Controls.Add(this.cbbVaiTro);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtTenTaiKhoan);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvDSTK);
             this.Name = "FormTaiKhoan";
             this.Text = "Danh sách tài khoản";
@@ -258,20 +294,20 @@ namespace GUILayer.ChildForm
         #endregion
 
         private System.Windows.Forms.DataGridView dgvDSTK;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtTenTaiKhoan;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbbVaiTro;
-        private System.Windows.Forms.Button btnClear;
-        private System.Windows.Forms.Button btnXoa;
-        private System.Windows.Forms.Button btnSua;
-        private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.GroupBox grbThem;
         private System.Windows.Forms.TextBox txtMatKhau;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.PictureBox picTK;
-        private System.Windows.Forms.TextBox txtSearch;
+        private MaterialSkin.Controls.MaterialRaisedButton btnClear;
+        private MaterialSkin.Controls.MaterialRaisedButton btnXoa;
+        private MaterialSkin.Controls.MaterialRaisedButton btnSua;
+        private MaterialSkin.Controls.MaterialRaisedButton btnThem;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtSearch;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
+        private MaterialSkin.Controls.MaterialLabel materialLabel2;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtTenTaiKhoan;
+        private MaterialSkin.Controls.MaterialLabel materialLabel1;
     }
 }

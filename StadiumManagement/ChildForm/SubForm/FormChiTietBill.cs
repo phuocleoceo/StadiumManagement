@@ -39,7 +39,7 @@ namespace GUILayer.ChildForm.SubForm
         private void LoadRentOrder()
         {
             dgvSan.FormatTable();
-            dgvSan.DataSource = _rovm.ToList();
+            dgvSan.DataSource = _rovm.ToSortableBindingList();
             dgvSan.Columns["Id"].Visible = false;
             dgvSan.Columns["Bill_Code"].Visible = false;
             dgvSan.Columns["Stadium_Image"].Visible = false;
@@ -51,7 +51,7 @@ namespace GUILayer.ChildForm.SubForm
         private void LoadServiceOrder()
         {
             dgvDV.FormatTable();
-            dgvDV.DataSource = _sovm.ToList();
+            dgvDV.DataSource = _sovm.ToSortableBindingList();
             dgvDV.Columns["Id"].Visible = false;
             dgvDV.Columns["Bill_Code"].Visible = false;
             dgvDV.Columns["Service_Image"].Visible = false;

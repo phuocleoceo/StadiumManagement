@@ -29,25 +29,22 @@ namespace GUILayer.ChildForm
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea16 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend16 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series16 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title16 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea17 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend17 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series17 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title17 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea18 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend18 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series18 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title18 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.TCThongKe = new System.Windows.Forms.TabControl();
             this.TPLichSuBill = new System.Windows.Forms.TabPage();
-            this.txtSearch = new System.Windows.Forms.TextBox();
-            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.lblTongDoanhTHu = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnLoc = new System.Windows.Forms.Button();
             this.dtpToDate = new System.Windows.Forms.DateTimePicker();
             this.dtpFromDate = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
@@ -82,9 +79,11 @@ namespace GUILayer.ChildForm
             this.SoKhach = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblPhuongTrinh = new System.Windows.Forms.Label();
             this.chartDuDoan = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+            this.btnLoc = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.txtSearch = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.TCThongKe.SuspendLayout();
             this.TPLichSuBill.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBill)).BeginInit();
             this.TPSoLieu.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -98,6 +97,7 @@ namespace GUILayer.ChildForm
             this.TPDuDoan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhachTB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartDuDoan)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // TCThongKe
@@ -115,11 +115,12 @@ namespace GUILayer.ChildForm
             // 
             // TPLichSuBill
             // 
+            this.TPLichSuBill.BackColor = System.Drawing.Color.White;
             this.TPLichSuBill.Controls.Add(this.txtSearch);
+            this.TPLichSuBill.Controls.Add(this.btnLoc);
             this.TPLichSuBill.Controls.Add(this.iconPictureBox1);
             this.TPLichSuBill.Controls.Add(this.lblTongDoanhTHu);
             this.TPLichSuBill.Controls.Add(this.label3);
-            this.TPLichSuBill.Controls.Add(this.btnLoc);
             this.TPLichSuBill.Controls.Add(this.dtpToDate);
             this.TPLichSuBill.Controls.Add(this.dtpFromDate);
             this.TPLichSuBill.Controls.Add(this.label2);
@@ -131,36 +132,12 @@ namespace GUILayer.ChildForm
             this.TPLichSuBill.Size = new System.Drawing.Size(1033, 573);
             this.TPLichSuBill.TabIndex = 1;
             this.TPLichSuBill.Text = "Lịch sử hoá đơn";
-            this.TPLichSuBill.UseVisualStyleBackColor = true;
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.Location = new System.Drawing.Point(51, 519);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(100, 21);
-            this.txtSearch.TabIndex = 62;
-            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
-            // 
-            // iconPictureBox1
-            // 
-            this.iconPictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.iconPictureBox1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.Search;
-            this.iconPictureBox1.IconColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox1.IconSize = 25;
-            this.iconPictureBox1.Location = new System.Drawing.Point(26, 518);
-            this.iconPictureBox1.Name = "iconPictureBox1";
-            this.iconPictureBox1.Size = new System.Drawing.Size(25, 25);
-            this.iconPictureBox1.TabIndex = 63;
-            this.iconPictureBox1.TabStop = false;
             // 
             // lblTongDoanhTHu
             // 
             this.lblTongDoanhTHu.AutoSize = true;
             this.lblTongDoanhTHu.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTongDoanhTHu.Location = new System.Drawing.Point(540, 527);
+            this.lblTongDoanhTHu.Location = new System.Drawing.Point(540, 529);
             this.lblTongDoanhTHu.Name = "lblTongDoanhTHu";
             this.lblTongDoanhTHu.Size = new System.Drawing.Size(91, 31);
             this.lblTongDoanhTHu.TabIndex = 15;
@@ -170,28 +147,16 @@ namespace GUILayer.ChildForm
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(307, 527);
+            this.label3.Location = new System.Drawing.Point(307, 529);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(218, 31);
             this.label3.TabIndex = 15;
             this.label3.Text = "Tổng doanh thu :";
             // 
-            // btnLoc
-            // 
-            this.btnLoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLoc.Location = new System.Drawing.Point(483, 15);
-            this.btnLoc.Name = "btnLoc";
-            this.btnLoc.Size = new System.Drawing.Size(101, 41);
-            this.btnLoc.TabIndex = 14;
-            this.btnLoc.Text = "Lọc";
-            this.btnLoc.UseVisualStyleBackColor = true;
-            this.btnLoc.Click += new System.EventHandler(this.btnLoc_Click);
-            // 
             // dtpToDate
             // 
             this.dtpToDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpToDate.Location = new System.Drawing.Point(680, 22);
+            this.dtpToDate.Location = new System.Drawing.Point(673, 22);
             this.dtpToDate.Name = "dtpToDate";
             this.dtpToDate.Size = new System.Drawing.Size(310, 29);
             this.dtpToDate.TabIndex = 13;
@@ -199,7 +164,7 @@ namespace GUILayer.ChildForm
             // dtpFromDate
             // 
             this.dtpFromDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFromDate.Location = new System.Drawing.Point(122, 22);
+            this.dtpFromDate.Location = new System.Drawing.Point(132, 22);
             this.dtpFromDate.Name = "dtpFromDate";
             this.dtpFromDate.Size = new System.Drawing.Size(310, 29);
             this.dtpFromDate.TabIndex = 13;
@@ -208,7 +173,7 @@ namespace GUILayer.ChildForm
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(619, 25);
+            this.label2.Location = new System.Drawing.Point(612, 25);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 24);
             this.label2.TabIndex = 12;
@@ -218,7 +183,7 @@ namespace GUILayer.ChildForm
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(70, 26);
+            this.label1.Location = new System.Drawing.Point(80, 26);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(48, 24);
             this.label1.TabIndex = 12;
@@ -236,6 +201,7 @@ namespace GUILayer.ChildForm
             // 
             // TPSoLieu
             // 
+            this.TPSoLieu.BackColor = System.Drawing.Color.White;
             this.TPSoLieu.Controls.Add(this.btnDV);
             this.TPSoLieu.Controls.Add(this.btnSan);
             this.TPSoLieu.Controls.Add(this.panel3);
@@ -249,7 +215,6 @@ namespace GUILayer.ChildForm
             this.TPSoLieu.Size = new System.Drawing.Size(1033, 573);
             this.TPSoLieu.TabIndex = 2;
             this.TPSoLieu.Text = "Thống kê số liệu";
-            this.TPSoLieu.UseVisualStyleBackColor = true;
             this.TPSoLieu.Enter += new System.EventHandler(this.TPSoLieu_Enter);
             // 
             // btnDV
@@ -486,47 +451,48 @@ namespace GUILayer.ChildForm
             // 
             // chartSanDV
             // 
-            chartArea1.Name = "ChartSDVArea";
-            this.chartSanDV.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chartSanDV.Legends.Add(legend1);
+            chartArea16.Name = "ChartSDVArea";
+            this.chartSanDV.ChartAreas.Add(chartArea16);
+            legend16.Name = "Legend1";
+            this.chartSanDV.Legends.Add(legend16);
             this.chartSanDV.Location = new System.Drawing.Point(645, 182);
             this.chartSanDV.Name = "chartSanDV";
-            series1.ChartArea = "ChartSDVArea";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series1.Legend = "Legend1";
-            series1.Name = "SanDV";
-            this.chartSanDV.Series.Add(series1);
+            series16.ChartArea = "ChartSDVArea";
+            series16.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series16.Legend = "Legend1";
+            series16.Name = "SanDV";
+            this.chartSanDV.Series.Add(series16);
             this.chartSanDV.Size = new System.Drawing.Size(393, 389);
             this.chartSanDV.TabIndex = 0;
             this.chartSanDV.Text = "Sân được thuê";
-            title1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            title1.Name = "Title1";
-            title1.Text = "Thịnh hành";
-            this.chartSanDV.Titles.Add(title1);
+            title16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            title16.Name = "Title1";
+            title16.Text = "Thịnh hành";
+            this.chartSanDV.Titles.Add(title16);
             // 
             // chartDoanhThu
             // 
-            chartArea2.Name = "ChartDoanhThu";
-            this.chartDoanhThu.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chartDoanhThu.Legends.Add(legend2);
+            chartArea17.Name = "ChartDoanhThu";
+            this.chartDoanhThu.ChartAreas.Add(chartArea17);
+            legend17.Name = "Legend1";
+            this.chartDoanhThu.Legends.Add(legend17);
             this.chartDoanhThu.Location = new System.Drawing.Point(-17, 187);
             this.chartDoanhThu.Name = "chartDoanhThu";
-            series2.ChartArea = "ChartDoanhThu";
-            series2.Legend = "Legend1";
-            series2.Name = "Doanh thu";
-            this.chartDoanhThu.Series.Add(series2);
+            series17.ChartArea = "ChartDoanhThu";
+            series17.Legend = "Legend1";
+            series17.Name = "Doanh thu";
+            this.chartDoanhThu.Series.Add(series17);
             this.chartDoanhThu.Size = new System.Drawing.Size(686, 383);
             this.chartDoanhThu.TabIndex = 0;
             this.chartDoanhThu.Text = "Doanh thu ";
-            title2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            title2.Name = "TitleDoanhThu";
-            title2.Text = "Doanh thu từng tháng";
-            this.chartDoanhThu.Titles.Add(title2);
+            title17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            title17.Name = "TitleDoanhThu";
+            title17.Text = "Doanh thu từng tháng";
+            this.chartDoanhThu.Titles.Add(title17);
             // 
             // TPDuDoan
             // 
+            this.TPDuDoan.BackColor = System.Drawing.Color.White;
             this.TPDuDoan.Controls.Add(this.dgvKhachTB);
             this.TPDuDoan.Controls.Add(this.lblPhuongTrinh);
             this.TPDuDoan.Controls.Add(this.chartDuDoan);
@@ -536,7 +502,6 @@ namespace GUILayer.ChildForm
             this.TPDuDoan.Size = new System.Drawing.Size(1033, 573);
             this.TPDuDoan.TabIndex = 3;
             this.TPDuDoan.Text = "Dự đoán doanh thu";
-            this.TPDuDoan.UseVisualStyleBackColor = true;
             this.TPDuDoan.Enter += new System.EventHandler(this.TPDuDoan_Enter);
             // 
             // dgvKhachTB
@@ -574,23 +539,70 @@ namespace GUILayer.ChildForm
             // 
             // chartDuDoan
             // 
-            chartArea3.Name = "ChartDuDoan";
-            this.chartDuDoan.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chartDuDoan.Legends.Add(legend3);
+            chartArea18.Name = "ChartDuDoan";
+            this.chartDuDoan.ChartAreas.Add(chartArea18);
+            legend18.Name = "Legend1";
+            this.chartDuDoan.Legends.Add(legend18);
             this.chartDuDoan.Location = new System.Drawing.Point(55, -9);
             this.chartDuDoan.Name = "chartDuDoan";
-            series3.ChartArea = "ChartDuDoan";
-            series3.Legend = "Legend1";
-            series3.Name = "Doanh thu";
-            this.chartDuDoan.Series.Add(series3);
+            series18.ChartArea = "ChartDuDoan";
+            series18.Legend = "Legend1";
+            series18.Name = "Doanh thu";
+            this.chartDuDoan.Series.Add(series18);
             this.chartDuDoan.Size = new System.Drawing.Size(906, 532);
             this.chartDuDoan.TabIndex = 1;
             this.chartDuDoan.Text = "Doanh thu ";
-            title3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            title3.Name = "TitleDoanhThu";
-            title3.Text = "Dự đoán doanh thu từng ngày trong tuần";
-            this.chartDuDoan.Titles.Add(title3);
+            title18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            title18.Name = "TitleDoanhThu";
+            title18.Text = "Dự đoán doanh thu từng ngày trong tuần";
+            this.chartDuDoan.Titles.Add(title18);
+            // 
+            // iconPictureBox1
+            // 
+            this.iconPictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.iconPictureBox1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.Search;
+            this.iconPictureBox1.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox1.IconSize = 25;
+            this.iconPictureBox1.Location = new System.Drawing.Point(26, 522);
+            this.iconPictureBox1.Name = "iconPictureBox1";
+            this.iconPictureBox1.Size = new System.Drawing.Size(25, 25);
+            this.iconPictureBox1.TabIndex = 63;
+            this.iconPictureBox1.TabStop = false;
+            // 
+            // btnLoc
+            // 
+            this.btnLoc.BackColor = System.Drawing.SystemColors.Control;
+            this.btnLoc.Depth = 0;
+            this.btnLoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLoc.Location = new System.Drawing.Point(494, 15);
+            this.btnLoc.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnLoc.Name = "btnLoc";
+            this.btnLoc.Primary = true;
+            this.btnLoc.Size = new System.Drawing.Size(72, 40);
+            this.btnLoc.TabIndex = 64;
+            this.btnLoc.Text = "Lọc";
+            this.btnLoc.UseVisualStyleBackColor = false;
+            this.btnLoc.Click += new System.EventHandler(this.btnLoc_Click);
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Depth = 0;
+            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.Hint = "";
+            this.txtSearch.Location = new System.Drawing.Point(57, 524);
+            this.txtSearch.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.PasswordChar = '\0';
+            this.txtSearch.SelectedText = "";
+            this.txtSearch.SelectionLength = 0;
+            this.txtSearch.SelectionStart = 0;
+            this.txtSearch.Size = new System.Drawing.Size(102, 23);
+            this.txtSearch.TabIndex = 65;
+            this.txtSearch.UseSystemPasswordChar = false;
+            this.txtSearch.Click += new System.EventHandler(this.txtSearch_TextChanged);
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // FormThongKe
             // 
@@ -603,7 +615,6 @@ namespace GUILayer.ChildForm
             this.TCThongKe.ResumeLayout(false);
             this.TPLichSuBill.ResumeLayout(false);
             this.TPLichSuBill.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBill)).EndInit();
             this.TPSoLieu.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
@@ -621,6 +632,7 @@ namespace GUILayer.ChildForm
             this.TPDuDoan.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhachTB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartDuDoan)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -635,7 +647,6 @@ namespace GUILayer.ChildForm
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dtpToDate;
         private System.Windows.Forms.DateTimePicker dtpFromDate;
-        private System.Windows.Forms.Button btnLoc;
         private System.Windows.Forms.Label lblTongDoanhTHu;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartDoanhThu;
@@ -660,13 +671,14 @@ namespace GUILayer.ChildForm
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnDV;
         private System.Windows.Forms.Button btnSan;
-        private System.Windows.Forms.TextBox txtSearch;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private System.Windows.Forms.TabPage TPDuDoan;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartDuDoan;
         private System.Windows.Forms.Label lblPhuongTrinh;
         private System.Windows.Forms.DataGridView dgvKhachTB;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ngay;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoKhach;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
+        private MaterialSkin.Controls.MaterialRaisedButton btnLoc;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtSearch;
     }
 }

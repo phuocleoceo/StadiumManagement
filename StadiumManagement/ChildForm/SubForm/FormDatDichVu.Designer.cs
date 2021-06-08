@@ -30,23 +30,23 @@ namespace GUILayer.ChildForm.SubForm
         private void InitializeComponent()
         {
             this.dgvDV = new System.Windows.Forms.DataGridView();
-            this.btnClear = new System.Windows.Forms.Button();
-            this.btnXoa = new System.Windows.Forms.Button();
-            this.btnSua = new System.Windows.Forms.Button();
-            this.btnThem = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.NUDSoLuong = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtTongTien = new System.Windows.Forms.TextBox();
             this.picDV = new System.Windows.Forms.PictureBox();
             this.lblDichVu = new System.Windows.Forms.Label();
             this.lblGia = new System.Windows.Forms.Label();
-            this.txtHoaDon = new System.Windows.Forms.TextBox();
-            this.btnXacNhan = new System.Windows.Forms.Button();
-            this.txtSearch = new System.Windows.Forms.TextBox();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+            this.txtSearch = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txtHoaDon = new MaterialSkin.Controls.MaterialLabel();
+            this.txtTongTien = new MaterialSkin.Controls.MaterialLabel();
+            this.btnClear = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnXoa = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnSua = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnThem = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnXacNhan = new MaterialSkin.Controls.MaterialRaisedButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NUDSoLuong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDV)).BeginInit();
@@ -62,54 +62,6 @@ namespace GUILayer.ChildForm.SubForm
             this.dgvDV.Size = new System.Drawing.Size(1005, 348);
             this.dgvDV.TabIndex = 1;
             this.dgvDV.SelectionChanged += new System.EventHandler(this.dgvDV_SelectionChanged);
-            // 
-            // btnClear
-            // 
-            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(777, 116);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(66, 36);
-            this.btnClear.TabIndex = 6;
-            this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = true;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoa.Location = new System.Drawing.Point(680, 116);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(66, 36);
-            this.btnXoa.TabIndex = 7;
-            this.btnXoa.Text = "Xoá";
-            this.btnXoa.UseVisualStyleBackColor = true;
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
-            // 
-            // btnSua
-            // 
-            this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSua.Location = new System.Drawing.Point(575, 116);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(66, 36);
-            this.btnSua.TabIndex = 8;
-            this.btnSua.Text = "Sửa";
-            this.btnSua.UseVisualStyleBackColor = true;
-            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
-            // 
-            // btnThem
-            // 
-            this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThem.Location = new System.Drawing.Point(466, 116);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(66, 36);
-            this.btnThem.TabIndex = 9;
-            this.btnThem.Text = "Thêm";
-            this.btnThem.UseVisualStyleBackColor = true;
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // label2
             // 
@@ -143,10 +95,12 @@ namespace GUILayer.ChildForm.SubForm
             // 
             // NUDSoLuong
             // 
+            this.NUDSoLuong.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.NUDSoLuong.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.NUDSoLuong.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NUDSoLuong.Location = new System.Drawing.Point(540, 47);
+            this.NUDSoLuong.Location = new System.Drawing.Point(540, 53);
             this.NUDSoLuong.Name = "NUDSoLuong";
-            this.NUDSoLuong.Size = new System.Drawing.Size(162, 26);
+            this.NUDSoLuong.Size = new System.Drawing.Size(162, 22);
             this.NUDSoLuong.TabIndex = 53;
             this.NUDSoLuong.Value = new decimal(new int[] {
             1,
@@ -164,18 +118,9 @@ namespace GUILayer.ChildForm.SubForm
             this.label4.TabIndex = 49;
             this.label4.Text = "Tổng tiền : ";
             // 
-            // txtTongTien
-            // 
-            this.txtTongTien.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTongTien.Location = new System.Drawing.Point(852, 47);
-            this.txtTongTien.Name = "txtTongTien";
-            this.txtTongTien.ReadOnly = true;
-            this.txtTongTien.Size = new System.Drawing.Size(162, 26);
-            this.txtTongTien.TabIndex = 52;
-            // 
             // picDV
             // 
-            this.picDV.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picDV.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.picDV.Location = new System.Drawing.Point(154, 68);
             this.picDV.Name = "picDV";
             this.picDV.Size = new System.Drawing.Size(100, 100);
@@ -203,36 +148,6 @@ namespace GUILayer.ChildForm.SubForm
             this.lblGia.Size = new System.Drawing.Size(0, 17);
             this.lblGia.TabIndex = 57;
             // 
-            // txtHoaDon
-            // 
-            this.txtHoaDon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHoaDon.Location = new System.Drawing.Point(154, 26);
-            this.txtHoaDon.Name = "txtHoaDon";
-            this.txtHoaDon.ReadOnly = true;
-            this.txtHoaDon.Size = new System.Drawing.Size(173, 26);
-            this.txtHoaDon.TabIndex = 71;
-            // 
-            // btnXacNhan
-            // 
-            this.btnXacNhan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXacNhan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXacNhan.Location = new System.Drawing.Point(880, 116);
-            this.btnXacNhan.Name = "btnXacNhan";
-            this.btnXacNhan.Size = new System.Drawing.Size(93, 36);
-            this.btnXacNhan.TabIndex = 6;
-            this.btnXacNhan.Text = "Xác nhận";
-            this.btnXacNhan.UseVisualStyleBackColor = true;
-            this.btnXacNhan.Click += new System.EventHandler(this.btnXacNhan_Click);
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.Location = new System.Drawing.Point(918, 177);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(100, 21);
-            this.txtSearch.TabIndex = 72;
-            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
-            // 
             // iconPictureBox1
             // 
             this.iconPictureBox1.BackColor = System.Drawing.SystemColors.Control;
@@ -241,34 +156,153 @@ namespace GUILayer.ChildForm.SubForm
             this.iconPictureBox1.IconColor = System.Drawing.SystemColors.ControlText;
             this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBox1.IconSize = 25;
-            this.iconPictureBox1.Location = new System.Drawing.Point(893, 176);
+            this.iconPictureBox1.Location = new System.Drawing.Point(883, 176);
             this.iconPictureBox1.Name = "iconPictureBox1";
             this.iconPictureBox1.Size = new System.Drawing.Size(25, 25);
             this.iconPictureBox1.TabIndex = 73;
             this.iconPictureBox1.TabStop = false;
             // 
+            // txtSearch
+            // 
+            this.txtSearch.Depth = 0;
+            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.Hint = "";
+            this.txtSearch.Location = new System.Drawing.Point(916, 175);
+            this.txtSearch.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.PasswordChar = '\0';
+            this.txtSearch.SelectedText = "";
+            this.txtSearch.SelectionLength = 0;
+            this.txtSearch.SelectionStart = 0;
+            this.txtSearch.Size = new System.Drawing.Size(102, 23);
+            this.txtSearch.TabIndex = 74;
+            this.txtSearch.UseSystemPasswordChar = false;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            // 
+            // txtHoaDon
+            // 
+            this.txtHoaDon.AutoSize = true;
+            this.txtHoaDon.Depth = 0;
+            this.txtHoaDon.Font = new System.Drawing.Font("Roboto", 11F);
+            this.txtHoaDon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.txtHoaDon.Location = new System.Drawing.Point(150, 29);
+            this.txtHoaDon.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtHoaDon.Name = "txtHoaDon";
+            this.txtHoaDon.Size = new System.Drawing.Size(30, 19);
+            this.txtHoaDon.TabIndex = 75;
+            this.txtHoaDon.Text = "xxx";
+            // 
+            // txtTongTien
+            // 
+            this.txtTongTien.AutoSize = true;
+            this.txtTongTien.Depth = 0;
+            this.txtTongTien.Font = new System.Drawing.Font("Roboto", 11F);
+            this.txtTongTien.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.txtTongTien.Location = new System.Drawing.Point(849, 53);
+            this.txtTongTien.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtTongTien.Name = "txtTongTien";
+            this.txtTongTien.Size = new System.Drawing.Size(30, 19);
+            this.txtTongTien.TabIndex = 76;
+            this.txtTongTien.Text = "xxx";
+            // 
+            // btnClear
+            // 
+            this.btnClear.BackColor = System.Drawing.SystemColors.Control;
+            this.btnClear.Depth = 0;
+            this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.Location = new System.Drawing.Point(786, 116);
+            this.btnClear.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Primary = true;
+            this.btnClear.Size = new System.Drawing.Size(71, 36);
+            this.btnClear.TabIndex = 77;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.BackColor = System.Drawing.SystemColors.Control;
+            this.btnXoa.Depth = 0;
+            this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoa.Location = new System.Drawing.Point(679, 116);
+            this.btnXoa.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Primary = true;
+            this.btnXoa.Size = new System.Drawing.Size(71, 36);
+            this.btnXoa.TabIndex = 78;
+            this.btnXoa.Text = "Xoá";
+            this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
+            // 
+            // btnSua
+            // 
+            this.btnSua.BackColor = System.Drawing.SystemColors.Control;
+            this.btnSua.Depth = 0;
+            this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSua.Location = new System.Drawing.Point(577, 116);
+            this.btnSua.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Primary = true;
+            this.btnSua.Size = new System.Drawing.Size(71, 36);
+            this.btnSua.TabIndex = 79;
+            this.btnSua.Text = "Sửa";
+            this.btnSua.UseVisualStyleBackColor = false;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
+            // 
+            // btnThem
+            // 
+            this.btnThem.BackColor = System.Drawing.SystemColors.Control;
+            this.btnThem.Depth = 0;
+            this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThem.Location = new System.Drawing.Point(477, 116);
+            this.btnThem.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Primary = true;
+            this.btnThem.Size = new System.Drawing.Size(71, 36);
+            this.btnThem.TabIndex = 80;
+            this.btnThem.Text = "Thêm";
+            this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            // 
+            // btnXacNhan
+            // 
+            this.btnXacNhan.BackColor = System.Drawing.SystemColors.Control;
+            this.btnXacNhan.Depth = 0;
+            this.btnXacNhan.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXacNhan.Location = new System.Drawing.Point(883, 116);
+            this.btnXacNhan.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnXacNhan.Name = "btnXacNhan";
+            this.btnXacNhan.Primary = true;
+            this.btnXacNhan.Size = new System.Drawing.Size(93, 36);
+            this.btnXacNhan.TabIndex = 77;
+            this.btnXacNhan.Text = "Xác nhận";
+            this.btnXacNhan.UseVisualStyleBackColor = false;
+            this.btnXacNhan.Click += new System.EventHandler(this.btnXacNhan_Click);
+            // 
             // FormDatDichVu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1041, 566);
-            this.Controls.Add(this.txtSearch);
-            this.Controls.Add(this.iconPictureBox1);
-            this.Controls.Add(this.txtHoaDon);
-            this.Controls.Add(this.lblGia);
-            this.Controls.Add(this.lblDichVu);
-            this.Controls.Add(this.picDV);
-            this.Controls.Add(this.NUDSoLuong);
-            this.Controls.Add(this.txtTongTien);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.btnXacNhan);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnSua);
             this.Controls.Add(this.btnThem);
+            this.Controls.Add(this.txtTongTien);
+            this.Controls.Add(this.txtHoaDon);
+            this.Controls.Add(this.txtSearch);
+            this.Controls.Add(this.iconPictureBox1);
+            this.Controls.Add(this.lblGia);
+            this.Controls.Add(this.lblDichVu);
+            this.Controls.Add(this.picDV);
+            this.Controls.Add(this.NUDSoLuong);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.dgvDV);
             this.Name = "FormDatDichVu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -285,22 +319,22 @@ namespace GUILayer.ChildForm.SubForm
         #endregion
 
         private System.Windows.Forms.DataGridView dgvDV;
-        private System.Windows.Forms.Button btnClear;
-        private System.Windows.Forms.Button btnXoa;
-        private System.Windows.Forms.Button btnSua;
-        private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.NumericUpDown NUDSoLuong;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtTongTien;
         private System.Windows.Forms.PictureBox picDV;
         private System.Windows.Forms.Label lblDichVu;
         private System.Windows.Forms.Label lblGia;
-        private System.Windows.Forms.TextBox txtHoaDon;
-        private System.Windows.Forms.Button btnXacNhan;
-        private System.Windows.Forms.TextBox txtSearch;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtSearch;
+        private MaterialSkin.Controls.MaterialLabel txtHoaDon;
+        private MaterialSkin.Controls.MaterialLabel txtTongTien;
+        private MaterialSkin.Controls.MaterialRaisedButton btnClear;
+        private MaterialSkin.Controls.MaterialRaisedButton btnXoa;
+        private MaterialSkin.Controls.MaterialRaisedButton btnSua;
+        private MaterialSkin.Controls.MaterialRaisedButton btnThem;
+        private MaterialSkin.Controls.MaterialRaisedButton btnXacNhan;
     }
 }
