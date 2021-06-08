@@ -31,6 +31,8 @@ namespace GUILayer.ChildForm
         {
             this.dgvDSNV = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rdbNu = new MaterialSkin.Controls.MaterialRadioButton();
+            this.rdbNam = new MaterialSkin.Controls.MaterialRadioButton();
             this.dtpNgaySinh = new System.Windows.Forms.DateTimePicker();
             this.cbbTaiKhoan = new System.Windows.Forms.ComboBox();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
@@ -51,8 +53,6 @@ namespace GUILayer.ChildForm
             this.txtDiaChi = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel7 = new MaterialSkin.Controls.MaterialLabel();
-            this.rdbNam = new MaterialSkin.Controls.MaterialRadioButton();
-            this.rdbNu = new MaterialSkin.Controls.MaterialRadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSNV)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
@@ -80,6 +80,40 @@ namespace GUILayer.ChildForm
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Giới tính : ";
             // 
+            // rdbNu
+            // 
+            this.rdbNu.AutoSize = true;
+            this.rdbNu.Depth = 0;
+            this.rdbNu.Font = new System.Drawing.Font("Roboto", 10F);
+            this.rdbNu.Location = new System.Drawing.Point(12, 60);
+            this.rdbNu.Margin = new System.Windows.Forms.Padding(0);
+            this.rdbNu.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.rdbNu.MouseState = MaterialSkin.MouseState.HOVER;
+            this.rdbNu.Name = "rdbNu";
+            this.rdbNu.Ripple = true;
+            this.rdbNu.Size = new System.Drawing.Size(47, 30);
+            this.rdbNu.TabIndex = 0;
+            this.rdbNu.TabStop = true;
+            this.rdbNu.Text = "Nữ";
+            this.rdbNu.UseVisualStyleBackColor = true;
+            // 
+            // rdbNam
+            // 
+            this.rdbNam.AutoSize = true;
+            this.rdbNam.Depth = 0;
+            this.rdbNam.Font = new System.Drawing.Font("Roboto", 10F);
+            this.rdbNam.Location = new System.Drawing.Point(12, 27);
+            this.rdbNam.Margin = new System.Windows.Forms.Padding(0);
+            this.rdbNam.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.rdbNam.MouseState = MaterialSkin.MouseState.HOVER;
+            this.rdbNam.Name = "rdbNam";
+            this.rdbNam.Ripple = true;
+            this.rdbNam.Size = new System.Drawing.Size(58, 30);
+            this.rdbNam.TabIndex = 0;
+            this.rdbNam.TabStop = true;
+            this.rdbNam.Text = "Nam";
+            this.rdbNam.UseVisualStyleBackColor = true;
+            // 
             // dtpNgaySinh
             // 
             this.dtpNgaySinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -101,7 +135,7 @@ namespace GUILayer.ChildForm
             // 
             // iconPictureBox1
             // 
-            this.iconPictureBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.iconPictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.iconPictureBox1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.Search;
             this.iconPictureBox1.IconColor = System.Drawing.SystemColors.ControlText;
@@ -360,40 +394,6 @@ namespace GUILayer.ChildForm
             this.materialLabel7.Size = new System.Drawing.Size(61, 19);
             this.materialLabel7.TabIndex = 83;
             this.materialLabel7.Text = "CMND :";
-            // 
-            // rdbNam
-            // 
-            this.rdbNam.AutoSize = true;
-            this.rdbNam.Depth = 0;
-            this.rdbNam.Font = new System.Drawing.Font("Roboto", 10F);
-            this.rdbNam.Location = new System.Drawing.Point(12, 27);
-            this.rdbNam.Margin = new System.Windows.Forms.Padding(0);
-            this.rdbNam.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.rdbNam.MouseState = MaterialSkin.MouseState.HOVER;
-            this.rdbNam.Name = "rdbNam";
-            this.rdbNam.Ripple = true;
-            this.rdbNam.Size = new System.Drawing.Size(58, 30);
-            this.rdbNam.TabIndex = 0;
-            this.rdbNam.TabStop = true;
-            this.rdbNam.Text = "Nam";
-            this.rdbNam.UseVisualStyleBackColor = true;
-            // 
-            // rdbNu
-            // 
-            this.rdbNu.AutoSize = true;
-            this.rdbNu.Depth = 0;
-            this.rdbNu.Font = new System.Drawing.Font("Roboto", 10F);
-            this.rdbNu.Location = new System.Drawing.Point(12, 60);
-            this.rdbNu.Margin = new System.Windows.Forms.Padding(0);
-            this.rdbNu.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.rdbNu.MouseState = MaterialSkin.MouseState.HOVER;
-            this.rdbNu.Name = "rdbNu";
-            this.rdbNu.Ripple = true;
-            this.rdbNu.Size = new System.Drawing.Size(47, 30);
-            this.rdbNu.TabIndex = 0;
-            this.rdbNu.TabStop = true;
-            this.rdbNu.Text = "Nữ";
-            this.rdbNu.UseVisualStyleBackColor = true;
             // 
             // FormDSNV
             // 

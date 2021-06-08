@@ -206,7 +206,7 @@ namespace GUILayer.ChildForm
             // 
             // iconPictureBox1
             // 
-            this.iconPictureBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.iconPictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.iconPictureBox1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.Search;
             this.iconPictureBox1.IconColor = System.Drawing.SystemColors.ControlText;

@@ -79,7 +79,7 @@ namespace GUILayer.ChildForm.SubForm
             // 
             // picSan
             // 
-            this.picSan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picSan.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.picSan.Location = new System.Drawing.Point(132, 59);
             this.picSan.Name = "picSan";
             this.picSan.Size = new System.Drawing.Size(100, 100);
@@ -251,7 +251,7 @@ namespace GUILayer.ChildForm.SubForm
             // 
             // iconPictureBox1
             // 
-            this.iconPictureBox1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.iconPictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.iconPictureBox1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.Search;
             this.iconPictureBox1.IconColor = System.Drawing.SystemColors.ControlText;

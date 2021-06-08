@@ -93,13 +93,13 @@ namespace GUILayer.ChildForm
             // 
             // iconPictureBox1
             // 
-            this.iconPictureBox1.BackColor = System.Drawing.Color.White;
+            this.iconPictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.iconPictureBox1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.Search;
             this.iconPictureBox1.IconColor = System.Drawing.SystemColors.ControlText;
             this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBox1.IconSize = 25;
-            this.iconPictureBox1.Location = new System.Drawing.Point(903, 189);
+            this.iconPictureBox1.Location = new System.Drawing.Point(896, 189);
             this.iconPictureBox1.Name = "iconPictureBox1";
             this.iconPictureBox1.Size = new System.Drawing.Size(25, 25);
             this.iconPictureBox1.TabIndex = 50;
@@ -288,7 +288,7 @@ namespace GUILayer.ChildForm
             this.materialLabel4.Depth = 0;
             this.materialLabel4.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel4.Location = new System.Drawing.Point(406, 32);
+            this.materialLabel4.Location = new System.Drawing.Point(406, 34);
             this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel4.Name = "materialLabel4";
             this.materialLabel4.Size = new System.Drawing.Size(77, 19);
@@ -301,7 +301,7 @@ namespace GUILayer.ChildForm
             this.materialLabel5.Depth = 0;
             this.materialLabel5.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel5.Location = new System.Drawing.Point(406, 89);
+            this.materialLabel5.Location = new System.Drawing.Point(406, 85);
             this.materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel5.Name = "materialLabel5";
             this.materialLabel5.Size = new System.Drawing.Size(78, 19);
@@ -366,7 +366,7 @@ namespace GUILayer.ChildForm
             this.txtNgayTao.Depth = 0;
             this.txtNgayTao.Font = new System.Drawing.Font("Roboto", 11F);
             this.txtNgayTao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.txtNgayTao.Location = new System.Drawing.Point(505, 32);
+            this.txtNgayTao.Location = new System.Drawing.Point(505, 34);
             this.txtNgayTao.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtNgayTao.Name = "txtNgayTao";
             this.txtNgayTao.Size = new System.Drawing.Size(30, 19);
@@ -379,7 +379,7 @@ namespace GUILayer.ChildForm
             this.txtThuNgan.Depth = 0;
             this.txtThuNgan.Font = new System.Drawing.Font("Roboto", 11F);
             this.txtThuNgan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.txtThuNgan.Location = new System.Drawing.Point(505, 89);
+            this.txtThuNgan.Location = new System.Drawing.Point(505, 85);
             this.txtThuNgan.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtThuNgan.Name = "txtThuNgan";
             this.txtThuNgan.Size = new System.Drawing.Size(30, 19);
