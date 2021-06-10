@@ -22,7 +22,7 @@ namespace GUILayer
             InitializeComponent();
             InitializeUI();
             Authorization();
-            SettupMaterialSkin();
+            SetupMaterialSkin();
         }
 
         #region Authorization
@@ -58,7 +58,7 @@ namespace GUILayer
         #endregion
 
         #region MaterialSkin
-        private void SettupMaterialSkin()
+        private void SetupMaterialSkin()
         {
             MaterialSkinManager materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.ROBOTO_REGULAR_11 = new Font("Microsoft Sans Serif", 12f, FontStyle.Regular);
