@@ -1,4 +1,5 @@
 ﻿using BusinessLayer.Repository;
+using BusinessLayer.ViewModels;
 using System;
 using System.Windows.Forms;
 
@@ -12,6 +13,7 @@ namespace GUILayer
         {
             InitializeComponent();
             _db = new AccountRepository();
+            if (txtPass.Text == "Mật khẩu") txtPass.UseSystemPasswordChar=false;
             btnHidePass.Hide();
         }
 
@@ -24,6 +26,12 @@ namespace GUILayer
             {
                 FormControl fc = new FormControl();
                 this.Hide();
+                AccountVM currentAcc = (new AccountRepository()).GetAccountById(currentAccount_Id);
+                if (currentAcc.Role == "Admin")
+                {
+                    MessageBox.Show("Chào mừng Quản lý");
+                }
+                else MessageBox.Show("Chào mừng Thu Ngân");
                 fc.ShowDialog();
                 this.Show();
                 txtUser.Text = "Tài khoản";
@@ -67,6 +75,11 @@ namespace GUILayer
         private void lbexit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtPass_TextChanged(object sender, EventArgs e)
+        {
+            txtPass.UseSystemPasswordChar = true;
         }
     }
 }
