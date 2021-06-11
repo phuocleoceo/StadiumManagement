@@ -13,7 +13,7 @@ namespace GUILayer
         {
             InitializeComponent();
             _db = new AccountRepository();
-            if (txtPass.Text == "Mật khẩu") txtPass.UseSystemPasswordChar=false;
+            if (txtPass.Text == "Mật khẩu") txtPass.UseSystemPasswordChar = false;
             btnHidePass.Hide();
         }
 
@@ -26,12 +26,14 @@ namespace GUILayer
             {
                 FormControl fc = new FormControl();
                 this.Hide();
-                AccountVM currentAcc = (new AccountRepository()).GetAccountById(currentAccount_Id);
+                AccountVM currentAcc = _db.GetAccountById(currentAccount_Id);
+                AccountInformationVM currentAccIfo = (new AccountInformationRepository()).GetAIByAccountId(currentAccount_Id);
+                string Name = currentAccIfo.Name;
                 if (currentAcc.Role == "Admin")
                 {
-                    MessageBox.Show("Chào mừng Quản lý");
+                    MessageBox.Show($"Chào mừng Quản lý {Name}", "Welcome!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                else MessageBox.Show("Chào mừng Thu Ngân");
+                else MessageBox.Show($"Chào mừng Thu Ngân {Name}", "Welcome!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 fc.ShowDialog();
                 this.Show();
                 txtUser.Text = "Tài khoản";
