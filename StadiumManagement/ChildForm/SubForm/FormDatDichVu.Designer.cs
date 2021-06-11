@@ -201,9 +201,8 @@ namespace GUILayer.ChildForm.SubForm
             this.txtTongTien.Location = new System.Drawing.Point(849, 53);
             this.txtTongTien.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtTongTien.Name = "txtTongTien";
-            this.txtTongTien.Size = new System.Drawing.Size(30, 19);
+            this.txtTongTien.Size = new System.Drawing.Size(0, 19);
             this.txtTongTien.TabIndex = 76;
-            this.txtTongTien.Text = "xxx";
             // 
             // btnClear
             // 

@@ -24,16 +24,17 @@ namespace GUILayer
             currentAccount_Id = _db.Authentication(un, pw);
             if (currentAccount_Id > 0)
             {
-                FormControl fc = new FormControl();
-                this.Hide();
                 AccountVM currentAcc = _db.GetAccountById(currentAccount_Id);
                 AccountInformationVM currentAccIfo = (new AccountInformationRepository()).GetAIByAccountId(currentAccount_Id);
-                string Name = currentAccIfo.Name;
+                string Name = currentAccIfo != null ? currentAccIfo.Name : "";
                 if (currentAcc.Role == "Admin")
                 {
-                    MessageBox.Show($"Chào mừng Quản lý {Name}", "Welcome!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show($"Chào mừng Quản lý {Name}", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                else MessageBox.Show($"Chào mừng Thu Ngân {Name}", "Welcome!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else MessageBox.Show($"Chào mừng Thu Ngân {Name}", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                FormControl fc = new FormControl();
+                this.Hide();
                 fc.ShowDialog();
                 this.Show();
                 txtUser.Text = "Tài khoản";
@@ -41,7 +42,7 @@ namespace GUILayer
             }
             else
             {
-                MessageBox.Show("Sai thông tin đăng nhập !", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Sai thông tin đăng nhập !", "Thất bại", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
