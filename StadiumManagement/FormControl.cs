@@ -29,13 +29,17 @@ namespace GUILayer
         public void Authorization()
         {
             AccountVM currentAcc = (new AccountRepository()).GetAccountById(FormLogin.currentAccount_Id);
+            AccountInformationVM currentAccIfo = (new AccountInformationRepository()).GetAIByAccountId(FormLogin.currentAccount_Id);
             if (currentAcc.Role != "Admin")
             {
+                lblRole.Text = $"Thu Ngân: {currentAccIfo.Name}";
                 btnStadium.Visible = false;
                 btnService.Visible = false;
                 btnCashier.Visible = false;
             }
-            lblUserName.Text = currentAcc.UserName;
+            else lblRole.Text = $"Quản lý: {currentAccIfo.Name}";
+
+            lblUserName.Text = $"Tài Khoản: {currentAcc.UserName}";
             picLogo.Image = currentAcc.Image.ByteArrayToImage();
         }
         #endregion

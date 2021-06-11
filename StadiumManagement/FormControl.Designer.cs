@@ -58,6 +58,7 @@ namespace GUILayer
             this.lblDMY = new System.Windows.Forms.Label();
             this.lblTime = new System.Windows.Forms.Label();
             this.timer = new System.Windows.Forms.Timer(this.components);
+            this.lblRole = new System.Windows.Forms.Label();
             this.PanelMenu.SuspendLayout();
             this.pnlCashier.SuspendLayout();
             this.pnlLogo.SuspendLayout();
@@ -82,8 +83,9 @@ namespace GUILayer
             this.PanelMenu.Controls.Add(this.pnlLogo);
             this.PanelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.PanelMenu.Location = new System.Drawing.Point(0, 0);
+            this.PanelMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.PanelMenu.Name = "PanelMenu";
-            this.PanelMenu.Size = new System.Drawing.Size(170, 675);
+            this.PanelMenu.Size = new System.Drawing.Size(227, 831);
             this.PanelMenu.TabIndex = 0;
             // 
             // btnStatistic
@@ -98,10 +100,11 @@ namespace GUILayer
             this.btnStatistic.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnStatistic.IconSize = 35;
             this.btnStatistic.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnStatistic.Location = new System.Drawing.Point(0, 395);
+            this.btnStatistic.Location = new System.Drawing.Point(0, 488);
+            this.btnStatistic.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnStatistic.Name = "btnStatistic";
-            this.btnStatistic.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnStatistic.Size = new System.Drawing.Size(170, 50);
+            this.btnStatistic.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
+            this.btnStatistic.Size = new System.Drawing.Size(227, 62);
             this.btnStatistic.TabIndex = 18;
             this.btnStatistic.Text = "Thống kê";
             this.btnStatistic.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -121,10 +124,11 @@ namespace GUILayer
             this.btnHoaDon.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnHoaDon.IconSize = 35;
             this.btnHoaDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHoaDon.Location = new System.Drawing.Point(0, 345);
+            this.btnHoaDon.Location = new System.Drawing.Point(0, 426);
+            this.btnHoaDon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnHoaDon.Name = "btnHoaDon";
-            this.btnHoaDon.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnHoaDon.Size = new System.Drawing.Size(170, 50);
+            this.btnHoaDon.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
+            this.btnHoaDon.Size = new System.Drawing.Size(227, 62);
             this.btnHoaDon.TabIndex = 17;
             this.btnHoaDon.Text = "Hoá đơn";
             this.btnHoaDon.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -144,10 +148,11 @@ namespace GUILayer
             this.btnCustomer.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCustomer.IconSize = 35;
             this.btnCustomer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCustomer.Location = new System.Drawing.Point(0, 295);
+            this.btnCustomer.Location = new System.Drawing.Point(0, 364);
+            this.btnCustomer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCustomer.Name = "btnCustomer";
-            this.btnCustomer.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnCustomer.Size = new System.Drawing.Size(170, 50);
+            this.btnCustomer.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
+            this.btnCustomer.Size = new System.Drawing.Size(227, 62);
             this.btnCustomer.TabIndex = 14;
             this.btnCustomer.Text = "Khách hàng";
             this.btnCustomer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -162,9 +167,10 @@ namespace GUILayer
             this.pnlCashier.Controls.Add(this.btnDSNV);
             this.pnlCashier.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlCashier.ForeColor = System.Drawing.Color.White;
-            this.pnlCashier.Location = new System.Drawing.Point(0, 220);
+            this.pnlCashier.Location = new System.Drawing.Point(0, 272);
+            this.pnlCashier.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlCashier.Name = "pnlCashier";
-            this.pnlCashier.Size = new System.Drawing.Size(170, 75);
+            this.pnlCashier.Size = new System.Drawing.Size(227, 92);
             this.pnlCashier.TabIndex = 13;
             this.pnlCashier.Visible = false;
             // 
@@ -175,9 +181,10 @@ namespace GUILayer
             this.btnTaiKhoan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTaiKhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTaiKhoan.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnTaiKhoan.Location = new System.Drawing.Point(0, 37);
+            this.btnTaiKhoan.Location = new System.Drawing.Point(0, 46);
+            this.btnTaiKhoan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnTaiKhoan.Name = "btnTaiKhoan";
-            this.btnTaiKhoan.Size = new System.Drawing.Size(170, 34);
+            this.btnTaiKhoan.Size = new System.Drawing.Size(227, 42);
             this.btnTaiKhoan.TabIndex = 1;
             this.btnTaiKhoan.Text = "DS Tài khoản";
             this.btnTaiKhoan.UseVisualStyleBackColor = true;
@@ -191,8 +198,9 @@ namespace GUILayer
             this.btnDSNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDSNV.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnDSNV.Location = new System.Drawing.Point(0, 0);
+            this.btnDSNV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnDSNV.Name = "btnDSNV";
-            this.btnDSNV.Size = new System.Drawing.Size(170, 37);
+            this.btnDSNV.Size = new System.Drawing.Size(227, 46);
             this.btnDSNV.TabIndex = 0;
             this.btnDSNV.Text = "DS Nhân viên";
             this.btnDSNV.UseVisualStyleBackColor = true;
@@ -210,10 +218,11 @@ namespace GUILayer
             this.btnCashier.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCashier.IconSize = 35;
             this.btnCashier.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCashier.Location = new System.Drawing.Point(0, 170);
+            this.btnCashier.Location = new System.Drawing.Point(0, 210);
+            this.btnCashier.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCashier.Name = "btnCashier";
-            this.btnCashier.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnCashier.Size = new System.Drawing.Size(170, 50);
+            this.btnCashier.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
+            this.btnCashier.Size = new System.Drawing.Size(227, 62);
             this.btnCashier.TabIndex = 12;
             this.btnCashier.Text = "Nhân viên";
             this.btnCashier.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -233,10 +242,11 @@ namespace GUILayer
             this.btnService.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnService.IconSize = 35;
             this.btnService.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnService.Location = new System.Drawing.Point(0, 120);
+            this.btnService.Location = new System.Drawing.Point(0, 148);
+            this.btnService.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnService.Name = "btnService";
-            this.btnService.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnService.Size = new System.Drawing.Size(170, 50);
+            this.btnService.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
+            this.btnService.Size = new System.Drawing.Size(227, 62);
             this.btnService.TabIndex = 10;
             this.btnService.Text = "Dịch vụ";
             this.btnService.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -256,10 +266,11 @@ namespace GUILayer
             this.btnSetting.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSetting.IconSize = 35;
             this.btnSetting.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSetting.Location = new System.Drawing.Point(0, 575);
+            this.btnSetting.Location = new System.Drawing.Point(0, 707);
+            this.btnSetting.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSetting.Name = "btnSetting";
-            this.btnSetting.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnSetting.Size = new System.Drawing.Size(170, 50);
+            this.btnSetting.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
+            this.btnSetting.Size = new System.Drawing.Size(227, 62);
             this.btnSetting.TabIndex = 8;
             this.btnSetting.Text = "Thiết lập";
             this.btnSetting.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -279,10 +290,11 @@ namespace GUILayer
             this.btnLogOut.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnLogOut.IconSize = 35;
             this.btnLogOut.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLogOut.Location = new System.Drawing.Point(0, 625);
+            this.btnLogOut.Location = new System.Drawing.Point(0, 769);
+            this.btnLogOut.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnLogOut.Size = new System.Drawing.Size(170, 50);
+            this.btnLogOut.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
+            this.btnLogOut.Size = new System.Drawing.Size(227, 62);
             this.btnLogOut.TabIndex = 7;
             this.btnLogOut.Text = "Đăng xuất";
             this.btnLogOut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -302,10 +314,11 @@ namespace GUILayer
             this.btnStadium.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnStadium.IconSize = 35;
             this.btnStadium.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnStadium.Location = new System.Drawing.Point(0, 70);
+            this.btnStadium.Location = new System.Drawing.Point(0, 86);
+            this.btnStadium.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnStadium.Name = "btnStadium";
-            this.btnStadium.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnStadium.Size = new System.Drawing.Size(170, 50);
+            this.btnStadium.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
+            this.btnStadium.Size = new System.Drawing.Size(227, 62);
             this.btnStadium.TabIndex = 1;
             this.btnStadium.Text = "Sân bóng";
             this.btnStadium.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -318,16 +331,18 @@ namespace GUILayer
             this.pnlLogo.Controls.Add(this.picLogo);
             this.pnlLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlLogo.Location = new System.Drawing.Point(0, 0);
+            this.pnlLogo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlLogo.Name = "pnlLogo";
-            this.pnlLogo.Size = new System.Drawing.Size(170, 70);
+            this.pnlLogo.Size = new System.Drawing.Size(227, 86);
             this.pnlLogo.TabIndex = 0;
             // 
             // picLogo
             // 
             this.picLogo.Image = global::GUILayer.Properties.Resources.phuocleoceo;
-            this.picLogo.Location = new System.Drawing.Point(55, 3);
+            this.picLogo.Location = new System.Drawing.Point(73, 4);
+            this.picLogo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.picLogo.Name = "picLogo";
-            this.picLogo.Size = new System.Drawing.Size(60, 64);
+            this.picLogo.Size = new System.Drawing.Size(80, 79);
             this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picLogo.TabIndex = 0;
             this.picLogo.TabStop = false;
@@ -336,6 +351,7 @@ namespace GUILayer
             // panelTitlebar
             // 
             this.panelTitlebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.panelTitlebar.Controls.Add(this.lblRole);
             this.panelTitlebar.Controls.Add(this.lblDateTime);
             this.panelTitlebar.Controls.Add(this.lblUserName);
             this.panelTitlebar.Controls.Add(this.iconMinimize);
@@ -344,9 +360,10 @@ namespace GUILayer
             this.panelTitlebar.Controls.Add(this.lblCurrentForm);
             this.panelTitlebar.Controls.Add(this.iconCurrentForm);
             this.panelTitlebar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTitlebar.Location = new System.Drawing.Point(170, 0);
+            this.panelTitlebar.Location = new System.Drawing.Point(227, 0);
+            this.panelTitlebar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelTitlebar.Name = "panelTitlebar";
-            this.panelTitlebar.Size = new System.Drawing.Size(1057, 70);
+            this.panelTitlebar.Size = new System.Drawing.Size(1409, 86);
             this.panelTitlebar.TabIndex = 1;
             this.panelTitlebar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitlebar_MouseDown);
             // 
@@ -355,9 +372,10 @@ namespace GUILayer
             this.lblDateTime.AutoSize = true;
             this.lblDateTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDateTime.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblDateTime.Location = new System.Drawing.Point(366, 31);
+            this.lblDateTime.Location = new System.Drawing.Point(488, 38);
+            this.lblDateTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDateTime.Name = "lblDateTime";
-            this.lblDateTime.Size = new System.Drawing.Size(71, 20);
+            this.lblDateTime.Size = new System.Drawing.Size(90, 25);
             this.lblDateTime.TabIndex = 6;
             this.lblDateTime.Text = "12:30:33";
             // 
@@ -366,9 +384,10 @@ namespace GUILayer
             this.lblUserName.AutoSize = true;
             this.lblUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUserName.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblUserName.Location = new System.Drawing.Point(701, 35);
+            this.lblUserName.Location = new System.Drawing.Point(1090, 42);
+            this.lblUserName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(87, 16);
+            this.lblUserName.Size = new System.Drawing.Size(103, 20);
             this.lblUserName.TabIndex = 5;
             this.lblUserName.Text = "phuocleoceo";
             // 
@@ -380,9 +399,10 @@ namespace GUILayer
             this.iconMinimize.IconColor = System.Drawing.Color.Gainsboro;
             this.iconMinimize.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconMinimize.IconSize = 25;
-            this.iconMinimize.Location = new System.Drawing.Point(959, 2);
+            this.iconMinimize.Location = new System.Drawing.Point(1279, 2);
+            this.iconMinimize.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.iconMinimize.Name = "iconMinimize";
-            this.iconMinimize.Size = new System.Drawing.Size(30, 30);
+            this.iconMinimize.Size = new System.Drawing.Size(40, 37);
             this.iconMinimize.TabIndex = 4;
             this.iconMinimize.UseVisualStyleBackColor = true;
             this.iconMinimize.Click += new System.EventHandler(this.iconMinimize_Click);
@@ -395,9 +415,10 @@ namespace GUILayer
             this.iconZoom.IconColor = System.Drawing.Color.Gainsboro;
             this.iconZoom.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconZoom.IconSize = 25;
-            this.iconZoom.Location = new System.Drawing.Point(994, 7);
+            this.iconZoom.Location = new System.Drawing.Point(1325, 9);
+            this.iconZoom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.iconZoom.Name = "iconZoom";
-            this.iconZoom.Size = new System.Drawing.Size(30, 30);
+            this.iconZoom.Size = new System.Drawing.Size(40, 37);
             this.iconZoom.TabIndex = 3;
             this.iconZoom.UseVisualStyleBackColor = true;
             this.iconZoom.Click += new System.EventHandler(this.iconZoom_Click);
@@ -410,9 +431,10 @@ namespace GUILayer
             this.iconExit.IconColor = System.Drawing.Color.Gainsboro;
             this.iconExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconExit.IconSize = 25;
-            this.iconExit.Location = new System.Drawing.Point(1022, 7);
+            this.iconExit.Location = new System.Drawing.Point(1363, 9);
+            this.iconExit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.iconExit.Name = "iconExit";
-            this.iconExit.Size = new System.Drawing.Size(30, 30);
+            this.iconExit.Size = new System.Drawing.Size(40, 37);
             this.iconExit.TabIndex = 2;
             this.iconExit.UseVisualStyleBackColor = true;
             this.iconExit.Click += new System.EventHandler(this.iconExit_Click);
@@ -422,9 +444,10 @@ namespace GUILayer
             this.lblCurrentForm.AutoSize = true;
             this.lblCurrentForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCurrentForm.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblCurrentForm.Location = new System.Drawing.Point(64, 31);
+            this.lblCurrentForm.Location = new System.Drawing.Point(85, 38);
+            this.lblCurrentForm.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCurrentForm.Name = "lblCurrentForm";
-            this.lblCurrentForm.Size = new System.Drawing.Size(45, 16);
+            this.lblCurrentForm.Size = new System.Drawing.Size(54, 20);
             this.lblCurrentForm.TabIndex = 1;
             this.lblCurrentForm.Text = "Home";
             // 
@@ -435,18 +458,21 @@ namespace GUILayer
             this.iconCurrentForm.IconChar = FontAwesome.Sharp.IconChar.Home;
             this.iconCurrentForm.IconColor = System.Drawing.Color.Gainsboro;
             this.iconCurrentForm.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconCurrentForm.Location = new System.Drawing.Point(19, 23);
+            this.iconCurrentForm.IconSize = 39;
+            this.iconCurrentForm.Location = new System.Drawing.Point(25, 28);
+            this.iconCurrentForm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.iconCurrentForm.Name = "iconCurrentForm";
-            this.iconCurrentForm.Size = new System.Drawing.Size(32, 32);
+            this.iconCurrentForm.Size = new System.Drawing.Size(43, 39);
             this.iconCurrentForm.TabIndex = 0;
             this.iconCurrentForm.TabStop = false;
             // 
             // panelshadow
             // 
             this.panelshadow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(24)))), ((int)(((byte)(58)))));
-            this.panelshadow.Location = new System.Drawing.Point(173, 64);
+            this.panelshadow.Location = new System.Drawing.Point(231, 79);
+            this.panelshadow.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelshadow.Name = "panelshadow";
-            this.panelshadow.Size = new System.Drawing.Size(628, 9);
+            this.panelshadow.Size = new System.Drawing.Size(837, 11);
             this.panelshadow.TabIndex = 2;
             // 
             // pnlChildForm
@@ -457,9 +483,10 @@ namespace GUILayer
             this.pnlChildForm.Controls.Add(this.lblDate);
             this.pnlChildForm.Controls.Add(this.lblDMY);
             this.pnlChildForm.Controls.Add(this.lblTime);
-            this.pnlChildForm.Location = new System.Drawing.Point(170, 70);
+            this.pnlChildForm.Location = new System.Drawing.Point(227, 86);
+            this.pnlChildForm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlChildForm.Name = "pnlChildForm";
-            this.pnlChildForm.Size = new System.Drawing.Size(1057, 605);
+            this.pnlChildForm.Size = new System.Drawing.Size(1409, 745);
             this.pnlChildForm.TabIndex = 3;
             // 
             // lblDate
@@ -468,9 +495,10 @@ namespace GUILayer
             this.lblDate.BackColor = System.Drawing.Color.Transparent;
             this.lblDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDate.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblDate.Location = new System.Drawing.Point(588, 333);
+            this.lblDate.Location = new System.Drawing.Point(784, 410);
+            this.lblDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(267, 73);
+            this.lblDate.Size = new System.Drawing.Size(328, 91);
             this.lblDate.TabIndex = 9;
             this.lblDate.Text = "Monday";
             // 
@@ -480,9 +508,10 @@ namespace GUILayer
             this.lblDMY.BackColor = System.Drawing.Color.Transparent;
             this.lblDMY.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDMY.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblDMY.Location = new System.Drawing.Point(56, 333);
+            this.lblDMY.Location = new System.Drawing.Point(75, 410);
+            this.lblDMY.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDMY.Name = "lblDMY";
-            this.lblDMY.Size = new System.Drawing.Size(366, 73);
+            this.lblDMY.Size = new System.Drawing.Size(445, 91);
             this.lblDMY.TabIndex = 8;
             this.lblDMY.Text = "05/06/2001";
             // 
@@ -492,9 +521,10 @@ namespace GUILayer
             this.lblTime.BackColor = System.Drawing.Color.Transparent;
             this.lblTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTime.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblTime.Location = new System.Drawing.Point(305, 166);
+            this.lblTime.Location = new System.Drawing.Point(407, 204);
+            this.lblTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(425, 108);
+            this.lblTime.Size = new System.Drawing.Size(533, 135);
             this.lblTime.TabIndex = 7;
             this.lblTime.Text = "10:08:01";
             // 
@@ -502,16 +532,28 @@ namespace GUILayer
             // 
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
+            // lblRole
+            // 
+            this.lblRole.AutoSize = true;
+            this.lblRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.lblRole.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblRole.Location = new System.Drawing.Point(769, 42);
+            this.lblRole.Name = "lblRole";
+            this.lblRole.Size = new System.Drawing.Size(81, 20);
+            this.lblRole.TabIndex = 7;
+            this.lblRole.Text = "Thu Ngân";
+            // 
             // FormControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1227, 675);
+            this.ClientSize = new System.Drawing.Size(1636, 831);
             this.Controls.Add(this.panelTitlebar);
             this.Controls.Add(this.pnlChildForm);
             this.Controls.Add(this.panelshadow);
             this.Controls.Add(this.PanelMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormControl";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainControl";
@@ -558,5 +600,6 @@ namespace GUILayer
         private FontAwesome.Sharp.IconButton btnCashier;
         private FontAwesome.Sharp.IconButton btnHoaDon;
         private FontAwesome.Sharp.IconButton btnStatistic;
+        private System.Windows.Forms.Label lblRole;
     }
 }
