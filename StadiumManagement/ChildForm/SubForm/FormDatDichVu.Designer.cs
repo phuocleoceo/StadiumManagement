@@ -133,11 +133,11 @@ namespace GUILayer.ChildForm.SubForm
             // 
             this.lblDichVu.AutoSize = true;
             this.lblDichVu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDichVu.Location = new System.Drawing.Point(281, 101);
+            this.lblDichVu.Location = new System.Drawing.Point(276, 102);
             this.lblDichVu.Name = "lblDichVu";
-            this.lblDichVu.Size = new System.Drawing.Size(132, 20);
+            this.lblDichVu.Size = new System.Drawing.Size(107, 40);
             this.lblDichVu.TabIndex = 56;
-            this.lblDichVu.Text = "Click to choose ...";
+            this.lblDichVu.Text = "Click để chọn \r\n     dịch vụ ...";
             // 
             // lblGia
             // 

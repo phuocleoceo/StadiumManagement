@@ -39,7 +39,7 @@ namespace GUILayer.ChildForm.SubForm
         {
             txtTienCoc.Text = txtTongTien.Text = "";
             dtpKetThucThue.Value = dtpBatDauThue.Value = DateTime.Now;
-            lblSan.Text = "Click to choose ...";
+            lblSan.Text = "Click để chọn sân ...";
             lblGia.Text = "";
             picSan.Image = null;
             picSan.Tag = "";

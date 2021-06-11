@@ -71,11 +71,11 @@ namespace GUILayer.ChildForm.SubForm
             // 
             this.lblSan.AutoSize = true;
             this.lblSan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSan.Location = new System.Drawing.Point(259, 96);
+            this.lblSan.Location = new System.Drawing.Point(252, 96);
             this.lblSan.Name = "lblSan";
-            this.lblSan.Size = new System.Drawing.Size(132, 20);
+            this.lblSan.Size = new System.Drawing.Size(149, 20);
             this.lblSan.TabIndex = 65;
-            this.lblSan.Text = "Click to choose ...";
+            this.lblSan.Text = "Click để chọn sân ...";
             // 
             // picSan
             // 

@@ -2,7 +2,6 @@
 using BusinessLayer.Repository;
 using BusinessLayer.ViewModels;
 using System.Collections.Generic;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace GUILayer.ChildForm.SubForm

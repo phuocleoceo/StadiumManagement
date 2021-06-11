@@ -3,12 +3,11 @@ using BusinessLayer.Repository;
 using BusinessLayer.ViewModels;
 using FontAwesome.Sharp;
 using GUILayer.ChildForm;
+using MaterialSkin;
 using System;
 using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
-using MaterialSkin;
-using MaterialSkin.Controls;
 
 namespace GUILayer
 {

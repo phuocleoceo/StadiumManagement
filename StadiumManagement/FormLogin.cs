@@ -8,11 +8,13 @@ namespace GUILayer
     public partial class FormLogin : Form
     {
         private readonly AccountRepository _db;
+        private readonly AccountInformationRepository _dbAI;
         public static int currentAccount_Id;
         public FormLogin()
         {
             InitializeComponent();
             _db = new AccountRepository();
+            _dbAI = new AccountInformationRepository();
             if (txtPass.Text == "Mật khẩu") txtPass.UseSystemPasswordChar = false;
             btnHidePass.Hide();
         }
@@ -25,7 +27,7 @@ namespace GUILayer
             if (currentAccount_Id > 0)
             {
                 AccountVM currentAcc = _db.GetAccountById(currentAccount_Id);
-                AccountInformationVM currentAccIfo = (new AccountInformationRepository()).GetAIByAccountId(currentAccount_Id);
+                AccountInformationVM currentAccIfo = _dbAI.GetAIByAccountId(currentAccount_Id);
                 string Name = currentAccIfo != null ? currentAccIfo.Name : "";
                 if (currentAcc.Role == "Admin")
                 {

@@ -59,16 +59,21 @@ namespace BusinessLayer.Repository
         //Validate dat san
         public string ListRentTime(int stadium_id)
         {
-            // Lay list RO cua San, Chi lay nhung RO thuoc Bill chua thanh toan
-            IEnumerable<RentOrder> listRO = _db.Stadiums.Find(stadium_id).RentOrders;
-            listRO = listRO.Where(c => c.Bill.BillStatus == BillStatus.UnPurchased);
-
-            StringBuilder sb = new StringBuilder();
-            foreach (RentOrder ro in listRO)
+            Stadium stadium = _db.Stadiums.Find(stadium_id);
+            if (stadium == null) return "";
+            else
             {
-                sb.Append($"{ro.StartRentDate,22}  => {ro.EndRentDate,22}\n\n");
+                // Lay list RO cua San, Chi lay nhung RO thuoc Bill chua thanh toan
+                IEnumerable<RentOrder> listRO = stadium.RentOrders;
+                listRO = listRO.Where(c => c.Bill.BillStatus == BillStatus.UnPurchased);
+
+                StringBuilder sb = new StringBuilder();
+                foreach (RentOrder ro in listRO)
+                {
+                    sb.Append($"{ro.StartRentDate,22}  => {ro.EndRentDate,22}\n\n");
+                }
+                return sb.ToString();
             }
-            return sb.ToString();
         }
 
         public bool isValidTime(int stadium_id, DateTime _start, DateTime _end,

@@ -12,7 +12,7 @@ namespace GUILayer.ChildForm
         private readonly StadiumRepository _db;
         public FormQLSan()
         {
-            InitializeComponent();            
+            InitializeComponent();
             dgvDSSan.FormatTable();
             _db = new StadiumRepository();
             LoadData();

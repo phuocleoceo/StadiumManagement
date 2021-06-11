@@ -39,7 +39,7 @@ namespace GUILayer.ChildForm.SubForm
         {
             txtTongTien.Text = "";
             NUDSoLuong.Value = 0;
-            lblDichVu.Text = "Click to choose ...";
+            lblDichVu.Text = "Click để chọn\n     dịch vụ ... ";
             lblGia.Text = "";
             picDV.Image = null;
             picDV.Tag = "";
