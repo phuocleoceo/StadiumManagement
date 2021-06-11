@@ -22,9 +22,11 @@ namespace GUILayer.ChildForm.SubForm
         {
             int i = 0;
             IEnumerable<StadiumVM> listSVM = _db.GetListAvailable();
+            Image img;
+            ListViewItem item;
             foreach (StadiumVM svm in listSVM)
             {
-                Image img = svm.Image.ByteArrayToImage();
+                img = svm.Image.ByteArrayToImage();
                 if (img != null)
                 {
                     imgList.Images.Add(img);
@@ -33,7 +35,7 @@ namespace GUILayer.ChildForm.SubForm
                 {
                     imgList.Images.Add(new Bitmap(120, 120));
                 }
-                ListViewItem item = new ListViewItem
+                item = new ListViewItem
                 {
                     Text = $"{svm.Name}\r\n{svm.Price}",
                     Tag = svm.Id,
