@@ -16,9 +16,9 @@ namespace BusinessLayer
         public SortableBindingList(IEnumerable<T> list)
         {
             // O(n)
-            foreach (object o in list)
+            foreach (T i in list)
             {
-                this.Add((T)o);
+                this.Add(i);
             }
         }
 

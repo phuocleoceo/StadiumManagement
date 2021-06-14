@@ -288,9 +288,8 @@ namespace GUILayer.ChildForm.SubForm
             this.txtHoaDon.Location = new System.Drawing.Point(133, 21);
             this.txtHoaDon.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtHoaDon.Name = "txtHoaDon";
-            this.txtHoaDon.Size = new System.Drawing.Size(30, 19);
+            this.txtHoaDon.Size = new System.Drawing.Size(0, 19);
             this.txtHoaDon.TabIndex = 90;
-            this.txtHoaDon.Text = "xxx";
             // 
             // label1
             // 

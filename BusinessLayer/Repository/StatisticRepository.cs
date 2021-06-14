@@ -81,12 +81,11 @@ namespace BusinessLayer.Repository
             //Neu chi dung Select thi no tra ve RentOrders = List<RentOrder>
             IEnumerable<RentOrder> listAllRO = listBill.SelectMany(c => c.RentOrders);
 
-            IEnumerable<Frequency> listFre = listAllRO.GroupBy(c => c.Stadium.Name).Select(c => new Frequency
+            return listAllRO.GroupBy(c => c.Stadium.Name).Select(c => new Frequency
             {
                 Name = c.First().Stadium.Name,
                 Count = c.Sum(x => Utility.RentTime(x.StartRentDate, x.EndRentDate))
             });
-            return listFre;
         }
 
         public IEnumerable<Frequency> StatisticService()
@@ -96,12 +95,11 @@ namespace BusinessLayer.Repository
 
             IEnumerable<ServiceOrder> listAllSO = listBill.SelectMany(c => c.ServiceOrders);
 
-            IEnumerable<Frequency> listFre = listAllSO.GroupBy(c => c.Service.Name).Select(c => new Frequency
+            return listAllSO.GroupBy(c => c.Service.Name).Select(c => new Frequency
             {
                 Name = c.First().Service.Name,
                 Count = c.Sum(x => x.Count)
             });
-            return listFre;
         }
         #endregion
     }

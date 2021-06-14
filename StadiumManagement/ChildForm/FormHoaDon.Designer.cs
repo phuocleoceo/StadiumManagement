@@ -340,7 +340,7 @@ namespace GUILayer.ChildForm
             this.materialLabel8.Depth = 0;
             this.materialLabel8.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel8.Location = new System.Drawing.Point(764, 109);
+            this.materialLabel8.Location = new System.Drawing.Point(761, 109);
             this.materialLabel8.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel8.Name = "materialLabel8";
             this.materialLabel8.Size = new System.Drawing.Size(68, 19);
@@ -356,9 +356,8 @@ namespace GUILayer.ChildForm
             this.txtSDTKhach.Location = new System.Drawing.Point(155, 110);
             this.txtSDTKhach.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtSDTKhach.Name = "txtSDTKhach";
-            this.txtSDTKhach.Size = new System.Drawing.Size(30, 19);
+            this.txtSDTKhach.Size = new System.Drawing.Size(0, 19);
             this.txtSDTKhach.TabIndex = 86;
-            this.txtSDTKhach.Text = "xxx";
             // 
             // txtNgayTao
             // 
@@ -369,9 +368,8 @@ namespace GUILayer.ChildForm
             this.txtNgayTao.Location = new System.Drawing.Point(505, 34);
             this.txtNgayTao.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtNgayTao.Name = "txtNgayTao";
-            this.txtNgayTao.Size = new System.Drawing.Size(30, 19);
+            this.txtNgayTao.Size = new System.Drawing.Size(0, 19);
             this.txtNgayTao.TabIndex = 87;
-            this.txtNgayTao.Text = "xxx";
             // 
             // txtThuNgan
             // 
@@ -382,9 +380,8 @@ namespace GUILayer.ChildForm
             this.txtThuNgan.Location = new System.Drawing.Point(505, 85);
             this.txtThuNgan.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtThuNgan.Name = "txtThuNgan";
-            this.txtThuNgan.Size = new System.Drawing.Size(30, 19);
+            this.txtThuNgan.Size = new System.Drawing.Size(0, 19);
             this.txtThuNgan.TabIndex = 88;
-            this.txtThuNgan.Text = "xxx";
             // 
             // txtTienCoc
             // 
@@ -395,9 +392,8 @@ namespace GUILayer.ChildForm
             this.txtTienCoc.Location = new System.Drawing.Point(858, 27);
             this.txtTienCoc.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtTienCoc.Name = "txtTienCoc";
-            this.txtTienCoc.Size = new System.Drawing.Size(30, 19);
+            this.txtTienCoc.Size = new System.Drawing.Size(0, 19);
             this.txtTienCoc.TabIndex = 87;
-            this.txtTienCoc.Text = "xxx";
             // 
             // txtTongTien
             // 
@@ -408,9 +404,8 @@ namespace GUILayer.ChildForm
             this.txtTongTien.Location = new System.Drawing.Point(858, 68);
             this.txtTongTien.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtTongTien.Name = "txtTongTien";
-            this.txtTongTien.Size = new System.Drawing.Size(30, 19);
+            this.txtTongTien.Size = new System.Drawing.Size(0, 19);
             this.txtTongTien.TabIndex = 87;
-            this.txtTongTien.Text = "xxx";
             // 
             // txtPhaiTra
             // 
@@ -421,9 +416,8 @@ namespace GUILayer.ChildForm
             this.txtPhaiTra.Location = new System.Drawing.Point(858, 109);
             this.txtPhaiTra.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtPhaiTra.Name = "txtPhaiTra";
-            this.txtPhaiTra.Size = new System.Drawing.Size(30, 19);
+            this.txtPhaiTra.Size = new System.Drawing.Size(0, 19);
             this.txtPhaiTra.TabIndex = 87;
-            this.txtPhaiTra.Text = "xxx";
             // 
             // FormHoaDon
             // 

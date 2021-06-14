@@ -100,7 +100,7 @@ namespace GUILayer.ChildForm.SubForm
             this.NUDSoLuong.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NUDSoLuong.Location = new System.Drawing.Point(540, 53);
             this.NUDSoLuong.Name = "NUDSoLuong";
-            this.NUDSoLuong.Size = new System.Drawing.Size(162, 22);
+            this.NUDSoLuong.Size = new System.Drawing.Size(71, 22);
             this.NUDSoLuong.TabIndex = 53;
             this.NUDSoLuong.Value = new decimal(new int[] {
             1,
@@ -188,9 +188,8 @@ namespace GUILayer.ChildForm.SubForm
             this.txtHoaDon.Location = new System.Drawing.Point(150, 29);
             this.txtHoaDon.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtHoaDon.Name = "txtHoaDon";
-            this.txtHoaDon.Size = new System.Drawing.Size(30, 19);
+            this.txtHoaDon.Size = new System.Drawing.Size(0, 19);
             this.txtHoaDon.TabIndex = 75;
-            this.txtHoaDon.Text = "xxx";
             // 
             // txtTongTien
             // 
