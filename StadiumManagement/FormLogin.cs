@@ -12,27 +12,22 @@ namespace GUILayer
         private AccountRepository _db;
         private AccountInformationRepository _dbAI;
         public static int currentAccount_Id;
+        private readonly Task _loadDB;
         public FormLogin()
         {
-            InitEF();
-            InitializeComponent();
-            if (txtPass.Text == "Mật khẩu") txtPass.UseSystemPasswordChar = false;
-            btnHidePass.Hide();
-        }
-
-        private Task InitEF()
-        {
-            Task task = new Task(() =>
+            _loadDB = new Task(() =>
             {
                 _db = new AccountRepository();
                 _dbAI = new AccountInformationRepository();
                 _db.InitEF();
             });
-            task.Start();
-            return task;
+            _loadDB.Start();
+            InitializeComponent();
+            if (txtPass.Text == "Mật khẩu") txtPass.UseSystemPasswordChar = false;
+            btnHidePass.Hide();
         }
 
-        private void Login()
+        private void CheckLogin()
         {
             string un = txtUser.Text;
             string pw = txtPass.Text;
@@ -65,13 +60,15 @@ namespace GUILayer
         {
             try
             {
-                Login();
+                // Đợi cho việc LoadDB hoàn thành, tối đa 5s
+                _loadDB.Wait(5000);
+                CheckLogin();
             }
             catch
             {
-                new FormAlert("Chưa tải xong Database !", Error);
+                new FormAlert("Database đang gặp lỗi !\nVui lòng thử lại sau", Error);
                 btnLogin.Focus();
-            }
+            }            
         }
 
         private void btnHidePass_Click(object sender, EventArgs e)
