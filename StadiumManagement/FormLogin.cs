@@ -1,50 +1,70 @@
 ﻿using BusinessLayer.Repository;
 using BusinessLayer.ViewModels;
 using System;
+using System.Threading.Tasks;
 using System.Windows.Forms;
+using static GUILayer.AlertType;
 
 namespace GUILayer
 {
     public partial class FormLogin : Form
     {
-        private readonly AccountRepository _db;
-        private readonly AccountInformationRepository _dbAI;
+        private AccountRepository _db;
+        private AccountInformationRepository _dbAI;
         public static int currentAccount_Id;
         public FormLogin()
         {
+            InitEF();
             InitializeComponent();
-            _db = new AccountRepository();
-            _dbAI = new AccountInformationRepository();
             if (txtPass.Text == "Mật khẩu") txtPass.UseSystemPasswordChar = false;
             btnHidePass.Hide();
         }
 
+        private Task InitEF()
+        {
+            var task = new Task(() =>
+            {
+                _db = new AccountRepository();
+                _dbAI = new AccountInformationRepository();
+                _db.InitEF();
+            });
+            task.Start();
+            return task;
+        }
+
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string un = txtUser.Text;
-            string pw = txtPass.Text;
-            currentAccount_Id = _db.Authentication(un, pw);
-            if (currentAccount_Id > 0)
+            try
             {
-                AccountVM currentAcc = _db.GetAccountById(currentAccount_Id);
-                AccountInformationVM currentAccIfo = _dbAI.GetAIByAccountId(currentAccount_Id);
-                string Name = currentAccIfo != null ? currentAccIfo.Name : "";
-                if (currentAcc.Role == "Admin")
+                string un = txtUser.Text;
+                string pw = txtPass.Text;
+                currentAccount_Id = _db.Authentication(un, pw);
+                if (currentAccount_Id > 0)
                 {
-                    MessageBox.Show($"Chào mừng Quản lý {Name}", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else MessageBox.Show($"Chào mừng Thu Ngân {Name}", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    AccountVM currentAcc = _db.GetAccountById(currentAccount_Id);
+                    AccountInformationVM currentAccIfo = _dbAI.GetAIByAccountId(currentAccount_Id);
+                    string Name = currentAccIfo != null ? currentAccIfo.Name : "";
+                    if (currentAcc.Role == "Admin")
+                    {
+                        MessageBox.Show($"Chào mừng Quản lý {Name}", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else MessageBox.Show($"Chào mừng Thu Ngân {Name}", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                FormControl fc = new FormControl();
-                this.Hide();
-                fc.ShowDialog();
-                this.Show();
-                txtUser.Text = "Tài khoản";
-                txtPass.Text = "Mật khẩu";
+                    FormControl fc = new FormControl();
+                    this.Hide();
+                    fc.ShowDialog();
+                    this.Show();
+                    txtUser.Text = "Tài khoản";
+                    txtPass.Text = "Mật khẩu";
+                }
+                else
+                {
+                    MessageBox.Show("Sai thông tin đăng nhập !", "Thất bại", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            else
+            catch
             {
-                MessageBox.Show("Sai thông tin đăng nhập !", "Thất bại", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                new FormAlert("Chưa tải xong Database !", Error);
             }
         }
 

@@ -3,12 +3,18 @@ using DataAccessLayer.Enums;
 using DataAccessLayer.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 
 namespace BusinessLayer.Repository
 {
     public class AccountRepository : Repository<Account>
     {
         #region Login
+        public void InitEF()
+        {
+            dbSet.Load();
+        }
+
         public int Authentication(string username, string password)
         {
             string passwordMD5 = password.GetMD5();
