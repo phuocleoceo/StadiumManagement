@@ -22,7 +22,7 @@ namespace GUILayer
 
         private Task InitEF()
         {
-            var task = new Task(() =>
+            Task task = new Task(() =>
             {
                 _db = new AccountRepository();
                 _dbAI = new AccountInformationRepository();
@@ -32,39 +32,45 @@ namespace GUILayer
             return task;
         }
 
+        private void Login()
+        {
+            string un = txtUser.Text;
+            string pw = txtPass.Text;
+            currentAccount_Id = _db.Authentication(un, pw);
+            if (currentAccount_Id > 0)
+            {
+                AccountVM currentAcc = _db.GetAccountById(currentAccount_Id);
+                AccountInformationVM currentAccIfo = _dbAI.GetAIByAccountId(currentAccount_Id);
+                string Name = currentAccIfo != null ? currentAccIfo.Name : "";
+                if (currentAcc.Role == "Admin")
+                {
+                    MessageBox.Show($"Chào mừng Quản lý {Name}", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else MessageBox.Show($"Chào mừng Thu Ngân {Name}", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                FormControl fc = new FormControl();
+                this.Hide();
+                fc.ShowDialog();
+                this.Show();
+                txtUser.Text = "Tài khoản";
+                txtPass.Text = "Mật khẩu";
+            }
+            else
+            {
+                MessageBox.Show("Sai thông tin đăng nhập !", "Thất bại", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private void btnLogin_Click(object sender, EventArgs e)
         {
             try
             {
-                string un = txtUser.Text;
-                string pw = txtPass.Text;
-                currentAccount_Id = _db.Authentication(un, pw);
-                if (currentAccount_Id > 0)
-                {
-                    AccountVM currentAcc = _db.GetAccountById(currentAccount_Id);
-                    AccountInformationVM currentAccIfo = _dbAI.GetAIByAccountId(currentAccount_Id);
-                    string Name = currentAccIfo != null ? currentAccIfo.Name : "";
-                    if (currentAcc.Role == "Admin")
-                    {
-                        MessageBox.Show($"Chào mừng Quản lý {Name}", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else MessageBox.Show($"Chào mừng Thu Ngân {Name}", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    FormControl fc = new FormControl();
-                    this.Hide();
-                    fc.ShowDialog();
-                    this.Show();
-                    txtUser.Text = "Tài khoản";
-                    txtPass.Text = "Mật khẩu";
-                }
-                else
-                {
-                    MessageBox.Show("Sai thông tin đăng nhập !", "Thất bại", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                Login();
             }
             catch
             {
                 new FormAlert("Chưa tải xong Database !", Error);
+                btnLogin.Focus();
             }
         }
 
