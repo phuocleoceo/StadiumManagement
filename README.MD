@@ -11,7 +11,7 @@
 
 <p align="center">
   <p>
-    <img src="https://raw.githubusercontent.com/phuocleoceo/StadiumManagement/master/screen-shot/0.jpg" width=100% alt="Logo">
+    <img src="/screen-shot/0.jpg" width=100% alt="Logo">
   </p>
 
   <h3 align="center">STADIUM MANAGEMENT</h3>
@@ -57,7 +57,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-![Screen Shot](https://raw.githubusercontent.com/phuocleoceo/StadiumManagement/master/screen-shot/1.jpg)
+![Screen Shot](/screen-shot/1.jpg)
 
 Stadium Management is an application built by Windows Form Technology.
 It will help stadium owner and their cashier easy to manage the business. 
@@ -129,82 +129,82 @@ You still need to install these things first:
 **1. Login**
     <br/>
     <br/>
-    ![image_login](https://raw.githubusercontent.com/phuocleoceo/StadiumManagement/master/screen-shot/2.jpg)
+    ![image_login](/screen-shot/2.jpg)
     
 **2. Home Screen**
     <br/>
     <br/>
-    ![image_home](https://raw.githubusercontent.com/phuocleoceo/StadiumManagement/master/screen-shot/3.jpg)
+    ![image_home](/screen-shot/3.jpg)
 
 **3. Stadium and Service Form**
     <br/>
     <br/>
-    ![image_stadium](https://raw.githubusercontent.com/phuocleoceo/StadiumManagement/master/screen-shot/4.jpg)
+    ![image_stadium](/screen-shot/4.jpg)
     <br/>
     <br/>
-    ![image_service](https://raw.githubusercontent.com/phuocleoceo/StadiumManagement/master/screen-shot/5.jpg)
+    ![image_service](/screen-shot/5.jpg)
 
 **4. Cashier and Account Form**
     <br/>
     <br/>
-    ![image_cashier](https://raw.githubusercontent.com/phuocleoceo/StadiumManagement/master/screen-shot/6.jpg)
+    ![image_cashier](/screen-shot/6.jpg)
     <br/>
     <br/>
-    ![image_account](https://raw.githubusercontent.com/phuocleoceo/StadiumManagement/master/screen-shot/7.jpg)
+    ![image_account](/screen-shot/7.jpg)
     
 **5. Customer Form**
     <br/>
     <br/>
-    ![image_customer](https://raw.githubusercontent.com/phuocleoceo/StadiumManagement/master/screen-shot/8.jpg)
+    ![image_customer](/screen-shot/8.jpg)
     
 **6. Bill Form**
     <br/>
     <br/>
-    ![image_bill](https://raw.githubusercontent.com/phuocleoceo/StadiumManagement/master/screen-shot/9.jpg)
+    ![image_bill](/screen-shot/9.jpg)
 
 **7. Stadium and Service Order Form**
     <br/>
     <br/>
-    ![image_stadiumorder](https://raw.githubusercontent.com/phuocleoceo/StadiumManagement/master/screen-shot/10.jpg)
+    ![image_stadiumorder](/screen-shot/10.jpg)
     <br/>
     <br/>
-    ![image_serviceorder](https://raw.githubusercontent.com/phuocleoceo/StadiumManagement/master/screen-shot/11.jpg)
+    ![image_serviceorder](/screen-shot/11.jpg)
     
 **8. Bill Printing**
     <br/>
     <br/>
-    ![image_print](https://raw.githubusercontent.com/phuocleoceo/StadiumManagement/master/screen-shot/12.jpg)
+    ![image_print](/screen-shot/12.jpg)
 
 **9. Statistic Form (Predict by Linear Regression)**
     <br/>
     <br/>
-    ![image_history](https://raw.githubusercontent.com/phuocleoceo/StadiumManagement/master/screen-shot/13.jpg)
+    ![image_history](/screen-shot/13.jpg)
     <br/>
     <br/>
-    ![image_statistic](https://raw.githubusercontent.com/phuocleoceo/StadiumManagement/master/screen-shot/15.jpg)
-	  <br/>
+    ![image_statistic](/screen-shot/15.jpg)
+	<br/>
     <br/>
-    ![image_predict](https://raw.githubusercontent.com/phuocleoceo/StadiumManagement/master/screen-shot/16.jpg)	
+    ![image_predict](/screen-shot/16.jpg)	
 
 **10. Bill Detail Form**
     <br/>
     <br/>
-    ![image_detail](https://raw.githubusercontent.com/phuocleoceo/StadiumManagement/master/screen-shot/14.jpg)
+    ![image_detail](/screen-shot/14.jpg)
 
 **11. Setting Form**
     <br/>
     <br/>
-    ![image_setting](https://raw.githubusercontent.com/phuocleoceo/StadiumManagement/master/screen-shot/17.jpg)
+    ![image_setting](/screen-shot/17.jpg)
 
 **12. Beautiful Alert with each Validation Result**
     <br/>
     <br/>
-    ![image_alert](https://raw.githubusercontent.com/phuocleoceo/StadiumManagement/master/screen-shot/18.jpg)
+    ![image_alert](/screen-shot/18.jpg)
 
 **13. Sorting data by clicking the column header (SortableBindingList<T>)**
     <br/>
     <br/>
-    ![image_sort](https://raw.githubusercontent.com/phuocleoceo/StadiumManagement/master/screen-shot/19.jpg)
+    ![image_sort](/screen-shot/19.jpg)
  
 
 <!-- ROADMAP -->
