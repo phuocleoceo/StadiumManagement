@@ -16,7 +16,7 @@ namespace DataAccessLayer.Models
 
         public bool isDeleted { get; set; }
 
-        public virtual List<ServiceOrder> ServiceOrders { get; set; }
+        public virtual HashSet<ServiceOrder> ServiceOrders { get; set; }
 
         public byte[] Image { get; set; }
     }

@@ -78,7 +78,7 @@ namespace BusinessLayer.Repository
         public string UnFinishedStadium(int Bill_Id)
         {
             StringBuilder sb = new StringBuilder();
-            List<RentOrder> listRO = GetById(Bill_Id).RentOrders;
+            HashSet<RentOrder> listRO = GetById(Bill_Id).RentOrders;
             foreach (RentOrder ro in listRO)
             {
                 if (ro.EndRentDate > DateTime.Now)

@@ -28,6 +28,6 @@ namespace DataAccessLayer.Models
         [ForeignKey(nameof(Account_Id))]
         public virtual Account Account { get; set; }
 
-        public virtual List<Bill> Bills { get; set; }
+        public virtual HashSet<Bill> Bills { get; set; }
     }
 }
