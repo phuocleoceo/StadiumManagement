@@ -10,10 +10,11 @@ namespace BusinessLayer.Repository
 {
     public class BillRepository : Repository<Bill>
     {
-        public IEnumerable<BillVM> GetList(string BillCode)
+        public IEnumerable<BillVM> GetList(string CustomerName)
         {
+            CustomerName = CustomerName.Trim();
             IEnumerable<Bill> list = GetAll(c => c.BillStatus == BillStatus.UnPurchased
-                                            && c.BillCode.Contains(BillCode));
+                                            && c.Customer.Name.Contains(CustomerName));
             foreach (Bill s in list)
             {
                 yield return mapper.Map<BillVM>(s);

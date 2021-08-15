@@ -9,6 +9,7 @@ namespace BusinessLayer.Repository
     {
         public IEnumerable<StadiumVM> GetList(string StadiumName)
         {
+            StadiumName = StadiumName.Trim();
             IEnumerable<Stadium> list = GetAll(c => c.isDeleted == false
                                             && c.Name.Contains(StadiumName));
             foreach (Stadium s in list)

@@ -27,6 +27,7 @@ namespace BusinessLayer.Repository
         #region Admin
         public IEnumerable<AccountVM> GetList(string UserName)
         {
+            UserName = UserName.Trim();
             IEnumerable<Account> list = GetAll(c => c.UserName.Contains(UserName));
             foreach (Account a in list)
             {

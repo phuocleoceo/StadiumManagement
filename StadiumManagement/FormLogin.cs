@@ -31,28 +31,35 @@ namespace GUILayer
         {
             string un = txtUser.Text;
             string pw = txtPass.Text;
-            currentAccount_Id = _db.Authentication(un, pw);
-            if (currentAccount_Id > 0)
+            if(!string.IsNullOrWhiteSpace(un) && !string.IsNullOrWhiteSpace(pw))
             {
-                AccountVM currentAcc = _db.GetAccountById(currentAccount_Id);
-                AccountInformationVM currentAccIfo = _dbAI.GetAIByAccountId(currentAccount_Id);
-                string Name = currentAccIfo != null ? currentAccIfo.Name : "";
-                if (currentAcc.Role == "Admin")
+                currentAccount_Id = _db.Authentication(un, pw);
+                if (currentAccount_Id > 0)
                 {
-                    MessageBox.Show($"Chào mừng Quản lý {Name}", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else MessageBox.Show($"Chào mừng Thu Ngân {Name}", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    AccountVM currentAcc = _db.GetAccountById(currentAccount_Id);
+                    AccountInformationVM currentAccIfo = _dbAI.GetAIByAccountId(currentAccount_Id);
+                    string Name = currentAccIfo != null ? currentAccIfo.Name : "";
+                    if (currentAcc.Role == "Admin")
+                    {
+                        MessageBox.Show($"Chào mừng Quản lý {Name}", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else MessageBox.Show($"Chào mừng Thu Ngân {Name}", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                FormControl fc = new FormControl();
-                this.Hide();
-                fc.ShowDialog();
-                this.Show();
-                txtUser.Text = "Tài khoản";
-                txtPass.Text = "Mật khẩu";
+                    FormControl fc = new FormControl();
+                    this.Hide();
+                    fc.ShowDialog();
+                    this.Show();
+                    txtUser.Text = "Tài khoản";
+                    txtPass.Text = "Mật khẩu";
+                }
+                else
+                {
+                    MessageBox.Show("Sai thông tin đăng nhập !", "Thất bại", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else
             {
-                MessageBox.Show("Sai thông tin đăng nhập !", "Thất bại", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Tài khoản và mật khẩu không được trống !", "Thất bại", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

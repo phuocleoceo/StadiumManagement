@@ -25,13 +25,13 @@ namespace GUILayer.ChildForm
             //In ngang
             printDocumentBill.DefaultPageSettings.Landscape = true;
         }
-        private void LoadData(string BillCode = "")
+        private void LoadData(string CustomerName = "")
         {
             // Reset DbContext
             _db = new BillRepository();
             dgvBill.DataSource = null;
             dgvBill.Rows.Clear();
-            dgvBill.DataSource = _db.GetList(BillCode).ToSortableBindingList();
+            dgvBill.DataSource = _db.GetList(CustomerName).ToSortableBindingList();
             dgvBill.Columns["Id"].Visible = false;
             dgvBill.Columns["DateCheckedOut"].Visible = false;
         }

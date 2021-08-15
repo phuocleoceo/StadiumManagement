@@ -9,6 +9,7 @@ namespace BusinessLayer.Repository
     {
         public IEnumerable<CustomerVM> GetList(string Name)
         {
+            Name = Name.Trim();
             IEnumerable<Customer> list = GetAll(c => c.Name.Contains(Name));
             foreach (Customer c in list)
             {

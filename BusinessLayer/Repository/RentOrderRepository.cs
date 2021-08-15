@@ -12,6 +12,7 @@ namespace BusinessLayer.Repository
     {
         public IEnumerable<RentOrderVM> GetList(int Bill_Id, string StadiumName)
         {
+            StadiumName = StadiumName.Trim();
             IEnumerable<RentOrder> list = GetAll(c => c.Bill_Id == Bill_Id
                                             && c.Stadium.Name.Contains(StadiumName));
             foreach (RentOrder s in list)

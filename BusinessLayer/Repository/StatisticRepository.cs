@@ -13,6 +13,7 @@ namespace BusinessLayer.Repository
         public IEnumerable<BillVM> GetBillHistory(string CustomerName, DateTime? _fromDate = null,
                                                                         DateTime? _toDate = null)
         {
+            CustomerName = CustomerName.Trim();
             IEnumerable<Bill> list = GetAll(c => c.BillStatus == BillStatus.Purchased
                                         && c.Customer.Name.Contains(CustomerName));
             if (_fromDate != null && _toDate != null)

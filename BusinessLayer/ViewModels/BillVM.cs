@@ -13,6 +13,8 @@ namespace BusinessLayer.ViewModels
 
         [DisplayName("Mã hoá đơn")]
         [Required(ErrorMessage = "Mã hoá đơn không được để trống")]
+        [MinLength(6, ErrorMessage = "BillCode phải dài 6 kí tự")]
+        [MaxLength(6,ErrorMessage ="BillCode phải dài 6 kí tự")]
         public string BillCode { get; set; }
 
         [Browsable(false)]
